@@ -54,6 +54,8 @@ function Tabs() {
         <OrderCard state={State.initial} />
         <OrderCard state={State.pending} />
         <OrderCard state={State.completed} />
+        <OrderCard state={State.completed} />
+        <OrderCard state={State.completed} />
       </div>
     </>
   );

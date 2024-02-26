@@ -31,7 +31,7 @@ function SideBar() {
       </ul>
       <a
         href="#"
-        className={selectedOption === "logout" ? "selected" : ""}
+        className="logout"
         onClick={() => handleOptionClick("logout")}
       >
         <div className="down">

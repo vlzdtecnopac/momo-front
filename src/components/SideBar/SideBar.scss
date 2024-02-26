@@ -142,8 +142,29 @@
     .logout{
         margin: auto;
         text-align: center;
-        margin-top: 150px;
+        margin-top: 120px;
         display: block;
+        padding: 22px 0px;
+
+        &:hover{
+            background-color: #2E418E;
+        }
+        .logout-icon{
+            width: 30px;
+            height: 30px;
+            display: block;
+            background-color: #2E418E;
+            -webkit-mask-image: url(/src/assets/icons/logout.svg);
+            mask-image: url(/src/assets/icons/logout.svg);
+            mask-size: 100%;
+            text-align: center;
+            margin: auto;
+            &:hover{
+                background-color: #fff;
+                cursor: pointer;
+            }
+        }
+    
     }
 }
 

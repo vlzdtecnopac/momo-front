@@ -1,9 +1,5 @@
 import React, { useState } from "react";
 import "./SideBar.scss";
-import orderIcon from "../../assets/icons/orders.svg";
-import inventoryIcon from "../../assets/icons/inventory.svg";
-import alertIcon from "../../assets/icons/alert.svg";
-import configIcon from "../../assets/icons/config.svg";
 import logoutIcon from "../../assets/icons/logout.svg";
 
 function SideBar() {
@@ -34,11 +30,7 @@ function SideBar() {
         className="logout"
         onClick={() => handleOptionClick("logout")}
       >
-        <div className="down">
-          <div className="option">
-            <img className="" src={logoutIcon} />
-          </div>
-        </div>
+            <i className="logout-icon"></i>
       </a>
     </>
   );

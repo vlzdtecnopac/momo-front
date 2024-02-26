@@ -2,33 +2,47 @@
 
 .head {
     display: flex;
-    background-color: $azul-oscuro;
-    justify-content: end;
-    align-items: center;
-    padding: 10px;
-    padding-bottom: 17px;
-    padding-top: 17px;
-    padding-right: 78px;
-    min-width: 624px;
+    justify-content: space-between;
+    background-color: #2E418E;
+
+    .column_start{
+        width: 250px;
+    }
+
+    .column_center{
+        width: auto;
+        display: flex;
+        justify-content: center;
+    }
+
+    .column_end{
+        width: 250px;
+        display: flex;
+        padding: 10px;
+        .welcome-text{
+            width: 150px;
+        }
+    }
 
     .logo {
         width: 130px;
         height: 49.23px;
-        margin-right: 30%;
+        margin: auto;
+        display: block;
 
     }
 
     .welcome {
         width: 146px;
         height: 22px;
-        font-size: 24px;
+        font-size: 22px;
         font-weight: 700;
         text-align: left;
         margin: 0 50px 5px 0;
     }
 
     .store {
-        font-size: 18px;
+        font-size: 16px;
         text-align: left;
         margin: 0;
 

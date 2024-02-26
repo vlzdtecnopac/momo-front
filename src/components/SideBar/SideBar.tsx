@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./SideBar.scss";
-import logoutIcon from "../../assets/icons/logout.svg";
 
 function SideBar() {
   const [selectedOption, setSelectedOption] = useState("");
@@ -20,7 +19,11 @@ function SideBar() {
     <>
       <ul className="options__menu">
         {sidebarListNav.map((item, index) => (
-          <li className="option"   onClick={() => handleOptionClick(item.name)} key={index}>
+          <li
+            className="option"
+            onClick={() => handleOptionClick(item.name)}
+            key={index}
+          >
             <i className={`icon ${item.icon}`}></i>
           </li>
         ))}

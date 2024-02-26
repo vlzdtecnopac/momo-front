@@ -7,6 +7,7 @@ $orange: #FF6010;
 $red: #FF4A53;
 $dark: #333;
 $light-grey: #EDEDED;
+$grey: #777672;
 $accent: $orange;
 $accent-inactive: desaturate($accent, 85%);
 $secondary: $accent-inactive;
@@ -64,11 +65,12 @@ $content-selector: "~ .content > section";
 
         li {
             box-sizing: border-box;
-            padding: 0 10px;
             text-align: center;
             border-bottom: 1px solid #EDEDED;
             margin: 0px 3px;
             font-family: "Schibsted Grotesk";
+
+
 
             &:hover {
                 border-bottom: 1px solid red !important;
@@ -86,7 +88,51 @@ $content-selector: "~ .content > section";
                 background: $light-grey;
                 padding: 10px;
                 border-radius: 4px;
+                cursor: pointer;
 
+                .icon {
+                    width: 22px;
+                    height: 22px;
+                    background-size: contain;
+                    margin: auto;
+                }
+
+                .flag {
+                    background-color: $grey;
+                    -webkit-mask-image: url(/src/assets/icons/flag.svg);
+                    mask-image: url(/src/assets/icons/flag.svg);
+                    mask-size: 100%;
+
+                    &.active {
+                        background: $dark-blue;
+
+                    }
+                }
+
+                .bell {
+                    background-color: $grey;
+
+                    -webkit-mask-image: url(/src/assets/icons/bell.svg);
+                    mask-image: url(/src/assets/icons/bell.svg);
+                    mask-size: 100%;
+
+                    &.active {
+                        background: $dark-blue;
+
+                    }
+                }
+
+                .clock {
+                    background-color: $grey;
+                    -webkit-mask-image: url(/src/assets/icons/clock.svg);
+                    mask-image: url(/src/assets/icons/clock.svg);
+                    mask-size: 100%;
+
+                    &.active {
+                        background: $dark-blue;
+
+                    }
+                }
 
 
                 &.active {
@@ -96,6 +142,8 @@ $content-selector: "~ .content > section";
 
                 span {
                     margin-left: 5px;
+                    color: $grey;
+                    font-weight: 300;
 
                     &.active {
                         color: $dark-blue;

@@ -17,7 +17,7 @@
     border-radius: 16px;
     display: block;
     align-content: center;
-  
+
     :-webkit-scrollbar {
         display: none;
     }
@@ -32,12 +32,12 @@
         .option {
             padding: 22px 0px;
             width: auto;
-      
-            &:hover{
+
+            &:hover {
                 background-color: #2E418E;
             }
 
-            .icon{
+            .icon {
                 width: 30px;
                 height: 30px;
                 display: block;
@@ -45,54 +45,58 @@
                 margin: auto;
             }
 
-            .inventory-icon{
-                background-color: #2E418E;
+            .inventory-icon {
+                background-color: $dark-blue;
                 -webkit-mask-image: url(/src/assets/icons/inventory.svg);
                 mask-image: url(/src/assets/icons/inventory.svg);
                 mask-size: 100%;
 
-                &:hover{
+                &:hover {
                     background-color: #fff;
                     cursor: pointer;
                 }
             }
 
-            .orders-icon{
-                background-color: #2E418E;
+            .orders-icon {
+                background-color: $dark-blue;
+
                 -webkit-mask-image: url(/src/assets/icons/orders.svg);
                 mask-image: url(/src/assets/icons/orders.svg);
                 mask-size: 100%;
 
-                &:hover{
+                &:hover {
                     background-color: #fff;
                     cursor: pointer;
                 }
-               
+
             }
 
-            .alert-icon{
-                background-color: #2E418E;
+            .alert-icon {
+
                 -webkit-mask-image: url(/src/assets/icons/alert.svg);
                 mask-image: url(/src/assets/icons/alert.svg);
                 mask-size: 100%;
-                &:hover{
+
+                &:hover {
                     background-color: #fff;
                     cursor: pointer;
                 }
             }
 
-            .config-icon{
-                background-color: #2E418E;
+            .config-icon {
+                background-color: $dark-blue;
+
                 -webkit-mask-image: url(/src/assets/icons/alert.svg);
                 mask-image: url(/src/assets/icons/config.svg);
                 mask-size: 100%;
-                &:hover{
+
+                &:hover {
                     background-color: #fff;
                     cursor: pointer;
                 }
             }
 
-            
+
         }
 
 
@@ -132,14 +136,15 @@
                 -o-border-radius: 30px;
             }
 
-         
+
 
             .down {
                 margin-top: 200px;
             }
         }
     }
-    .logout{
+
+    .logout {
         margin: auto;
         text-align: center;
         margin-top: 150px;

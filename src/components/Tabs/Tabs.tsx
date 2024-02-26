@@ -1,50 +1,52 @@
 import "./Tabs.scss";
-import React, { useState } from "react";
-import flagIcon from "../../assets/icons/flag.svg";
-import bellIcon from "../../assets/icons/bell.svg";
-import clockIcon from "../../assets/icons/clock.svg";
+import React, { useEffect, useState } from "react";
 import OrderCard from "../OrderCard/OrderCard";
 
-const tabOptions = [
-  {
-    text: "Pedidos completados",
-    icon: flagIcon,
-    active: true,
-  },
-  {
-    text: "Pedidos en proceso",
-    icon: bellIcon,
-    active: false,
-  },
-  {
-    text: "Pedidos entrantes",
-    icon: clockIcon,
-    active: false,
-  },
-];
-
 function Tabs() {
-  const [isActive, setIsActive] = useState(false);
+  const [options, setOptions] = useState([
+    {
+      text: "Pedidos completados",
+      icon: "flag",
+      active: false,
+    },
+    {
+      text: "Pedidos en proceso",
+      icon: "bell",
+      active: false,
+    },
+    {
+      text: "Pedidos entrantes",
+      icon: "clock",
+      active: true,
+    },
+  ]);
+
+  const changeActivate = (index: number) => {
+    const updatedOptions = options.map((option, i) => ({
+      ...option,
+      active: i == index ? true : false,
+    }));
+    setOptions(updatedOptions);
+  };
 
   return (
     <>
       <div className="tabs">
         <ul>
-          {tabOptions.map((tab, index) => (
+          {options.map((tab, index: number) => (
             <li
-              key={index}
               className={tab.active ? "active" : ""}
+              key={index}
+              onClick={() => changeActivate(index)}
             >
-              <div
-                className={`tab-button ${tab.active ? "active" : ""}`}
-                onClick={() => setIsActive(true)}
-              >
-                <img
-                  src={tab.icon}
-                  alt="icon"
+              <div className={`tab-button ${tab.active ? "active" : ""}`}>
+                <i
+                  className={`icon ${tab.active ? "active" : ""} ${tab.icon}`}
                 />
                 <br />
-                <span className="active">{tab.text}</span>
+                <span className={`${tab.active ? "active" : ""}`}>
+                  {tab.text}
+                </span>
               </div>
             </li>
           ))}

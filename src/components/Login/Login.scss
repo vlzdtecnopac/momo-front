@@ -1,7 +1,7 @@
 @import "../../index.scss";
 
 .component-login {
-    background: $azul-oscuro;
+    background: $dark-blue;
     display: flex;
     height: 100vh;
     overflow: hidden;
@@ -50,13 +50,13 @@
 
         .text {
             h2 {
-                color: $crema;
+                color: $cream;
                 display: flex;
                 justify-content: center;
             }
 
             p {
-                color: $crema;
+                color: $cream;
                 display: flex;
                 justify-content: center;
             }

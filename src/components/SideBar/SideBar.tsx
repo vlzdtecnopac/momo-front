@@ -13,79 +13,34 @@ function SideBar() {
     setSelectedOption(option);
   };
 
+  const sidebarListNav = [
+    { icon: "orders-icon", name: "orders" },
+    { icon: "inventory-icon", name: "inventory" },
+    { icon: "alert-icon", name: "alert" },
+    { icon: "config-icon", name: "config" },
+  ];
+
   return (
-      <div className="options__menu">
-        <a
-          href="#"
-          className={selectedOption === "orders" ? "selected" : ""}
-          onClick={() => handleOptionClick("orders")}
-        >
+    <>
+      <ul className="options__menu">
+        {sidebarListNav.map((item, index) => (
+          <li className="option"   onClick={() => handleOptionClick(item.name)} key={index}>
+            <i className={`icon ${item.icon}`}></i>
+          </li>
+        ))}
+      </ul>
+      <a
+        href="#"
+        className={selectedOption === "logout" ? "selected" : ""}
+        onClick={() => handleOptionClick("logout")}
+      >
+        <div className="down">
           <div className="option">
-            <img
-              className={selectedOption === "option-icon" ? "selected" : ""}
-              src={orderIcon}
-              alt="Order Icon"
-            />
+            <img className="" src={logoutIcon} />
           </div>
-        </a>
-
-        <a
-          href="#"
-          className={selectedOption === "inventory" ? "selected" : ""}
-          onClick={() => handleOptionClick("inventory")}
-        >
-          <div className="option">
-            <img
-              className=""
-              src={inventoryIcon}
-              alt="Inventory Icon"
-            />
-          </div>
-        </a>
-
-        <a
-          href="#"
-          className={selectedOption === "alert" ? "selected" : ""}
-          onClick={() => handleOptionClick("alert")}
-        >
-          <div className="option">
-            <img
-              className=""
-              src={alertIcon}
-              alt="Alert Icon"
-            />
-          </div>
-        </a>
-
-        <a
-          href="#"
-          className={selectedOption === "config" ? "selected" : ""}
-          onClick={() => handleOptionClick("config")}
-        >
-          <div className="option">
-            <img
-              className=""
-              src={configIcon}
-              alt="Config Icon"
-            />
-          </div>
-        </a>
-
-        <a
-          href="#"
-          className={selectedOption === "logout" ? "selected" : ""}
-          onClick={() => handleOptionClick("logout")}
-        >
-          <div className="down">
-            <div className="option">
-              <img
-                className=""
-                src={logoutIcon}
-              />
-            </div>
-          </div>
-        </a>
-      </div>
+        </div>
+      </a>
+    </>
   );
 }
 

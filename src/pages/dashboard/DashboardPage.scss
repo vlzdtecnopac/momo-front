@@ -2,13 +2,14 @@
 
 .dashboard-page {
     background: $azul-claro;
+    padding: 0px 0px 50px 0px;
     .content{
         background: white;
         padding: 20px;
         border-radius: 16px;
-        width: 88%;
+        width: 86%;
+        margin-left: 120px;
+        top: 30px;
         position: relative;
-        left: 120px;
-        top: 10px;
     }
 }

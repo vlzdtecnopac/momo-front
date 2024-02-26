@@ -65,19 +65,8 @@ function Tabs() {
           </label>
         </li>{" "}
       </ul>
-      <div className="slider">
-        <div className="indicator"></div>
-      </div>
-      <div className="content">
-        <section>
+      <div className="content-tab">
           <OrderCard />
-        </section>
-        <section>
-          <OrderCard />
-        </section>
-        <section>
-          <OrderCard />
-        </section>
       </div>
     </div>
   );

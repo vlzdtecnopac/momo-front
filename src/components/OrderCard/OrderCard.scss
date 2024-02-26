@@ -70,7 +70,7 @@
 
     .opcion-radio {
         display: inline-block;
-        margin-right: 18px;
+        margin-right: 2px;
       }
       
       .opcion-radio input {
@@ -101,10 +101,7 @@
           display: inline-block;
           vertical-align: middle;
       }
-      .opcion-radio input[type=radio]:checked + label:before {
-          background-color: #8879FF;
-          box-shadow: inset 0 0 0 4px #F4F5F8;
-      }
+   
       .opcion-radio label {
           display: inline-block;
           vertical-align: middle;
@@ -120,17 +117,32 @@
     .client_info{
         background: $light-blue;
     }
+
+    .opcion-radio input[type=radio]:checked + label:before {
+        background-color: $dark-blue;
+        box-shadow: inset 0 0 0 4px #F4F5F8;
+    }
 }
 
 .state_completed{
     .client_info{
         background: $completed;
     }
+
+    .opcion-radio input[type=radio]:checked + label:before {
+        background-color: $completed;
+        box-shadow: inset 0 0 0 4px #F4F5F8;
+    }
 }
 
 .state_pending{
     .client_info{
         background: $pending;
+    }
+
+    .opcion-radio input[type=radio]:checked + label:before {
+        background-color: $pending;
+        box-shadow: inset 0 0 0 4px #F4F5F8;
     }
 }
 

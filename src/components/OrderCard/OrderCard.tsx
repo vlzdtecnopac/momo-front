@@ -33,7 +33,7 @@ const OrderCard: React.FC<Props> = (props) => {
             <h2>Macadamia Black Tea Soda</h2>
             <form>
               <span className="opcion-radio">
-                <input type="radio" id={id_input} name="tipo_comida"  />
+                <input type="radio" id={id_input} name="check_process"  />
                 <label htmlFor={id_input}></label>
               </span>
             </form>

@@ -1,0 +1,17 @@
+@import "../../index.scss";
+
+.order-button {
+    width: 250px;
+    height: 40px;
+    background: $azul-oscuro;
+    color: $azul-claro;
+    font-weight: 700;
+    size: 24px;
+    border: none;
+    padding: 5px 15px;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+}

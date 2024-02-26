@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap");
+
+
+$azul-oscuro: #2E418E;
+$azul-claro: #D5EAFB;
+
+$crema: #EDEBDF;
+$negro: #212121;
+$blanco: #FFFFFF;
+
+@mixin center {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.loader {
+  margin: 0px 40px 0px 40px;
+  width: 15px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  animation: l5 1s infinite linear alternate;
+}
+
+@keyframes l5 {
+  0% {
+    box-shadow: 20px 0 #edebdf, -20px 0 #edebdf;
+    background: #edebdf
+  }
+
+  33% {
+    box-shadow: 20px 0 #fcfbf55b, -20px 0 #fcfbf55b;
+    background: #fcfbf55b
+  }
+
+  66% {
+    box-shadow: 20px 0 #f6f4eeba, -20px 0 #f6f4eeba;
+    background: #f6f4eeba
+  }
+
+  100% {
+    box-shadow: 20px 0 #ddddbe, -20px 0 #ddddbe;
+    background: #ddddbe
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+h2,
+h3 {
+  font-family: "Red Hat Display", sans-serif;
+  color: $crema ;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+h3 {
+  color: $azul-oscuro;
+}
+
+p {
+  font-family: "Schibsted Grotesk", sans-serif;
+  color: $crema;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+input {
+  font-family: "Red Hat Display", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}

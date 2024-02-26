@@ -1,0 +1,71 @@
+@import "../../index.scss";
+
+.order-card {
+    width: 329px;
+    height: 660px;
+    background: #ffffff;
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+
+
+    .client_info {
+        background: $azul-claro;
+        border-radius: 16px 16px 0 0;
+        padding: 15px;
+        -webkit-border-radius: 16px 16px 0 0;
+        -moz-border-radius: 16px 16px 0 0;
+        -ms-border-radius: 16px 16px 0 0;
+        -o-border-radius: 16px 16px 0 0;
+
+        .left {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            h2 {
+                color: $negro;
+
+            }
+        }
+
+        .right {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            span {
+                font-weight: 700;
+            }
+
+            p {
+                color: $negro;
+            }
+        }
+    }
+
+    .order_info {
+        justify-content: center;
+        margin: 10px;
+
+        .item_name {
+            display: flex;
+
+            h2 {
+                color: $negro;
+            }
+
+        }
+
+        .details {
+            margin-left: 20px;
+        }
+
+        .button {
+            display: flex;
+            justify-content: center;
+        }
+    }
+}
+
+hr {
+    width: 90%;
+}

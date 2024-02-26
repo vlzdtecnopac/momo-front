@@ -1,0 +1,13 @@
+@import "../../index.scss";
+
+.badge {
+    background: #2E418E;
+    border: none;
+    padding: 5px 15px;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    color: $azul-claro;
+}

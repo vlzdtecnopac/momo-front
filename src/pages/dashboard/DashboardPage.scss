@@ -2,9 +2,13 @@
 
 .dashboard-page {
     background: $azul-claro;
-    height: 100vh;
-
-    .divider {
-        height: 100%;
+    .content{
+        background: white;
+        padding: 20px;
+        border-radius: 16px;
+        width: 88%;
+        position: relative;
+        left: 120px;
+        top: 10px;
     }
 }

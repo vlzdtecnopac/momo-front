@@ -14,7 +14,6 @@ function SideBar() {
   };
 
   return (
-    <nav className="sidebar">
       <div className="options__menu">
         <a
           href="#"
@@ -87,7 +86,6 @@ function SideBar() {
           </div>
         </a>
       </div>
-    </nav>
   );
 }
 

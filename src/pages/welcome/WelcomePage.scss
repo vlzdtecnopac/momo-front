@@ -22,11 +22,10 @@
     }
 
     .text-container {
-        display: flex;
+        display: block;
         width: 544px;
         height: 171px;
         margin: 0 auto;
-        display: flex;
 
         .text {
             max-width: 100%;
@@ -53,21 +52,16 @@
 }
 
 .kds-loader-container {
-    display: flex;
-    position: fixed;
-    width: 1174px;
-    height: 390px;
+  
 
     .kds-loader {
-        max-width: 1174px;
-        max-height: 390px;
-        width: 100%;
-        height: auto;
+        max-width: 990px;
         display: flex;
         align-items: center;
         justify-content: center;
+        margin: 20px auto;
 
-        .store-card {}
+
 
         .card-group {
             display: grid;

@@ -6,13 +6,18 @@ import "./DashboardPage.scss";
 
 function DashboardPage() {
   return (
-    <div className="dashboard-page">
-      <Header />
-      <SideBar />
-      <div className="divider">
-        <Tabs />
+    <>
+     <Header />
+       <div className="dashboard-page">
+       <div className="sidebar">
+          <SideBar />
+        </div> 
+        <div className="content">
+          <Tabs />
+        </div>
       </div>
-    </div>
+    </>
+  
   );
 }
 export default DashboardPage;

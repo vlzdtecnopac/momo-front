@@ -1,8 +1,21 @@
 import CompleteOrderButton from "../CompleteOrderButton/CompleteOrderButton";
 import TakeoutBadge from "../TakeoutBadge/TakeoutBadge";
 import "./OrderCard.scss";
-function OrderCard() {
+
+export enum State{
+  initial = "initial",
+  pending = "pending",
+  completed = "completed"
+
+}
+
+interface Props {
+  state: State;
+}
+
+const OrderCard: React.FC<Props> = (props) => {
   return (
+    <div className={`state_${props.state}`}>
     <div className="order-card">
       <div className="client_info">
         <div className="left">
@@ -36,6 +49,7 @@ function OrderCard() {
           <CompleteOrderButton />
         </div>
       </div>
+    </div>
     </div>
   );
 }

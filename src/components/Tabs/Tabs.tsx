@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import flagIcon from "../../assets/icons/flag.svg";
 import bellIcon from "../../assets/icons/bell.svg";
 import clockIcon from "../../assets/icons/clock.svg";
-import OrderCard from "../OrderCard/OrderCard";
+import OrderCard, { State } from "../OrderCard/OrderCard";
 
 const tabOptions = [
   {
@@ -51,7 +51,9 @@ function Tabs() {
         </ul>
       </div>
       <div className="content-tab">
-        <OrderCard />
+        <OrderCard state={State.initial} />
+        <OrderCard state={State.pending} />
+        <OrderCard state={State.completed} />
       </div>
     </>
   );

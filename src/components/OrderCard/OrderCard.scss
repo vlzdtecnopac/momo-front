@@ -16,13 +16,14 @@
         -o-border-radius: 16px 16px 0 0;
 
         .left {
+            
             display: flex;
             justify-content: space-between;
             align-items: center;
 
             h2 {
                 color: $black;
-
+                margin: 0px;
             }
         }
 
@@ -37,6 +38,7 @@
 
             p {
                 color: $black;
+                margin: 0px;
             }
         }
     }

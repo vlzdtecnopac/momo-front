@@ -27,14 +27,6 @@ const BrowserRoutes = createBrowserRouter([
     path: "/dashboard",
     element: <DashboardPage />,
   },
-  {
-    path: "/tabs",
-    element: <Tabs />,
-  },
-  {
-    path: "/table",
-    element: "sdas",
-  },
 ]);
 
 export default BrowserRoutes;

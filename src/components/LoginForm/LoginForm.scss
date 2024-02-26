@@ -11,7 +11,7 @@
             z-index: 9;
             position: relative;
             background: transparent;
-            padding: 10px 10px 10px 38px;
+            padding: 10px 10px 10px 45px;
             border: 1px solid #fff;
             border-radius: 5px;
             color: #fff;
@@ -41,7 +41,7 @@
             bottom: 0px;
             margin: auto;
             top: 0px;
-            left: 4px;
+            left: 10px;
         }
 
         .icon-email {
@@ -69,6 +69,9 @@
                 font-style: normal;
                 font-weight: 700;
                 font-size: 20px;
+                a{
+                    color: #fff; 
+                }
             }
         }
 

@@ -1,8 +1,7 @@
 import React from "react";
 import "./LoginForm.scss";
-function useSend() {
-  console.log(FormData);
-}
+import { Link } from "react-router-dom";
+
 function LoginForm() {
   return (
     <div className="component-login-form">
@@ -36,10 +35,10 @@ function LoginForm() {
         <div className="button-container">
           <button
             className="login-buttom"
-            onClick={useSend}
-            type="submit"
+            type="button"
           >
-            Ingresar
+            <Link to="/dashboard"> Ingresar </Link>
+       
           </button>
         </div>
       </form>

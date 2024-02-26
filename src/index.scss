@@ -2,12 +2,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap");
 
 
-$azul-oscuro: #2E418E;
-$azul-claro: #D5EAFB;
-
-$crema: #EDEBDF;
-$negro: #212121;
-$blanco: #FFFFFF;
+$dark-blue: #2E418E;
+$light-blue: #D5EAFB;
+$cream: #EDEBDF;
+$black: #212121;
+$white: #FFFFFF;
 
 @mixin center {
   position: relative;
@@ -57,19 +56,19 @@ body {
 h2,
 h3 {
   font-family: "Red Hat Display", sans-serif;
-  color: $crema ;
+  color: $cream ;
   font-optical-sizing: auto;
   font-weight: 700;
   font-style: normal;
 }
 
 h3 {
-  color: $azul-oscuro;
+  color: $dark-blue;
 }
 
 p {
   font-family: "Schibsted Grotesk", sans-serif;
-  color: $crema;
+  color: $cream;
   font-optical-sizing: auto;
   font-weight: 300;
   font-style: normal;

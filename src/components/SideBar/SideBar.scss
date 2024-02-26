@@ -3,13 +3,13 @@
 .sidebar {
     width: 78px;
     height: 80%;
-    background: $blanco;
+    background: $white;
     position: fixed;
     // top: 0;
     margin-top: 40px;
     margin-left: 25px;
     // left: 0;
-    color: $blanco;
+    color: $white;
     font-size: 18px;
     overflow: hidden;
     overflow-y: scroll;
@@ -31,24 +31,24 @@
         top: 40px;
 
         &.selected {
-            background-color: $azul-oscuro; // Cambiar el color de fondo cuando está seleccionado
-            color: $blanco; // Cambiar el color del texto a blanco
+            background-color: $dark-blue;
+            color: $white;
 
             .option .option-icon {
-                filter: invert(100%); // Cambiar el color de los iconos a blanco
+                filter: invert(100%);
             }
         }
 
         a {
-            color: $azul-oscuro;
+            color: $dark-blue;
             cursor: default;
             display: block;
             position: relative;
             transition: color 300ms;
 
             &:hover {
-                color: $blanco;
-                background: $azul-oscuro;
+                color: $white;
+                background: $dark-blue;
             }
 
             &.selected:before {
@@ -56,7 +56,7 @@
                 width: 3px;
                 height: 80%;
                 border-radius: 30px;
-                background: $blanco;
+                background: $white;
                 position: absolute;
                 top: 10%;
                 left: 77px;

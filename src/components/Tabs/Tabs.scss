@@ -1,12 +1,13 @@
 @import 'https://fonts.googleapis.com/css?family=Montserrat:400,700|Raleway:300,400';
 
+@import "../../index.scss";
 
 /* colors */
-$blue: #FF6010;
+$orange: #FF6010;
 $red: #FF4A53;
 $dark: #333;
-
-$accent: $blue;
+$light-grey: #EDEDED;
+$accent: $orange;
 $accent-inactive: desaturate($accent, 85%);
 $secondary: $accent-inactive;
 
@@ -52,10 +53,7 @@ $content-selector: "~ .content > section";
 .tabs {
     background: white;
     border-radius: 16px;
- 
 
-    .content section h2,
- 
 
     ul {
         list-style-type: none;
@@ -70,37 +68,54 @@ $content-selector: "~ .content > section";
             text-align: center;
             border-bottom: 1px solid #EDEDED;
             margin: 0px 3px;
+            font-family: "Schibsted Grotesk";
 
-            &:hover{
-                border-bottom: 1px solid red!important;
+            &:hover {
+                border-bottom: 1px solid red !important;
             }
 
-            &.active{
-                border-bottom: 1px solid red!important;
+            &.active {
+                border-bottom: 1px solid red !important;
             }
 
-    
-            .tab-button{
+
+            .tab-button {
                 display: flex;
                 justify-content: center;
                 margin-bottom: 5px;
-                background: #EDEDED;
+                background: $light-grey;
                 padding: 10px;
-                border-radius: 4px;  
+                border-radius: 4px;
 
-                &.active{
-                    background: blue!important;
+
+
+                &.active {
+                    background: $light-blue;
+
+                }
+
+                span {
+                    margin-left: 5px;
+
+                    &.active {
+                        color: $dark-blue;
+
+                    }
+                }
+
+                &.active {
+                    background: $light-blue !important;
                 }
             }
-            
+
         }
     }
 
-    .content-tab{
+    .content-tab {
         margin-top: 50px;
     }
 
-   
+
 
     @keyframes content {
         from {

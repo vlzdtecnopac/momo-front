@@ -7,7 +7,7 @@
 
 
     .client_info {
-        background: $azul-claro;
+        background: $light-blue;
         border-radius: 16px 16px 0 0;
         padding: 15px;
         -webkit-border-radius: 16px 16px 0 0;
@@ -21,7 +21,7 @@
             align-items: center;
 
             h2 {
-                color: $negro;
+                color: $black;
 
             }
         }
@@ -36,7 +36,7 @@
             }
 
             p {
-                color: $negro;
+                color: $black;
             }
         }
     }
@@ -50,7 +50,7 @@
             display: flex;
 
             h2 {
-                color: $negro;
+                color: $black;
             }
 
         }

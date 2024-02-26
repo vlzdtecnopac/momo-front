@@ -1,5 +1,6 @@
 [
   {
+    "status": "ok",
     "id": "0",
     "name": "item1",
     "actualAmount": "10",
@@ -7,6 +8,7 @@
     "minimumAmount": "2"
   },
   {
+    "status": "danger",
     "id": "1",
     "name": "item2",
     "actualAmount": "8",
@@ -14,6 +16,7 @@
     "minimumAmount": "1"
   },
   {
+    "status": "danger",
     "id": "2",
     "name": "item3",
     "actualAmount": "15",
@@ -21,6 +24,7 @@
     "minimumAmount": "3"
   },
   {
+    "status": "warning",
     "id": "3",
     "name": "item4",
     "actualAmount": "20",
@@ -28,6 +32,7 @@
     "minimumAmount": "5"
   },
   {
+    "status": "ok",
     "id": "4",
     "name": "item5",
     "actualAmount": "12",
@@ -35,6 +40,7 @@
     "minimumAmount": "2"
   },
   {
+    "status": "warning",
     "id": "5",
     "name": "item6",
     "actualAmount": "18",
@@ -42,6 +48,7 @@
     "minimumAmount": "4"
   },
   {
+    "status": "warning",
     "id": "6",
     "name": "item7",
     "actualAmount": "6",
@@ -49,6 +56,7 @@
     "minimumAmount": "1"
   },
   {
+    "status": "ok",
     "id": "7",
     "name": "item8",
     "actualAmount": "9",
@@ -56,6 +64,7 @@
     "minimumAmount": "2"
   },
   {
+    "status": "danger",
     "id": "8",
     "name": "item9",
     "actualAmount": "14",
@@ -63,6 +72,7 @@
     "minimumAmount": "3"
   },
   {
+    "status": "ok",
     "id": "9",
     "name": "item10",
     "actualAmount": "22",
@@ -70,6 +80,7 @@
     "minimumAmount": "5"
   },
   {
+    "status": "danger",
     "id": "10",
     "name": "item11",
     "actualAmount": "28",

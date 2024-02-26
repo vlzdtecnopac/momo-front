@@ -50,6 +50,12 @@ $content-selector: "~ .content > section";
     }
 }
 
+.content-tab {
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
 
 .tabs {
     background: white;
@@ -159,13 +165,7 @@ $content-selector: "~ .content > section";
         }
     }
 
-    .content-tab {
-        margin-top: 50px;
-        display: flex;
-        flex-wrap: wrap;
-    }
-
-
+ 
 
     @keyframes content {
         from {

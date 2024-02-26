@@ -30,9 +30,9 @@
         margin: 12px 0px;
 
         .option {
-            padding: 14px 0px;
+            padding: 22px 0px;
             width: auto;
-            height: 40px;
+      
             &:hover{
                 background-color: #2E418E;
             }
@@ -142,6 +142,8 @@
     .logout{
         margin: auto;
         text-align: center;
+        margin-top: 150px;
+        display: block;
     }
 }
 

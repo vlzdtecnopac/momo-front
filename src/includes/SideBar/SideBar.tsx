@@ -35,7 +35,7 @@ function SideBar() {
         className="logout"
         onClick={() => handleOptionClick("logout")}
       >
-            <i className="logout-icon"></i>
+           <Link to="../login" ><i className="logout-icon"></i></Link> 
       </Link>
     </>
   );

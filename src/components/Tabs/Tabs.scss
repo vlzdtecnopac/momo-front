@@ -51,9 +51,12 @@ $content-selector: "~ .content > section";
 }
 
 .content-tab {
-    margin-top: 50px;
+    margin-top: 20px;
+    max-height: 430px;
+    overflow: scroll;
     display: flex;
     flex-wrap: wrap;
+
 }
 
 

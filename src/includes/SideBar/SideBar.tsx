@@ -10,9 +10,9 @@ function SideBar() {
   };
 
   const sidebarListNav = [
-    { icon: "orders-icon", name: "orders", router: "#"  },
-    { icon: "inventory-icon", name: "inventory", router: "/inventory-page" },
-    { icon: "alert-icon", name: "alert",  router: "/alerts-page" },
+    { icon: "orders-icon", name: "orders", router: "../dashboard"  },
+    { icon: "inventory-icon", name: "inventory", router: "../inventory-page" },
+    { icon: "alert-icon", name: "alert",  router: "../alerts-page" },
     { icon: "config-icon", name: "config", router: "#" },
   ];
 
@@ -26,7 +26,7 @@ function SideBar() {
             onClick={() => handleOptionClick(item.name)}
             key={index}
           >
-                 <Link to=""><i className={`icon ${item.icon}`}></i></Link>
+                 <Link to={item.router} ><i className={`icon ${item.icon}`}></i></Link>
           </li>
         ))}
       </ul>

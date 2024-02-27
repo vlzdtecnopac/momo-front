@@ -2,14 +2,6 @@ import React from "react";
 
 import "./Table.scss";
 
-type Inventory = {
-  [key: string]: string;
-  id: string;
-  name: string;
-  actualAmount: string;
-  alertLevel: string;
-  minimumAmount: string;
-};
 
 const column_headers = ["", "Alertas", "Hora", "Nivel de alerta", "Acción"];
 
@@ -37,7 +29,7 @@ const data = [
   },
 ];
 
-function AlertsTable() {
+function  AlertsTable() {
   return (
     <div className="content-table">
     <table className="table">

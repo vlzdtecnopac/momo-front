@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
-import Header from "../../components/Header/Header";
-import SideBar from "../../components/SideBar/SideBar";
+import Header from "../Header/Header";
+import SideBar from "../SideBar/SideBar";
 import InfoSidebar from "../../components/InfoSidebar/InfoSidebar";
 
 interface DynamicLayoutProps {

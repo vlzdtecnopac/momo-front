@@ -33,9 +33,6 @@ $grey: #F4F4F4;
         td:nth-child(1) {
             width: fit-content;
             padding-right: 10px;
-    
-    
-    
         }
     
         td:nth-child(2) {
@@ -81,6 +78,8 @@ $grey: #F4F4F4;
             -ms-border-radius: 50%;
             -o-border-radius: 50%;
             display: block;
+            padding: 4px;
+            margin: 8px;
         }
     
         .text-success {
@@ -93,30 +92,21 @@ $grey: #F4F4F4;
         .success {
             background: $green;
             mask-image: url(/src/assets/icons/alert.svg);
-    
-    
-    
         }
     
         .text-warning {
             color: $yellow;
             font-weight: 700;
-    
-    
         }
     
         .warning {
             mask-image: url(/src/assets/icons/alert.svg);
-    
             background: $yellow;
-    
         }
     
         .text-danger {
             color: $red;
             font-weight: 700;
-    
-    
         }
     
         .danger {

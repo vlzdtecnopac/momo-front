@@ -39,6 +39,7 @@ const data = [
 
 function AlertsTable() {
   return (
+    <div className="content-table">
     <table className="table">
       <thead>
         <tr>
@@ -86,6 +87,7 @@ function AlertsTable() {
         ))}
       </tbody>
     </table>
+    </div>
   );
 }
 

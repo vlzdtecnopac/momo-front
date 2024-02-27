@@ -1,3 +1,5 @@
+
+
 import AlertsTable from "../../components/Table/AlertsTable";
 import Layout from "../../includes/layout/Layout";
 import "./AlertsPage.scss";

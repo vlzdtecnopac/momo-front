@@ -1,0 +1,76 @@
+$cell-shadow: #F4F4F4;
+
+.table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+
+    th {
+        font-family: "Red Hat display", serif;
+        font-weight: 700;
+        font-size: 16px;
+    }
+
+    td {
+        font-family: "Red Hat display", serif;
+        font-weight: 500;
+        font-size: 16px;
+
+        /* Hide text inside td for the first column */
+        .table .td:first-child {
+            visibility: hidden;
+
+        }
+
+        /* Show div for the first column */
+        .table .td:first-child>div {
+            visibility: visible;
+        }
+    }
+
+
+
+    .td,
+    .th {
+        text-align: center;
+        padding: 0px;
+    }
+
+    .tr:nth-child(odd) {
+        background-color: $cell-shadow;
+    }
+}
+
+.ok {
+    width: 25px;
+    height: 25px;
+    background: green;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.warning {
+    width: 25px;
+    height: 25px;
+    background: yellow;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.danger {
+
+    width: 25px;
+    height: 25px;
+    background: red;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}

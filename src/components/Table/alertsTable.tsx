@@ -1,40 +1,33 @@
 import React from "react";
-import data from "./inventory.json";
+import data from "./alerts.json";
 import "./Table.scss";
 
-type Inventory = {
-  [key: string]: string;
+type Alerts = {
   id: string;
-  name: string;
-  actualAmount: string;
+  alert: string;
+  hour: string;
   alertLevel: string;
-  minimumAmount: string;
 };
 
 const columns = [
   {
-    header: "",
-    accessorKey: "status",
+    header: "Alerta",
+    accessorKey: "alert",
   },
   {
-    header: "Inventario",
-    accessorKey: "name",
-  },
-  {
-    header: "Cantidad Actual",
-    accessorKey: "actualAmount",
+    header: "Hora",
+    accessorKey: "hour",
   },
   {
     header: "Nivel de alerta",
     accessorKey: "alertLevel",
   },
   {
-    header: "Cantidad Minima",
-    accessorKey: "minimumAmount",
+    header: "Acción",
   },
 ];
 
-function Table() {
+function AlertTable() {
   return (
     <table className="table">
       <thead>
@@ -50,7 +43,7 @@ function Table() {
         </tr>
       </thead>
       <tbody>
-        {data.map((item: Inventory) => (
+        {data.map((item: Alerts) => (
           <tr
             className="tr"
             key={item.id}
@@ -71,4 +64,4 @@ function Table() {
   );
 }
 
-export default Table;
+export default AlertTable;

@@ -1,0 +1,79 @@
+[
+  {
+    "id": "0",
+    "status": "ok | warning | danger",
+    "alert": "alert1",
+    "hour": "10",
+    "alertLevel": "5"
+  },
+  {
+    "id": "1",
+    "status": "ok | warning ",
+    "alert": "alert2",
+    "hour": "8",
+    "alertLevel": "4"
+  },
+  {
+    "id": "2",
+    "status": "ok",
+    "alert": "alert3",
+    "hour": "15",
+    "alertLevel": "7"
+  },
+  {
+    "id": "3",
+    "status": "ok | warning | danger",
+    "alert": "alert4",
+    "hour": "20",
+    "alertLevel": "10"
+  },
+  {
+    "id": "4",
+    "status": "ok | warning | danger",
+    "alert": "alert5",
+    "hour": "12",
+    "alertLevel": "6"
+  },
+  {
+    "id": "5",
+    "status": "ok | warning | danger",
+    "alert": "alert6",
+    "hour": "18",
+    "alertLevel": "9"
+  },
+  {
+    "id": "6",
+    "status": "ok | warning | danger",
+    "alert": "alert7",
+    "hour": "6",
+    "alertLevel": "3"
+  },
+  {
+    "id": "7",
+    "status": "ok | warning | danger",
+    "alert": "alert8",
+    "hour": "9",
+    "alertLevel": "4"
+  },
+  {
+    "id": "8",
+    "status": "ok | warning | danger",
+    "alert": "alert9",
+    "hour": "14",
+    "alertLevel": "7"
+  },
+  {
+    "id": "9",
+    "status": "ok | warning | danger",
+    "alert": "alert10",
+    "hour": "22",
+    "alertLevel": "11"
+  },
+  {
+    "id": "10",
+    "status": "ok | warning | danger",
+    "alert": "alert11",
+    "hour": "28",
+    "alertLevel": "11"
+  }
+]

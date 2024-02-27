@@ -5,7 +5,7 @@
     "name": "item1",
     "actualAmount": "10",
     "alertLevel": "5",
-    "minimumAmount": "2"
+    "minimumAmount": "1"
   },
   {
     "status": "danger",
@@ -37,7 +37,7 @@
     "name": "item5",
     "actualAmount": "12",
     "alertLevel": "6",
-    "minimumAmount": "2"
+    "minimumAmount": "1"
   },
   {
     "status": "warning",
@@ -45,7 +45,7 @@
     "name": "item6",
     "actualAmount": "18",
     "alertLevel": "9",
-    "minimumAmount": "4"
+    "minimumAmount": "1"
   },
   {
     "status": "warning",
@@ -61,7 +61,7 @@
     "name": "item8",
     "actualAmount": "9",
     "alertLevel": "4",
-    "minimumAmount": "2"
+    "minimumAmount": "1"
   },
   {
     "status": "danger",

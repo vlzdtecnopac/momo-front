@@ -6,7 +6,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Tabs from "../components/Tabs/Tabs";
 import Table from "../components/Table/InventoryTable";
 import InventoryTable from "../components/Table/InventoryTable";
-import AlertsTable from "../components/Table/AlertsTable";
+
 
 const BrowserRoutes = createBrowserRouter([
   {
@@ -35,7 +35,7 @@ const BrowserRoutes = createBrowserRouter([
   },
   {
     path: "/alerts-table",
-    element: <AlertsTable />,
+    element: "",
   },
 ]);
 

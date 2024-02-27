@@ -3,11 +3,9 @@ import Layout from "../../includes/layout/Layout";
 
 function InventoryPage() {
   return (
-    <>
-        <Layout>
-        <InventoryTable />;
-      </Layout>
-    </>
-  )
+    <Layout>
+      <InventoryTable />;
+    </Layout>
+  );
 }
 export default InventoryPage;

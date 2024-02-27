@@ -10,13 +10,17 @@
     .order-button {
         width: 259px;
         height: 44px;
-        background: #2E418E;
+        background: $dark-blue;
         color: #D5EAFB;
         font-weight: 400;
         border: none;
         padding: 5px 15px;
         border-radius: 8px;
         font-size: 18px;
+        &:hover{
+            background: $dark-blue-hover;
+            cursor: pointer;
+        }
     }
 
     .client_info {

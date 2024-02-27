@@ -32,7 +32,7 @@ function Table() {
  
 
   return (
-    <div className="table">
+    <div className="table-component">
     
     </div>
   );

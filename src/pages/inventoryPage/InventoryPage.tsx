@@ -4,7 +4,7 @@ import Layout from "../../includes/layout/Layout";
 function InventoryPage() {
   return (
     <Layout>
-      <InventoryTable />;
+      <InventoryTable />
     </Layout>
   );
 }

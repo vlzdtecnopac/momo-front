@@ -41,7 +41,7 @@ function getRandomStatus() {
 
 function Table() {
   return (
-    <div>
+    <div className="content-table">
     <table className="table">
       <thead>
         <tr>
@@ -76,7 +76,7 @@ function Table() {
       </tbody>
     </table>
     </div>
-  );
+  )
 }
 
 export default Table;

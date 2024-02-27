@@ -11,33 +11,45 @@ type Inventory = {
   minimumAmount: string;
 };
 
-const column_headers = ["", "Alertas", "Hora", "Nivel de alerta", "Acción"];
+const column_headers = [
+  "",
+  "Inventario",
+  "Cantidad actual",
+  "Nivel de alerta",
+  "Cantidad Minima",
+];
 
 const data = [
   {
     id: "0",
+    inventario: "2",
+    name: "leche",
+    actualAmount: "8",
+    alertLevel: "4",
+    minimumAmount: "1",
     status: "success",
-    alert: "No hay pan",
-    hour: "10:00 pm",
-    alertLevel: "5",
   },
   {
     id: "1",
+    inventario: "2",
+    name: "cafe",
+    actualAmount: "8",
+    alertLevel: "4",
+    minimumAmount: "1",
     status: "danger",
-    alert: "No hay azucar",
-    hour: "03:00 pm",
-    alertLevel: "2",
   },
   {
     id: "2",
+    inventario: "2",
+    name: "pastel",
+    actualAmount: "8",
+    alertLevel: "4",
+    minimumAmount: "1",
     status: "warning",
-    alert: "No hay limones",
-    hour: "02:00 pm",
-    alertLevel: "3",
   },
 ];
 
-function AlertsTable() {
+function Table() {
   return (
     <table className="table">
       <thead>
@@ -62,12 +74,12 @@ function AlertsTable() {
             <td className="td">
               <i className={`icon ${item.status}`}></i>
             </td>
-            <td className="td">{item.alert}</td>
-            <td className="td">{item.hour}</td>
-            <td className={`text-${item.status}`}>{item.alertLevel}</td>
-            <td>
-              <button>notificar</button>
+            <td className="td">{item.name}</td>
+            <td className="td">
+              <p className={`text-${item.status}`}>{item.actualAmount}</p>
             </td>
+            <td>{item.alertLevel}</td>
+            <td>{item.minimumAmount}</td>
           </tr>
         ))}
       </tbody>
@@ -75,4 +87,4 @@ function AlertsTable() {
   );
 }
 
-export default AlertsTable;
+export default Table;

@@ -5,7 +5,7 @@
     "name": "item1",
     "actualAmount": "10",
     "alertLevel": "5",
-    "action": "2"
+    "minimumAmount": "1"
   },
   {
     "status": "danger",
@@ -13,7 +13,7 @@
     "name": "item2",
     "actualAmount": "8",
     "alertLevel": "4",
-    "action": "1"
+    "minimumAmount": "1"
   },
   {
     "status": "danger",
@@ -21,7 +21,7 @@
     "name": "item3",
     "actualAmount": "15",
     "alertLevel": "7",
-    "action": "3"
+    "minimumAmount": "3"
   },
   {
     "status": "warning",
@@ -29,7 +29,7 @@
     "name": "item4",
     "actualAmount": "20",
     "alertLevel": "10",
-    "action": "5"
+    "minimumAmount": "5"
   },
   {
     "status": "ok",
@@ -37,7 +37,7 @@
     "name": "item5",
     "actualAmount": "12",
     "alertLevel": "6",
-    "action": "2"
+    "minimumAmount": "1"
   },
   {
     "status": "warning",
@@ -45,7 +45,7 @@
     "name": "item6",
     "actualAmount": "18",
     "alertLevel": "9",
-    "action": "4"
+    "minimumAmount": "1"
   },
   {
     "status": "warning",
@@ -53,7 +53,7 @@
     "name": "item7",
     "actualAmount": "6",
     "alertLevel": "3",
-    "action": "1"
+    "minimumAmount": "1"
   },
   {
     "status": "ok",
@@ -61,7 +61,7 @@
     "name": "item8",
     "actualAmount": "9",
     "alertLevel": "4",
-    "action": "2"
+    "minimumAmount": "1"
   },
   {
     "status": "danger",
@@ -69,7 +69,7 @@
     "name": "item9",
     "actualAmount": "14",
     "alertLevel": "7",
-    "action": "3"
+    "minimumAmount": "3"
   },
   {
     "status": "ok",
@@ -77,7 +77,7 @@
     "name": "item10",
     "actualAmount": "22",
     "alertLevel": "11",
-    "action": "5"
+    "minimumAmount": "5"
   },
   {
     "status": "danger",
@@ -85,6 +85,6 @@
     "name": "item11",
     "actualAmount": "28",
     "alertLevel": "11",
-    "action": "5"
+    "minimumAmount": "5"
   }
 ]

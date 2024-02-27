@@ -1,76 +1,122 @@
 $cell-shadow: #F4F4F4;
 
+$green: #79BF80;
+$yellow: #F2B45D;
+$red: #F3726C;
+$grey: #F4F4F4;
+
 .table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 100%;
+    // height: 100%;
+    text-align: left;
 
-    th {
-        font-family: "Red Hat display", serif;
-        font-weight: 700;
-        font-size: 16px;
+
+    thead {
+        text-align: center;
+        padding: 20px 10px;
     }
 
     td {
-        font-family: "Red Hat display", serif;
-        font-weight: 500;
-        font-size: 16px;
-
-        /* Hide text inside td for the first column */
-        .table .td:first-child {
-            visibility: hidden;
-
-        }
-
-        /* Show div for the first column */
-        .table .td:first-child>div {
-            visibility: visible;
-        }
-    }
-
-
-
-    .td,
-    .th {
+        font-family: "Red Hat Display", serif;
+        font-size: 20px;
+        font-weight: 700;
         text-align: center;
-        padding: 0px;
+        margin-right: 10px;
     }
 
-    .tr:nth-child(odd) {
-        background-color: $cell-shadow;
+    td:nth-child(1) {
+        width: fit-content;
+        padding-right: 10px;
+
+
+
     }
-}
 
-.ok {
-    width: 25px;
-    height: 25px;
-    background: green;
-    border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
-}
+    td:nth-child(2) {
+        width: 500px;
+        text-align-last: left;
+        font-weight: 500;
+        font-family: "Schibsted Grotesk", sans-serif;
+    }
 
-.warning {
-    width: 25px;
-    height: 25px;
-    background: yellow;
-    border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
-}
+    th {
+        font-family: "Red Hat Display", serif;
+        font-size: 20px;
+        font-weight: 700;
+        letter-spacing: 0em;
+        text-align: center;
+        background-color: #fff;
+        padding: 20px 10px;
+    }
 
-.danger {
+    th :first-child {
+        padding: 20px 0 0 10px !important;
+    }
 
-    width: 25px;
-    height: 25px;
-    background: red;
-    border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
+    th:nth-child(2) {
+        text-align: left;
+
+    }
+
+    tr {
+        height: 50px;
+    }
+
+    tr:nth-child(odd) {
+        background-color: $grey;
+    }
+
+    .icon {
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+        display: block;
+    }
+
+    .text-success {
+        color: $green;
+        font-weight: 700;
+
+
+    }
+
+    .success {
+        background: $green;
+
+
+    }
+
+    .text-warning {
+        color: $yellow;
+        font-weight: 700;
+
+
+    }
+
+    .warning {
+
+        background: $yellow;
+
+    }
+
+    .text-danger {
+        color: $red;
+        font-weight: 700;
+
+
+    }
+
+    .danger {
+
+        background: $red;
+
+        ;
+
+    }
 }

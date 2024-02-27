@@ -1,11 +1,11 @@
-
 import AlertsTable from "../../components/Table/alertsTable";
+import Layout from "../../includes/layout/Layout";
 import "./AlertsPage.scss";
 function AlertsPage() {
   return (
-    <div className="alerts-page">
+    <Layout>
       <AlertsTable />
-    </div>
+    </Layout>
   );
 }
 export default AlertsPage;

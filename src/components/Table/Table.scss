@@ -115,4 +115,17 @@ $grey: #F4F4F4;
     
         }
     }
+    .btn_notify{
+        border-radius: 6px;
+        background-color: #D5EAFB;
+        border: "none";
+        width: 82px;
+        height: 30px;
+        font-weight: 700;
+        color: #2E418E;
+        &:hover{
+            background-color: #a5c1d9!important;
+            cursor: pointer;
+        }
+    }
 }

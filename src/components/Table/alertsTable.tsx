@@ -60,17 +60,7 @@ function  AlertsTable() {
             <td className={`text-${item.status}`}>{item.alertLevel}</td>
             <td>
               <button
-                style={{
-                  borderRadius: "6px",
-                  background: "#D5EAFB",
-                  border: "none",
-                  width: "82px",
-                  height: "30px",
-                  fontFamily: "Red Hat Display",
-                  fontWeight: "700",
-                  color: "#2E418E",
-                  cursor: "pointer",
-                }}
+                className="btn_notify"
               >
                 Notificar
               </button>

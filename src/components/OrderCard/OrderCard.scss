@@ -7,6 +7,21 @@
     background: #ffffff;
     box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
 
+    .order-button {
+        width: 259px;
+        height: 44px;
+        background: $dark-blue;
+        color: #D5EAFB;
+        font-weight: 400;
+        border: none;
+        padding: 5px 15px;
+        border-radius: 8px;
+        font-size: 18px;
+        &:hover{
+            background: $dark-blue-hover;
+            cursor: pointer;
+        }
+    }
 
     .client_info {
         padding: 15px;

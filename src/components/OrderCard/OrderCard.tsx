@@ -1,4 +1,3 @@
-import CompleteOrderButton from "../CompleteOrderButton/CompleteOrderButton";
 import TakeoutBadge from "../TakeoutBadge/TakeoutBadge";
 import "./OrderCard.scss";
 
@@ -47,7 +46,7 @@ const OrderCard: React.FC<Props> = (props) => {
           </div>
           <hr />
           <div className="button">
-            <CompleteOrderButton />
+          <button className="order-button">Completar Orden</button>
           </div>
         </div>
       </div>

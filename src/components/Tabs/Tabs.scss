@@ -51,16 +51,18 @@ $content-selector: "~ .content > section";
 }
 
 .content-tab {
-    margin-top: 50px;
+    margin-top: 5px;
+    max-height: 440px;
+    overflow: scroll;
     display: flex;
     flex-wrap: wrap;
+
 }
 
 
 .tabs {
     background: white;
     border-radius: 16px;
-
 
     ul {
         list-style-type: none;
@@ -75,8 +77,6 @@ $content-selector: "~ .content > section";
             border-bottom: 1px solid #EDEDED;
             margin: 0px 3px;
             font-family: "Schibsted Grotesk";
-
-
 
             &:hover {
                 border-bottom: 1px solid red !important;

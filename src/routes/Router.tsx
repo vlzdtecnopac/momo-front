@@ -30,8 +30,16 @@ const BrowserRoutes = createBrowserRouter([
     element: <DashboardPage />,
   },
   {
-    path: "/config",
+    path: "/config-page",
     element: <ConfigPage />,
+  },
+  {
+    path: "/alerts-page",
+    element: <AlertsPage />,
+  },
+  {
+    path: "/inventory-page",
+    element: <InventoryPage />,
   },
 ]);
 

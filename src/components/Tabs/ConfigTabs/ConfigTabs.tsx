@@ -1,22 +1,18 @@
-import "./Tabs.scss";
+import "./ConfigTabs.scss";
 import React, { useState } from "react";
-import OrderCard, { State } from "../OrderCard/OrderCard";
 
-function OrderTabs() {
+function ConfigTabs() {
   const [options, setOptions] = useState([
     {
-      text: "Pedidos completados",
-      icon: "flag",
+      text: "General",
       active: false,
     },
     {
-      text: "Pedidos en proceso",
-      icon: "bell",
+      text: "Display",
       active: false,
     },
     {
-      text: "Pedidos entrantes",
-      icon: "clock",
+      text: "Kioskos",
       active: true,
     },
   ]);
@@ -40,9 +36,6 @@ function OrderTabs() {
               onClick={() => changeActivate(index)}
             >
               <div className={`tab-button ${tab.active ? "active" : ""}`}>
-                <i
-                  className={`icon ${tab.active ? "active" : ""} ${tab.icon}`}
-                />
                 <br />
                 <span className={`${tab.active ? "active" : ""}`}>
                   {tab.text}
@@ -52,15 +45,8 @@ function OrderTabs() {
           ))}
         </ul>
       </div>
-      <div className="content-tab">
-        <OrderCard state={State.initial} />
-        <OrderCard state={State.pending} />
-        <OrderCard state={State.completed} />
-        <OrderCard state={State.completed} />
-        <OrderCard state={State.completed} />
-      </div>
     </>
   );
 }
 
-export default OrderTabs;
+export default ConfigTabs;

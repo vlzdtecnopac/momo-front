@@ -10,23 +10,24 @@ function SideBar() {
   };
 
   const sidebarListNav = [
-    { icon: "orders-icon", name: "orders", router: "../dashboard"  },
+    { icon: "orders-icon", name: "orders", router: "../dashboard" },
     { icon: "inventory-icon", name: "inventory", router: "../inventory-page" },
-    { icon: "alert-icon", name: "alert",  router: "../alerts-page" },
-    { icon: "config-icon", name: "config", router: "#" },
+    { icon: "alert-icon", name: "alert", router: "../alerts-page" },
+    { icon: "config-icon", name: "config", router: "../config-page" },
   ];
 
   return (
     <>
       <ul className="options__menu">
         {sidebarListNav.map((item, index) => (
-     
           <li
             className="option"
             onClick={() => handleOptionClick(item.name)}
             key={index}
           >
-                 <Link to={item.router} ><i className={`icon ${item.icon}`}></i></Link>
+            <Link to={item.router}>
+              <i className={`icon ${item.icon}`}></i>
+            </Link>
           </li>
         ))}
       </ul>
@@ -35,7 +36,9 @@ function SideBar() {
         className="logout"
         onClick={() => handleOptionClick("logout")}
       >
-           <Link to="../login" ><i className="logout-icon"></i></Link> 
+        <Link to="../login">
+          <i className="logout-icon"></i>
+        </Link>
       </Link>
     </>
   );

@@ -6,6 +6,7 @@ import { createBrowserRouter } from "react-router-dom";
 
 import InventoryPage from "../pages/inventoryPage/InventoryPage";
 import AlertsPage from "../pages/alertsPage/AlertsPage";
+import ConfigPage from "../pages/configPage/ConfigPage";
 
 const BrowserRoutes = createBrowserRouter([
   {
@@ -29,12 +30,8 @@ const BrowserRoutes = createBrowserRouter([
     element: <DashboardPage />,
   },
   {
-    path: "/inventory-page",
-    element: <InventoryPage />,
-  },
-  {
-    path: "/alerts-page",
-    element: <AlertsPage />,
+    path: "/config",
+    element: <ConfigPage />,
   },
 ]);
 

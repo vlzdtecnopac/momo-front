@@ -19,7 +19,7 @@ const column_headers = [
   "Cantidad Minima",
 ];
 
-let data: Inventory[] = [];
+const data: Inventory[] = [];
 
 for (let i = 0; i < 100; i++) {
   data.push({
@@ -42,41 +42,41 @@ function getRandomStatus() {
 function Table() {
   return (
     <div className="content-table">
-    <table className="table">
-      <thead>
-        <tr>
-          {column_headers.map((column, index) => (
-            <th
-              className="th"
-              key={index}
-            >
-              {column}
-            </th>
-          ))}
-        </tr>
-      </thead>
-      <tbody>
-        {data.map((item, index) => (
-          <tr
-            className="tr"
-            key={index}
-            id={`state-${item.status}`}
-          >
-            <td className="td">
-              <i className={`icon ${item.status}`}></i>
-            </td>
-            <td className="td">{item.name}</td>
-            <td className="td">
-              <p className={`text-${item.status}`}>{item.actualAmount}</p>
-            </td>
-            <td>{item.alertLevel}</td>
-            <td>{item.minimumAmount}</td>
+      <table className="table">
+        <thead>
+          <tr>
+            {column_headers.map((column, index) => (
+              <th
+                className="th"
+                key={index}
+              >
+                {column}
+              </th>
+            ))}
           </tr>
-        ))}
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          {data.map((item, index) => (
+            <tr
+              className="tr"
+              key={index}
+              id={`state-${item.status}`}
+            >
+              <td className="td">
+                <i className={`icon ${item.status}`}></i>
+              </td>
+              <td className="td">{item.name}</td>
+              <td className="td">
+                <p className={`text-${item.status}`}>{item.actualAmount}</p>
+              </td>
+              <td>{item.alertLevel}</td>
+              <td>{item.minimumAmount}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
-  )
+  );
 }
 
 export default Table;

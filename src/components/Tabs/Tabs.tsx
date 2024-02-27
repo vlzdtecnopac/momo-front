@@ -2,7 +2,7 @@ import "./Tabs.scss";
 import React, { useState } from "react";
 import OrderCard, { State } from "../OrderCard/OrderCard";
 
-function Tabs() {
+function OrderTabs() {
   const [options, setOptions] = useState([
     {
       text: "Pedidos completados",
@@ -63,4 +63,4 @@ function Tabs() {
   );
 }
 
-export default Tabs;
+export default OrderTabs;

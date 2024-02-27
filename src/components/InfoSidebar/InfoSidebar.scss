@@ -1,0 +1,23 @@
+@import "../../index.scss";
+
+.info-sidebar-component{
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 99;
+    .icon {
+        background-size: cover;
+        width: 60px;
+        height: 60px;
+        display: block;
+        margin: 10px;
+    }
+
+    .icon-info{
+        background-image: url("../../assets/icons/question-info.svg");
+    }
+
+    .icon-fullscreen{
+        background-image: url("../../assets/icons/fullscreen.svg");
+    }
+}

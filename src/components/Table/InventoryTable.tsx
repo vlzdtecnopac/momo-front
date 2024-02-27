@@ -19,35 +19,25 @@ const column_headers = [
   "Cantidad Minima",
 ];
 
-const data = [
-  {
-    id: "0",
+const data: Inventory = [];
+
+for (let i = 0; i < 100; i++) {
+  data.push({
+    id: i.toString(),
     inventario: "2",
-    name: "leche",
-    actualAmount: "8",
-    alertLevel: "4",
+    name: `Producto ${i}`,
+    actualAmount: Math.floor(Math.random() * 20), // Genera un número aleatorio entre 0 y 19
+    alertLevel: Math.floor(Math.random() * 10), // Genera un número aleatorio entre 0 y 9
     minimumAmount: "1",
-    status: "success",
-  },
-  {
-    id: "1",
-    inventario: "2",
-    name: "cafe",
-    actualAmount: "8",
-    alertLevel: "4",
-    minimumAmount: "1",
-    status: "danger",
-  },
-  {
-    id: "2",
-    inventario: "2",
-    name: "pastel",
-    actualAmount: "8",
-    alertLevel: "4",
-    minimumAmount: "1",
-    status: "warning",
-  },
-];
+    status: getRandomStatus(), // Obtiene un estado aleatorio de la función getRandomStatus
+  });
+}
+
+function getRandomStatus() {
+  const statuses = ["success", "danger", "warning"];
+  const randomIndex = Math.floor(Math.random() * statuses.length);
+  return statuses[randomIndex];
+}
 
 function Table() {
   return (

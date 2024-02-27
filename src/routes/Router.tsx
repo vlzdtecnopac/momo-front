@@ -3,10 +3,9 @@ import WelcomePage from "../pages/welcome/WelcomePage";
 import ConectedPage from "../pages/conected/ConectedPage";
 import DashboardPage from "../pages/dashboard/DashboardPage";
 import { createBrowserRouter } from "react-router-dom";
-import Tabs from "../components/Tabs/Tabs";
-import Table from "../components/Table/InventoryTable";
-import InventoryTable from "../components/Table/InventoryTable";
-import AlertsTable from "../components/Table/AlertsTable";
+
+import InventoryPage from "../pages/inventoryPage/InventoryPage";
+import AlertsPage from "../pages/alertsPage/AlertsPage";
 
 const BrowserRoutes = createBrowserRouter([
   {
@@ -30,12 +29,12 @@ const BrowserRoutes = createBrowserRouter([
     element: <DashboardPage />,
   },
   {
-    path: "/inventory-table",
-    element: <InventoryTable />,
+    path: "/inventory-page",
+    element: <InventoryPage />,
   },
   {
-    path: "/alerts-table",
-    element: <AlertsTable />,
+    path: "/alerts-page",
+    element: <AlertsPage />,
   },
 ]);
 

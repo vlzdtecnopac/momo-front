@@ -24,16 +24,23 @@ export const useSocket = (serverPath: string) => {
       setSocket(socketTemp);
   }, [serverPath]);
 
-  const desconectarSocket = useCallback(() => {
+  const desconectarSocket = useCallback( () => {
     socket?.disconnect();
-  }, [socket]);
+},[ socket ]);
 
-  useEffect(() => {
-    // Cleanup function to disconnect the socket when the component unmounts
-    return () => {
-      desconectarSocket();
-    };
-  }, [desconectarSocket]);
+
+useEffect(() => {
+    setOnline( socket?.connected! );
+}, [socket])
+
+useEffect(() => {
+    socket?.on('connect', () => setOnline( true ));
+}, [ socket ])
+
+useEffect(() => {
+    socket?.on('disconnect', () => setOnline( false ));
+}, [ socket ])
+
 
   return {
     socket,

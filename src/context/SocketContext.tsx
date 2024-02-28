@@ -10,7 +10,7 @@ export const SocketContext = createContext<any | null>(null);
 
 export const SocketProvider: React.FC<DynamicLayoutProps> = ({ children }: DynamicLayoutProps) => {
   const { socket, online, conectarSocket, desconectarSocket } = useSocket('http://ec2-54-167-254-121.compute-1.amazonaws.com');
-console.log(online);
+
   useEffect(() => {
     conectarSocket();
   }, [conectarSocket]);

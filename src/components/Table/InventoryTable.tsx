@@ -43,8 +43,9 @@ function getRandomStatus() {
 function Table() {
   return (
     <>
-      <InventoryTabs />
+     
       <div className="content-table">
+      <InventoryTabs />
         <table className="table">
           <thead>
             <tr>

@@ -2,6 +2,7 @@ import "./ConfigPage.scss";
 import photo from "../../assets/login-img.jpg";
 import ConfigTabs from "../../components/Tabs/ConfigTabs/ConfigTabs";
 import Layout from "../../includes/layout/Layout";
+import GeneralInfoForm from "../../components/GeneralInfoForm/GeneralInfoForm";
 function ConfigPage() {
   return (
     <Layout>
@@ -23,7 +24,11 @@ function ConfigPage() {
             </div>
           </div>
         </div>
-        <div className="config-options">{/* General Info form */}</div>
+        <div className="config-options">
+          {/* General Info form */}
+          <h2 className="title">Informacion General</h2>
+          <GeneralInfoForm />
+        </div>
       </div>
     </Layout>
   );

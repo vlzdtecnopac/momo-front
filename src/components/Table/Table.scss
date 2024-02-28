@@ -14,6 +14,7 @@ $grey: #F4F4F4;
     -o-border-radius: 16px;
     position: fixed;
     width: 100%;
+    height: 540px;
     max-width: 1300px;
     background: #fff;
     padding: 0px 10px 10px 10px;
@@ -22,7 +23,6 @@ $grey: #F4F4F4;
         font-family: arial, sans-serif;
         border-collapse: collapse;
         width: 100%;
-        height: 100%;
         text-align: left;
 
         thead {

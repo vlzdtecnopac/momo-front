@@ -7,8 +7,7 @@ import { createBrowserRouter } from "react-router-dom";
 import InventoryPage from "../pages/inventoryPage/InventoryPage";
 import AlertsPage from "../pages/alertsPage/AlertsPage";
 import ConfigPage from "../pages/configPage/ConfigPage";
-import AppGridFlex from "../pages/grid/GridFlexExample";
-
+import FullScreen from "../pages/fullScreen/FullScreen";
 
 const BrowserRoutes = createBrowserRouter([
   {
@@ -44,8 +43,8 @@ const BrowserRoutes = createBrowserRouter([
     element: <InventoryPage />,
   },
   {
-    path: "/example",
-    element: <AppGridFlex />
+    path: "/full-screen",
+    element: <FullScreen />
   }
 ]);
 

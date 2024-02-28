@@ -8,17 +8,22 @@ function ConfigPage() {
     <Layout>
       <div className="config_page">
         <div className="header_blue"></div>
-        <div className="grid-2_xs-1">
-          <div className="col-2">
-            <img className="profile-pic" src={photo} alt="photo" />
-          </div>
-          <div className="col">
-            <h2 className="store">Tienda 1</h2>
-            <p className="address">Calle 1 #1-1</p>
+        <div className="header_white"></div>
+        <div className="header_info">
+          <div className="grid-2_xs-1">
+            <div className="col-2">
+              <img className="profile-pic" src={photo} alt="photo" />
+            </div>
+            <div className="col-10">
+              <h2 className="store">Tienda 1</h2>
+              <p className="address">Calle 1 #1-1</p>
+            </div>
           </div>
         </div>
+        <div className="conten_tabs">
         <ConfigTabs />
         <GeneralInfoForm />
+        </div>
       </div>
     </Layout>
   );

@@ -38,14 +38,9 @@ h2 {
     label {
         font-family: "Red Hat Display", "serif";
         color: #898989;
-
         font-size: 18px;
         font-weight: normal;
-        position: absolute;
         pointer-events: none;
-        left: 5px;
-        top: 10px;
-        transition: 0.2s ease all;
     }
 
     /* active state */
@@ -88,17 +83,7 @@ h2 {
         width: 50%;
     }
 
-    /* HIGHLIGHTER */
-    .highlight {
-        position: absolute;
-        height: 60%;
-        width: 100px;
-        top: 25%;
-        left: 0;
-        pointer-events: none;
-        opacity: 0.5;
-    }
-
+ 
     /* active state */
     input:focus~.highlight {
         animation: inputHighlighter 0.3s ease;

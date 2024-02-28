@@ -9,47 +9,44 @@ function GeneralInfoForm() {
       >
         <div className="left">
           <div className="group">
+          <label htmlFor="store">Tienda</label>
             <input
               id="store"
               type="text"
               required
             />
-            <span className="highlight"></span>
-            <span className="bar"></span>
-            <label htmlFor="store">Tienda</label>
+     
+         
           </div>
           <div className="group">
+          <label htmlFor="email">Cierre anterior</label>
             <input
               id="close"
               type="datetime-local"
               required
             />
-            <span className="highlight"></span>
-            <span className="bar"></span>
-            <label htmlFor="email">Cierre anterior</label>
+
+           
           </div>
         </div>
         <div className="right">
           <div className="group">
+          <label htmlFor="email">Email</label>
             <input
               id="email"
               type="text"
               required
             />
-            <span className="highlight"></span>
-            <span className="bar"></span>
-            <label htmlFor="email">Email</label>
           </div>
-
           <div className="group">
+          <label htmlFor="email">Apertura</label>
             <input
               id="open"
               type="datetime-local"
               required
             />
-            <span className="highlight"></span>
-            <span className="bar"></span>
-            <label htmlFor="email">Apertura</label>
+
+     
           </div>
         </div>
       </form>

@@ -6,28 +6,28 @@ import GeneralInfoForm from "../../components/GeneralInfoForm/GeneralInfoForm";
 function ConfigPage() {
   return (
     <Layout>
-      <div className="config-page">
-        <div className="config">
-          <div className="top dual-color-bg ">
-            <div className="config-header-content">
-              <img
-                className="profile-pic"
-                src={photo}
-                alt="photo"
-              />
-
+      <div className="config_page">
+        <div className="bg-blue">
+        <div className="header_blue"></div>
+        <div className="header_white">
+            <ConfigTabs />
+        </div>
+        <div className="header_info">
+          <div className="grid-2_xs-1">
+            <div className="col-2">
+              <img className="profile-pic" src={photo} alt="photo" />
+            </div>
+            <div className="col-10">
               <h2 className="store">Tienda 1</h2>
               <p className="address">Calle 1 #1-1</p>
             </div>
-            <div className="bottom">
-              <ConfigTabs />
-            </div>
           </div>
         </div>
-        <div className="config-options">
-          {/* General Info form */}
-          <h2 className="title">Informacion General</h2>
-          <GeneralInfoForm />
+        <div className="conten_tabs">
+          <div className="bg_content">
+              <GeneralInfoForm />
+          </div>
+        </div>
         </div>
       </div>
     </Layout>

@@ -3,19 +3,12 @@ h2 {
 }
 
 .info-form {
-    height: 937px;
-    display: flex;
-    gap: 50px;
-    margin-top: 20px;
-    background: #fff;
-    border-radius: 16px;
-    -webkit-border-radius: 16px;
-    -moz-border-radius: 16px;
-    -ms-border-radius: 16px;
-    -o-border-radius: 16px;
+    margin-top: 10px;
+    padding: 10px 20px;
 
     .group {
         position: relative;
+        padding: 5px 10px;
     }
 
     input {
@@ -23,7 +16,7 @@ h2 {
         font-size: 14px;
         padding: 10px 10px 10px 5px;
         display: block;
-        width: 500px;
+        width: 100%;
         border: none;
         border-bottom: 1px solid #757575;
         font-family: "Red Hat Display", "serif";
@@ -38,14 +31,9 @@ h2 {
     label {
         font-family: "Red Hat Display", "serif";
         color: #898989;
-
         font-size: 18px;
         font-weight: normal;
-        position: absolute;
         pointer-events: none;
-        left: 5px;
-        top: 10px;
-        transition: 0.2s ease all;
     }
 
     /* active state */
@@ -88,17 +76,7 @@ h2 {
         width: 50%;
     }
 
-    /* HIGHLIGHTER */
-    .highlight {
-        position: absolute;
-        height: 60%;
-        width: 100px;
-        top: 25%;
-        left: 0;
-        pointer-events: none;
-        opacity: 0.5;
-    }
-
+ 
     /* active state */
     input:focus~.highlight {
         animation: inputHighlighter 0.3s ease;

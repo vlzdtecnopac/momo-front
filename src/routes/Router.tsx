@@ -7,6 +7,7 @@ import { createBrowserRouter } from "react-router-dom";
 import InventoryPage from "../pages/inventoryPage/InventoryPage";
 import AlertsPage from "../pages/alertsPage/AlertsPage";
 import ConfigPage from "../pages/configPage/ConfigPage";
+import FullScreen from "../pages/fullScreen/FullScreen";
 
 const BrowserRoutes = createBrowserRouter([
   {
@@ -41,6 +42,10 @@ const BrowserRoutes = createBrowserRouter([
     path: "/inventory-page",
     element: <InventoryPage />,
   },
+  {
+    path: "/full-screen",
+    element: <FullScreen />
+  }
 ]);
 
 export default BrowserRoutes;

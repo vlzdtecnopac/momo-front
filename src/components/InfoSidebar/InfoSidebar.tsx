@@ -2,10 +2,10 @@ import { Link } from "react-router-dom";
 import "./InfoSidebar.scss";
 function InfoSidebar() {
   return (<div className="info-sidebar-component">
-    <Link to="">
+    <Link to="/">
       <i className="icon icon-info"></i>
     </Link>
-    <Link to="">
+    <Link to="/full-screen">
       <i className="icon icon-fullscreen"></i>
     </Link>
   </div>);

@@ -6,19 +6,23 @@ $red: #F3726C;
 $grey: #F4F4F4;
 
 .content-table {
-    max-height: 530px;
     overflow: auto;
     border-radius: 16px;
     -webkit-border-radius: 16px;
     -moz-border-radius: 16px;
     -ms-border-radius: 16px;
     -o-border-radius: 16px;
+    position: fixed;
+    width: 100%;
+    height: 540px;
+    max-width: 1300px;
+    background: #fff;
+    padding: 0px 10px 10px 10px;
 
     .table {
         font-family: arial, sans-serif;
         border-collapse: collapse;
         width: 100%;
-        height: 100%;
         text-align: left;
 
         thead {

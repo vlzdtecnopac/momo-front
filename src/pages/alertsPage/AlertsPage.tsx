@@ -1,6 +1,4 @@
-
-
-import  AlertsTable from "../../components/Table/alertsTable";
+import AlertsTable from "../../components/Table/alertsTable";
 import Layout from "../../includes/layout/Layout";
 import "./AlertsPage.scss";
 function AlertsPage() {

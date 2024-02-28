@@ -6,6 +6,9 @@ import { createBrowserRouter } from "react-router-dom";
 
 import InventoryPage from "../pages/inventoryPage/InventoryPage";
 import AlertsPage from "../pages/alertsPage/AlertsPage";
+import ConfigPage from "../pages/configPage/ConfigPage";
+import AppGridFlex from "../pages/grid/GridFlexExample";
+
 
 const BrowserRoutes = createBrowserRouter([
   {
@@ -29,13 +32,21 @@ const BrowserRoutes = createBrowserRouter([
     element: <DashboardPage />,
   },
   {
-    path: "/inventory-page",
-    element: <InventoryPage />,
+    path: "/config-page",
+    element: <ConfigPage />,
   },
   {
     path: "/alerts-page",
     element: <AlertsPage />,
   },
+  {
+    path: "/inventory-page",
+    element: <InventoryPage />,
+  },
+  {
+    path: "/example",
+    element: <AppGridFlex />
+  }
 ]);
 
 export default BrowserRoutes;

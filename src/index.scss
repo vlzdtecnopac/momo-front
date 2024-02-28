@@ -3,13 +3,25 @@
 
 
 $dark-blue: #2E418E;
-$dark-blue-hover: #2c46ad;
 $light-blue: #D5EAFB;
+$dark-blue-hover: #2c46ad;
+$light-grey: #9499A1;
 $completed: #79BF80;
 $pending: #F2B45D;
+$orange: #FF6010;
 $cream: #EDEBDF;
 $black: #212121;
 $white: #FFFFFF;
+
+[class*=col_], [class~=col] {
+  flex: 1 1 0%;
+  margin: 5px 0px;
+}
+
+[class*=-equalHeight]>[class~=col] {
+  align-self: stretch;
+  margin: 5px 0px;
+}
 
 @mixin center {
   position: relative;
@@ -85,6 +97,6 @@ input {
   font-style: normal;
 }
 
-a{
+a {
   text-decoration: none;
 }

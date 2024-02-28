@@ -8,6 +8,9 @@ h3 {
 .config-page {
     background: $light-blue ;
     height: 100%;
+    max-width: 1320px;
+    position: fixed;
+    width: 100%;
 
     .config {
         height: 100%;

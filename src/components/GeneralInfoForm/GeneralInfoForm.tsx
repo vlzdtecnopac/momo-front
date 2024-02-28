@@ -7,16 +7,16 @@ function GeneralInfoForm() {
         action=""
         method="POST"
       >
-        <div className="left">
-          <div className="group">
+<div className="grid-2_xs-1">
+    <div className="col">
+        
+    <div className="group">
           <label htmlFor="store">Tienda</label>
             <input
               id="store"
               type="text"
               required
             />
-     
-         
           </div>
           <div className="group">
           <label htmlFor="email">Cierre anterior</label>
@@ -25,12 +25,10 @@ function GeneralInfoForm() {
               type="datetime-local"
               required
             />
-
-           
           </div>
-        </div>
-        <div className="right">
-          <div className="group">
+    </div>
+    <div className="col">
+    <div className="group">
           <label htmlFor="email">Email</label>
             <input
               id="email"
@@ -45,10 +43,14 @@ function GeneralInfoForm() {
               type="datetime-local"
               required
             />
-
-     
-          </div>
         </div>
+    </div>
+</div>
+        
+
+ 
+
+          
       </form>
     </>
   );

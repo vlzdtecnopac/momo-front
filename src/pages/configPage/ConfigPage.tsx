@@ -7,8 +7,11 @@ function ConfigPage() {
   return (
     <Layout>
       <div className="config_page">
+        <div className="bg-blue">
         <div className="header_blue"></div>
-        <div className="header_white"></div>
+        <div className="header_white">
+            <ConfigTabs />
+        </div>
         <div className="header_info">
           <div className="grid-2_xs-1">
             <div className="col-2">
@@ -21,8 +24,10 @@ function ConfigPage() {
           </div>
         </div>
         <div className="conten_tabs">
-        <ConfigTabs />
-        <GeneralInfoForm />
+          <div className="bg_content">
+              <GeneralInfoForm />
+          </div>
+        </div>
         </div>
       </div>
     </Layout>

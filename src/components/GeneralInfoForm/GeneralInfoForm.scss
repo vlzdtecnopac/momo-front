@@ -1,0 +1,118 @@
+h2 {
+    color: orange;
+}
+
+.info-form {
+    height: 937px;
+    display: flex;
+    gap: 50px;
+    margin-top: 20px;
+    background: #fff;
+    border-radius: 16px;
+    -webkit-border-radius: 16px;
+    -moz-border-radius: 16px;
+    -ms-border-radius: 16px;
+    -o-border-radius: 16px;
+
+    .group {
+        position: relative;
+    }
+
+    input {
+        font-weight: 400;
+        font-size: 14px;
+        padding: 10px 10px 10px 5px;
+        display: block;
+        width: 500px;
+        border: none;
+        border-bottom: 1px solid #757575;
+        font-family: "Red Hat Display", "serif";
+        margin-bottom: 50px;
+    }
+
+    input:focus {
+        outline: none;
+    }
+
+    /* LABEL */
+    label {
+        font-family: "Red Hat Display", "serif";
+        color: #898989;
+
+        font-size: 18px;
+        font-weight: normal;
+        position: absolute;
+        pointer-events: none;
+        left: 5px;
+        top: 10px;
+        transition: 0.2s ease all;
+    }
+
+    /* active state */
+    input:focus~label,
+    input:valid~label {
+        top: -20px;
+        font-size: 16px;
+        font-weight: 500;
+        color: #000;
+    }
+
+    /* BOTTOM BARS */
+    .bar {
+        position: relative;
+        display: block;
+        width: 300px;
+    }
+
+    .bar:before,
+    .bar:after {
+        content: '';
+        height: 2px;
+        width: 0;
+        bottom: 1px;
+        position: absolute;
+        transition: 0.2s ease all;
+    }
+
+    .bar:before {
+        left: 50%;
+    }
+
+    .bar:after {
+        right: 50%;
+    }
+
+    /* active state */
+    input:focus~.bar:before,
+    input:focus~.bar:after {
+        width: 50%;
+    }
+
+    /* HIGHLIGHTER */
+    .highlight {
+        position: absolute;
+        height: 60%;
+        width: 100px;
+        top: 25%;
+        left: 0;
+        pointer-events: none;
+        opacity: 0.5;
+    }
+
+    /* active state */
+    input:focus~.highlight {
+        animation: inputHighlighter 0.3s ease;
+    }
+
+    /* ANIMATIONS */
+    @keyframes inputHighlighter {
+        from {
+            background: #5264AE;
+        }
+
+        to {
+            width: 0;
+            background: transparent;
+        }
+    }
+}

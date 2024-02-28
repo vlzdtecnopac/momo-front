@@ -38,7 +38,6 @@ function LoginForm() {
             type="button"
           >
             <Link to="/dashboard"> Ingresar </Link>
-       
           </button>
         </div>
       </form>

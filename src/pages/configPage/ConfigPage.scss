@@ -1,16 +1,23 @@
 @import "../../index.scss";
 
-.dashboard-page .content{
-    background: transparent;
-}
+
 
 .config_page{
     position: relative;
-    .header_white{
-        background: white;
-        height: 120px;
+
+    .bg-blue{
+        background: $light-blue;
     }
 
+    .header_white{
+        background: white;
+        height: 152px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: end;
+        border-radius: 0px 0px 20px 20px;
+    }
+  
     .header_blue{
         background: #2e418d;
         height: 120px;
@@ -24,10 +31,21 @@
     .header_info{
         position: absolute;
         z-index: 99;
-        top: 39px;
+        top: 18px;
         left: 46px;
     }
     .conten_tabs{
-        margin: 22px 0px 0px 10px;
+        background: transparent;
+        margin: 6px 0px 0px 0px;
+        border-top: 13px solid #d5eafb;
+        .bg_content{
+            background: white;
+            padding: 10px 10px;
+            border-radius: 20px 20px;
+            position: absolute;
+            width: 100%;
+            max-width: 1240px;
+            height: 210px;
+        }
     }
 }

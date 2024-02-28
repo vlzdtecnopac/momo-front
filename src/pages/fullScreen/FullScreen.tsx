@@ -1,3 +1,4 @@
+import React from "react";
 import { useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
 import OrderCard, { State } from "../../components/OrderCard/OrderCard";
@@ -5,7 +6,7 @@ import OrderCardTwo from "../../components/OrderCard/OrderCard copy";
 import "./FullScreen.scss";
 
 
-export default function FullScreen():React.FC {
+export default function FullScreen() {
     const navigate = useNavigate();
   const handleEscapeKey = (event: KeyboardEvent) => {
     if (event.key === "Escape") {

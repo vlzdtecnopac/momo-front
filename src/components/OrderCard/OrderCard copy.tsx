@@ -1,3 +1,4 @@
+import React from "react";
 import TakeoutBadge from "../TakeoutBadge/TakeoutBadge";
 import "./OrderCard.scss";
 

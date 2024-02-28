@@ -1,12 +1,9 @@
 @import "../../index.scss";
 
 
-h3,
-{
-color: $orange !important;
+h3 {
+    color: $orange !important;
 }
-
-
 
 .config-page {
     background: $light-blue ;
@@ -81,6 +78,6 @@ color: $orange !important;
             margin-bottom: 5px;
         }
 
-        .config-options {}
+        // .config-options {}
     }
 }

@@ -60,7 +60,7 @@ $content-selector: "~ .content > section";
 }
 
 
-.tabs {
+.config-tabs {
     background: white;
     border-radius: 16px;
 
@@ -96,7 +96,7 @@ $content-selector: "~ .content > section";
                 border-radius: 4px;
                 cursor: pointer;
 
-                span {
+                .config-tab {
                     margin-left: 5px;
                     color: $grey;
                     font-weight: 300;

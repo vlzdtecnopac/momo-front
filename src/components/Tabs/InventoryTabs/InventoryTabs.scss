@@ -1,6 +1,6 @@
 @import 'https://fonts.googleapis.com/css?family=Montserrat:400,700|Raleway:300,400';
 
-@import "../../index.scss";
+@import "../../../index.scss";
 
 /* colors */
 $orange: #FF6010;
@@ -8,13 +8,10 @@ $red: #FF4A53;
 $dark: #333;
 $light-grey: #EDEDED;
 $grey: #777672;
-$accent: $orange;
-$accent-inactive: desaturate($accent, 85%);
-$secondary: $accent-inactive;
 
 
 /* tab setting */
-$tab-count: 3;
+$tab-count: 5;
 
 
 /* breakpoints */
@@ -60,9 +57,12 @@ $content-selector: "~ .content > section";
 }
 
 
-.tabs {
+.inventory-tabs {
     background: white;
     border-radius: 16px;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 30px;
 
     ul {
         list-style-type: none;
@@ -91,81 +91,34 @@ $content-selector: "~ .content > section";
                 display: flex;
                 justify-content: center;
                 margin-bottom: 5px;
-                background: $light-grey;
+                background: none;
                 padding: 10px;
                 border-radius: 4px;
                 cursor: pointer;
 
-                .icon {
-                    width: 22px;
-                    height: 22px;
-                    background-size: contain;
-                    margin: auto;
-                }
-
-                .flag {
-                    background-color: $grey;
-                    -webkit-mask-image: url(/src/assets/icons/flag.svg);
-                    mask-image: url(/src/assets/icons/flag.svg);
-                    mask-size: 100%;
-
-                    &.active {
-                        background: $dark-blue;
-
-                    }
-                }
-
-                .bell {
-                    background-color: $grey;
-
-                    -webkit-mask-image: url(/src/assets/icons/bell.svg);
-                    mask-image: url(/src/assets/icons/bell.svg);
-                    mask-size: 100%;
-
-                    &.active {
-                        background: $dark-blue;
-
-                    }
-                }
-
-                .clock {
-                    background-color: $grey;
-                    -webkit-mask-image: url(/src/assets/icons/clock.svg);
-                    mask-image: url(/src/assets/icons/clock.svg);
-                    mask-size: 100%;
-
-                    &.active {
-                        background: $dark-blue;
-
-                    }
-                }
-
-
-                &.active {
-                    background: $light-blue;
-
-                }
-
                 span {
                     margin-left: 5px;
-                    color: $grey;
-                    font-weight: 300;
+                    font-weight: 500 !important;
+                    color: $black !important;
 
                     &.active {
-                        color: $dark-blue;
+                        color: $orange !important;
+
 
                     }
                 }
 
                 &.active {
-                    background: $light-blue !important;
+                    background: none !important;
+
+
                 }
             }
 
         }
     }
 
- 
+
 
     @keyframes content {
         from {

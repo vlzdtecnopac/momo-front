@@ -27,7 +27,7 @@ function ConfigTabs() {
 
   return (
     <>
-      <div className="tabs">
+      <div className="config-tabs">
         <ul>
           {options.map((tab, index: number) => (
             <li
@@ -37,7 +37,7 @@ function ConfigTabs() {
             >
               <div className={`tab-button ${tab.active ? "active" : ""}`}>
                 <br />
-                <span className={`${tab.active ? "active" : ""}`}>
+                <span className={`config-tab ${tab.active ? "active" : ""}`}>
                   {tab.text}
                 </span>
               </div>

@@ -60,7 +60,7 @@ $content-selector: "~ .content > section";
 }
 
 
-.tabs {
+.order-tabs {
     background: white;
     border-radius: 16px;
 
@@ -95,6 +95,12 @@ $content-selector: "~ .content > section";
                 padding: 10px;
                 border-radius: 4px;
                 cursor: pointer;
+                background: $light-grey !important;
+
+                &:active {
+                    background-color: $light-blue !important;
+
+                }
 
                 .icon {
                     width: 22px;
@@ -140,32 +146,23 @@ $content-selector: "~ .content > section";
                     }
                 }
 
-
-                &.active {
-                    background: $light-blue;
-
-                }
-
-                span {
+                .span {
                     margin-left: 5px;
-                    color: $grey;
                     font-weight: 300;
 
                     &.active {
-                        color: $dark-blue;
+                        color: $dark-blue !important;
 
                     }
                 }
 
-                &.active {
-                    background: $light-blue !important;
-                }
+
             }
 
         }
     }
 
- 
+
 
     @keyframes content {
         from {

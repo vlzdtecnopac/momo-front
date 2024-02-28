@@ -31,7 +31,7 @@ function OrderTabs() {
 
   return (
     <>
-      <div className="tabs">
+      <div className="order-tabs">
         <ul>
           {options.map((tab, index: number) => (
             <li
@@ -44,7 +44,7 @@ function OrderTabs() {
                   className={`icon ${tab.active ? "active" : ""} ${tab.icon}`}
                 />
                 <br />
-                <span className={`${tab.active ? "active" : ""}`}>
+                <span className={`span ${tab.active ? "active" : ""}`}>
                   {tab.text}
                 </span>
               </div>

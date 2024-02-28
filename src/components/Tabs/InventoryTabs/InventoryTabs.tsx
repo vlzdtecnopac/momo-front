@@ -1,22 +1,27 @@
-import "./Tabs.scss";
+import "./InventoryTabs.scss";
 import React, { useState } from "react";
 
-function InventoryTabs() {
+function ConfigTabs() {
   const [options, setOptions] = useState([
     {
-      text: "Pedidos completados",
-      icon: "flag",
-      active: false,
-    },
-    {
-      text: "Pedidos en proceso",
-      icon: "bell",
-      active: false,
-    },
-    {
-      text: "Pedidos entrantes",
-      icon: "clock",
+      text: "Resumen",
       active: true,
+    },
+    {
+      text: "Insumos para bebidas",
+      active: false,
+    },
+    {
+      text: "Listos para consumir",
+      active: false,
+    },
+    {
+      text: "Insumos alimentos",
+      active: false,
+    },
+    {
+      text: "Desechables",
+      active: false,
     },
   ]);
 
@@ -30,7 +35,7 @@ function InventoryTabs() {
 
   return (
     <>
-      <div className="tabs">
+      <div className="inventory-tabs">
         <ul>
           {options.map((tab, index: number) => (
             <li
@@ -39,9 +44,6 @@ function InventoryTabs() {
               onClick={() => changeActivate(index)}
             >
               <div className={`tab-button ${tab.active ? "active" : ""}`}>
-                <i
-                  className={`icon ${tab.active ? "active" : ""} ${tab.icon}`}
-                />
                 <br />
                 <span className={`${tab.active ? "active" : ""}`}>
                   {tab.text}
@@ -55,4 +57,4 @@ function InventoryTabs() {
   );
 }
 
-export default InventoryTabs;
+export default ConfigTabs;

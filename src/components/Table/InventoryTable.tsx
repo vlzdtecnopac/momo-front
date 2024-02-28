@@ -1,6 +1,7 @@
 import React from "react";
 
 import "./Table.scss";
+import InventoryTabs from "../Tabs/InventoryTabs/InventoryTabs";
 
 type Inventory = {
   [key: string]: string;
@@ -41,41 +42,44 @@ function getRandomStatus() {
 
 function Table() {
   return (
-    <div className="content-table">
-      <table className="table">
-        <thead>
-          <tr>
-            {column_headers.map((column, index) => (
-              <th
-                className="th"
-                key={index}
-              >
-                {column}
-              </th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {data.map((item, index) => (
-            <tr
-              className="tr"
-              key={index}
-              id={`state-${item.status}`}
-            >
-              <td className="td">
-                <i className={`icon ${item.status}`}></i>
-              </td>
-              <td className="td">{item.name}</td>
-              <td className="td">
-                <p className={`text-${item.status}`}>{item.actualAmount}</p>
-              </td>
-              <td>{item.alertLevel}</td>
-              <td>{item.minimumAmount}</td>
+    <>
+      <InventoryTabs />
+      <div className="content-table">
+        <table className="table">
+          <thead>
+            <tr>
+              {column_headers.map((column, index) => (
+                <th
+                  className="th"
+                  key={index}
+                >
+                  {column}
+                </th>
+              ))}
             </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+          </thead>
+          <tbody>
+            {data.map((item, index) => (
+              <tr
+                className="tr"
+                key={index}
+                id={`state-${item.status}`}
+              >
+                <td className="td">
+                  <i className={`icon ${item.status}`}></i>
+                </td>
+                <td className="td">{item.name}</td>
+                <td className="td">
+                  <p className={`text-${item.status}`}>{item.actualAmount}</p>
+                </td>
+                <td>{item.alertLevel}</td>
+                <td>{item.minimumAmount}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </>
   );
 }
 

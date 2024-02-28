@@ -8,7 +8,7 @@ export const useSocket = (serverPath: string) => {
   const conectarSocket = useCallback(() => {
     const token = localStorage.getItem('token');
 
-    const socketTemp = io('http://localhost:3000',{
+    const socketTemp = io(serverPath,{
         transports: ['websocket']
     });
     

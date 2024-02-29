@@ -25,12 +25,11 @@ function WelcomePage() {
       <div className="kds-loader-container">
         <div className="kds-loader">
           <div className="store-card">
-            <Link to="/dashboard">
             <Card
               icon={tabletIcon}
               text="KDS
       "
-            /></Link>
+            />
           </div>
           <div className="loader"></div>
           <div className="card-group">

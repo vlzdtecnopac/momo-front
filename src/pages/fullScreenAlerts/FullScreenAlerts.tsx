@@ -21,7 +21,9 @@ function FullScreenAlerts() {
 
   return (
     <>
+     <div className="alert_table_full_screen">
       <AlertsTable />
+      </div>
     </>
   );
 }

@@ -2,15 +2,44 @@
     width: 120px;
     height: 175px;
     background: #FFF;
+    border: 1px solid #C4C4C5;
     border-radius: 20px;
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
     -ms-border-radius: 20px;
     -o-border-radius: 20px;
+    display: flex;
+    justify-content: center;
 
-    .option-icon {
-        width: 100px;
-        height: 68px;
+    .container {
+        margin: 10px;
+
+        .option-icon {
+            width: 100px;
+            display: flex;
+            height: 68px;
+            justify-content: center;
+            padding-bottom: 10px;
+
+
+        }
+
+        .option-text {
+            display: flex;
+            justify-content: center;
+            padding-bottom: 10px;
+
+        }
+
+        input {
+            display: flex;
+            position: relative;
+            left: 40px;
+            top: 10px;
+        }
+
+
     }
+
 
 }

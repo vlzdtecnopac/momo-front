@@ -6,18 +6,9 @@ import stackedIcon from "../../assets/icons/stacked.svg";
 import clasicIcon from "../../assets/icons/clasic.svg";
 
 const options = [
-  {
-    icon: { splitIcon },
-    text: "Split",
-  },
-  {
-    icon: { stackedIcon },
-    text: "Split",
-  },
-  {
-    icon: { clasicIcon },
-    text: "Split",
-  },
+  { icon: splitIcon, text: "Split" },
+  { icon: stackedIcon, text: "Stacked" }, // Corrected text "Stacked"
+  { icon: clasicIcon, text: "Clasica" }, // Corrected text "Classic"
 ];
 
 function DisplayConfig() {
@@ -26,13 +17,17 @@ function DisplayConfig() {
       <h2 className="title">Configuración display</h2>
       <p className="sub-title">Visualización</p>
       <div className="display">
-        <DisplayOption
-          icon={""}
-          text={""}
-        />
+        {/* Map through the options array and render each option as a DisplayOption component */}
+        {options.map((option) => (
+          <DisplayOption
+            key={option.text}
+            icon={option.icon}
+            text={option.text}
+          />
+        ))}
       </div>
-      <div className="text-size"></div>
     </div>
   );
 }
+
 export default DisplayConfig;

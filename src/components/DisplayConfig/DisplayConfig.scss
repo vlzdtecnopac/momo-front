@@ -1,4 +1,6 @@
 .display-config {
+    width: 440px;
+
     .title {
         font-size: 18px;
         font-weight: 500;
@@ -9,5 +11,9 @@
         color: #000;
     }
 
+    .display {
+        display: flex;
+        justify-content: space-around;
+    }
 
 }

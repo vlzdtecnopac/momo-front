@@ -9,11 +9,7 @@ function WelcomePage() {
     <div className="component-welcome">
       <div className="logo-container">
         {" "}
-        <img
-          className="logo"
-          src={logo}
-          alt="momo-logo"
-        />
+        <img className="logo" src={logo} alt="momo-logo" />
       </div>
       <div className="text-container">
         <div className="text">
@@ -61,10 +57,9 @@ function WelcomePage() {
               text="KIOSKO
   "
             />{" "}
-            <Card
-              icon={kioskIcon}
-              text="KIOSKO"
-            />
+            <Card icon={kioskIcon} text="KIOSKO" />{" "}
+            <Card icon={kioskIcon} text="KIOSKO" />{" "}
+            <Card icon={kioskIcon} text="KIOSKO" />
           </div>
         </div>
       </div>

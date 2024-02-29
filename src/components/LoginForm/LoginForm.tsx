@@ -33,7 +33,7 @@ function LoginForm() {
           className="login-buttom"
           type="button"
         >
-          <Link to="/dashboard"> Ingresar </Link>
+          <Link to="/welcome"> Ingresar </Link>
         </button>
       </div>
       </form>

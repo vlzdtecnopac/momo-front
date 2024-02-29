@@ -1,6 +1,6 @@
 import "./OrderTabs.scss";
 import React, { useState } from "react";
-import OrderCard, { State } from "../OrderCard/OrderCard";
+import OrderCard, { State } from "../../OrderCard/OrderCard";
 
 function OrderTabs() {
   const [options, setOptions] = useState([
@@ -54,11 +54,21 @@ function OrderTabs() {
       </div>
       <div className="content-tab">
         <div className="grid-equalHeight grid-4_lg-4_md-3_sm-1_xs-1">
-        <div className="col"><OrderCard state={State.initial} /></div>
-        <div className="col"><OrderCard state={State.pending} /></div>
-        <div className="col"><OrderCard state={State.completed} /></div>
-        <div className="col"><OrderCard state={State.completed} /></div>
-        <div className="col"><OrderCard state={State.completed} /></div>
+          <div className="col">
+            <OrderCard state={State.initial} />
+          </div>
+          <div className="col">
+            <OrderCard state={State.pending} />
+          </div>
+          <div className="col">
+            <OrderCard state={State.completed} />
+          </div>
+          <div className="col">
+            <OrderCard state={State.completed} />
+          </div>
+          <div className="col">
+            <OrderCard state={State.completed} />
+          </div>
         </div>
       </div>
     </>

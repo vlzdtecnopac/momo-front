@@ -15,10 +15,9 @@ export const SocketProvider: React.FC<DynamicLayoutProps> = ({ children }: Dynam
     conectarSocket();
   }, [conectarSocket]);
 
- 
-  useEffect(() => {
-    desconectarSocket();
-  }, [desconectarSocket]);
+  //useEffect(() => {
+    //desconectarSocket();
+  //}, [desconectarSocket]);
 
   return (
     <SocketContext.Provider value= {{ socket, online }}>

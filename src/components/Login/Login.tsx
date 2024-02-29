@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import "./Login.scss";
 import LoginForm from "../LoginForm/LoginForm";
 import imgLogin from "../../assets/login-img.jpg";
 import logoMomo from "../../assets/logo.svg";
+import { SocketContext } from "../../context/SocketContext";
 
 interface LoginProps {
   img: string;
@@ -10,6 +11,13 @@ interface LoginProps {
 
 const Login: React.FC<LoginProps> = (props) => {
   const { img } = props;
+  const { socket } = useContext(SocketContext);
+
+  useEffect(()=>{
+    socket?.on("mensaje-welcome", (data: string)=>{
+      console.log(data);
+    })
+  },[socket])
 
   return (
     <div className="component-login">

@@ -28,6 +28,7 @@ function DisplayConfig() {
         </div>
 
         <div className="font-size-input">
+          <p>Tamaño de texto</p>
           <label htmlFor="size-select">Tamaño de texto</label>
           <select
             id="size-select"

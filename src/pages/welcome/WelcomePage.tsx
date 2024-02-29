@@ -10,7 +10,11 @@ function WelcomePage() {
     <div className="component-welcome">
       <div className="logo-container">
         {" "}
-        <img className="logo" src={logo} alt="momo-logo" />
+        <img
+          className="logo"
+          src={logo}
+          alt="momo-logo"
+        />
       </div>
       <div className="text-container">
         <div className="text">
@@ -29,38 +33,63 @@ function WelcomePage() {
               icon={tabletIcon}
               text="KDS
       "
+              subText="Tienda 1"
+              state="Conectado"
             />
           </div>
           <div className="loader"></div>
           <div className="card-group">
             <Card
               icon={kioskIcon}
-              text="KIOSKO
-     "
+              text="KIOSKO"
+              subText="Tienda 1"
+              state="Conectado"
+            />
+            <Card
+              icon={kioskIcon}
+              text="KIOSKO"
+              subText="Tienda 1"
+              state="Conectado"
             />
             <Card
               icon={kioskIcon}
               text="KIOSKO
       "
-            />
-            <Card
-              icon={kioskIcon}
-              text="KIOSKO
-      "
+              subText="Tienda 1"
+              state="Conectado"
             />{" "}
             <Card
               icon={kioskIcon}
               text="KIOSKO
     "
+              subText="Tienda 1"
+              state="Conectado"
             />{" "}
             <Card
               icon={kioskIcon}
               text="KIOSKO
   "
+              subText="Tienda 1"
+              state="Conectado"
             />{" "}
-            <Card icon={kioskIcon} text="KIOSKO" />{" "}
-            <Card icon={kioskIcon} text="KIOSKO" />{" "}
-            <Card icon={kioskIcon} text="KIOSKO" />
+            <Card
+              icon={kioskIcon}
+              text="KIOSKO"
+              subText="Tienda 1"
+              state="Conectado"
+            />{" "}
+            <Card
+              icon={kioskIcon}
+              text="KIOSKO"
+              subText="Tienda 1"
+              state="Conectado"
+            />{" "}
+            <Card
+              icon={kioskIcon}
+              text="KIOSKO"
+              subText="Tienda 1"
+              state="Conectado"
+            />
           </div>
         </div>
       </div>

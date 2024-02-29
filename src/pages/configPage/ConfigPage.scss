@@ -17,6 +17,18 @@
         align-items: end;
         border-radius: 0px 0px 20px 20px;
     }
+
+    .store{
+        margin: 90px 0px 0px 0px;
+        color: #202020;
+        font-size: 22px;
+        font-weight: 600;
+    }
+
+    .address{
+        margin: 0px;
+        color: #9499A1;
+    }
   
     .header_blue{
         background: #2e418d;
@@ -33,6 +45,7 @@
         z-index: 99;
         top: 18px;
         left: 46px;
+        width: 100%;
     }
     .conten_tabs{
         background: transparent;

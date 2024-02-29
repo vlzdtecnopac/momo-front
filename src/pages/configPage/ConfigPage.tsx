@@ -19,7 +19,7 @@ function ConfigPage() {
             </div>
             <div className="col-10">
               <h2 className="store">Tienda 1</h2>
-              <p className="address">Calle 1 #1-1</p>
+              <p className="address">Dirección tienda</p>
             </div>
           </div>
         </div>

@@ -1,5 +1,6 @@
 import React from "react";
 import "./Card.scss";
+import { Link } from "react-router-dom";
 
 interface CardProps {
   icon: string;
@@ -8,6 +9,7 @@ interface CardProps {
 
 const Card: React.FC<CardProps> = ({ icon, text }) => {
   return (
+    <Link to="/dashboard">
     <div className="card">
       <div className="container">
         <img
@@ -22,6 +24,7 @@ const Card: React.FC<CardProps> = ({ icon, text }) => {
         </p>
       </div>
     </div>
+    </Link>
   );
 };
 

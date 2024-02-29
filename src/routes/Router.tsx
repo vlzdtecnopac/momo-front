@@ -8,6 +8,7 @@ import InventoryPage from "../pages/inventoryPage/InventoryPage";
 import AlertsPage from "../pages/alertsPage/AlertsPage";
 import ConfigPage from "../pages/configPage/ConfigPage";
 import FullScreen from "../pages/fullScreen/FullScreen";
+import FullScreenAlerts from "../pages/fullScreenAlerts/FullScreenAlerts";
 import DisplayConfig from "../components/DisplayConfig/DisplayConfig";
 import Nofound from "../pages/404/404";
 
@@ -47,6 +48,10 @@ const BrowserRoutes = createBrowserRouter([
   {
     path: "/full-screen",
     element: <FullScreen />,
+  },
+  {
+    path: "/full-alerts",
+    element: <FullScreenAlerts />,
   },
   {
     path: "/display",

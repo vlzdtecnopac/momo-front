@@ -6,7 +6,6 @@ $red: #F3726C;
 $grey: #F4F4F4;
 
 .content-table {
-    overflow: auto;
     border-radius: 16px;
     -webkit-border-radius: 16px;
     -moz-border-radius: 16px;
@@ -19,7 +18,7 @@ $grey: #F4F4F4;
     background: #fff;
     padding: 0px 10px 10px 10px;
 
-    .table {
+    .table_header{
         font-family: arial, sans-serif;
         border-collapse: collapse;
         width: 100%;
@@ -30,6 +29,23 @@ $grey: #F4F4F4;
             padding: 20px 10px;
         }
 
+        .th{
+            padding: 20px;
+        }
+
+        .th:nth-child(2) {
+            text-align: left;
+        }
+
+    }
+
+    .table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+        text-align: left;
+
+        
         td {
             font-family: "Red Hat Display", serif;
             font-size: 18px;
@@ -39,12 +55,19 @@ $grey: #F4F4F4;
         }
 
         td:nth-child(1) {
-            width: fit-content;
+            width: 80px;
             padding-right: 10px;
         }
 
         td:nth-child(2) {
-            width: 500px;
+            width: 350px;
+            text-align-last: left;
+            font-weight: 500;
+            font-family: "Schibsted Grotesk", sans-serif;
+        }
+
+        td:nth-child(3) {
+            width: 80px;
             text-align-last: left;
             font-weight: 500;
             font-family: "Schibsted Grotesk", sans-serif;

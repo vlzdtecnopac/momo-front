@@ -46,8 +46,8 @@ function Table() {
      
       <div className="content-table">
       <InventoryTabs />
-        <table className="table">
-          <thead>
+      <table className="table_header">
+      <thead>
             <tr>
               {column_headers.map((column, index) => (
                 <th
@@ -59,6 +59,10 @@ function Table() {
               ))}
             </tr>
           </thead>
+      </table>
+      <div style={{overflow: "auto", height: "410px"}}>
+        <table className="table">
+       
           <tbody>
             {data.map((item, index) => (
               <tr
@@ -79,6 +83,7 @@ function Table() {
             ))}
           </tbody>
         </table>
+        </div>
       </div>
     </>
   );

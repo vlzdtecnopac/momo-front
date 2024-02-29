@@ -8,6 +8,7 @@ import InventoryPage from "../pages/inventoryPage/InventoryPage";
 import AlertsPage from "../pages/alertsPage/AlertsPage";
 import ConfigPage from "../pages/configPage/ConfigPage";
 import FullScreen from "../pages/fullScreen/FullScreen";
+import DisplayConfig from "../components/DisplayConfig/DisplayConfig";
 
 const BrowserRoutes = createBrowserRouter([
   {
@@ -44,8 +45,12 @@ const BrowserRoutes = createBrowserRouter([
   },
   {
     path: "/full-screen",
-    element: <FullScreen />
-  }
+    element: <FullScreen />,
+  },
+  {
+    path: "/display",
+    element: <DisplayConfig />,
+  },
 ]);
 
 export default BrowserRoutes;

@@ -1,5 +1,29 @@
-function FullScreenAlerts(){
-    return (<p>Working Page Alerts</p>)
+import { useEffect } from "react";
+import AlertsTable from "../../components/Table/alertsTable";
+import "./FullScreenAlerts.scss";
+import { useNavigate } from "react-router-dom";
+
+function FullScreenAlerts() {
+  const navigate = useNavigate();
+  const handleEscapeKey = (event: KeyboardEvent) => {
+    if (event.key === "Escape") {
+      navigate("/dashboard");
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("keydown", handleEscapeKey);
+
+    return () => {
+      window.removeEventListener("keydown", handleEscapeKey);
+    };
+  }, []);
+
+  return (
+    <>
+      <AlertsTable />
+    </>
+  );
 }
 
-export default FullScreenAlerts
+export default FullScreenAlerts;

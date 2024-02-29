@@ -57,7 +57,7 @@ function AlertsTable() {
           </tr>
         </thead>
         </table>
-        <div style={{overflow: "auto", height: "480px"}}>
+        <div className="scroll_alerts">
         <table className="table">
         <tbody>
           {data.map((item, index) => (

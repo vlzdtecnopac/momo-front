@@ -1,0 +1,11 @@
+.content-table{
+    width: 100%!important;
+    max-width: 98%!important;
+    margin: auto;
+    display: block;
+    position: relative;
+    .scroll_alerts {
+        overflow: auto;
+        height: 88vh;
+    }
+}

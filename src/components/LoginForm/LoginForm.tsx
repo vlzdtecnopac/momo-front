@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 function LoginForm() {
   return (
     <div className="component-login-form">
-      className="login-form" action="" method="POST"
+      <form className="login-form" action="" method="POST">
       <div className="form-group">
         <input
           placeholder="Correo Electronico"
@@ -36,6 +36,7 @@ function LoginForm() {
           <Link to="/dashboard"> Ingresar </Link>
         </button>
       </div>
+      </form>
     </div>
   );
 }

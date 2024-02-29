@@ -28,10 +28,22 @@ const data = [
   },
 ];
 
+
+
+for (let i = 0; i < 100; i++) {
+  data.push({
+    id: "0",
+    status: "success",
+    alert: "No hay pan",
+    hour: "10:00 pm",
+    alertLevel: "5",
+  });
+}
+
 function AlertsTable() {
   return (
     <div className="content-table">
-      <table className="table">
+      <table className="table_header">
         <thead>
           <tr>
             {column_headers.map((column, index) => (
@@ -44,6 +56,9 @@ function AlertsTable() {
             ))}
           </tr>
         </thead>
+        </table>
+        <div style={{overflow: "auto", height: "480px"}}>
+        <table className="table">
         <tbody>
           {data.map((item, index) => (
             <tr
@@ -64,6 +79,7 @@ function AlertsTable() {
           ))}
         </tbody>
       </table>
+      </div>
     </div>
   );
 }

@@ -36,6 +36,8 @@ $grey: #F4F4F4;
 
         .th:nth-child(2) {
             text-align: left;
+            width: 50%;
+            padding-left: 40px;
         }
 
     }
@@ -57,22 +59,36 @@ $grey: #F4F4F4;
 
         td:nth-child(1) {
             width: 50px;
-            padding-right: 10px;
         }
 
         td:nth-child(2) {
-            width: 350px;
+            width: 50%;
             text-align-last: left;
             font-weight: 500;
             font-family: "Schibsted Grotesk", sans-serif;
         }
 
         td:nth-child(3) {
-            width: 100px;
+            width: 60px;
             text-align-last: left;
             font-weight: 500;
             font-family: "Schibsted Grotesk", sans-serif;
         }
+
+        td:nth-child(4) {
+            width: 120px;
+            text-align-last: center;
+            font-weight: 500;
+            font-family: "Schibsted Grotesk", sans-serif;
+        }
+
+        td:nth-child(5) {
+            width: 100px;
+            text-align-last: center;
+            font-weight: 500;
+            font-family: "Schibsted Grotesk", sans-serif;
+        }
+
 
         th {
             font-family: "Red Hat Display", serif;
@@ -90,7 +106,7 @@ $grey: #F4F4F4;
 
         th:nth-child(2) {
             text-align: left;
-
+           
         }
 
         tr {

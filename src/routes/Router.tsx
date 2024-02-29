@@ -9,6 +9,7 @@ import AlertsPage from "../pages/alertsPage/AlertsPage";
 import ConfigPage from "../pages/configPage/ConfigPage";
 import FullScreen from "../pages/fullScreen/FullScreen";
 import DisplayConfig from "../components/DisplayConfig/DisplayConfig";
+import Nofound from "../pages/404/404";
 
 const BrowserRoutes = createBrowserRouter([
   {
@@ -50,6 +51,10 @@ const BrowserRoutes = createBrowserRouter([
   {
     path: "/display",
     element: <DisplayConfig />,
+  },
+  {
+    path: "*",
+    element: <Nofound />,
   },
 ]);
 

@@ -1,19 +1,53 @@
+.title {
+    font-size: 18px;
+    font-weight: 500;
+    color: orange
+}
+
+.sub-title {
+    color: #000;
+}
+
 .display-config {
     width: 440px;
+    // display: flex;
+    gap: 145px;
 
-    .title {
-        font-size: 18px;
-        font-weight: 500;
-        color: orange
-    }
 
-    .sub-title {
-        color: #000;
-    }
+
+
 
     .display {
         display: flex;
         justify-content: space-around;
     }
 
+}
+
+.btns {
+    display: flex;
+    gap: 16px;
+
+    .btn {
+        width: 104px;
+        height: 33.6px;
+        border: none;
+        border-radius: 6px;
+        font-family: "Red Hat Display", "serif";
+        font-weight: 700;
+        font-size: 14px;
+
+    }
+
+}
+
+.back {
+    background: #EDEDED;
+    color: #777672;
+}
+
+.save {
+    background: #FF6010 !important;
+    color: #FFF;
+    width: 129px !important;
 }

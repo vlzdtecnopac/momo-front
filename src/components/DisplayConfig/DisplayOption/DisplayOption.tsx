@@ -1,15 +1,31 @@
 import "./DisplayOption.scss";
-import split from "../../../assets/icons/split.svg";
-function DisplayOption() {
+
+interface OptionProps {
+  icon: any;
+  text: string;
+}
+
+const DisplayOption: React.FC<OptionProps> = ({ icon, text }) => {
   return (
     <div className="display-option">
-      <img
-        className="option-icon"
-        src={split}
-        alt="icon"
-      />
-      <h3>Split</h3>
+      <div className="container">
+        <img
+          className="option-icon"
+          src={icon}
+          alt={text}
+        />
+        <h3 className="option-text">{text}</h3>
+        <div className="opcion-radio">
+          <input
+            type="radio"
+            id="radio"
+            name="check_process"
+          />
+          <label htmlFor="radio"></label>
+        </div>
+      </div>
     </div>
   );
-}
+};
+
 export default DisplayOption;

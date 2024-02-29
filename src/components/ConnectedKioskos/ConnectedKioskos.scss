@@ -1,0 +1,18 @@
+@import "../../index.scss";
+
+.connected {
+    width: 1288px;
+    height: 397px;
+    background: $white;
+
+    .connected-title {
+        color: $orange;
+        padding-bottom: 20px;
+    }
+
+    .connected-group {
+        display: flex;
+        padding-left: 40px;
+        gap: 30px;
+    }
+}

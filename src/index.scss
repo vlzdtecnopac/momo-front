@@ -1,103 +1,104 @@
-@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap");
+  @import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap");
+  @import url("https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap");
 
 
-$dark-blue: #2E418E;
-$light-blue: #D5EAFB;
-$dark-blue-hover: #2c46ad;
-$light-grey: #9499A1;
-$completed: #79BF80;
-$pending: #F2B45D;
-$orange: #FF6010;
-$cream: #EDEBDF;
-$black: #212121;
-$white: #FFFFFF;
+  $dark-blue: #2E418E;
+  $light-blue: #D5EAFB;
+  $dark-blue-hover: #2c46ad;
+  $light-grey: #9499A1;
+  $completed: #79BF80;
+  $pending: #F2B45D;
+  $orange: #FF6010;
+  $cream: #EDEBDF;
+  $black: #212121;
+  $white: #FFFFFF;
 
-[class*=col_], [class~=col] {
-  flex: 1 1 0%;
-  margin: 5px 0px;
-}
-
-[class*=-equalHeight]>[class~=col] {
-  align-self: stretch;
-  margin: 5px 0px;
-}
-
-@mixin center {
-  position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
-
-.loader {
-  margin: 0px 40px 0px 40px;
-  width: 15px;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  animation: l5 1s infinite linear alternate;
-}
-
-@keyframes l5 {
-  0% {
-    box-shadow: 20px 0 #edebdf, -20px 0 #edebdf;
-    background: #edebdf
+  [class*=col_],
+  [class~=col] {
+    flex: 1 1 0%;
+    margin: 5px 0px;
   }
 
-  33% {
-    box-shadow: 20px 0 #fcfbf55b, -20px 0 #fcfbf55b;
-    background: #fcfbf55b
+  [class*=-equalHeight]>[class~=col] {
+    align-self: stretch;
+    margin: 5px 0px;
   }
 
-  66% {
-    box-shadow: 20px 0 #f6f4eeba, -20px 0 #f6f4eeba;
-    background: #f6f4eeba
+  @mixin center {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
   }
 
-  100% {
-    box-shadow: 20px 0 #ddddbe, -20px 0 #ddddbe;
-    background: #ddddbe
+  .loader {
+    margin: 0px 40px 0px 40px;
+    width: 15px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    animation: l5 1s infinite linear alternate;
   }
-}
 
-body {
-  margin: 0;
-  padding: 0;
-}
+  @keyframes l5 {
+    0% {
+      box-shadow: 20px 0 #edebdf, -20px 0 #edebdf;
+      background: #edebdf
+    }
 
-h2,
-h3 {
-  font-family: "Red Hat Display", sans-serif;
-  color: $cream ;
-  font-optical-sizing: auto;
-  font-weight: 700;
-  font-style: normal;
-  margin: 0px;
-}
+    33% {
+      box-shadow: 20px 0 #fcfbf55b, -20px 0 #fcfbf55b;
+      background: #fcfbf55b
+    }
 
-h3 {
-  color: $dark-blue;
-}
+    66% {
+      box-shadow: 20px 0 #f6f4eeba, -20px 0 #f6f4eeba;
+      background: #f6f4eeba
+    }
 
-p {
-  font-family: "Schibsted Grotesk", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 300;
-  font-style: normal;
-}
+    100% {
+      box-shadow: 20px 0 #ddddbe, -20px 0 #ddddbe;
+      background: #ddddbe
+    }
+  }
 
-input {
-  font-family: "Red Hat Display", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 700;
-  font-style: normal;
-}
+  body {
+    margin: 0;
+    padding: 0;
+  }
 
-a {
-  text-decoration: none;
-}
+  h2,
+  h3 {
+    font-family: "Red Hat Display", sans-serif;
+    color: $cream ;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    margin: 0px;
+  }
 
-img{
-  width: 100%;
-}
+  h3 {
+    color: $dark-blue;
+  }
+
+  p {
+    font-family: "Schibsted Grotesk", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+  }
+
+  input {
+    font-family: "Red Hat Display", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  img {
+    width: 100%;
+  }

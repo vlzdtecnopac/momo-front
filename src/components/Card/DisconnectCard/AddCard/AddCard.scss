@@ -1,27 +1,25 @@
 @import "../../index.scss";
 
-
-
-.card {
-    background: $cream;
+.add-card {
     border-radius: 10px;
+    background: $cream;
     width: 200px;
     height: 180px;
     display: flex;
 
-    .container {
+    .add-container {
         @include center;
 
     }
 
-    .icon {
+    .add-icon {
         padding-top: 15px;
         width: 61px;
         height: 43px;
     }
 
     p {
-        color: $dark-blue;
+        color: $completed;
 
         span {
             font-weight: bold;
@@ -30,25 +28,17 @@
     }
 }
 
-.btn {
-    width: 104px;
-    height: 33px;
-    cursor: pointer;
-    color: $white;
-    font-family: "Red Hat Display", "serif";
-    font-weight: 700;
-    font-size: 14px;
-
-}
-
 .disconnect-btn {
     right: 33px;
     border: none;
     position: relative;
     top: 180px;
     border-radius: 6px;
+    width: 104px;
+    height: 33px;
     background: #FF6010;
     margin-top: 10px;
+    cursor: pointer;
 }
 
 .add-btn {

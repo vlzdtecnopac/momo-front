@@ -1,16 +1,17 @@
 import React from "react";
-import "./Card.scss";
+import "../Card.scss";
 import { Link } from "react-router-dom";
+import Button from "./button";
 
-interface CardProps {
+interface DisconnectCardProps {
   icon: string;
-  text?: string;
+  text: string;
+  backgroundColor?: string;
   subText?: string;
   state?: string;
-  backgroundColor?: string;
 }
 
-const Card: React.FC<CardProps> = ({
+const DisconnectCard: React.FC<DisconnectCardProps> = ({
   icon,
   text,
   backgroundColor,
@@ -20,7 +21,7 @@ const Card: React.FC<CardProps> = ({
   const cardBackgroundColor = backgroundColor || "#F2F2F2 !mportant";
 
   return (
-    <Link to="/dashboard">
+    <>
       <div
         className="card"
         style={{ backgroundColor: cardBackgroundColor }}
@@ -39,9 +40,10 @@ const Card: React.FC<CardProps> = ({
             {state}
           </p>
         </div>
+        <button className=" btn disconnect-btn">Desconectar</button>
       </div>
-    </Link>
+    </>
   );
 };
 
-export default Card;
+export default DisconnectCard;

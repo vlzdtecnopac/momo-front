@@ -3,7 +3,6 @@ import tabletIcon from "../../assets/icons/tablet.svg";
 import kioskIcon from "../../assets/icons/kiosko.svg";
 import Card from "../../components/Card/Card";
 import "./WelcomePage.scss";
-import { Link } from "react-router-dom";
 
 function WelcomePage() {
   return (

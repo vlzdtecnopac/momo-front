@@ -33,24 +33,27 @@ function DisplayConfig() {
             <div className="column-option-text">
               <div className="radio-group">
                 <div className="opcion-radio-text">
-                  <input type="radio" id="small-text" name="check_text" />
+                  <input type="radio" id="small-text" name="text-options" />
                   <label htmlFor="small-text"></label>
                 </div>
+                <h3 className="text-small">Chico</h3>
               </div>
               <div className="radio-group">
                 <div className="opcion-radio-text">
-                  <input type="radio" id="medium-text" name="check_text" />
+                  <input type="radio" id="medium-text" name="text-options" />
                   <label htmlFor="medium-text"></label>
                 </div>
+                <h3 className="text-medium">Mediano</h3>
               </div>
               <div>
                 <div className="opcion-radio-text">
-                  <input type="radio" id="large-text" name="check_text" />
+                  <input type="radio" id="large-text" name="text-options" />
                   <label htmlFor="large-text"></label>
                 </div>
+                <h3 className="text-large">Grande</h3>
               </div>
             </div>
-            <div className="column-dave-options">
+            <div className="column-save-options">
               <div className="btns">
                 <button className="btn back">Regresar</button>
                 <button className="btn save">Guardar cambios</button>

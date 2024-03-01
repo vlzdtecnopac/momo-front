@@ -53,14 +53,34 @@
         &::before{
             content: '';
             position: absolute;
-            top: 40%;
+            top: 20%;
             left: 0;
             width: 290px;
             height: 4px; /* Set the height of your line */
             background-color: $dark-blue;
         }
     }
+
+    .text-small{
+        width: 80px;
+        text-align: center;
+        color: $dark-blue;
+        margin-left: -30px;
+    }
    
+    .text-medium{
+        width: 80px;
+        text-align: center;
+        color: $dark-blue;
+        margin-left: -30px;
+    }
+
+    .text-large{
+        width: 80px;
+        text-align: center;
+        color: $dark-blue;
+        margin-left: -30px;
+    }
 
     .opcion-radio-text {
         display: inline-block;
@@ -108,21 +128,18 @@
         background-color: $orange;
         box-shadow: inset 0 0 0 4px #F4F5F8;
     }
-
-    .column-dave-options{
-        display: flex;
-        justify-content: flex-end;
-        align-items: end;
-        height: 150px;
-    }
-
 }
 
 
 
 
 
-
+.column-save-options{
+    display: flex;
+    justify-content: flex-end;
+    align-items: end;
+    height: 90px;
+}
 
 
 

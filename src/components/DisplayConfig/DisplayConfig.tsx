@@ -15,8 +15,10 @@ function DisplayConfig() {
     <>
       <div className="config-display-section">
         <h2 className="title">Configuración display</h2>
-        <p className="sub-title">Visualización</p>
-
+        <div className="grid-3_xs-1">
+          <div className="col"><p className="sub-title">Visualización</p></div>
+           <div className="col"><p className="sub-title">Tamaño de texto</p></div>
+        </div>
         <div className="grid-2_xs-2_sm-2">
           <div className="col-4">
             <div className="display-config">

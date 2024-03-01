@@ -77,8 +77,13 @@
 
             h2 {
                 color: $black;
-                width: 230px;
                 display: block;
+            }
+
+            .center-col{
+                display: flex;
+                justify-content: center;
+                align-items: center;
             }
 
         }

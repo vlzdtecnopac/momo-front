@@ -1,4 +1,4 @@
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from "uuid";
 import TakeoutBadge from "../TakeoutBadge/TakeoutBadge";
 import "./OrderCard.scss";
 
@@ -29,13 +29,19 @@ const OrderCard: React.FC<Props> = (props) => {
         </div>
         <div className="order_info">
           <div className="item_name">
-            <h2>Macadamia Black Tea Soda</h2>
-            <form>
-              <span className="opcion-radio">
-                <input type="radio" id={id_input} name="check_process"  />
-                <label htmlFor={id_input}></label>
-              </span>
-            </form>
+            <div className="grid-2_xs-1">
+              <div className="col-9">
+                <h2>Macadamia Black Tea Soda</h2>
+              </div>
+              <div className="col-3 center-col">
+                <form>
+                  <span className="opcion-radio">
+                    <input type="radio" id={id_input} name="check_process" />
+                    <label htmlFor={id_input}></label>
+                  </span>
+                </form>
+              </div>
+            </div>
           </div>
           <hr />
           <div className="details">
@@ -46,7 +52,7 @@ const OrderCard: React.FC<Props> = (props) => {
           </div>
           <hr />
           <div className="button">
-          <button className="order-button">Completar Orden</button>
+            <button className="order-button">Completar Orden</button>
           </div>
         </div>
       </div>

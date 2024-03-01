@@ -1,17 +1,19 @@
 @import "../../index.scss";
 
-
-
 .card {
     background: $cream;
     border-radius: 10px;
     width: 200px;
     height: 180px;
+    margin: 0px 10px;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
 
     .container {
-        @include center;
-
+     display: block;
+     text-align: center;
     }
 
     .icon {
@@ -20,14 +22,19 @@
         height: 43px;
     }
 
-    p {
-        color: $dark-blue;
+    .text_add{
+        color: #79be81
+    }
 
+    .text_active{
+        color: $dark-blue;
+        text-align: center;
         span {
             font-weight: bold;
             text-align: center;
         }
     }
+
 }
 
 .btn {
@@ -41,25 +48,12 @@
 
 }
 
-.disconnect-btn {
-    right: 33px;
+.button-card {
     border: none;
     position: relative;
-    top: 180px;
     border-radius: 6px;
     background: #FF6010;
     margin-top: 10px;
+    text-align: center;
 }
 
-.add-btn {
-    position: relative;
-    border: none;
-    border-radius: 6px;
-    width: 104px;
-    height: 33px;
-    background: #FF6010;
-    cursor: pointer;
-    top: 9px;
-    left: 50px;
-
-}

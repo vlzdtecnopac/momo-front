@@ -22,24 +22,20 @@ const Card: React.FC<CardProps> = ({
   return (
     <Link to="/dashboard">
       <div
-        className="card"
-        style={{ backgroundColor: cardBackgroundColor }}
-      >
-        <div className="container">
-          <img
-            className="icon"
-            src={icon}
-            alt="icon"
-          />
-          <p>
-            <span>{text}</span>
-            <br />
-            <span>{subText}</span>
-            <br />
-            {state}
-          </p>
-        </div>
-      </div>
+            className="card"
+            style={{ backgroundColor: cardBackgroundColor }}
+          >
+            <div className="container">
+              <img className="icon" src={icon} alt="icon" />
+              <p className="text_active">
+                <span>{text}</span>
+                <br />
+                <span>{subText}</span>
+                <br />
+                {state}
+              </p>
+            </div>
+          </div>
     </Link>
   );
 };

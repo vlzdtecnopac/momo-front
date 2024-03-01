@@ -12,7 +12,13 @@
 
     .connected-group {
         display: flex;
-        padding-left: 40px;
-        gap: 30px;
+        flex-wrap: wrap;
+        margin: 0px;
+        padding: 0px;
+        list-style: none;
+    }
+    .content-center{
+        display: block;
+        text-align: center;
     }
 }

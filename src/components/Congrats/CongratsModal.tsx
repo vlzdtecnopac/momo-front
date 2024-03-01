@@ -1,6 +1,6 @@
 import coffee from "../../assets/coffee-momo.png";
 import "./Congrats.scss";
-function Congrats() {
+function CongratsModal() {
   return (
     <div className="congrats">
       <div className="congrats-container">
@@ -17,4 +17,4 @@ function Congrats() {
     </div>
   );
 }
-export default Congrats;
+export default CongratsModal;

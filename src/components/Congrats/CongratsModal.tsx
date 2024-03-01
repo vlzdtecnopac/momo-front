@@ -1,4 +1,4 @@
-import coffee from "../../assets/coffee-momo.jpg";
+import coffee from "../../assets/coffee-momo.png";
 import "./CongratsModal.scss";
 function CongratsModal() {
   return (

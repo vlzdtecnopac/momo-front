@@ -1,5 +1,6 @@
 @import "../../index.scss";
 .config-display-section{
+    padding: 10px;
 .title {
     font-size: 18px;
     font-weight: 500;
@@ -48,16 +49,32 @@
 .column-option-text{
     display: flex;
     justify-content: space-around;
+    margin-top: -20px;
     .radio-group{
         position: relative;
         &::before{
             content: '';
             position: absolute;
-            top: 20%;
+            top: 18%;
             left: 0;
-            width: 290px;
+            width: 280px;
             height: 4px; /* Set the height of your line */
             background-color: $dark-blue;
+        }
+    }
+
+    .text-title{
+        height: 36px;
+        color: $dark-blue;
+        &.small{
+            font-size: 18px;
+            margin: 0px 5px;
+        }
+        &.medium{
+            font-size: 26px;
+        }
+        &.large{
+            font-size: 32px;
         }
     }
 
@@ -66,6 +83,7 @@
         text-align: center;
         color: $dark-blue;
         margin-left: -30px;
+        margin-top: 10px;
     }
    
     .text-medium{
@@ -73,6 +91,7 @@
         text-align: center;
         color: $dark-blue;
         margin-left: -30px;
+        margin-top: 10px;
     }
 
     .text-large{
@@ -80,11 +99,13 @@
         text-align: center;
         color: $dark-blue;
         margin-left: -30px;
+        margin-top: 10px;
     }
 
     .opcion-radio-text {
         display: inline-block;
         margin-right: 2px;
+    
     }
 
     .opcion-radio-text input {
@@ -131,17 +152,11 @@
 }
 
 
-
-
-
 .column-save-options{
     display: flex;
     justify-content: flex-end;
     align-items: end;
-    height: 90px;
+    height: 60px;
 }
-
-
-
 
 }

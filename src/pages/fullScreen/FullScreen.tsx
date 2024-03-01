@@ -22,7 +22,7 @@ export default function FullScreen() {
 
   return (
     <>
-      <div className="columns">
+      <div className="columns-full-screen">
         <article>
           <OrderCard state={State.initial} />
         </article>

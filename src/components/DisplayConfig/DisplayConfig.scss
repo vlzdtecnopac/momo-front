@@ -46,6 +46,9 @@
             &.back {
                 background: #EDEDED;
                 color: #777672;
+                &:hover {
+                    background: rgb(211, 211, 211);
+                }
             }
 
         }

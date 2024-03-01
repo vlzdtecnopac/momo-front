@@ -3,6 +3,7 @@ import photo from "../../assets/login-img.jpg";
 import ConfigTabs from "../../components/Tabs/ConfigTabs/ConfigTabs";
 import Layout from "../../includes/layout/Layout";
 import GeneralInfoForm from "../../components/GeneralInfoForm/GeneralInfoForm";
+import ConnectedKioskos from "../../components/ConnectedKioskos/ConnectedKioskos";
 function ConfigPage() {
   return (
     <Layout>
@@ -25,7 +26,7 @@ function ConfigPage() {
         </div>
         <div className="conten_tabs">
           <div className="bg_content">
-              <GeneralInfoForm />
+              <ConnectedKioskos/>
           </div>
         </div>
         </div>

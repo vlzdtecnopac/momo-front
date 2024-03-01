@@ -17,6 +17,61 @@ function ConnectedKioskos() {
             backgroundColor="#D5EAFB"
           />
           </li>
+          <li className="content-center">
+          <KioskoCard
+            connect={true}
+            text="KIOSKO"
+            subText="Tienda 1"
+            state="Conectado"
+            backgroundColor="#D5EAFB"
+          />
+          </li>
+         
+          <li className="content-center">
+          <KioskoCard
+            connect={true}
+            text="KIOSKO"
+            subText="Tienda 1"
+            state="Conectado"
+            backgroundColor="#D5EAFB"
+          />
+          </li>
+          <li className="content-center">
+          <KioskoCard
+            connect={true}
+            text="KIOSKO"
+            subText="Tienda 1"
+            state="Conectado"
+            backgroundColor="#D5EAFB"
+          />
+          </li>
+          <li className="content-center">
+          <KioskoCard
+            connect={true}
+            text="KIOSKO"
+            subText="Tienda 1"
+            state="Conectado"
+            backgroundColor="#D5EAFB"
+          />
+          </li>
+          <li className="content-center">
+          <KioskoCard
+            connect={true}
+            text="KIOSKO"
+            subText="Tienda 1"
+            state="Conectado"
+            backgroundColor="#D5EAFB"
+          />
+          </li>
+          <li className="content-center">
+          <KioskoCard
+            connect={true}
+            text="KIOSKO"
+            subText="Tienda 1"
+            state="Conectado"
+            backgroundColor="#D5EAFB"
+          />
+          </li>
           <li>
           <KioskoCard
             connect={false}

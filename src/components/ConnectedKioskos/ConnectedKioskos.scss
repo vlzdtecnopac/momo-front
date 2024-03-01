@@ -1,9 +1,11 @@
 @import "../../index.scss";
 
 .connected {
-    width: 1288px;
-    height: 397px;
+    width: 100%;
     background: $white;
+    overflow-y: auto;
+    height: 250px;
+
 
     .connected-title {
         color: $orange;
@@ -16,9 +18,11 @@
         margin: 0px;
         padding: 0px;
         list-style: none;
+
+        .content-center{
+            display: block;
+            text-align: center;
+        }
     }
-    .content-center{
-        display: block;
-        text-align: center;
-    }
+   
 }

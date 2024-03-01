@@ -63,12 +63,12 @@
 
 
         .card-group {
-            overflow-y: auto;
-            overflow-x: hidden;
+            overflow-x: auto;
+            overflow-y: hidden;
             width: 680px;
             max-height: 400px;
             display: grid;
-            grid-template-columns: repeat(3, minmax(200px, 1fr));
+            grid-template-columns: repeat(20, minmax(200px, 1fr));
             gap: 10px;
 
             @media screen and (max-width: 768px) {

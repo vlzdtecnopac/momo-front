@@ -50,12 +50,12 @@ function DisplayConfig() {
                 </div>
               </div>
             </div>
-            <div>
-            <div className="btns">
-              <button className="btn back">Regresar</button>
-              <button className="btn save">Guardar cambios</button>
+            <div className="column-dave-options">
+              <div className="btns">
+                <button className="btn back">Regresar</button>
+                <button className="btn save">Guardar cambios</button>
+              </div>
             </div>
-          </div>
           </div>
         </div>
       </div>

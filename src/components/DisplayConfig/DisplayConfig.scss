@@ -57,7 +57,7 @@
             left: 0;
             width: 290px;
             height: 4px; /* Set the height of your line */
-            background-color: red;
+            background-color: $dark-blue;
         }
     }
    
@@ -109,7 +109,12 @@
         box-shadow: inset 0 0 0 4px #F4F5F8;
     }
 
-
+    .column-dave-options{
+        display: flex;
+        justify-content: flex-end;
+        align-items: end;
+        height: 150px;
+    }
 
 }
 

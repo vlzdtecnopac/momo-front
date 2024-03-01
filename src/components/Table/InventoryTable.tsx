@@ -60,7 +60,7 @@ function Table() {
             </tr>
           </thead>
       </table>
-      <div style={{overflow: "auto", height: "410px"}}>
+      <div style={{overflow: "auto", height: "380px"}}>
         <table className="table">
        
           <tbody>

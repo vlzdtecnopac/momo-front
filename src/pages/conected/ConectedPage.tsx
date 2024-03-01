@@ -1,7 +1,13 @@
 import "./ConectedPage.scss";
 import logo from "../../assets/logo.svg";
 import checkIcon from "../../assets/icons/check.svg";
+import { useEffect } from "react";
 function ConectedPage() {
+
+  useEffect(()=>{
+    setTimeout(()=> location.href="./dashboard", 1500)
+  },[])
+
   return (
     <div className="success_fully">
       <div className="container">

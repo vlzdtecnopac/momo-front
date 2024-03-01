@@ -20,7 +20,7 @@ const Card: React.FC<CardProps> = ({
   const cardBackgroundColor = backgroundColor || "#F2F2F2 !mportant";
 
   return (
-    <Link to="/dashboard">
+    <Link to="/success">
       <div
             className="card"
             style={{ backgroundColor: cardBackgroundColor }}

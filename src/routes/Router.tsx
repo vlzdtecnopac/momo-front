@@ -58,10 +58,7 @@ const BrowserRoutes = createBrowserRouter([
     path: "/display",
     element: <DisplayConfig />,
   },
-  {
-    path: "/connected-kioskos",
-    element: <ConnectedKioskos />,
-  },
+  
   {
     path: "*",
     element: <Nofound />,

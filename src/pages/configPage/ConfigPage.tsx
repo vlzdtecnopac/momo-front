@@ -4,6 +4,7 @@ import ConfigTabs from "../../components/Tabs/ConfigTabs/ConfigTabs";
 import Layout from "../../includes/layout/Layout";
 import GeneralInfoForm from "../../components/GeneralInfoForm/GeneralInfoForm";
 import ConnectedKioskos from "../../components/ConnectedKioskos/ConnectedKioskos";
+import DisplayConfig from "../../components/DisplayConfig/DisplayConfig";
 function ConfigPage() {
   return (
     <Layout>
@@ -26,7 +27,8 @@ function ConfigPage() {
         </div>
         <div className="conten_tabs">
           <div className="bg_content">
-              <ConnectedKioskos/>
+              {/*<ConnectedKioskos/>*/}
+              <DisplayConfig/>
           </div>
         </div>
         </div>

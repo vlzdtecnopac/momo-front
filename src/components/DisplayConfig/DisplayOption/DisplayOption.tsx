@@ -1,11 +1,12 @@
 import "./DisplayOption.scss";
-
+import { v4 as uuidv4 } from "uuid";
 interface OptionProps {
   icon: any;
   text: string;
 }
 
 const DisplayOption: React.FC<OptionProps> = ({ icon, text }) => {
+  const id_input = "id_" + uuidv4();
   return (
     <div className="display-option">
       <div className="container">
@@ -15,13 +16,14 @@ const DisplayOption: React.FC<OptionProps> = ({ icon, text }) => {
           alt={text}
         />
         <h3 className="option-text">{text}</h3>
+        
         <div className="opcion-radio">
           <input
             type="radio"
-            id="radio"
+            id={id_input}
             name="check_process"
           />
-          <label htmlFor="radio"></label>
+          <label htmlFor={id_input}></label>
         </div>
       </div>
     </div>

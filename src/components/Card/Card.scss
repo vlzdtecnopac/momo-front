@@ -13,7 +13,16 @@
 
     .container {
      display: block;
-     text-align: center;
+     text-align: center;    
+    }
+
+    .text-add{
+        p{
+            color: #79be81;
+            font-weight: 700;
+            text-align: center;
+            margin: 0px;
+        }
     }
 
     .icon {
@@ -22,16 +31,15 @@
         height: 43px;
     }
 
-    .text_add{
-        color: #79be81
-    }
-
+  
     .text_active{
         color: $dark-blue;
         text-align: center;
-        span {
+        margin: 10px 0px 15px 0px;
+        p {
             font-weight: bold;
             text-align: center;
+            margin: 0px;
         }
     }
 
@@ -49,6 +57,8 @@
 }
 
 .button-card {
+    display: block;
+    margin: 10px auto;
     border: none;
     position: relative;
     border-radius: 6px;

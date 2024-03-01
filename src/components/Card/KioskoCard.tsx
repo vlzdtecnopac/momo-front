@@ -30,13 +30,11 @@ const KioskoCard: React.FC<KioskoCardProps> = ({
           >
             <div className="container">
               <img className="icon" src={kioskoIcon} alt="icon" />
-              <p className="text_active">
-                <span>{text}</span>
-                <br />
-                <span>{subText}</span>
-                <br />
-                {state}
-              </p>
+              <div className="text_active">
+                <p>{text}</p>
+                <p>{subText}</p>
+                <p>{state}</p>
+              </div>
             </div>
           </div>
           <button className=" btn button-card">Desconectar</button>
@@ -49,9 +47,9 @@ const KioskoCard: React.FC<KioskoCardProps> = ({
           >
             <div className="container">
               <img className="icon" src={addKioskoIcon} alt="icon" />
-              <p className="text-add">
-                <span>{text}</span>
-              </p>
+              <div className="text-add">
+                <p>{text}</p>
+              </div>
             </div>
           </div>
           <button className=" btn button-card">Adjuntar</button>

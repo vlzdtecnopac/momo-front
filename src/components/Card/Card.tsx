@@ -27,13 +27,11 @@ const Card: React.FC<CardProps> = ({
           >
             <div className="container">
               <img className="icon" src={icon} alt="icon" />
-              <p className="text_active">
-                <span>{text}</span>
-                <br />
-                <span>{subText}</span>
-                <br />
-                {state}
-              </p>
+              <div className="text_active">
+                <p>{text}</p>
+                <p>{subText}</p>
+                <p>{state}</p>
+              </div>
             </div>
           </div>
     </Link>

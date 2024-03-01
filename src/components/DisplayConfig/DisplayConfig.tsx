@@ -32,6 +32,7 @@ function DisplayConfig() {
           <div className="col-8">
             <div className="column-option-text">
               <div className="radio-group">
+              <h3 className="text-small">A</h3>
                 <div className="opcion-radio-text">
                   <input type="radio" id="small-text" name="text-options" />
                   <label htmlFor="small-text"></label>
@@ -39,6 +40,7 @@ function DisplayConfig() {
                 <h3 className="text-small">Chico</h3>
               </div>
               <div className="radio-group">
+              <h3 className="text-medium">A</h3>
                 <div className="opcion-radio-text">
                   <input type="radio" id="medium-text" name="text-options" />
                   <label htmlFor="medium-text"></label>
@@ -46,6 +48,7 @@ function DisplayConfig() {
                 <h3 className="text-medium">Mediano</h3>
               </div>
               <div>
+                <h3 className="text-medium">A</h3>
                 <div className="opcion-radio-text">
                   <input type="radio" id="large-text" name="text-options" />
                   <label htmlFor="large-text"></label>

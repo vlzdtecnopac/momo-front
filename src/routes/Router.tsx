@@ -12,7 +12,8 @@ import FullScreenAlerts from "../pages/fullScreenAlerts/FullScreenAlerts";
 import DisplayConfig from "../components/DisplayConfig/DisplayConfig";
 import Nofound from "../pages/404/404";
 import ConnectedKioskos from "../components/ConnectedKioskos/ConnectedKioskos";
-import Congrats from "../components/Congrats/Congrats";
+import CongratsModal from "../components/Congrats/CongratsModal";
+import AlertModal from "../components/AlertModal/AlertModal";
 
 const BrowserRoutes = createBrowserRouter([
   {
@@ -61,7 +62,19 @@ const BrowserRoutes = createBrowserRouter([
   },
   {
     path: "/congrats",
-    element: <Congrats />,
+    element: <CongratsModal />,
+  },
+  {
+    path: "/alert",
+    element: (
+      <AlertModal
+        units="5"
+        product="
+        Leche deslactosada
+        santa clara 2 litros "
+        state="danger"
+      />
+    ),
   },
   {
     path: "*",

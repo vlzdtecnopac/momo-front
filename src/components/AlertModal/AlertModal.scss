@@ -1,0 +1,86 @@
+@import "../../index.scss";
+
+.alert-container {
+    width: 100%;
+    min-height: 100vh;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    justify-content: center;
+    align-items: center;
+    display: none;
+
+    &.is-open {
+        display: flex;
+    }
+
+    .alert-modal {
+        position: relative;
+        width: 500px;
+        height: 532px;
+        gap: 15px;
+        display: flex;
+        flex-direction: column;
+        border-radius: 16px;
+        justify-content: center;
+        align-items: center;
+        color: $white;
+
+
+
+        .alert-modal-title {
+            font-family: "Red Hat Display", "serif";
+            font-size: 24px;
+            color: $white !important;
+
+        }
+
+        .alert-modal-icon {
+            width: 100px;
+            height: 100px;
+            background-size: contain;
+            background-color: $white;
+            -webkit-mask-image: url(/src/assets/icons/alert.svg);
+            mask-image: url(/src/assets/icons/alert.svg);
+            mask-size: 100%;
+        }
+
+        .alert-modal-number,
+        .alert-modal-product {
+            font-weight: 700;
+            font-size: 26px;
+            text-align: center;
+            width: 254px;
+        }
+
+        .alert-modal-btn {
+            border-radius: 32px;
+            width: 200px;
+            height: 46px;
+            border: none;
+            font-weight: 700;
+            font-size: 20px;
+            cursor: pointer;
+        }
+    }
+}
+
+
+.bg-warning {
+    background-color: $pending;
+}
+
+.bg-danger {
+    background-color: $red;
+}
+
+.btn-warning {
+    color: $pending;
+}
+
+.btn-danger {
+    color: $red;
+
+}

@@ -5,6 +5,7 @@ import Layout from "../../includes/layout/Layout";
 import GeneralInfoForm from "../../components/GeneralInfoForm/GeneralInfoForm";
 import ConnectedKioskos from "../../components/ConnectedKioskos/ConnectedKioskos";
 import DisplayConfig from "../../components/DisplayConfig/DisplayConfig";
+
 function ConfigPage() {
   return (
     <Layout>

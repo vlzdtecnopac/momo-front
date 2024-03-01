@@ -1,12 +1,16 @@
 import "./DisplayOption.scss";
 import { v4 as uuidv4 } from "uuid";
+
+type ActionFunction = () => void;
+
 interface OptionProps {
   icon: any;
   text: string;
   check: boolean;
+  handleChange: ActionFunction
 }
 
-const DisplayOption: React.FC<OptionProps> = ({ icon, text, check }) => {
+const DisplayOption: React.FC<OptionProps> = ({ icon, text, check, handleChange }) => {
   const id_input = "id_" + uuidv4();
   return (
     <div className="display-option">
@@ -24,6 +28,7 @@ const DisplayOption: React.FC<OptionProps> = ({ icon, text, check }) => {
             id={id_input}
             name="check_process"
             checked={check}
+            onChange={handleChange}
           />
           
           <label htmlFor={id_input}></label>

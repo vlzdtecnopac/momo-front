@@ -13,9 +13,19 @@ const options = [
 
 function DisplayConfig() {
   const [stateText, setStateText] = useState<string>("medium");
+  const [stateColumn, setStateColumn] = useState<number>(0);
 
   const handleChangeOption = (option: string) => {
     setStateText(option);
+  }
+
+  const handleChangeColumOption = (option: number) => {
+    setStateColumn(option);
+  }
+
+  const saveChangeHandler = () => {
+    
+
   }
 
   return (
@@ -38,7 +48,8 @@ function DisplayConfig() {
                   key={option.text}
                   icon={option.icon}
                   text={option.text}
-                  check={index == 0 ? true : false}
+                  check={index == stateColumn ? true : false}
+                  handleChange={()=>handleChangeColumOption(index)}
                 />
               ))}
             </div>
@@ -79,7 +90,7 @@ function DisplayConfig() {
             <div className="column-save-options">
               <div className="btns">
                 <button className="btn back">Regresar</button>
-                <button className="btn save">Guardar cambios</button>
+                <button  onClick={()=>saveChangeHandler()} className="btn save">Guardar cambios</button>
               </div>
             </div>
           </div>

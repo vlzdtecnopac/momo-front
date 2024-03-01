@@ -28,7 +28,8 @@ function ConfigPage() {
         <div className="conten_tabs">
           <div className="bg_content">
               {/*<ConnectedKioskos/>*/}
-              <DisplayConfig/>
+              {/*<DisplayConfig/>*/}
+              <GeneralInfoForm/>
           </div>
         </div>
         </div>

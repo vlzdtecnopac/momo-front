@@ -1,5 +1,5 @@
 import coffee from "../../assets/coffee-momo.png";
-import "./Congrats.scss";
+import "./CongratsModal.scss";
 function CongratsModal() {
   return (
     <div className="congrats">

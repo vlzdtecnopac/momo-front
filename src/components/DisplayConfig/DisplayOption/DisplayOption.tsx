@@ -3,9 +3,10 @@ import { v4 as uuidv4 } from "uuid";
 interface OptionProps {
   icon: any;
   text: string;
+  check: boolean;
 }
 
-const DisplayOption: React.FC<OptionProps> = ({ icon, text }) => {
+const DisplayOption: React.FC<OptionProps> = ({ icon, text, check }) => {
   const id_input = "id_" + uuidv4();
   return (
     <div className="display-option">
@@ -22,7 +23,9 @@ const DisplayOption: React.FC<OptionProps> = ({ icon, text }) => {
             type="radio"
             id={id_input}
             name="check_process"
+            checked={check}
           />
+          
           <label htmlFor={id_input}></label>
         </div>
       </div>

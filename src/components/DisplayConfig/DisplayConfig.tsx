@@ -22,12 +22,13 @@ function DisplayConfig() {
         <div className="grid-2_xs-2_sm-2">
           <div className="col-4">
             <div className="display-config">
-              {options.map((option) => (
-                <DisplayOption
+              {options.map((option, index) => (
+                  <DisplayOption
                   key={option.text}
                   icon={option.icon}
                   text={option.text}
-                />
+                  check={index == 0 ? true : false}
+                />   
               ))}
             </div>
           </div>

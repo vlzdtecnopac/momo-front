@@ -3,10 +3,9 @@ import logo from "../../assets/logo.svg";
 import checkIcon from "../../assets/icons/check.svg";
 import { useEffect } from "react";
 function ConectedPage() {
-
-  useEffect(()=>{
-    setTimeout(()=> location.href="./dashboard", 2000)
-  },[])
+  useEffect(() => {
+    setTimeout(() => (location.href = "./dashboard"), 2000);
+  }, []);
 
   return (
     <div className="success_fully">

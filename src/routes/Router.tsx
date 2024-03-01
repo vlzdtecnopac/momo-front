@@ -10,10 +10,10 @@ import ConfigPage from "../pages/configPage/ConfigPage";
 import FullScreen from "../pages/fullScreen/FullScreen";
 import FullScreenAlerts from "../pages/fullScreenAlerts/FullScreenAlerts";
 import DisplayConfig from "../components/DisplayConfig/DisplayConfig";
-import Nofound from "../pages/404/404";
 import ConnectedKioskos from "../components/ConnectedKioskos/ConnectedKioskos";
 import CongratsModal from "../components/Congrats/CongratsModal";
 import AlertModal from "../components/AlertModal/AlertModal";
+import NotFound from "../pages/404/404";
 
 const BrowserRoutes = createBrowserRouter([
   {
@@ -78,7 +78,7 @@ const BrowserRoutes = createBrowserRouter([
   },
   {
     path: "*",
-    element: <Nofound />,
+    element: <NotFound />,
   },
 ]);
 

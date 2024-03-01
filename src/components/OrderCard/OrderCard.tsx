@@ -1,3 +1,4 @@
+import { v4 as uuidv4 } from 'uuid';
 import TakeoutBadge from "../TakeoutBadge/TakeoutBadge";
 import "./OrderCard.scss";
 
@@ -12,8 +13,7 @@ interface Props {
 }
 
 const OrderCard: React.FC<Props> = (props) => {
-  const randomNum = Math.random();
-  const id_input = "id_" + randomNum.toString(16).substr(2);
+  const id_input = "id_" + uuidv4();
   return (
     <div className={`state_${props.state}`}>
       <div className="order-card">

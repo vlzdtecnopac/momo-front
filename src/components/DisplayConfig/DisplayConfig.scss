@@ -1,5 +1,6 @@
 @import "../../index.scss";
 .config-display-section{
+    padding: 10px;
 .title {
     font-size: 18px;
     font-weight: 500;
@@ -153,7 +154,7 @@
     display: flex;
     justify-content: flex-end;
     align-items: end;
-    height: 75px;
+    height: 60px;
 }
 
 }

@@ -4,9 +4,9 @@ import checkIcon from "../../assets/icons/check.svg";
 import { useEffect } from "react";
 function ConectedPage() {
 
-  useEffect(()=>{
+  {/*useEffect(()=>{
     setTimeout(()=> location.href="./dashboard", 1500)
-  },[])
+  },[])*/}
 
   return (
     <div className="success_fully">

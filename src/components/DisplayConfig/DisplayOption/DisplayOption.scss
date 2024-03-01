@@ -12,6 +12,7 @@
     -o-border-radius: 20px;
     display: flex;
     justify-content: center;
+    margin: 0px 5px;
 
     .container {
         margin: 10px;
@@ -44,22 +45,22 @@
 
     }
 
-    .opcion-radio {
+    .opcion-radio-desing {
         display: inline-block;
         margin-right: 2px;
     }
 
-    .opcion-radio input {
+    .opcion-radio-desing input {
         margin-right: 5px;
     }
 
 
-    .opcion-radio input[type=radio] {
+    .opcion-radio-desing input[type=radio] {
         position: absolute;
         opacity: 0;
     }
 
-    .opcion-radio input[type=radio]+label:before {
+    .opcion-radio-desing input[type=radio]+label:before {
         content: '';
         background: #F4F5F8;
         border-radius: 100%;
@@ -79,13 +80,13 @@
         vertical-align: middle;
     }
 
-    .opcion-radio label {
+    .opcion-radio-desing label {
         display: inline-block;
         vertical-align: middle;
         line-height: 32px;
     }
 
-    .opcion-radio input[type=radio]:checked+label:before {
+    .opcion-radio-desing input[type=radio]:checked+label:before {
         content: '\2714';
         color: #fff;
         width: 30px;

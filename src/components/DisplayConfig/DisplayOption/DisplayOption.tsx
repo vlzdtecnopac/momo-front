@@ -17,7 +17,7 @@ const DisplayOption: React.FC<OptionProps> = ({ icon, text }) => {
         />
         <h3 className="option-text">{text}</h3>
         
-        <div className="opcion-radio">
+        <div className="opcion-radio-desing">
           <input
             type="radio"
             id={id_input}

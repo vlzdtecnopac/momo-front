@@ -1,16 +1,16 @@
 @import "../../index.scss";
 
+.kiosko-component{
+    .connected-title {
+        color: $orange;
+        padding: 10px;
+        margin: 0px;
+    }
 .connected {
     width: 100%;
     background: $white;
     overflow-y: auto;
-    height: 250px;
-
-
-    .connected-title {
-        color: $orange;
-        padding-bottom: 20px;
-    }
+    height: 212px;
 
     .connected-group {
         display: flex;
@@ -25,4 +25,5 @@
         }
     }
    
+}
 }

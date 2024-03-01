@@ -5,8 +5,9 @@ import "./ConnectedKioskos.scss";
 function ConnectedKioskos() {
   return (
     <>
+    <div className="kiosko-component">
+     <h2 className="connected-title">Kioskos conectados</h2>
       <div className="connected">
-        <h2 className="connected-title">Kioskos conectados</h2>
         <ul className="connected-group">
           <li className="content-center">
           <KioskoCard
@@ -82,6 +83,7 @@ function ConnectedKioskos() {
           />
           </li>
         </ul>
+      </div>
       </div>
     </>
   );

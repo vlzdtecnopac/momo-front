@@ -1,11 +1,17 @@
 import "./ConfigTabs.scss";
 import React, { useState } from "react";
 
-function ConfigTabs() {
+type ActionFunction = (valor: number) => void;
+
+interface ChildProps {
+  onClick: ActionFunction;
+}
+
+const  ConfigTabs: React.FC<ChildProps> = ({ onClick }) => {
   const [options, setOptions] = useState([
     {
       text: "General",
-      active: false,
+      active: true,
     },
     {
       text: "Display",
@@ -13,7 +19,7 @@ function ConfigTabs() {
     },
     {
       text: "Kioskos",
-      active: true,
+      active: false,
     },
   ]);
 
@@ -22,6 +28,7 @@ function ConfigTabs() {
       ...option,
       active: i == index ? true : false,
     }));
+    onClick?.(index);
     setOptions(updatedOptions);
   };
 

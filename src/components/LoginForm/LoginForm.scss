@@ -1,3 +1,4 @@
+@import "../../index.scss";
 .component-login-form {
     .form-group {
         position: relative;
@@ -61,7 +62,7 @@
                 height: 50px;
                 padding: 10px;
                 border-radius: 32px;
-                background: #FF6010;
+                background: $orange;
                 border: none;
                 color: #fff;
                 font-family: "Red Hat Display", sans-serif;
@@ -72,6 +73,11 @@
 
                 a {
                     color: #fff;
+                }
+
+                &:hover{
+                    background: #e35108;
+                    cursor: pointer;
                 }
             }
         }

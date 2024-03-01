@@ -1,5 +1,4 @@
 import "./DisplayConfig.scss";
-import { v4 as uuidv4 } from "uuid";
 import DisplayOption from "./DisplayOption/DisplayOption";
 import splitIcon from "../../assets/icons/split.svg";
 import stackedIcon from "../../assets/icons/stacked.svg";
@@ -12,7 +11,7 @@ const options = [
 ];
 
 function DisplayConfig() {
-  const id_input = "id_" + uuidv4();
+ 
   return (
     <>
     <div className="config-display-section">
@@ -31,21 +30,24 @@ function DisplayConfig() {
             ))}
             </div>
           </div>
-          <div className="col-6">
-            <div>
+          <div className="col-8-center">
+            <div className="column-option-text">
               <div>
-                <div className="opcion-radio">
-                  <input type="radio" id={id_input} name="check_text" />
+                <div className="opcion-radio-text">
+                  <input type="radio" id="small-text" name="check_text" />
+                  <label htmlFor="small-text" ></label>
                 </div>
               </div>
               <div>
-                <div className="opcion-radio">
-                  <input type="radio" id={id_input} name="check_text" />
+                <div className="opcion-radio-text">
+                  <input type="radio" id="medium-text" name="check_text" />
+                  <label htmlFor="medium-text" ></label>
                 </div>
               </div>
               <div>
-                <div className="opcion-radio">
-                  <input type="radio" id={id_input} name="check_text" />
+                <div className="opcion-radio-text">
+                  <input type="radio" id="large-text" name="check_text" />
+                  <label htmlFor="large-text" ></label>
                 </div>
               </div>
             </div>

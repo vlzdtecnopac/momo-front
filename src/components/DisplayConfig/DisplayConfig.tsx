@@ -32,13 +32,13 @@ function DisplayConfig() {
           </div>
           <div className="col-8-center">
             <div className="column-option-text">
-              <div>
+              <div className="radio-group">
                 <div className="opcion-radio-text">
                   <input type="radio" id="small-text" name="check_text" />
                   <label htmlFor="small-text" ></label>
                 </div>
               </div>
-              <div>
+              <div className="radio-group">
                 <div className="opcion-radio-text">
                   <input type="radio" id="medium-text" name="check_text" />
                   <label htmlFor="medium-text" ></label>

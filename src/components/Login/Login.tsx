@@ -9,15 +9,14 @@ interface LoginProps {
   img: string;
 }
 
-const Login: React.FC<LoginProps> = (props) => {
-  const { img } = props;
+const Login: React.FC<LoginProps> = () => {
   const { socket } = useContext(SocketContext);
 
-  useEffect(()=>{
-    socket?.on("mensaje-welcome", (data: string)=>{
+  useEffect(() => {
+    socket?.on("mensaje-welcome", (data: string) => {
       console.log(data);
-    })
-  },[socket])
+    });
+  }, [socket]);
 
   return (
     <div className="component-login">

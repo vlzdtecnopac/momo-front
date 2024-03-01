@@ -12,6 +12,7 @@ import FullScreenAlerts from "../pages/fullScreenAlerts/FullScreenAlerts";
 import DisplayConfig from "../components/DisplayConfig/DisplayConfig";
 import Nofound from "../pages/404/404";
 import ConnectedKioskos from "../components/ConnectedKioskos/ConnectedKioskos";
+import Congrats from "../components/Congrats/Congrats";
 
 const BrowserRoutes = createBrowserRouter([
   {
@@ -58,7 +59,10 @@ const BrowserRoutes = createBrowserRouter([
     path: "/display",
     element: <DisplayConfig />,
   },
-  
+  {
+    path: "/congrats",
+    element: <Congrats />,
+  },
   {
     path: "*",
     element: <Nofound />,

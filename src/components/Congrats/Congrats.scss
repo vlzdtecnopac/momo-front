@@ -1,0 +1,45 @@
+.congrats {
+    width: 759px;
+    height: 584px;
+    gap: 21px;
+    display: flex;
+    flex-direction: column;
+    background: #D5EAFB;
+    border-radius: 16px;
+
+    .congrats-container {
+        display: flex;
+        flex-direction: column;
+        margin-top: 142px;
+        gap: 21px;
+
+
+
+
+        .congrats-img {
+            width: 168px;
+            height: 182px;
+            margin: 0 auto;
+
+        }
+
+        .congrat {
+            color: #000;
+            margin: 0 auto;
+
+        }
+
+        .congrat-text {
+            margin: 0 auto;
+            width: 224px;
+            text-align: center;
+            height: 42px;
+            font-weight: 500;
+            font-size: 16px;
+
+        }
+
+
+
+    }
+}

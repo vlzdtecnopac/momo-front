@@ -44,7 +44,7 @@
                 font-size: 22px;
                 text-align: center;
                 margin: 0;
-                color:$cream
+                color: $cream
             }
         }
     }
@@ -81,5 +81,33 @@
                 grid-template-columns: repeat(1, minmax(100px, 1fr));
             }
         }
+    }
+
+
+    //Options Typography
+
+    .tex-small {
+        .p-1 {}
+
+        .p-2 {}
+
+        .p-3 {}
+    }
+
+    .medimum {
+        .p-1 {}
+
+        .p-2 {}
+
+        .p-3 {}
+    }
+
+    .large {
+        .p-1 {}
+
+        .p-2 {}
+
+        .p-3 {}
+
     }
 }

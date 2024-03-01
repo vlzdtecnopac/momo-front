@@ -152,6 +152,10 @@
     }
 
     .opcion-radio input[type=radio]:checked+label:before {
+        content: '\2714';
+        color: #fff;
+        width: 30px;
+        height: 30px;
         background-color: $dark-blue;
         box-shadow: inset 0 0 0 4px #F4F5F8;
     }
@@ -164,6 +168,10 @@
     }
 
     .opcion-radio input[type=radio]:checked+label:before {
+        content: '\2714';
+        color: #fff;
+        width: 30px;
+        height: 30px;
         background-color: $completed;
         box-shadow: inset 0 0 0 4px #F4F5F8;
     }
@@ -176,6 +184,10 @@
     }
 
     .opcion-radio input[type=radio]:checked+label:before {
+        content: '\2714';
+        color: #fff;
+        width: 30px;
+        height: 30px;
         background-color: $pending;
         box-shadow: inset 0 0 0 4px #F4F5F8;
     }

@@ -9,9 +9,7 @@ import { useState } from "react";
 
 function ConfigPage() {
   const [postionTab, setPositionTab] = useState<number>(0);
-
   const handleClickTab = (resp: number) => setPositionTab(resp);
-
   return (
     <Layout>
       <div className="config_page">

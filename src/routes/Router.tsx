@@ -57,14 +57,6 @@ const BrowserRoutes = createBrowserRouter([
     element: <FullScreenAlerts />,
   },
   {
-    path: "/display",
-    element: <DisplayConfig />,
-  },
-  {
-    path: "/congrats",
-    element: <CongratsModal />,
-  },
-  {
     path: "/alert",
     element: (
       <AlertModal

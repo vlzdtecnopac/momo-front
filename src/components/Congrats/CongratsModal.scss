@@ -1,11 +1,25 @@
+.congrats-success{
+    .shadow-effect{
+        position: fixed;
+        background: #4d4d4d6b;
+        height: 100vh;
+        width: 100%;
+        z-index: 88;
+        left: 0px;
+        top: 0px;
+    }
 .congrats {
-    width: 759px;
-    height: 584px;
-    gap: 21px;
-    display: flex;
-    flex-direction: column;
+    position: fixed;
+    width: 631px;
+    height: 550px;
     background: #D5EAFB;
     border-radius: 16px;
+    margin: auto;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    z-index: 999;
 
     .congrats-container {
         display: flex;
@@ -36,7 +50,6 @@
 
         }
 
-
-
     }
+}
 }

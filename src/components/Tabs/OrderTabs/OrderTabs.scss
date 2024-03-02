@@ -52,6 +52,9 @@ $content-selector: "~ .content > section";
 
 .content-tab{
     padding: 10px;
+    padding: 10px;
+    overflow-y: auto;
+    height: 470px;
 }
 
 .order-tabs {

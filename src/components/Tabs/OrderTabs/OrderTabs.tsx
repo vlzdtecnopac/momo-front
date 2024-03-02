@@ -32,8 +32,6 @@ function OrderTabs() {
     setOptions(updatedOptions);
   };
 
-
-
   return (
     <>
       <div className="order-tabs">

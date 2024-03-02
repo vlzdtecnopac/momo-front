@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import OrderCard, { State } from "../../components/OrderCard/OrderCard";
 import OrderCardTwo from "../../components/OrderCard/OrderCard copy";
 import { useDesignStore } from "../../store/design.store";
+import "./FullScreen.scss";
 
 export default function FullScreen() {
   const {typeTypography, selectTypography, typeColumns, selectTypeColumn} =  useDesignStore();

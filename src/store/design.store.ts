@@ -7,7 +7,7 @@ interface DesignStoreInterface{
     selectTypography: (option: string) => void
 }
 
-export const useDesignStore = create<DesignStoreInterface>((set, get) => ({
+export const useDesignStore = create<DesignStoreInterface>((set) => ({
     typeTypography: "medium",
     typeColumns: 0,
     selectTypeColumn: (option: number) => set((state) => ({...state, typeColumns: option})),

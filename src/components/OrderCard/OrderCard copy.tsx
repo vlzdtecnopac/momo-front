@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState}  from "react";
 import { v4 as uuidv4 } from "uuid";
 import TakeoutBadge from "../TakeoutBadge/TakeoutBadge";
 import "./OrderCard.scss";
@@ -15,6 +15,39 @@ interface Props {
 
 const OrderCardTwo: React.FC<Props> = (props) => {
   const id_input = "id_" + uuidv4();
+
+  const [globalID, setGlobalID] = useState<any>(null);
+  const [timeOrder, setTimeOrder] =  useState<string>("00:00:00");
+
+  function formatoDosDigitos(numero: number) {
+    return numero < 10 ? "0" + numero : "" + numero;
+  }
+
+  const tick = () => {
+    const now = new Date();
+    const h = now.getHours();
+    const m = now.getMinutes();
+    const s = now.getSeconds();
+
+
+    setTimeOrder(`${h} : ${formatoDosDigitos(m)} : ${formatoDosDigitos(s)}`);
+  
+    // Llamada recursiva para el próximo frame
+    setGlobalID(requestAnimationFrame(tick));
+  };
+  
+
+
+  const startOrder = () => {
+     // Inicia el ciclo de animación
+     setGlobalID(requestAnimationFrame(tick));
+  }
+
+  const cancelOrder = () => {
+    cancelAnimationFrame(globalID);
+    setGlobalID(null);
+  }
+
   return (
     <div className={`state_${props.state}`}>
       <div className="order-card">
@@ -24,7 +57,7 @@ const OrderCardTwo: React.FC<Props> = (props) => {
             <TakeoutBadge />
           </div>
           <div className="right">
-            <span>00:00:00</span>
+            <span>{timeOrder}</span>
             <p>ID #12356</p>
           </div>
         </div>
@@ -38,7 +71,7 @@ const OrderCardTwo: React.FC<Props> = (props) => {
               <div className="col-3 center-col">
                 <form>
                   <span className="opcion-radio">
-                    <input type="radio" id={id_input} name="check_process" />
+                    <input type="radio" id={id_input} onChange={()=>startOrder()} name="check_process" />
                     <label htmlFor={id_input}></label>
                   </span>
                 </form>
@@ -63,7 +96,7 @@ const OrderCardTwo: React.FC<Props> = (props) => {
               <div className="col-3 center-col">
                 <form>
                   <span className="opcion-radio">
-                    <input type="radio" id={id_input} name="check_process" />
+                    <input type="radio"  id={id_input} onChange={()=>startOrder()}  name="check_process" />
                     <label htmlFor={id_input}></label>
                   </span>
                 </form>
@@ -80,7 +113,7 @@ const OrderCardTwo: React.FC<Props> = (props) => {
           </section>
           <hr />
           <div className="button">
-          <button className="order-button">Completar Orden</button>
+          <button onClick={()=>cancelOrder()} className="order-button">Completar Orden</button>
           </div>
         </div>
       </div>

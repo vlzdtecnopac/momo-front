@@ -21,7 +21,7 @@ interface DesignStoreInterface{
 }
 
 export const useDesignStore = create<DesignStoreInterface>((set) => ({
-    typeTypography: TypographyEnum.small,
+    typeTypography: TypographyEnum.medium,
     typeColumns: TypeColumnsEnum.clasica,
     selectTypeColumn: (option: TypeColumnsEnum) => set((state) => ({...state, typeColumns: option})),
     selectTypography: (option: TypographyEnum) => set((state) => ({...state, typeTypography: option}))

@@ -1,15 +1,22 @@
 import "./ConfigPage.scss";
+import { useState } from "react";
+import { motion } from "framer-motion";
 import photo from "../../assets/login-img.jpg";
 import ConfigTabs from "../../components/Tabs/ConfigTabs/ConfigTabs";
 import Layout from "../../includes/layout/Layout";
 import GeneralInfoForm from "../../components/GeneralInfoForm/GeneralInfoForm";
 import ConnectedKioskos from "../../components/ConnectedKioskos/ConnectedKioskos";
 import DisplayConfig from "../../components/DisplayConfig/DisplayConfig";
-import { useState } from "react";
 
 function ConfigPage() {
   const [postionTab, setPositionTab] = useState<number>(0);
   const handleClickTab = (resp: number) => setPositionTab(resp);
+
+  const fadeInOutVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 },
+  };
+
   return (
     <Layout>
       <div className="config_page">
@@ -31,16 +38,24 @@ function ConfigPage() {
           </div>
           <div className="conten_tabs">
             <div className="bg_content">
-              {(() => {
-                switch (postionTab) {
-                  case 0:
-                    return <GeneralInfoForm />;
-                  case 1:
-                    return <DisplayConfig />;
-                  default:
-                    return <ConnectedKioskos />;
-                }
-              })()}
+              <motion.div
+                key={postionTab}
+                initial="hidden"
+                animate="visible"
+                variants={fadeInOutVariants}
+                transition={{ duration: 1 }} // Adjust the duration as needed
+              >
+                {(() => {
+                  switch (postionTab) {
+                    case 0:
+                      return <GeneralInfoForm />;
+                    case 1:
+                      return <DisplayConfig />;
+                    default:
+                      return <ConnectedKioskos />;
+                  }
+                })()}
+              </motion.div>
             </div>
           </div>
         </div>

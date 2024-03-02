@@ -25,7 +25,7 @@ function DisplayConfig() {
   const saveChangeHandler = () => {
     setTimeout(() => {
       setSucess(false);
-    }, 2500);
+    }, 3000);
     setSucess(true);
   };
 

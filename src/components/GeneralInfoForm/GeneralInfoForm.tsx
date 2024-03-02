@@ -2,7 +2,7 @@ import "./GeneralInfoForm.scss";
 function GeneralInfoForm() {
   return (
     <>
-    <h2 className="info-general-title">Infromación General</h2>
+    <h2 className="info-general-title">Información General</h2>
       <form className="info-form" action="" method="POST">
         <div className="grid-3_xs-2_sm-2">
           <div className="col-5">

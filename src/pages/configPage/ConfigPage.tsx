@@ -1,4 +1,3 @@
-import "./ConfigPage.scss";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import photo from "../../assets/login-img.jpg";
@@ -7,6 +6,8 @@ import Layout from "../../includes/layout/Layout";
 import GeneralInfoForm from "../../components/GeneralInfoForm/GeneralInfoForm";
 import ConnectedKioskos from "../../components/ConnectedKioskos/ConnectedKioskos";
 import DisplayConfig from "../../components/DisplayConfig/DisplayConfig";
+import "./../dashboard/DashboardPage.scss";
+import "./ConfigPage.scss";
 
 function ConfigPage() {
   const [postionTab, setPositionTab] = useState<number>(0);
@@ -27,10 +28,10 @@ function ConfigPage() {
           </div>
           <div className="header_info">
             <div className="grid-2_xs-1">
-              <div className="col-2">
+              <div className="col-2_xs-6_sm-4">
                 <img className="profile-pic" src={photo} alt="photo" />
               </div>
-              <div className="col-10">
+              <div className="col-10_sm-5">
                 <h2 className="store">Tienda 1</h2>
                 <p className="address">Dirección tienda</p>
               </div>

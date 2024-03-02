@@ -1,5 +1,6 @@
 import InventoryTable from "../../components/Table/InventoryTable";
 import Layout from "../../includes/layout/Layout";
+import "./../dashboard/DashboardPage.scss";
 
 function InventoryPage() {
   return (

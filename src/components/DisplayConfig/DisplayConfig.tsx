@@ -38,7 +38,7 @@ function DisplayConfig() {
       </div>
       <div className="config-display-section">
         <h2 className="title">Configuración display</h2>
-        <div className="grid-3_xs-1">
+        <div className="grid-3_xs-2">
           <div className="col">
             <p className="sub-title">Visualización</p>
           </div>
@@ -46,8 +46,8 @@ function DisplayConfig() {
             <p className="sub-title">Tamaño de texto</p>
           </div>
         </div>
-        <div className="grid-2_xs-2_sm-2">
-          <div className="col-4">
+        <div className="grid-2_xs-1_sm-2">
+          <div className="col-4_xs-5_sm-5">
             <div className="display-config">
               {options.map((option, index) => (
                 <DisplayOption
@@ -60,7 +60,7 @@ function DisplayConfig() {
               ))}
             </div>
           </div>
-          <div className="col-8">
+          <div className="col-8_xs-7_sm-7">
             <div className="column-option-text">
               <section>
                 <h3 className="text-title small">A</h3>

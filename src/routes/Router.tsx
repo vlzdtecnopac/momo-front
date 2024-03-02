@@ -1,77 +1,38 @@
-import LoginPage from "../pages/login/LoginPage";
-import WelcomePage from "../pages/welcome/WelcomePage";
-import ConectedPage from "../pages/conected/ConectedPage";
-import DashboardPage from "../pages/dashboard/DashboardPage";
-import { createBrowserRouter } from "react-router-dom";
+import React, { lazy, Suspense } from 'react';
+import { createBrowserRouter } from 'react-router-dom';
 
-import InventoryPage from "../pages/inventoryPage/InventoryPage";
-import AlertsPage from "../pages/alertsPage/AlertsPage";
-import ConfigPage from "../pages/configPage/ConfigPage";
-import FullScreen from "../pages/fullScreen/FullScreen";
-import FullScreenAlerts from "../pages/fullScreenAlerts/FullScreenAlerts";
-import DisplayConfig from "../components/DisplayConfig/DisplayConfig";
-import ConnectedKioskos from "../components/ConnectedKioskos/ConnectedKioskos";
-import CongratsModal from "../components/Congrats/CongratsModal";
-import AlertModal from "../components/AlertModal/AlertModal";
-import NotFound from "../pages/404/404";
+const LazyLoginPage = lazy(() => import('../pages/login/LoginPage'));
+const LazyWelcomePage = lazy(() => import('../pages/welcome/WelcomePage'));
+const LazyConectedPage = lazy(() => import('../pages/conected/ConectedPage'));
+const LazyDashboardPage = lazy(() => import('../pages/dashboard/DashboardPage'));
+const LazyInventoryPage = lazy(() => import('../pages/inventoryPage/InventoryPage'));
+const LazyAlertsPage = lazy(() => import('../pages/alertsPage/AlertsPage'));
+const LazyConfigPage = lazy(() => import('../pages/configPage/ConfigPage'));
+const LazyFullScreen = lazy(() => import('../pages/fullScreen/FullScreen'));
+const LazyFullScreenAlerts = lazy(() => import('../pages/fullScreenAlerts/FullScreenAlerts'));
+const LazyAlertModal = lazy(() => import('../components/AlertModal/AlertModal'));
+const LazyNotFound = lazy(() => import('../pages/404/404'));
 
 const BrowserRoutes = createBrowserRouter([
-  {
-    path: "/",
-    element: <LoginPage />,
-  },
-  {
-    path: "/login",
-    element: <LoginPage />,
-  },
-  {
-    path: "/welcome",
-    element: <WelcomePage />,
-  },
-  {
-    path: "/success",
-    element: <ConectedPage />,
-  },
-  {
-    path: "/dashboard",
-    element: <DashboardPage />,
-  },
-  {
-    path: "/config-page",
-    element: <ConfigPage />,
-  },
-  {
-    path: "/alerts-page",
-    element: <AlertsPage />,
-  },
-  {
-    path: "/inventory-page",
-    element: <InventoryPage />,
-  },
-  {
-    path: "/full-screen",
-    element: <FullScreen />,
-  },
-  {
-    path: "/full-alerts",
-    element: <FullScreenAlerts />,
-  },
+  { path: "/", element: <Suspense fallback={<div>Loading...</div>}><LazyLoginPage /></Suspense> },
+  { path: "/login", element: <Suspense fallback={<div>Loading...</div>}><LazyLoginPage /></Suspense> },
+  { path: "/welcome", element: <Suspense fallback={<div>Loading...</div>}><LazyWelcomePage /></Suspense> },
+  { path: "/success", element: <Suspense fallback={<div>Loading...</div>}><LazyConectedPage /></Suspense> },
+  { path: "/dashboard", element: <Suspense fallback={<div>Loading...</div>}><LazyDashboardPage /></Suspense> },
+  { path: "/config-page", element: <Suspense fallback={<div>Loading...</div>}><LazyConfigPage /></Suspense> },
+  { path: "/alerts-page", element: <Suspense fallback={<div>Loading...</div>}><LazyAlertsPage /></Suspense> },
+  { path: "/inventory-page", element: <Suspense fallback={<div>Loading...</div>}><LazyInventoryPage /></Suspense> },
+  { path: "/full-screen", element: <Suspense fallback={<div>Loading...</div>}><LazyFullScreen /></Suspense> },
+  { path: "/full-alerts", element: <Suspense fallback={<div>Loading...</div>}><LazyFullScreenAlerts /></Suspense> },
   {
     path: "/alert",
     element: (
-      <AlertModal
-        units="5"
-        product="
-        Leche deslactosada
-        santa clara 2 litros "
-        state="danger"
-      />
+      <Suspense fallback={<div>Loading...</div>}>
+        <LazyAlertModal units="5" product="Leche deslactosada santa clara 2 litros" state="danger" />
+      </Suspense>
     ),
   },
-  {
-    path: "*",
-    element: <NotFound />,
-  },
+  { path: "*", element: <Suspense fallback={<div>Loading...</div>}><LazyNotFound /></Suspense> },
 ]);
 
 export default BrowserRoutes;

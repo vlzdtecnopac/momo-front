@@ -50,10 +50,16 @@ $content-selector: "~ .content > section";
     }
 }
 
+.content-tab{
+    padding: 10px;
+}
+
 .order-tabs {
     background: white;
     border-radius: 16px;
     padding: 0px 10px;
+
+  
 
     ul {
         list-style-type: none;

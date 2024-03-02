@@ -1,5 +1,5 @@
-import "./ConfigTabs.scss";
 import React, { useState } from "react";
+import "./ConfigTabs.scss";
 
 type ActionFunction = (valor: number) => void;
 

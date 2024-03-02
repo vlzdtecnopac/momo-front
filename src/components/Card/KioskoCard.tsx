@@ -2,6 +2,8 @@ import React from "react";
 
 import kioskoIcon from "../../assets/icons/kiosko.svg";
 import addKioskoIcon from "../../assets/icons/green-kiosko.svg";
+import "./Card.scss";
+
 
 interface KioskoCardProps {
   connect: boolean;

@@ -1,8 +1,10 @@
-import "./OrderTabs.scss";
+
 import React, { useState } from "react";
 import OrderCard, { State } from "../../OrderCard/OrderCard";
 import OrderCardTwo from "../../OrderCard/OrderCard copy";
 import { useDesignStore } from "../../../store/design.store";
+
+import "./OrderTabs.scss";
 
 function OrderTabs() {
   const {typeTypography, selectTypography, typeColumns, selectTypeColumn} =  useDesignStore();

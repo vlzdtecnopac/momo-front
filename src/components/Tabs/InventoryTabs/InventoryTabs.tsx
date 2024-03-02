@@ -1,5 +1,6 @@
-import "./InventoryTabs.scss";
 import React, { useState } from "react";
+import "./InventoryTabs.scss";
+
 
 function ConfigTabs() {
   const [options, setOptions] = useState([

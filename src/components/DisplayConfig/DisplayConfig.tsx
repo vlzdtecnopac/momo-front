@@ -7,7 +7,7 @@ import splitIcon from "../../assets/icons/split.svg";
 import stackedIcon from "../../assets/icons/stacked.svg";
 import clasicIcon from "../../assets/icons/clasic.svg";
 import CongratsModal from "../../components/Congrats/CongratsModal";
-import {useDesignStore} from "./../../store/design.store";
+import {TypographyEnum, useDesignStore} from "./../../store/design.store";
 
 const options = [
   { icon: splitIcon, text: "Split" },
@@ -65,7 +65,7 @@ function DisplayConfig() {
                 <h3 className="text-title small">A</h3>
                 <div className="radio-group">
                   <div className="opcion-radio-text">
-                    <input type="radio" id="small-text" onChange={()=>selectTypography("small")} checked={typeTypography ==  "small" ?  true : false} name="text-options" />
+                    <input type="radio" id="small-text" onChange={()=>selectTypography(TypographyEnum.small)} checked={typeTypography ==  TypographyEnum.small ?  true : false} name="text-options" />
                     <label htmlFor="small-text"></label>
                   </div>
                   <h3 className="text-small">Chico</h3>
@@ -75,7 +75,7 @@ function DisplayConfig() {
                 <h3 className="text-title medium">A</h3>
                 <div className="radio-group">
                   <div className="opcion-radio-text">
-                    <input type="radio" id="medium-text"  onChange={()=>selectTypography("medium")} checked={typeTypography ==  "medium" ?  true : false}  name="text-options" />
+                    <input type="radio" id="medium-text"  onChange={()=>selectTypography(TypographyEnum.medium)} checked={typeTypography ==  TypographyEnum.medium ?  true : false}  name="text-options" />
                     <label htmlFor="medium-text"></label>
                   </div>
                   <h3 className="text-medium">Mediano</h3>
@@ -85,7 +85,7 @@ function DisplayConfig() {
                 <h3 className="text-title large">A</h3>
                 <div>
                   <div className="opcion-radio-text">
-                    <input type="radio" id="large-text"  onChange={()=>selectTypography("large")} checked={typeTypography ==  "large" ?  true : false}  name="text-options" />
+                    <input type="radio" id="large-text"  onChange={()=>selectTypography(TypographyEnum.large)} checked={typeTypography ==  TypographyEnum.large ?  true : false}  name="text-options" />
                     <label htmlFor="large-text"></label>
                   </div>
                   <h3 className="text-large">Grande</h3>

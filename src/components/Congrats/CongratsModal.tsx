@@ -1,10 +1,27 @@
+import React from 'react';
+import { motion } from "framer-motion";
 import coffee from "../../assets/coffee-momo.png";
 import "./CongratsModal.scss";
-function CongratsModal() {
+
+interface CongratsModalProps {
+  actionKey: React.Key;
+}
+
+const CongratsModal: React.FC<CongratsModalProps>  = ({ actionKey }) =>{
   return (
     <div className="congrats-success">
       <div className="shadow-effect"></div>
-      <div className="congrats">
+      <motion.div
+        key={actionKey}
+        className="congrats"
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{
+          duration: 0.5,
+          delay: 0.5,
+          ease: [0, 0.55, 0.2, 1.01],
+        }}
+      >
         <div className="congrats-container">
           <img className="congrats-img" src={coffee} alt="momo-coffee" />
           <h2 className="congrat">¡Felicidades!</h2>
@@ -12,7 +29,7 @@ function CongratsModal() {
             Tus cambios se han guardado exitosamente.
           </p>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }

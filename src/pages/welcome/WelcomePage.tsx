@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import logo from "../../assets/logo.svg";
 import tabletIcon from "../../assets/icons/tablet.svg";
 import kioskIcon from "../../assets/icons/kiosko.svg";
@@ -8,12 +9,22 @@ function WelcomePage() {
   return (
     <div className="component-welcome">
       <div className="logo-container">
-        {" "}
-        <img
-          className="logo"
-          src={logo}
-          alt="momo-logo"
-        />
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{
+            duration: 0.3,
+            ease: [0, 0.71, 0.2, 1.01],
+            scale: {
+              type: "spring",
+              damping: 5,
+              stiffness: 100,
+              restDelta: 0.001,
+            },
+          }}
+        >
+          <img className="logo" src={logo} alt="momo-logo" />
+        </motion.div>
       </div>
       <div className="text-container">
         <div className="text">
@@ -30,8 +41,7 @@ function WelcomePage() {
           <div className="store-card">
             <Card
               icon={tabletIcon}
-              text="KDS
-      "
+              text="KDS"
               subText="Tienda 1"
               state="Conectado"
             />

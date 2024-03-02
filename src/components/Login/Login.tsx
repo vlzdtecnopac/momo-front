@@ -1,4 +1,6 @@
 import React, { useContext, useEffect } from "react";
+import { motion } from "framer-motion";
+
 import "./Login.scss";
 import LoginForm from "../LoginForm/LoginForm";
 import imgLogin from "../../assets/login-img.jpg";
@@ -30,11 +32,20 @@ const Login: React.FC<LoginProps> = () => {
       <div className="column-right">
         <div className="center-container">
           <div className="container">
-            <img
+          <motion.div
+      className="box"
+      initial={{ opacity: 0, scale: 0.5 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{
+        duration: 0.8,
+        delay: 0.5,
+        ease: [0, 0.71, 0.2, 1.01]
+      }}
+    ><img
               className="logo-business"
               src={logoMomo}
               alt="logo-momo"
-            />
+            /></motion.div>
             <div className="text">
               <h2>Iniciar sesión en KDS</h2>
               <p>Digita tu correo electrónico y contraseña</p>

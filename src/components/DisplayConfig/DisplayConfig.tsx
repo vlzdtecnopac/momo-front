@@ -29,7 +29,12 @@ function DisplayConfig() {
     setStateColumn(option);
   }
 
-  const saveChangeHandler = () => setSucess(true);
+  const saveChangeHandler = () => {
+    setTimeout(()=>{
+      setSucess(false);
+    }, 2500)
+    setSucess(true)
+  };
 
   const handleBackNavegation = () => navigate("/dashboard");
   

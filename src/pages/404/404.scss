@@ -32,15 +32,11 @@
             }
 
             .wrong {
-                width: 100px;
-                height: 100px;
-                background-size: contain;
-                background-color: $white;
-                -webkit-mask-image: url(/src/assets/icons/alert.svg);
-                mask-image: url(/src/assets/icons/alert.svg);
-                mask-size: 100%;
+                width: 228px;
+                height: 218px;
+
                 position: relative;
-                left: 160px;
+                left: 100px;
                 margin: 0 auto;
             }
 

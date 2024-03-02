@@ -1,5 +1,5 @@
 import logo from "../../assets/logo.svg";
-import alertIcon from "../../assets/icons/question-info.svg";
+import coffee from "../../assets/coffee-momo.png";
 import "./404.scss";
 function NotFound() {
   return (
@@ -13,7 +13,7 @@ function NotFound() {
           />
           <h2 className="fail">¡Lo sentimos!</h2>
           <img
-            src={alertIcon}
+            src={coffee}
             alt="alert"
             className="wrong"
           />

@@ -1,4 +1,5 @@
 import React, {useState}  from "react";
+import { motion } from "framer-motion";
 import { v4 as uuidv4 } from "uuid";
 import TakeoutBadge from "../TakeoutBadge/TakeoutBadge";
 import "./OrderCard.scss";
@@ -18,6 +19,7 @@ const OrderCardTwo: React.FC<Props> = (props) => {
 
   const [globalID, setGlobalID] = useState<any>(null);
   const [timeOrder, setTimeOrder] =  useState<string>("00:00:00");
+  const [start, setStart] =  useState<boolean>(false);
 
   function formatoDosDigitos(numero: number) {
     return numero < 10 ? "0" + numero : "" + numero;
@@ -41,10 +43,12 @@ const OrderCardTwo: React.FC<Props> = (props) => {
   const startOrder = () => {
      // Inicia el ciclo de animación
      setGlobalID(requestAnimationFrame(tick));
+     setStart(true);
   }
 
   const cancelOrder = () => {
     cancelAnimationFrame(globalID);
+    setStart(false);
     setGlobalID(null);
   }
 
@@ -57,7 +61,22 @@ const OrderCardTwo: React.FC<Props> = (props) => {
             <TakeoutBadge />
           </div>
           <div className="right">
-            <span>{timeOrder}</span>
+          <motion.span
+          key={Number(start)}
+      className="box"
+      initial={{ opacity: 0, scale: 0.5 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{
+        duration: 0.3,
+        ease: [0, 0.71, 0.2, 1.01],
+        scale: {
+          type: "spring",
+          damping: 5,
+          stiffness: 100,
+          restDelta: 0.001
+        }
+      }}
+    >{timeOrder}</motion.span>
             <p>ID #12356</p>
           </div>
         </div>

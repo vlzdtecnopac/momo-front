@@ -46,6 +46,7 @@
             &.back {
                 background: #EDEDED;
                 color: #777672;
+
                 &:hover {
                     background: rgb(211, 211, 211);
                 }
@@ -176,6 +177,7 @@
         justify-content: flex-end;
         align-items: end;
         height: 60px;
+        margin-right: 100px;
     }
 
 }

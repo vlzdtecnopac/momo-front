@@ -6,6 +6,7 @@ import DisplayOption from "./DisplayOption/DisplayOption";
 import splitIcon from "../../assets/icons/split.svg";
 import stackedIcon from "../../assets/icons/stacked.svg";
 import clasicIcon from "../../assets/icons/clasic.svg";
+import CongratsModal from "../../components/Congrats/CongratsModal";
 
 
 const options = [
@@ -18,6 +19,7 @@ function DisplayConfig() {
   const navigate = useNavigate();
   const [stateText, setStateText] = useState<string>("medium");
   const [stateColumn, setStateColumn] = useState<number>(0);
+  const [success, setSucess] =  useState(false);
 
   const handleChangeOption = (option: string) => {
     setStateText(option);
@@ -27,17 +29,15 @@ function DisplayConfig() {
     setStateColumn(option);
   }
 
-  const saveChangeHandler = () => {
-    
+  const saveChangeHandler = () => setSucess(true);
 
-  }
-
-  const handleBackNavegation = () => {
-    navigate("/dashboard")
-  }
-
+  const handleBackNavegation = () => navigate("/dashboard");
+  
   return (
     <>
+       <div style={{display: success? "block" :"none"}}>
+      <CongratsModal/>
+      </div>
       <div className="config-display-section">
         <h2 className="title">Configuración display</h2>
         <div className="grid-3_xs-1">

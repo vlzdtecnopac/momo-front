@@ -10,6 +10,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        padding: 20px;
 
         .notfound-center {
             width: 430px;
@@ -17,7 +18,7 @@
             .notfound-logo {
                 width: 300px;
                 display: block;
-                margin: 30px auto;
+                margin: 40px auto;
             }
 
             .fail {

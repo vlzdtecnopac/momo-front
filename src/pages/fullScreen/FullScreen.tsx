@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import OrderCard, { State } from "../../components/OrderCard/OrderCard";
 import OrderCardTwo from "../../components/OrderCard/OrderCard copy";
-import "./FullScreen.scss";
 
 export default function FullScreen() {
   const navigate = useNavigate();
@@ -22,7 +21,7 @@ export default function FullScreen() {
 
   return (
     <>
-      <div className="columns-full-screen">
+      <div className="columns-stacked">
         <article>
           <OrderCard state={State.initial} />
         </article>

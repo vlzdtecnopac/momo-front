@@ -1,5 +1,5 @@
 import logo from "../../assets/logo.svg";
-import alertIcon from "../../assets/icons/question-info.svg";
+import alertIcon from "../../assets/coffee-momo.png";
 import "./404.scss";
 function NotFound() {
   return (

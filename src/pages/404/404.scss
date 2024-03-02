@@ -10,6 +10,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        padding: 20px;
 
         .notfound-center {
             width: 430px;
@@ -17,7 +18,7 @@
             .notfound-logo {
                 width: 300px;
                 display: block;
-                margin: 30px auto;
+                margin: 40px auto;
             }
 
             .fail {
@@ -32,16 +33,11 @@
             }
 
             .wrong {
-                width: 100px;
-                height: 100px;
-                background-size: contain;
-                background-color: $white;
-                -webkit-mask-image: url(/src/assets/icons/alert.svg);
-                mask-image: url(/src/assets/icons/alert.svg);
-                mask-size: 100%;
-                position: relative;
-                left: 160px;
-                margin: 0 auto;
+                width:250px;
+                margin: auto;
+                display: block;
+           
+               
             }
 
             .notfound-text {

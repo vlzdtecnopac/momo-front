@@ -30,7 +30,7 @@ const OrderCardTwo: React.FC<Props> = (props) => {
     const s = now.getSeconds();
 
 
-    setTimeOrder(`${h} : ${formatoDosDigitos(m)} : ${formatoDosDigitos(s)}`);
+    setTimeOrder(`${h}:${formatoDosDigitos(m)}:${formatoDosDigitos(s)}`);
   
     // Llamada recursiva para el próximo frame
     setGlobalID(requestAnimationFrame(tick));

@@ -97,12 +97,12 @@ const OrderCard: React.FC<Props> = (props) => {
             </div>
           </div>
           <hr />
-          <div className="details">
-            <h3>Chico</h3>
-            <h3>Regular</h3>
-            <h3>Menos Azucar</h3>
-            <h3>Sin tapa</h3>
-          </div>
+          <ul className="details">
+              <li>Chico</li>
+              <li>Regular</li>
+              <li>Menos Azucar</li>
+              <li>Sin tapa</li>
+            </ul>
           <hr />
           <div className="button">
             <button onClick={()=>cancelOrder()} className="order-button">Completar Orden</button>

@@ -17,7 +17,7 @@ const Layout: React.FC<DynamicLayoutProps> = (props) => {
             <SideBar />
           </div>
         </div>
-        <div className="col-11_sm-11_md_11_lg-11 right">
+        <div className="col-11_sm-11_md_11_lg-11">
           {props.children}
           <InfoSidebar />
         </div>

@@ -4,7 +4,6 @@
 
 .config_page {
     position: relative;
-    margin-right: 26px;
 
     .bg-blue {
         background: $light-blue;
@@ -60,11 +59,9 @@
 
         .bg_content {
             background: white;
-            padding: 0px 10px 6px 0px;
             border-radius: 20px 20px;
             position: absolute;
             width: 100%;
-            max-width: 1240px;
             height: 260px;
         }
     }

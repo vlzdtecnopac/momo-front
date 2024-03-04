@@ -63,16 +63,14 @@ $content-selector: "~ .content > section";
     border-radius: 16px 16px 0 0;
     padding: 0px 5px 10px 0px;
 
-
-
     ul {
         list-style-type: none;
         padding-left: 0;
         display: flex;
         flex-direction: row;
-
         margin-top: 40px;
-
+        padding: 10px;
+     
         li {
             box-sizing: border-box;
             text-align: center;

@@ -4,19 +4,23 @@ import SideBar from "../SideBar/SideBar";
 import InfoSidebar from "../../components/InfoSidebar/InfoSidebar";
 
 interface DynamicLayoutProps {
-    children: ReactNode;
-  }
+  children: ReactNode;
+}
 
 const Layout: React.FC<DynamicLayoutProps> = (props) => {
   return (
     <>
       <Header />
-      <div className="dashboard-page">
-        <div className="sidebar">
-          <SideBar />
+      <div className="grid-2">
+        <div className="col-1">
+          <div className="sidebar">
+            <SideBar />
+          </div>
         </div>
-        <div className="content">{props.children}</div>
-        <InfoSidebar />
+        <div className="col-11">
+          {props.children}
+          <InfoSidebar />
+        </div>
       </div>
     </>
   );

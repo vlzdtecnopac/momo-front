@@ -1,8 +1,6 @@
   @import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap");
   @import url("https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap");
 
-
-
   $dark-blue: #2E418E;
   $light-blue: #D5EAFB;
   $dark-blue-hover: #2c46ad;
@@ -62,6 +60,11 @@
       box-shadow: 20px 0 #ddddbe, -20px 0 #ddddbe;
       background: #ddddbe
     }
+  }
+
+  html {
+    overflow: hidden;
+    background-color: $light-blue
   }
 
   body {
@@ -136,10 +139,10 @@
     padding: 10px;
     background: transparent;
 
-    article{
-        background: transparent;
-        margin-top: 10px;
-        border-radius: 20px;
+    article {
+      background: transparent;
+      margin-top: 10px;
+      border-radius: 20px;
     }
 
   }

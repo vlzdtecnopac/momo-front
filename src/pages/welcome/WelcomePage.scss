@@ -42,7 +42,6 @@
             }
 
             .small-text {
-                font-size: 22px;
                 text-align: center;
                 margin: 0;
                 color: $cream
@@ -88,11 +87,19 @@
     //Options Typography
 
     .tex-small {
-        .p-1 {}
+        .p-1 {
+            font-size: 14px;
+        }
 
-        .p-2 {}
+        .p-2 {
+            font-size: 18px;
 
-        .p-3 {}
+        }
+
+        .p-3 {
+            font-size: 22px;
+
+        }
     }
 
     .medimum {
@@ -104,11 +111,17 @@
     }
 
     .large {
-        .p-1 {}
+        .p-1 {
+            font-size: 14px;
+        }
 
-        .p-2 {}
+        .p-2 {
+            font-size: 18px;
+        }
 
-        .p-3 {}
+        .p-3 {
+            font-size: 22px;
+        }
 
     }
 }

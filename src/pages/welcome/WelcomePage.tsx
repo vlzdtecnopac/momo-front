@@ -23,19 +23,24 @@ function WelcomePage() {
             },
           }}
         >
-          <img className="logo" src={logo} alt="momo-logo" />
+          `
+          <img
+            className="logo"
+            src={logo}
+            alt="momo-logo"
+          />
         </motion.div>
       </div>
       <div className="text-container">
         <div className="text">
-          <h2 className="big-text">¡Bienvenid@!</h2>
-          <p className="small-text">
+          <h2 className={"big-text small-text"}>¡Bienvenid@!</h2>
+          <p className={`sub-text  small-text`}>
             Antes de comenzar, <br /> Espera que se emparejen <br /> tus
             dispositivos.
           </p>
         </div>
       </div>
-
+      {/* ${size}text */}
       <div className="kds-loader-container">
         <div className="kds-loader">
           <div className="store-card">

@@ -50,26 +50,28 @@ $content-selector: "~ .content > section";
     }
 }
 
-.content-tab{
-    padding: 10px;
+.content-tab {
     padding: 10px;
     overflow-y: auto;
     height: 470px;
+    margin: 0;
+    background-color: $white;
 }
 
 .order-tabs {
     background: white;
-    border-radius: 16px;
-    padding: 0px 10px;
+    border-radius: 16px 16px 0 0;
+    padding: 0px 5px 10px 0px;
 
-  
+
 
     ul {
         list-style-type: none;
         padding-left: 0;
         display: flex;
         flex-direction: row;
-        margin-bottom: 10px;
+
+        margin-top: 40px;
 
         li {
             box-sizing: border-box;

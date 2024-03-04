@@ -54,14 +54,17 @@ $content-selector: "~ .content > section";
     margin-top: 5px;
     max-height: 560px;
     display: flex;
+    border-radius: 0 0 16px 16px;
     flex-wrap: wrap;
     padding: 0px 10px;
     overflow-x: hidden;
+
 }
 
 
 .config-tabs {
     padding: 10px 20px;
+
     ul {
         list-style-type: none;
         padding-left: 0;

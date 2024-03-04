@@ -43,11 +43,10 @@ function getRandomStatus() {
 function Table() {
   return (
     <>
-     
       <div className="content-table">
-      <InventoryTabs />
-      <table className="table_header">
-      <thead>
+        <InventoryTabs />
+        <table className="table_header">
+          <thead>
             <tr>
               {column_headers.map((column, index) => (
                 <th
@@ -59,30 +58,29 @@ function Table() {
               ))}
             </tr>
           </thead>
-      </table>
-      <div style={{overflow: "auto", height: "380px"}}>
-        <table className="table">
-       
-          <tbody>
-            {data.map((item, index) => (
-              <tr
-                className="tr"
-                key={index}
-                id={`state-${item.status}`}
-              >
-                <td className="td">
-                  <i className={`icon ${item.status}`}></i>
-                </td>
-                <td className="td">{item.name}</td>
-                <td className="td">
-                  <p className={`text-${item.status}`}>{item.actualAmount}</p>
-                </td>
-                <td>{item.alertLevel}</td>
-                <td>{item.minimumAmount}</td>
-              </tr>
-            ))}
-          </tbody>
         </table>
+        <div style={{ overflow: "auto", height: "380px" }}>
+          <table className="table">
+            <tbody>
+              {data.map((item, index) => (
+                <tr
+                  className="tr"
+                  key={index}
+                  id={`state-${item.status}`}
+                >
+                  <td className="td">
+                    <i className={`icon ${item.status}`}></i>
+                  </td>
+                  <td className="td">{item.name}</td>
+                  <td className="td">
+                    <p className={`text-${item.status}`}>{item.actualAmount}</p>
+                  </td>
+                  <td>{item.alertLevel}</td>
+                  <td>{item.minimumAmount}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       </div>
     </>

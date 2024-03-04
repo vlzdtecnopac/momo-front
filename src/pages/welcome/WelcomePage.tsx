@@ -23,6 +23,7 @@ function WelcomePage() {
             },
           }}
         >
+          `
           <img
             className="logo"
             src={logo}
@@ -32,14 +33,14 @@ function WelcomePage() {
       </div>
       <div className="text-container">
         <div className="text">
-          <h2 className="big-text">¡Bienvenid@!</h2>
-          <p className="small-text p-1">
+          <h2 className={"big-text small-text"}>¡Bienvenid@!</h2>
+          <p className={`sub-text  small-text`}>
             Antes de comenzar, <br /> Espera que se emparejen <br /> tus
             dispositivos.
           </p>
         </div>
       </div>
-
+      {/* ${size}text */}
       <div className="kds-loader-container">
         <div className="kds-loader">
           <div className="store-card">

@@ -1,6 +1,11 @@
   @import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap");
   @import url("https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap");
 
+  @font-face {
+    font-family: "Stacion";
+    src: local("./assets/fonts/Stacion Regular.otf")
+  }
+
   $dark-blue: #2E418E;
   $light-blue: #D5EAFB;
   $dark-blue-hover: #2c46ad;
@@ -62,6 +67,10 @@
     }
   }
 
+  #root {
+    min-width: 1300px
+  }
+
   html {
     overflow: hidden;
     background-color: $light-blue
@@ -82,7 +91,7 @@
   }
 
   p {
-    font-family: "Schibsted Grotesk", sans-serif;
+    font-family: "Stacion", sans-serif;
     font-optical-sizing: auto;
     font-weight: 300;
     font-style: normal;

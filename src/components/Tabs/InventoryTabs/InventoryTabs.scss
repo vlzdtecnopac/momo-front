@@ -69,6 +69,7 @@ $content-selector: "~ .content > section";
         display: flex;
         flex-direction: row;
         margin-bottom: 10px;
+        overflow-x: auto;
 
         li {
             box-sizing: border-box;

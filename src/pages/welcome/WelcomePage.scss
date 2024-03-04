@@ -34,24 +34,48 @@
             text-align: center;
 
             .big-text {
-                font-family: Red Hat Display;
+                font-family: "Red Hat Display", "serif";
                 color: $white;
-                font-size: 30px;
                 text-align: center;
                 margin-top: 40px;
+                padding-top: 20px;
+
+                &.small-text {
+                    font-size: 20px;
+                }
+
+                &.medium-text {
+                    font-size: 30px;
+                }
+
+                &.large-text {
+                    font-size: 40px
+                }
             }
 
-            .small-text {
+            .sub-text {
                 text-align: center;
                 margin: 0;
-                color: $cream
+                color: $cream;
+
+                &.small-text {
+                    font-size: 14px;
+                }
+
+                &.medium-text {
+                    font-size: 18px
+                }
+
+                &.large-text {
+                    font-size: 22px
+                }
+
             }
         }
     }
 }
 
 .kds-loader-container {
-
 
     .kds-loader {
         max-width: 990px;
@@ -86,7 +110,10 @@
 
     //Options Typography
 
-    .tex-small {
+
+
+
+    .medimum {
         .p-1 {
             font-size: 14px;
         }
@@ -100,14 +127,6 @@
             font-size: 22px;
 
         }
-    }
-
-    .medimum {
-        .p-1 {}
-
-        .p-2 {}
-
-        .p-3 {}
     }
 
     .large {

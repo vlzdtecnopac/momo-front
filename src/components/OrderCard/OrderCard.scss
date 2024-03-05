@@ -34,9 +34,22 @@
             justify-content: space-between;
             align-items: center;
 
-            h2 {
+            .client_name {
                 color: $black;
                 margin: 0px;
+
+
+                &.small-text {
+                    font-size: 18px;
+                }
+
+                &.medium-text {
+                    font-size: 22px;
+                }
+
+                &.large-text {
+                    font-size: 26px
+                }
             }
 
             h3 {
@@ -48,6 +61,20 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+
+            .order_id {
+                &.small-text {
+                    font-size: 14px;
+                }
+
+                &.medium-text {
+                    font-size: 18px;
+                }
+
+                &.large-text {
+                    font-size: 22px
+                }
+            }
 
             span {
                 font-weight: 700;
@@ -70,10 +97,24 @@
         margin: 10px;
         padding: 10px 0px;
 
-        .item_name {
+        .item {
             display: flex;
             align-items: center;
             max-width: 320px;
+
+            .item_name {
+                &.small-text {
+                    font-size: 18px;
+                }
+
+                &.medium-text {
+                    font-size: 22px;
+                }
+
+                &.large-text {
+                    font-size: 26px
+                }
+            }
 
             h2 {
                 color: $black;
@@ -102,12 +143,38 @@
                 margin: 0px;
                 font-size: 18px;
                 color: $dark-blue;
+
+                &.small-text {
+                    font-size: 16px;
+                }
+
+                &.medium-text {
+                    font-size: 20px;
+                }
+
+                &.large-text {
+                    font-size: 24px
+                }
             }
         }
 
         .button {
             display: flex;
             justify-content: center;
+
+            .order-button {
+                &.small-text {
+                    font-size: 16px;
+                }
+
+                &.medium-text {
+                    font-size: 20px;
+                }
+
+                &.large-text {
+                    font-size: 24px
+                }
+            }
         }
     }
 

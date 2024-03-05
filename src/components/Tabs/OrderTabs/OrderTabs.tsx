@@ -49,7 +49,11 @@ function OrderTabs() {
                   className={`icon ${tab.active ? "active" : ""} ${tab.icon}`}
                 />
                 <br />
-                <span className={`span ${tab.active ? "active" : ""}`}>
+                <span
+                  className={`span ${
+                    tab.active ? "active" : ""
+                  } span-tab small-text`}
+                >
                   {tab.text}
                 </span>
               </div>

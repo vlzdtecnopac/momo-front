@@ -29,11 +29,15 @@ function ConfigPage() {
           <div className="header_info">
             <div className="grid-2_xs-1">
               <div className="col-2_xs-6_sm-4">
-                <img className="profile-pic" src={photo} alt="photo" />
+                <img
+                  className="profile-pic"
+                  src={photo}
+                  alt="photo"
+                />
               </div>
               <div className="col-10_sm-5">
-                <h2 className="store">Tienda 1</h2>
-                <p className="address">Dirección tienda</p>
+                <h2 className="store medium-text">Tienda 1</h2>
+                <p className="address medium-text">Dirección tienda</p>
               </div>
             </div>
           </div>

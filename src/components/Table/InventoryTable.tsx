@@ -50,7 +50,7 @@ function Table() {
             <tr>
               {column_headers.map((column, index) => (
                 <th
-                  className="th"
+                  className="th "
                   key={index}
                 >
                   {column}

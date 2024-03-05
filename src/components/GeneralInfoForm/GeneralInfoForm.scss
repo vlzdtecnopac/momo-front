@@ -1,13 +1,26 @@
 @import "../../index.scss";
 
-.info-general-title{
+.info-general-title {
     color: $orange;
     padding: 10px 20px 0px 20px;
+
+    &.small-text {
+        font-size: 20px;
+    }
+
+    &.medium-text {
+        font-size: 24px;
+    }
+
+    &.large-text {
+        font-size: 28px
+    }
 }
 
 .info-form {
     margin-top: 10px;
     padding: 10px 20px;
+
 
     .group {
         position: relative;
@@ -17,7 +30,6 @@
 
     input {
         font-weight: 400;
-        font-size: 14px;
         padding: 10px 10px 10px 5px;
         display: block;
         width: 100%;
@@ -25,6 +37,19 @@
         border-bottom: 1px solid #757575;
         font-family: "Red Hat Display", "serif";
         margin-bottom: 50px;
+
+        &.small-text {
+            font-size: 14px;
+        }
+
+        &.medium-text {
+            font-size: 18px;
+        }
+
+        &.large-text {
+            font-size: 22px
+        }
+
     }
 
     input:focus {
@@ -35,7 +60,7 @@
     label {
         font-family: "Red Hat Display", "serif";
         color: #202020;
-        font-size: 18px;
+        font-size: 20px;
         font-weight: 600;
         pointer-events: none;
     }
@@ -80,7 +105,7 @@
         width: 50%;
     }
 
- 
+
     /* active state */
     input:focus~.highlight {
         animation: inputHighlighter 0.3s ease;

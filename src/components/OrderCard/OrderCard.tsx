@@ -1,4 +1,4 @@
-import React, {useState}  from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { v4 as uuidv4 } from "uuid";
 import TakeoutBadge from "../TakeoutBadge/TakeoutBadge";
@@ -17,9 +17,9 @@ interface Props {
 const OrderCard: React.FC<Props> = (props) => {
   const id_input = "id_" + uuidv4();
   const [globalID, setGlobalID] = useState<any>(null);
-  const [timeOrder, setTimeOrder] =  useState<string>("00:00:00");
+  const [timeOrder, setTimeOrder] = useState<string>("00:00:00");
 
-  const [start, setStart] =  useState<boolean>(false);
+  const [start, setStart] = useState<boolean>(false);
 
   function formatoDosDigitos(numero: number) {
     return numero < 10 ? "0" + numero : "" + numero;
@@ -31,65 +31,71 @@ const OrderCard: React.FC<Props> = (props) => {
     const m = now.getMinutes();
     const s = now.getSeconds();
 
-
     setTimeOrder(`${h}:${formatoDosDigitos(m)}:${formatoDosDigitos(s)}`);
-  
+
     // Llamada recursiva para el próximo frame
     setGlobalID(requestAnimationFrame(tick));
   };
-  
 
   const startOrder = () => {
-     // Inicia el ciclo de animación
-     setGlobalID(requestAnimationFrame(tick));
-     setStart(true);
-  }
+    // Inicia el ciclo de animación
+    setGlobalID(requestAnimationFrame(tick));
+    setStart(true);
+  };
 
   const cancelOrder = () => {
     cancelAnimationFrame(globalID);
     setStart(false);
     setGlobalID(null);
-  }
-
+  };
 
   return (
     <div className={`state_${props.state}`}>
       <div className="order-card">
         <div className="client_info">
           <div className="left">
-            <h2>Laura</h2>
+            <h2 className="client_name medium-text">Laura</h2>
             <TakeoutBadge />
           </div>
           <div className="right">
-          <motion.span
-          key={Number(start)}
-      className="box"
-      initial={{ opacity: 0, scale: 0.5 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{
-        duration: 0.3,
-        ease: [0, 0.71, 0.2, 1.01],
-        scale: {
-          type: "spring",
-          damping: 5,
-          stiffness: 100,
-          restDelta: 0.001
-        }
-      }}
-    >{timeOrder}</motion.span>
-            <p>ID #12356</p>
+            <motion.span
+              key={Number(start)}
+              className="box"
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{
+                duration: 0.3,
+                ease: [0, 0.71, 0.2, 1.01],
+                scale: {
+                  type: "spring",
+                  damping: 5,
+                  stiffness: 100,
+                  restDelta: 0.001,
+                },
+              }}
+            >
+              {timeOrder}
+            </motion.span>
+            <p className="order_id medium-text">ID #12356</p>
           </div>
         </div>
         <div className="order_info">
-          <div className="item_name">
+          <div className="item">
             <div className="grid-2_xs-1">
               <div className="col-9">
-                <h2>Macadamia Black Tea Soda</h2>
+                <h2 className="item_name medium-text">
+                  Macadamia Black Tea Soda
+                </h2>
               </div>
               <div className="col-3 center-col">
                 <form>
                   <span className="opcion-radio">
-                    <input type="radio" onChange={()=>startOrder()} id={id_input} name="check_process" />
+                    <input
+                      type="radio"
+                      onChange={() => startOrder()}
+                      id={id_input}
+                      name="check_process"
+                    />
                     <label htmlFor={id_input}></label>
                   </span>
                 </form>
@@ -98,14 +104,19 @@ const OrderCard: React.FC<Props> = (props) => {
           </div>
           <hr />
           <ul className="details">
-              <li>Chico</li>
-              <li>Regular</li>
-              <li>Menos Azucar</li>
-              <li>Sin tapa</li>
-            </ul>
+            <li className="medium-text">Chico</li>
+            <li className="medium-text">Regular</li>
+            <li className="medium-text">Menos Azucar</li>
+            <li className="medium-text">Sin tapa</li>
+          </ul>
           <hr />
           <div className="button">
-            <button onClick={()=>cancelOrder()} className="order-button">Completar Orden</button>
+            <button
+              onClick={() => cancelOrder()}
+              className="order-button medium-text"
+            >
+              Completar Orden
+            </button>
           </div>
         </div>
       </div>

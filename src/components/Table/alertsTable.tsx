@@ -28,8 +28,6 @@ const data = [
   },
 ];
 
-
-
 for (let i = 0; i < 100; i++) {
   data.push({
     id: "0",
@@ -45,10 +43,10 @@ function AlertsTable() {
     <div className="content-table">
       <table className="table_header">
         <thead>
-          <tr>
+          <tr small-text>
             {column_headers.map((column, index) => (
               <th
-                className="th"
+                className="th medium-text"
                 key={index}
               >
                 {column}
@@ -56,29 +54,31 @@ function AlertsTable() {
             ))}
           </tr>
         </thead>
-        </table>
-        <div className="scroll_alerts">
-        <table className="table">
-        <tbody>
-          {data.map((item, index) => (
-            <tr
-              className="tr"
-              key={index}
-              id={`state-${item.status}`}
-            >
-              <td className="td">
-                <i className={`icon ${item.status}`}></i>
-              </td>
-              <td className="td">{item.alert}</td>
-              <td className="td">{item.hour}</td>
-              <td className={`text-${item.status}`}>{item.alertLevel}</td>
-              <td>
-                <button className="btn_notify">Notificar</button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
       </table>
+      <div className="scroll_alerts">
+        <table className="table">
+          <tbody>
+            {data.map((item, index) => (
+              <tr
+                className="tr"
+                key={index}
+                id={`state-${item.status}`}
+              >
+                <td className="td medium-text">
+                  <i className={`icon ${item.status}`}></i>
+                </td>
+                <td className="td medium-text">{item.alert}</td>
+                <td className="td medium-text">{item.hour}</td>
+                <td className={`text-${item.status} medium-text`}>
+                  {item.alertLevel}
+                </td>
+                <td>
+                  <button className="btn_notify">Notificar</button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     </div>
   );

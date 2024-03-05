@@ -54,7 +54,7 @@ const OrderCardTwo: React.FC<Props> = (props) => {
       <div className="order-card">
         <div className="client_info">
           <div className="left">
-            <h2>Laura</h2>
+            <h2 className="client_name medium-text">Laura</h2>
             <TakeoutBadge />
           </div>
           <div className="right">
@@ -76,15 +76,17 @@ const OrderCardTwo: React.FC<Props> = (props) => {
             >
               {timeOrder}
             </motion.span>
-            <p>ID #12356</p>
+            <p className="order_id medium-text">ID #12356</p>
           </div>
         </div>
         <div className="order_info">
           <section>
-            <div className="item_name">
+            <div className="item">
               <div className="grid-2_xs-2">
                 <div className="col-9">
-                  <h2>Macadamia Black Tea Soda</h2>
+                  <h2 className="item_name medium-text">
+                    Macadamia Black Tea Soda
+                  </h2>
                 </div>
                 <div className="col-3 center-col">
                   <form>
@@ -103,10 +105,10 @@ const OrderCardTwo: React.FC<Props> = (props) => {
             </div>
             <hr />
             <ul className="details">
-              <li>Chico</li>
-              <li>Regular</li>
-              <li>Menos Azucar</li>
-              <li>Sin tapa</li>
+              <li className="medium-text">Chico</li>
+              <li className="medium-text">Regular</li>
+              <li className="medium-text">Menos Azucar</li>
+              <li className="medium-text">Sin tapa</li>
             </ul>
           </section>
           <hr />
@@ -133,15 +135,18 @@ const OrderCardTwo: React.FC<Props> = (props) => {
             </div>
             <hr />
             <ul className="details">
-              <li>Chico</li>
-              <li>Regular</li>
-              <li>Menos Azucar</li>
-              <li>Sin tapa</li>
+              <li className="medium-text">Chico</li>
+              <li className="medium-text">Regular</li>
+              <li className="medium-text">Menos Azucar</li>
+              <li className="medium-text">Sin tapa</li>
             </ul>
           </section>
           <hr />
           <div className="button">
-            <button onClick={() => cancelOrder()} className="order-button">
+            <button
+              onClick={() => cancelOrder()}
+              className="order-button"
+            >
               Completar Orden
             </button>
           </div>

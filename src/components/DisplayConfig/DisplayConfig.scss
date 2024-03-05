@@ -6,13 +6,38 @@
     .title {
         font-size: 18px;
         font-weight: 500;
-        color: $orange
+
+        color: $orange;
+
+        &.small-text {
+            font-size: 16px;
+        }
+
+        &.medium-text {
+            font-size: 20px;
+        }
+
+        &.large-text {
+            font-size: 24px
+        }
     }
 
     .sub-title {
         color: #000;
         font-weight: 500;
         font-family: "Red Hat Display", "serif";
+
+        &.small-text {
+            font-size: 16px;
+        }
+
+        &.medium-text {
+            font-size: 18px;
+        }
+
+        &.large-text {
+            font-size: 20px
+        }
     }
 
     .display-config {
@@ -180,7 +205,7 @@
         justify-content: flex-end;
         align-items: end;
         height: 55px;
-        margin-right:10px;
+        margin-right: 10px;
     }
 
 }

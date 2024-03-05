@@ -4,8 +4,15 @@ import tabletIcon from "../../assets/icons/tablet.svg";
 import kioskIcon from "../../assets/icons/kiosko.svg";
 import Card from "../../components/Card/Card";
 import "./WelcomePage.scss";
+import React, { useState } from "react";
 
 function WelcomePage() {
+  const [textSize, setTextSize] = useState("medium");
+
+  const handleSizeChange = (newSize: string) => {
+    setTextSize(newSize);
+  };
+
   return (
     <div className="component-welcome">
       <div className="logo-container">
@@ -23,7 +30,6 @@ function WelcomePage() {
             },
           }}
         >
-          `
           <img
             className="logo"
             src={logo}
@@ -33,14 +39,14 @@ function WelcomePage() {
       </div>
       <div className="text-container">
         <div className="text">
-          <h2 className={"big-text small-text"}>¡Bienvenid@!</h2>
-          <p className={`sub-text  small-text`}>
-            Antes de comenzar, <br /> Espera que se emparejen <br /> tus
-            dispositivos.
+          <h2 className={`big-text ${textSize}-text`}>¡Bienvenid@!</h2>
+          <p className={`sub-text ${textSize}-text`}>
+            Antes de comenzar, <br />
+            Espera que se emparejen <br />
+            tus dispositivos.
           </p>
         </div>
       </div>
-      {/* ${size}text */}
       <div className="kds-loader-container">
         <div className="kds-loader">
           <div className="store-card">
@@ -67,37 +73,22 @@ function WelcomePage() {
             />
             <Card
               icon={kioskIcon}
-              text="KIOSKO
-      "
+              text="KIOSKO"
               subText="Tienda 1"
               state="Conectado"
-            />{" "}
-            <Card
-              icon={kioskIcon}
-              text="KIOSKO
-    "
-              subText="Tienda 1"
-              state="Conectado"
-            />{" "}
-            <Card
-              icon={kioskIcon}
-              text="KIOSKO
-  "
-              subText="Tienda 1"
-              state="Conectado"
-            />{" "}
+            />
             <Card
               icon={kioskIcon}
               text="KIOSKO"
               subText="Tienda 1"
               state="Conectado"
-            />{" "}
+            />
             <Card
               icon={kioskIcon}
               text="KIOSKO"
               subText="Tienda 1"
               state="Conectado"
-            />{" "}
+            />
             <Card
               icon={kioskIcon}
               text="KIOSKO"
@@ -107,6 +98,12 @@ function WelcomePage() {
           </div>
         </div>
       </div>
+
+      {/* <div className="size-controls">
+        <button onClick={() => handleSizeChange("small")}>Small Text</button>
+        <button onClick={() => handleSizeChange("medium")}>Medium Text</button>
+        <button onClick={() => handleSizeChange("large")}>Large Text</button>
+      </div> */}
     </div>
   );
 }

@@ -99,8 +99,8 @@ function OrderTabs() {
             return (
               <div
                 className={`${
-                  typeColumns == 0 ? "grid-equalHeight" : ""
-                } grid-4_lg-4_md-3_sm-1_xs-1`}
+                  typeColumns == 0 ? "grid-equalHeight grid-4_lg-4_md-3_sm-1_xs-1" : "grid-basic-flex"
+                } `}
               >
                 <div className="col">
                   <OrderCard state={State.initial} />

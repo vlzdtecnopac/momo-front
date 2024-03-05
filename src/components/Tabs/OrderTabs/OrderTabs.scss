@@ -56,19 +56,24 @@ $content-selector: "~ .content > section";
     height: 470px;
     margin: 0;
     background-color: $white;
+
+    .grid-basic-flex{
+        display: flex;
+        overflow: auto;
+        flex-wrap: nowrap;
+    }
 }
 
 .order-tabs {
     background: white;
     border-radius: 16px 16px 0 0;
-    padding: 0px 5px 10px 0px;
-
+  
     ul {
         list-style-type: none;
         padding-left: 0;
         display: flex;
         flex-direction: row;
-        margin-top: 40px;
+        margin: 40px 0px 0px 0px;
         padding: 10px;
 
         li {

@@ -82,12 +82,12 @@ const OrderCard: React.FC<Props> = (props) => {
         <div className="order_info">
           <div className="item">
             <div className="grid-2_xs-1">
-              <div className="col-9">
+              <div className="col-10">
                 <h2 className="item_name medium-text">
                   Macadamia Black Tea Soda
                 </h2>
               </div>
-              <div className="col-3 center-col">
+              <div className="col-2 center-col">
                 <form>
                   <span className="opcion-radio">
                     <input

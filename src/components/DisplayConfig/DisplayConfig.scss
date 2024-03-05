@@ -17,6 +17,7 @@
 
     .display-config {
         display: flex;
+        margin-top: -10px;
     }
 
     .btns {
@@ -178,8 +179,8 @@
         display: flex;
         justify-content: flex-end;
         align-items: end;
-        height: 60px;
-        margin-right: 100px;
+        height: 55px;
+        margin-right:10px;
     }
 
 }

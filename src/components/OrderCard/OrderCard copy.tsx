@@ -83,10 +83,10 @@ const OrderCardTwo: React.FC<Props> = (props) => {
           <section>
             <div className="item_name">
               <div className="grid-2_xs-2">
-                <div className="col-9">
+                <div className="col-10">
                   <h2>Macadamia Black Tea Soda</h2>
                 </div>
-                <div className="col-3 center-col">
+                <div className="col-2 center-col">
                   <form>
                     <span className="opcion-radio">
                       <input
@@ -113,10 +113,10 @@ const OrderCardTwo: React.FC<Props> = (props) => {
           <section>
             <div className="item_name">
               <div className="grid-2_xs-1">
-                <div className="col-9">
+                <div className="col-10">
                   <h2>Macadamia Black Tea Soda</h2>
                 </div>
-                <div className="col-3 center-col">
+                <div className="col-2 center-col">
                   <form>
                     <span className="opcion-radio">
                       <input

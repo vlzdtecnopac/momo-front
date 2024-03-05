@@ -3,13 +3,13 @@
   
 
 .full_screen_page{
+    height: 100vh;
     margin: 10px;
-   
+    overflow: auto;
 
     .grid-basic-flex{
         flex-wrap: nowrap;
         display: flex;
-        overflow-x: auto;
     }
 }
 

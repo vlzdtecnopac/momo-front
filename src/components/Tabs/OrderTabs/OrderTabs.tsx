@@ -6,8 +6,7 @@ import { useDesignStore } from "../../../store/design.store";
 import "./OrderTabs.scss";
 
 function OrderTabs() {
-  const { typeTypography, selectTypography, typeColumns, selectTypeColumn } =
-    useDesignStore();
+  const { typeColumns } = useDesignStore();
   const [options, setOptions] = useState([
     {
       text: "Pedidos completados",

@@ -56,6 +56,12 @@ $content-selector: "~ .content > section";
     height: 470px;
     margin: 0;
     background-color: $white;
+
+    .grid-basic-flex{
+        display: flex;
+        overflow: auto;
+        flex-wrap: nowrap;
+    }
 }
 
 .order-tabs {

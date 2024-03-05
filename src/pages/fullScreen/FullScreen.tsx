@@ -4,6 +4,7 @@ import OrderCard, { State } from "../../components/OrderCard/OrderCard";
 import OrderCardTwo from "../../components/OrderCard/OrderCard copy";
 import { useDesignStore } from "../../store/design.store";
 import "./FullScreen.scss";
+import { Link } from "react-router-dom";
 
 export default function FullScreen() {
   const {typeTypography, selectTypography, typeColumns, selectTypeColumn} =  useDesignStore();
@@ -76,6 +77,7 @@ export default function FullScreen() {
         </div>)
         }
       })()}
+      <Link to="../dashboard"><i className="icon_close_full_screen"></i></Link>
     </div>
   );
 }

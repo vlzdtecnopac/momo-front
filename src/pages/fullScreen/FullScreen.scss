@@ -5,3 +5,18 @@
 .full_screen_page{
     margin: 10px;
 }
+
+.icon_close_full_screen{
+    bottom: 0px;
+    right: 0px;
+    position: fixed;
+    display: block;
+    width: 52px;
+    height: 52px;
+    background: url(/src/assets/icons/close_screen.svg);
+    background-size: cover;
+    margin: 20px;
+    &:hover{
+        cursor: pointer;
+    }
+}

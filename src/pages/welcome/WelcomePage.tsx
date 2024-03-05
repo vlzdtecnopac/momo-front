@@ -5,13 +5,11 @@ import kioskIcon from "../../assets/icons/kiosko.svg";
 import Card from "../../components/Card/Card";
 import "./WelcomePage.scss";
 import React, { useState } from "react";
+import { useDesignStore } from "../../store/design.store";
 
 function WelcomePage() {
-  const [textSize, setTextSize] = useState("medium");
-
-  const handleSizeChange = (newSize: string) => {
-    setTextSize(newSize);
-  };
+  
+  const { typeTypography } = useDesignStore();
 
   return (
     <div className="component-welcome">
@@ -39,8 +37,8 @@ function WelcomePage() {
       </div>
       <div className="text-container">
         <div className="text">
-          <h2 className={`big-text ${textSize}-text`}>¡Bienvenid@!</h2>
-          <p className={`sub-text ${textSize}-text`}>
+          <h2 className={`big-text ${typeTypography}-text`}>¡Bienvenid@!</h2>
+          <p className={`sub-text ${typeTypography}-text`}>
             Antes de comenzar, <br />
             Espera que se emparejen <br />
             tus dispositivos.
@@ -98,12 +96,6 @@ function WelcomePage() {
           </div>
         </div>
       </div>
-
-      {/* <div className="size-controls">
-        <button onClick={() => handleSizeChange("small")}>Small Text</button>
-        <button onClick={() => handleSizeChange("medium")}>Medium Text</button>
-        <button onClick={() => handleSizeChange("large")}>Large Text</button>
-      </div> */}
     </div>
   );
 }

@@ -1,8 +1,14 @@
+import { useDesignStore } from "../../store/design.store";
 import "./GeneralInfoForm.scss";
+
 function GeneralInfoForm() {
+  const { typeTypography } = useDesignStore();
+
   return (
     <>
-      <h2 className="info-general-title medium-text ">Información General</h2>
+      <h2 className={`info-general-title ${typeTypography}-text`}>
+        Información General
+      </h2>
       <form
         className="info-form"
         action=""
@@ -13,7 +19,7 @@ function GeneralInfoForm() {
             <div className="group">
               <label htmlFor="store">Tienda</label>
               <input
-                className="medium-text"
+                className={`${typeTypography}-text`}
                 id="store"
                 placeholder="Tienda 1"
                 type="text"
@@ -23,7 +29,7 @@ function GeneralInfoForm() {
             <div className="group">
               <label htmlFor="close">Cierre anterior</label>
               <input
-                className="medium-text"
+                className={`${typeTypography}-text`}
                 id="close"
                 type="datetime-local"
                 required
@@ -34,7 +40,7 @@ function GeneralInfoForm() {
             <div className="group">
               <label htmlFor="email">Email</label>
               <input
-                className="medium-text"
+                className={`${typeTypography}-text`}
                 id="email"
                 placeholder="mitienda@gmail.com"
                 type="text"
@@ -44,7 +50,7 @@ function GeneralInfoForm() {
             <div className="group">
               <label htmlFor="open">Apertura</label>
               <input
-                className="medium-text"
+                className={`${typeTypography}-text`}
                 id="open"
                 type="datetime-local"
                 required

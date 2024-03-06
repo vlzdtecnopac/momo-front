@@ -6,7 +6,7 @@ import { useDesignStore } from "../../../store/design.store";
 import "./OrderTabs.scss";
 
 function OrderTabs() {
-  const { typeColumns } = useDesignStore();
+  const { typeColumns, typeTypography } = useDesignStore();
   const [options, setOptions] = useState([
     {
       text: "Pedidos completados",
@@ -51,7 +51,7 @@ function OrderTabs() {
                 <span
                   className={`span ${
                     tab.active ? "active" : ""
-                  } span-tab small-text`}
+                  } span-tab ${typeTypography}-text`}
                 >
                   {tab.text}
                 </span>
@@ -98,7 +98,9 @@ function OrderTabs() {
             return (
               <div
                 className={`${
-                  typeColumns == 0 ? "grid-equalHeight grid-4_lg-4_md-3_sm-1_xs-1" : "grid-basic-flex"
+                  typeColumns == 0
+                    ? "grid-equalHeight grid-4_lg-4_md-3_sm-1_xs-1"
+                    : "grid-basic-flex"
                 } `}
               >
                 <div className="col">

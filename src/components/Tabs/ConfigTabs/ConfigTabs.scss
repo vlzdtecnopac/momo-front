@@ -1,5 +1,3 @@
-@import 'https://fonts.googleapis.com/css?family=Montserrat:400,700|Raleway:300,400';
-
 @import "../../../index.scss";
 
 /* colors */
@@ -76,7 +74,19 @@ $content-selector: "~ .content > section";
             text-align: center;
             border-bottom: 1px solid #EDEDED;
             margin: 0px 3px;
-            font-family: "Schibsted Grotesk";
+            font-family: "Stacion", sans-serif;
+
+            &.small-text {
+                font-size: 14px;
+            }
+
+            &.medium-text {
+                font-size: 16px;
+            }
+
+            &.large-text {
+                font-size: 18px
+            }
 
             &:hover {
                 border-bottom: 1px solid $orange !important;

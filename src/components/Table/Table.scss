@@ -17,7 +17,7 @@ $grey: #F4F4F4;
     padding: 0px 10px 10px 10px;
 
     .table_header {
-        font-family: arial, sans-serif;
+        font-family: "Red Hat Display", "serif";
         border-collapse: collapse;
         width: 100%;
         text-align: left;
@@ -29,7 +29,19 @@ $grey: #F4F4F4;
             tr {
                 .th {
                     padding: 20px 15px;
-                    font-size: 17px;
+
+                    &.small-text {
+                        font-size: 18px;
+                    }
+
+                    &.medium-text {
+                        font-size: 20px;
+                    }
+
+                    &.large-text {
+                        font-size: 24px
+                    }
+
                 }
 
                 .th:nth-child(1) {
@@ -129,13 +141,17 @@ $grey: #F4F4F4;
         }
 
 
-        th {
+
+        .th {
             font-family: "Red Hat Display", serif;
             font-weight: 700;
             letter-spacing: 0em;
             text-align: center;
             background-color: #fff;
             padding: 20px 10px;
+
+
+
         }
 
         th :first-child {

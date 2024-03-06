@@ -5,6 +5,7 @@ import TakeoutBadge from "../TakeoutBadge/TakeoutBadge";
 import moment from "moment";
 
 import "./OrderCard.scss";
+import { useDesignStore } from "../../store/design.store";
 
 export enum State {
   initial = "initial",
@@ -29,10 +30,9 @@ const OrderCard: React.FC<Props> = (props) => {
 
   const tick = () => {
     const now = moment();
-    const h = now.format('h');
+    const h = now.format("h");
     const m = now.minutes();
     const s = now.seconds();
-   
 
     setTimeOrder(`${h}:${formatoDosDigitos(m)}:${formatoDosDigitos(s)}`);
 
@@ -51,13 +51,14 @@ const OrderCard: React.FC<Props> = (props) => {
     setStart(false);
     setGlobalID(null);
   };
+  const { typeTypography } = useDesignStore();
 
   return (
     <div className={`state_${props.state}`}>
       <div className="order-card">
         <div className="client_info">
           <div className="left">
-            <h2 className="client_name medium-text">Laura</h2>
+            <h2 className={`client_name ${typeTypography}-text`}>Laura</h2>
             <TakeoutBadge />
           </div>
           <div className="right">
@@ -79,14 +80,14 @@ const OrderCard: React.FC<Props> = (props) => {
             >
               {timeOrder}
             </motion.span>
-            <p className="order_id medium-text">ID #12356</p>
+            <p className={`order_id ${typeTypography}-text`}>ID #12356</p>
           </div>
         </div>
         <div className="order_info">
           <div className="item">
             <div className="grid-2_xs-1">
               <div className="col-10">
-                <h2 className="item_name medium-text">
+                <h2 className={`item_name ${typeTypography}-text`}>
                   Macadamia Black Tea Soda
                 </h2>
               </div>
@@ -107,10 +108,9 @@ const OrderCard: React.FC<Props> = (props) => {
           </div>
           <hr />
           <ul className="details">
-            <li className="medium-text">Chico</li>
-            <li className="medium-text">Regular</li>
-            <li className="medium-text">Menos Azucar</li>
-            <li className="medium-text">Sin tapa</li>
+            <li className={`${typeTypography}-text`}>Chico</li>
+            <li className={`${typeTypography}-text`}>Regular</li>
+            <li className={`${typeTypography}-text`}>Sin tapa</li>
           </ul>
           <hr />
           <div className="button">

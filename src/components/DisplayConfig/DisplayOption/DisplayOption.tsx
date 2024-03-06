@@ -1,17 +1,25 @@
+import { useDesignStore } from "../../../store/design.store";
 import "./DisplayOption.scss";
 import { v4 as uuidv4 } from "uuid";
 
 type ActionFunction = () => void;
 
 interface OptionProps {
-  icon: any;
+  icon: string;
   text: string;
   check: boolean;
-  handleChange: ActionFunction
+  handleChange: ActionFunction;
 }
 
-const DisplayOption: React.FC<OptionProps> = ({ icon, text, check, handleChange }) => {
+const DisplayOption: React.FC<OptionProps> = ({
+  icon,
+  text,
+  check,
+  handleChange,
+}) => {
   const id_input = "id_" + uuidv4();
+  const { typeTypography } = useDesignStore();
+
   return (
     <div className="display-option">
       <div className="container">
@@ -20,8 +28,8 @@ const DisplayOption: React.FC<OptionProps> = ({ icon, text, check, handleChange 
           src={icon}
           alt={text}
         />
-        <h3 className="option-text">{text}</h3>
-        
+        <h3 className={`option-text ${typeTypography}-text`}>{text}</h3>
+
         <div className="opcion-radio-desing">
           <input
             type="radio"
@@ -30,7 +38,7 @@ const DisplayOption: React.FC<OptionProps> = ({ icon, text, check, handleChange 
             checked={check}
             onChange={handleChange}
           />
-          
+
           <label htmlFor={id_input}></label>
         </div>
       </div>

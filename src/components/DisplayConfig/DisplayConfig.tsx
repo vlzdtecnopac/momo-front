@@ -37,13 +37,17 @@ function DisplayConfig() {
         <CongratsModal actionKey={Number(success)} />
       </div>
       <div className="config-display-section">
-        <h2 className="title medium-text">Configuración display</h2>
+        <h2 className={`title medium-text ${typeTypography}-text`}>
+          Configuración display
+        </h2>
         <div className="grid-3_xs-2">
           <div className="col">
-            <p className="sub-title medium-text">Visualización</p>
+            <p className={`sub-title ${typeTypography}-text`}>Visualización</p>
           </div>
           <div className="col">
-            <p className="sub-title medium-text">Tamaño de texto</p>
+            <p className={`sub-title ${typeTypography}-text`}>
+              Tamaño de texto
+            </p>
           </div>
         </div>
         <div className="grid-2_xs-1_sm-2">

@@ -49,7 +49,7 @@ function AlertsTable() {
           <tr className={`${typeTypography}-text`}>
             {column_headers.map((column, index) => (
               <th
-                className="th medium-text"
+                className={`th ${typeTypography}-text`}
                 key={index}
               >
                 {column}

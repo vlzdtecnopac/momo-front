@@ -50,20 +50,45 @@
         }
 
         .text {
-            h2 {
+            .h2 {
                 color: $cream;
                 display: flex;
                 justify-content: center;
                 margin: 25px auto;
+
+                &.small-text {
+                    font-size: 34px;
+                }
+
+                &.medium-text {
+                    font-size: 38px;
+                }
+
+                &.large-text {
+                    font-size: 42px
+                }
             }
 
-            p {
+            .p {
                 color: $cream;
                 display: flex;
                 justify-content: center;
                 text-align: center;
                 margin: 10px auto;
                 display: block;
+                font-family: "Stacion" serif;
+
+                &.small-text {
+                    font-size: 22px;
+                }
+
+                &.medium-text {
+                    font-size: 26px;
+                }
+
+                &.large-text {
+                    font-size: 30px
+                }
             }
         }
     }

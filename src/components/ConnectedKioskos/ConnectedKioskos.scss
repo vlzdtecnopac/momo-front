@@ -1,29 +1,42 @@
 @import "../../index.scss";
 
-.kiosko-component{
+.kiosko-component {
     .connected-title {
         color: $orange;
         padding: 10px;
         margin: 0px;
-    }
-.connected {
-    width: 100%;
-    background: $white;
-    overflow-y: auto;
-    height: 212px;
 
-    .connected-group {
-        display: flex;
-        flex-wrap: wrap;
-        margin: 0px;
-        padding: 0px;
-        list-style: none;
+        &.small-text {
+            font-size: 20px;
+        }
 
-        .content-center{
-            display: block;
-            text-align: center;
+        &.medium-text {
+            font-size: 24px;
+        }
+
+        &.large-text {
+            font-size: 28px
         }
     }
-   
-}
+
+    .connected {
+        width: 100%;
+        background: $white;
+        overflow-y: auto;
+        height: 212px;
+
+        .connected-group {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+
+            .content-center {
+                display: block;
+                text-align: center;
+            }
+        }
+
+    }
 }

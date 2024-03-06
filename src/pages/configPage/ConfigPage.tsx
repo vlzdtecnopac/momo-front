@@ -8,6 +8,7 @@ import ConnectedKioskos from "../../components/ConnectedKioskos/ConnectedKioskos
 import DisplayConfig from "../../components/DisplayConfig/DisplayConfig";
 import "./../dashboard/DashboardPage.scss";
 import "./ConfigPage.scss";
+import { useDesignStore } from "../../store/design.store";
 
 function ConfigPage() {
   const [postionTab, setPositionTab] = useState<number>(0);
@@ -17,6 +18,7 @@ function ConfigPage() {
     hidden: { opacity: 0 },
     visible: { opacity: 1 },
   };
+  const { typeTypography } = useDesignStore();
 
   return (
     <Layout>
@@ -36,8 +38,10 @@ function ConfigPage() {
                 />
               </div>
               <div className="col-10_sm-5">
-                <h2 className="store medium-text">Tienda 1</h2>
-                <p className="address medium-text">Dirección tienda</p>
+                <h2 className={`store ${typeTypography}-text`}>Tienda 1</h2>
+                <p className={`address ${typeTypography}-text`}>
+                  Dirección tienda
+                </p>
               </div>
             </div>
           </div>

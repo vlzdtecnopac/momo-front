@@ -1,6 +1,7 @@
 import React from "react";
 
 import "./Table.scss";
+import { useDesignStore } from "../../store/design.store";
 
 const column_headers = ["", "Alertas", "Hora", "Nivel de alerta", "Acción"];
 
@@ -39,11 +40,13 @@ for (let i = 0; i < 100; i++) {
 }
 
 function AlertsTable() {
+  const { typeTypography } = useDesignStore();
+
   return (
     <div className="content-table">
       <table className="table_header">
         <thead>
-          <tr small-text>
+          <tr className={`${typeTypography}-text`}>
             {column_headers.map((column, index) => (
               <th
                 className="th medium-text"
@@ -64,12 +67,12 @@ function AlertsTable() {
                 key={index}
                 id={`state-${item.status}`}
               >
-                <td className="td medium-text">
+                <td className={`td ${typeTypography}-text`}>
                   <i className={`icon ${item.status}`}></i>
                 </td>
-                <td className="td medium-text">{item.alert}</td>
-                <td className="td medium-text">{item.hour}</td>
-                <td className={`text-${item.status} medium-text`}>
+                <td className={`td ${typeTypography}-text`}>{item.alert}</td>
+                <td className={`td ${typeTypography}-text`}>{item.hour}</td>
+                <td className={`text-${item.status} ${typeTypography}-text`}>
                   {item.alertLevel}
                 </td>
                 <td>

@@ -4,11 +4,14 @@ import { motion } from "framer-motion";
 
 import logo from "../../assets/logo.svg";
 import checkIcon from "../../assets/icons/check.svg";
+import { useDesignStore } from "../../store/design.store";
 
 function ConectedPage() {
   useEffect(() => {
     setTimeout(() => (location.href = "./dashboard"), 2000);
   }, []);
+
+  const { typeTypography } = useDesignStore();
 
   return (
     <div className="success_fully">
@@ -19,7 +22,7 @@ function ConectedPage() {
             src={logo}
             alt="logo"
           />
-          <h2 className="success">Felicidades</h2>
+          <h2 className={`success ${typeTypography}-text`}>Felicidades</h2>
           <motion.div
             className="box"
             initial={{ opacity: 0, scale: 0.5 }}
@@ -41,7 +44,7 @@ function ConectedPage() {
               alt="check-icon"
             />
           </motion.div>
-          <h2 className="text">
+          <h2 className={`text ${typeTypography}-text`}>
             <span className="space">6 kioskos Conectados.</span> <br />
             <span className="light-text">
               Estamos listos para brindar la mejor experiencia en

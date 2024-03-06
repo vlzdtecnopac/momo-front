@@ -2,6 +2,7 @@ import React from "react";
 
 import "./Table.scss";
 import InventoryTabs from "../Tabs/InventoryTabs/InventoryTabs";
+import { useDesignStore } from "../../store/design.store";
 
 type Inventory = {
   [key: string]: string;
@@ -41,6 +42,8 @@ function getRandomStatus() {
 }
 
 function Table() {
+  const { typeTypography } = useDesignStore();
+
   return (
     <>
       <div className="content-table">
@@ -50,7 +53,7 @@ function Table() {
             <tr>
               {column_headers.map((column, index) => (
                 <th
-                  className="th "
+                  className="th"
                   key={index}
                 >
                   {column}
@@ -68,11 +71,11 @@ function Table() {
                   key={index}
                   id={`state-${item.status}`}
                 >
-                  <td className="td">
+                  <td className={`td ${typeTypography}-text`}>
                     <i className={`icon ${item.status}`}></i>
                   </td>
-                  <td className="td">{item.name}</td>
-                  <td className="td">
+                  <td className={`td ${typeTypography}-text`}>{item.name}</td>
+                  <td className={`td ${typeTypography}-text`}>
                     <p className={`text-${item.status}`}>{item.actualAmount}</p>
                   </td>
                   <td>{item.alertLevel}</td>

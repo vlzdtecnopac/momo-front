@@ -48,10 +48,11 @@ $content-selector: "~ .content > section";
 }
 
 .content-tab {
-    max-height: 560px;
+    max-height: 550px;
     overflow: scroll;
     display: flex;
     flex-wrap: wrap;
+    height: 500px;
 }
 
 

@@ -4,6 +4,7 @@ import { LoaderPage } from '../includes/loader/Loader';
 
 export const alertPageRuta: string = "/alerts-page";
 export const configPageRuta: string = "/config-page";
+export const fullScreenPageAlertsRuta: string = "/full-alerts";
 export const fullScreenPageRuta: string = "/full-screen";
 
 const LazyLoginPage = lazy(() => import('../pages/login/LoginPage'));
@@ -24,10 +25,10 @@ const BrowserRoutes = createBrowserRouter([
   { path: "/welcome", element: <Suspense fallback={<LoaderPage/>}><LazyWelcomePage /></Suspense> },
   { path: "/success", element: <Suspense fallback={<LoaderPage/>}><LazyConectedPage /></Suspense> },
   { path: "/dashboard", element: <Suspense fallback={<LoaderPage/>}><LazyDashboardPage /></Suspense> },
-  { path: "/config-page", element: <Suspense fallback={<LoaderPage/>}><LazyConfigPage /></Suspense> },
+  { path: configPageRuta, element: <Suspense fallback={<LoaderPage/>}><LazyConfigPage /></Suspense> },
   { path: alertPageRuta, element: <Suspense fallback={<LoaderPage/>}><LazyAlertsPage /></Suspense> },
   { path: "/inventory-page", element: <Suspense fallback={<LoaderPage/>}><LazyInventoryPage /></Suspense> },
-  { path: "/full-screen", element: <Suspense fallback={<LoaderPage/>}><LazyFullScreen /></Suspense> },
+  { path: fullScreenPageRuta, element: <Suspense fallback={<LoaderPage/>}><LazyFullScreen /></Suspense> },
   { path: "/full-alerts", element: <Suspense fallback={<LoaderPage/>}><LazyFullScreenAlerts /></Suspense> },
   {
     path: "/alert",

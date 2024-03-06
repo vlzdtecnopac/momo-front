@@ -226,6 +226,18 @@ $grey: #F4F4F4;
         font-weight: 700;
         color: #2E418E;
 
+        &.small-text {
+            font-size: 14px;
+        }
+
+        &.medium-text {
+            font-size: 16px;
+        }
+
+        &.large-text {
+            font-size: 18px;
+        }
+
         &:hover {
             background-color: #a5c1d9 !important;
             cursor: pointer;

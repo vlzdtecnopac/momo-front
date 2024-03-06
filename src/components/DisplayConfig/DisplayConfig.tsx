@@ -125,13 +125,13 @@ function DisplayConfig() {
               <div className="btns">
                 <button
                   onClick={() => handleBackNavegation()}
-                  className="btn back"
+                  className={`btn back ${typeTypography}-text`}
                 >
                   Regresar
                 </button>
                 <button
                   onClick={() => saveChangeHandler()}
-                  className="btn save"
+                  className={`btn save ${typeTypography}-text`}
                 >
                   Guardar cambios
                 </button>

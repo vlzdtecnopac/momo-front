@@ -76,7 +76,9 @@ function AlertsTable() {
                   {item.alertLevel}
                 </td>
                 <td>
-                  <button className="btn_notify">Notificar</button>
+                  <button className={`btn_notify ${typeTypography}-text`}>
+                    Notificar
+                  </button>
                 </td>
               </tr>
             ))}

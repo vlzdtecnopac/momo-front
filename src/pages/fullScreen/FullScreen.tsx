@@ -78,6 +78,7 @@ export default function FullScreen() {
         </div>)
         }
       })()}
+      <Link to="../full-alerts"><i className="icon_info_full_screen"></i></Link>
       <Link to="../dashboard"><i className="icon_close_full_screen"></i></Link>
     </div>
     </div>

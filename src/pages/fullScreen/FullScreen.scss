@@ -12,9 +12,24 @@
     .content_full_page{
         margin: 10px;
     }
+
+   
 }
 
-
+.icon_info_full_screen{
+    bottom: 60px;
+    right: 0px;
+    position: fixed;
+    display: block;
+    width: 52px;
+    height: 52px;
+    background-image: url(/src/assets/icons/question-info.svg);
+    background-size: cover;
+    margin: 20px;
+    &:hover{
+        cursor: pointer;
+    }
+}
 
 .icon_close_full_screen{
     bottom: 0px;

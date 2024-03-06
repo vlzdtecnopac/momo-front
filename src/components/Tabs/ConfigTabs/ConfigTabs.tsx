@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./ConfigTabs.scss";
+import { useDesignStore } from "../../../store/design.store";
 
 type ActionFunction = (valor: number) => void;
 
@@ -7,7 +8,7 @@ interface ChildProps {
   onClick: ActionFunction;
 }
 
-const  ConfigTabs: React.FC<ChildProps> = ({ onClick }) => {
+const ConfigTabs: React.FC<ChildProps> = ({ onClick }) => {
   const [options, setOptions] = useState([
     {
       text: "General",
@@ -32,13 +33,15 @@ const  ConfigTabs: React.FC<ChildProps> = ({ onClick }) => {
     setOptions(updatedOptions);
   };
 
+  const { typeTypography } = useDesignStore();
+
   return (
     <>
       <div className="config-tabs">
         <ul>
           {options.map((tab, index: number) => (
             <li
-              className={tab.active ? "active" : ""}
+              className={`${tab.active ? "active" : ""} ${typeTypography}-text`}
               key={index}
               onClick={() => changeActivate(index)}
             >
@@ -54,6 +57,6 @@ const  ConfigTabs: React.FC<ChildProps> = ({ onClick }) => {
       </div>
     </>
   );
-}
+};
 
 export default ConfigTabs;

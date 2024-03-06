@@ -30,6 +30,18 @@
             justify-content: center;
             padding-bottom: 10px;
 
+            &.small-text {
+                font-size: 16px;
+            }
+
+            &.medium-text {
+                font-size: 18px;
+            }
+
+            &.large-text {
+                font-size: 22px
+            }
+
         }
 
         input {

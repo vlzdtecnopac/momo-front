@@ -12,12 +12,12 @@
 
 
     .container {
-     display: block;
-     text-align: center;    
+        display: block;
+        text-align: center;
     }
 
-    .text-add{
-        p{
+    .text-add {
+        p {
             color: #79be81;
             font-weight: 700;
             text-align: center;
@@ -31,15 +31,65 @@
         height: 39px;
     }
 
-  
-    .text_active{
+
+    .text_active {
         color: $dark-blue;
         text-align: center;
         margin: 10px 0px 15px 0px;
-        p {
-            font-weight: bold;
+
+        .text {
+            font-weight: 800;
             text-align: center;
             margin: 0px;
+
+            &.small-text {
+                font-size: 16px;
+            }
+
+            &.medium-text {
+                font-size: 18px;
+            }
+
+            &.large-text {
+                font-size: 20px
+            }
+        }
+
+        .subtext {
+            font-weight: 800;
+            text-align: center;
+            margin: 0px;
+
+            &.small-text {
+                font-size: 16px;
+            }
+
+            &.medium-text {
+                font-size: 18px;
+            }
+
+            &.large-text {
+                font-size: 20px
+            }
+        }
+
+        .state {
+            font-family: "Stacion", sans-serif;
+            font-weight: 300;
+            text-align: center;
+            margin: 0px;
+
+            &.small-text {
+                font-size: 16px;
+            }
+
+            &.medium-text {
+                font-size: 18px;
+            }
+
+            &.large-text {
+                font-size: 20px
+            }
         }
     }
 
@@ -57,16 +107,27 @@
 }
 
 .button-card {
-    display: block;
     margin: 10px auto;
     border: none;
-    position: relative;
     border-radius: 6px;
     background: $orange;
     margin-top: 10px;
     text-align: center;
-    &:hover{
+    font-weight: 700;
+
+    &.small-text {
+        font-size: 14px;
+    }
+
+    &.medium-text {
+        font-size: 15px;
+    }
+
+    &.large-text {
+        font-size: 16px
+    }
+
+    &:hover {
         background: #e35108;
     }
 }
-

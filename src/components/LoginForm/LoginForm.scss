@@ -1,4 +1,5 @@
 @import "../../index.scss";
+
 .component-login-form {
     .form-group {
         position: relative;
@@ -19,6 +20,18 @@
             font-weight: 700;
             font-size: 18px;
             width: 300px;
+
+            &.small-text {
+                font-size: 24px;
+            }
+
+            &.medium-text {
+                font-size: 28px;
+            }
+
+            &.large-text {
+                font-size: 32px
+            }
 
             &:focus-visible {
                 outline: none;
@@ -75,7 +88,7 @@
                     color: #fff;
                 }
 
-                &:hover{
+                &:hover {
                     background: #e35108;
                     cursor: pointer;
                 }

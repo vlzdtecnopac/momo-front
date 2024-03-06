@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Card.scss";
+import { useDesignStore } from "../../store/design.store";
 
 interface CardProps {
   icon: string;
@@ -18,22 +19,27 @@ const Card: React.FC<CardProps> = ({
   state,
 }) => {
   const cardBackgroundColor = backgroundColor || "#F2F2F2 !mportant";
+  const { typeTypography } = useDesignStore();
 
   return (
     <Link to="/success">
       <div
-            className="card"
-            style={{ backgroundColor: cardBackgroundColor }}
-          >
-            <div className="container">
-              <img className="icon" src={icon} alt="icon" />
-              <div className="text_active">
-                <p>{text}</p>
-                <p>{subText}</p>
-                <p>{state}</p>
-              </div>
-            </div>
+        className="card"
+        style={{ backgroundColor: cardBackgroundColor }}
+      >
+        <div className="container">
+          <img
+            className="icon"
+            src={icon}
+            alt="icon"
+          />
+          <div className="text_active">
+            <p className={`text ${typeTypography}-text`}>{text}</p>
+            <p className={`subtext ${typeTypography}-text`}>{subText}</p>
+            <p className={`state ${typeTypography}-text`}>{state}</p>
           </div>
+        </div>
+      </div>
     </Link>
   );
 };

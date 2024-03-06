@@ -53,7 +53,7 @@ function Table() {
             <tr>
               {column_headers.map((column, index) => (
                 <th
-                  className="th"
+                  className={`th ${typeTypography}-text`}
                   key={index}
                 >
                   {column}

@@ -116,7 +116,7 @@ const OrderCard: React.FC<Props> = (props) => {
           <div className="button">
             <button
               onClick={() => cancelOrder()}
-              className="order-button medium-text"
+              className={`order-button ${typeTypography}-text`}
             >
               Completar Orden
             </button>

@@ -10,10 +10,20 @@
     -ms-border-radius: 4px;
     -o-border-radius: 4px;
     color: $light-blue;
-    //styleName: Tableta/H5 TABLETA;
-    font-family: Red Hat Display;
-    font-size: 16px;
+    font-family: "Red Hat Display" serif;
+
     font-weight: 700;
 
+    &.small-text {
+        font-size: 14px;
+    }
+
+    &.medium-text {
+        font-size: 16px;
+    }
+
+    &.large-text {
+        font-size: 17px
+    }
 
 }

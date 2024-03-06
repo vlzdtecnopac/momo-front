@@ -5,23 +5,54 @@
     justify-content: space-between;
     background-color: #2E418E;
 
-    .column_start{
+    .column_start {
         width: 250px;
     }
 
-    .column_center{
+    .column_center {
         width: auto;
         display: flex;
         justify-content: center;
     }
 
-    .column_end{
+    .column_end {
         width: 250px;
         display: flex;
         padding: 10px;
-        .welcome-text{
+
+        .welcome-text {
             width: 150px;
-            color:$cream
+            color: $cream;
+
+            .welcome {
+                &.small-text {
+                    font-size: 20px;
+                }
+
+                &.medium-text {
+                    font-size: 24px;
+                }
+
+                &.large-text {
+                    font-size: 26px;
+                }
+
+            }
+
+            .store {
+                &.small-text {
+                    font-size: 16px;
+                }
+
+                &.medium-text {
+                    font-size: 18px;
+                }
+
+                &.large-text {
+                    font-size: 20px
+                }
+
+            }
         }
     }
 
@@ -40,7 +71,7 @@
         font-weight: 700;
         text-align: left;
         margin: 0 50px 5px 0;
-        color:$cream
+        color: $cream
     }
 
     .store {
@@ -58,6 +89,6 @@
         -moz-border-radius: 33px;
         -ms-border-radius: 33px;
         -o-border-radius: 33px;
-       
+
     }
 }

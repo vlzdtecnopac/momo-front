@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import "./InventoryTabs.scss";
-
+import { useDesignStore } from "../../../store/design.store";
 
 function ConfigTabs() {
+  const { typeTypography } = useDesignStore();
+
   const [options, setOptions] = useState([
     {
       text: "Resumen",
@@ -46,7 +48,11 @@ function ConfigTabs() {
             >
               <div className={`tab-button ${tab.active ? "active" : ""}`}>
                 <br />
-                <span className={`${tab.active ? "active" : ""}`}>
+                <span
+                  className={`${typeTypography}-text ${
+                    tab.active ? "active" : ""
+                  }`}
+                >
                   {tab.text}
                 </span>
               </div>

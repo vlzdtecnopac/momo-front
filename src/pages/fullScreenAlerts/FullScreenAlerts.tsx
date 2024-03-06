@@ -24,6 +24,7 @@ function FullScreenAlerts() {
     <>
      <div className="alert_table_full_screen">
       <AlertsTable />
+      <Link to="../full-screen"><i className="icon_dashboard_full_alerts"></i></Link>
       <Link to="../dashboard"><i className="icon_close_full_screen"></i></Link>
       </div>
     </>

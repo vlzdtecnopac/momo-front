@@ -34,6 +34,21 @@
         }
     }
 
+    .icon_dashboard_full_alerts{
+        bottom: 60px;
+        right: 0px;
+        position: fixed;
+        display: block;
+        width: 52px;
+        height: 52px;
+        background: url(/src/assets/icons/dashboard.svg);
+        background-size: cover;
+        margin: 20px;
+        &:hover{
+            cursor: pointer;
+        }
+    }
+
     .icon_close_full_screen{
         bottom: 0px;
         right: 0px;

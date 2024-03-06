@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import moment from "moment";
 import { motion } from "framer-motion";
 import { v4 as uuidv4 } from "uuid";
 import TakeoutBadge from "../TakeoutBadge/TakeoutBadge";
@@ -26,11 +27,11 @@ const OrderCardTwo: React.FC<Props> = (props) => {
   }
 
   const tick = () => {
-    const now = new Date();
-    const h = now.getHours();
-    const m = now.getMinutes();
-    const s = now.getSeconds();
-
+    const now = moment();
+    const h = now.format('h');
+    const m = now.minutes();
+    const s = now.seconds();
+   
     setTimeOrder(`${h}:${formatoDosDigitos(m)}:${formatoDosDigitos(s)}`);
 
     // Llamada recursiva para el próximo frame

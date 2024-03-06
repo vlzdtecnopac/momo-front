@@ -32,7 +32,7 @@ const OrderCard: React.FC<Props> = (props) => {
     const h = now.format('h');
     const m = now.minutes();
     const s = now.seconds();
-    console.log(h);
+   
 
     setTimeOrder(`${h}:${formatoDosDigitos(m)}:${formatoDosDigitos(s)}`);
 

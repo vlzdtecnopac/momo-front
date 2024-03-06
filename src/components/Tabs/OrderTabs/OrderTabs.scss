@@ -118,8 +118,7 @@ $content-selector: "~ .content > section";
 
                 .flag {
                     background-color: $grey;
-                    -webkit-mask-image: url(/src/assets/icons/flag.svg);
-                    mask-image: url(/src/assets/icons/flag.svg);
+                    mask-image: url(../../../assets/icons/flag.svg);
                     mask-size: 100%;
 
                     &.active {
@@ -130,9 +129,7 @@ $content-selector: "~ .content > section";
 
                 .bell {
                     background-color: $grey;
-
-                    -webkit-mask-image: url(/src/assets/icons/bell.svg);
-                    mask-image: url(/src/assets/icons/bell.svg);
+                    mask-image: url(../../../assets/icons/bell.svg);
                     mask-size: 100%;
 
                     &.active {
@@ -143,8 +140,7 @@ $content-selector: "~ .content > section";
 
                 .clock {
                     background-color: $grey;
-                    -webkit-mask-image: url(/src/assets/icons/clock.svg);
-                    mask-image: url(/src/assets/icons/clock.svg);
+                    mask-image: url(./../../../assets/icons/clock.svg);
                     mask-size: 100%;
 
                     &.active {

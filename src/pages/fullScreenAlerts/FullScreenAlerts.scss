@@ -5,15 +5,15 @@
 
     .content-table {
         width: 100% !important;
-        max-width: 98% !important;
-        margin: auto;
+        max-width: 1350px !important;
+        max-height: 800px;
+        margin: 20px auto;
         display: block;
         position: relative;
-        margin-top: 20px;
 
         .scroll_alerts {
             overflow: auto;
-            height: 88vh !important;
+            height: 540px !important;
         }
 
         .table_header {

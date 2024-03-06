@@ -2,6 +2,9 @@ import React, { lazy, Suspense } from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 import { LoaderPage } from '../includes/loader/Loader';
 
+export const alertPageRuta: string = "/alerts-page";
+export const configPageRuta: string = "/config-page";
+
 const LazyLoginPage = lazy(() => import('../pages/login/LoginPage'));
 const LazyWelcomePage = lazy(() => import('../pages/welcome/WelcomePage'));
 const LazyConectedPage = lazy(() => import('../pages/conected/ConectedPage'));
@@ -21,7 +24,7 @@ const BrowserRoutes = createBrowserRouter([
   { path: "/success", element: <Suspense fallback={<LoaderPage/>}><LazyConectedPage /></Suspense> },
   { path: "/dashboard", element: <Suspense fallback={<LoaderPage/>}><LazyDashboardPage /></Suspense> },
   { path: "/config-page", element: <Suspense fallback={<LoaderPage/>}><LazyConfigPage /></Suspense> },
-  { path: "/alerts-page", element: <Suspense fallback={<LoaderPage/>}><LazyAlertsPage /></Suspense> },
+  { path: alertPageRuta, element: <Suspense fallback={<LoaderPage/>}><LazyAlertsPage /></Suspense> },
   { path: "/inventory-page", element: <Suspense fallback={<LoaderPage/>}><LazyInventoryPage /></Suspense> },
   { path: "/full-screen", element: <Suspense fallback={<LoaderPage/>}><LazyFullScreen /></Suspense> },
   { path: "/full-alerts", element: <Suspense fallback={<LoaderPage/>}><LazyFullScreenAlerts /></Suspense> },

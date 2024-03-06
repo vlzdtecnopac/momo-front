@@ -2,9 +2,29 @@
   @import url("https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap");
 
   @font-face {
-    font-family: "Stacion";
-    src: local("./assets/fonts/Stacion Regular.otf")
-  }
+    font-family: 'Stacion';
+    src: url('./assets/fonts/regular/Stacion-Regular.eot');
+    src: url('./assets/fonts/regular/Stacion-Regular.eot?#iefix') format('embedded-opentype'),
+        url('./assets/fonts/regular/Stacion-Regular.woff2') format('woff2'),
+        url('./assets/fonts/regular/Stacion-Regular.woff') format('woff'),
+        url('./assets/fonts/regular/Stacion-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+  font-family: 'Stacion';
+  src: url('./assets/fonts/light/Stacion-Light.eot');
+  src: url('./assets/fonts/light/Stacion-Light.eot?#iefix') format('embedded-opentype'),
+      url('./assets/fonts/light/Stacion-Light.woff2') format('woff2'),
+      url('./assets/fonts/light/Stacion-Light.woff') format('woff'),
+      url('./assets/fonts/light/Stacion-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
 
   $dark-blue: #2E418E;
   $light-blue: #D5EAFB;
@@ -17,6 +37,13 @@
   $cream: #EDEBDF;
   $black: #212121;
   $white: #FFFFFF;
+
+
+  $cell-shadow: #F4F4F4;
+  $green: #79BF80;
+  $yellow: #F2B45D;
+  $red: #F3726C;
+  $grey: #F4F4F4;
 
   [class*=col_],
   [class~=col] {

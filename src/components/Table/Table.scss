@@ -1,9 +1,5 @@
-$cell-shadow: #F4F4F4;
 
-$green: #79BF80;
-$yellow: #F2B45D;
-$red: #F3726C;
-$grey: #F4F4F4;
+@import "../../index.scss";
 
 .content-table {
     border-radius: 16px;
@@ -221,10 +217,10 @@ $grey: #F4F4F4;
         border-radius: 6px;
         background-color: #D5EAFB;
         border: 0;
-        width: 82px;
-        height: 30px;
+        width: 120px;
+        height: 35px;
         font-weight: 700;
-        color: #2E418E;
+        color: $dark-blue;
 
         &.small-text {
             font-size: 14px;
@@ -239,7 +235,8 @@ $grey: #F4F4F4;
         }
 
         &:hover {
-            background-color: #a5c1d9 !important;
+            background-color: $dark-blue !important;
+            color: white;
             cursor: pointer;
         }
     }

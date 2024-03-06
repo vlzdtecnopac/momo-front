@@ -1,5 +1,9 @@
+import { useDesignStore } from "../../store/design.store";
 import "./TakeoutBadge.scss";
+
 function TakeoutBadge() {
-  return <button className="badge">Takeout</button>;
+  const { typeTypography } = useDesignStore();
+
+  return <button className={`badge ${typeTypography}-text`}>Takeout</button>;
 }
 export default TakeoutBadge;

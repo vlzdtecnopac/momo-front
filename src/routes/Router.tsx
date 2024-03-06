@@ -4,6 +4,7 @@ import { LoaderPage } from '../includes/loader/Loader';
 
 export const alertPageRuta: string = "/alerts-page";
 export const configPageRuta: string = "/config-page";
+export const fullScreenPageRuta: string = "/full-screen";
 
 const LazyLoginPage = lazy(() => import('../pages/login/LoginPage'));
 const LazyWelcomePage = lazy(() => import('../pages/welcome/WelcomePage'));

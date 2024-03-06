@@ -39,9 +39,9 @@ function ConfigPage() {
               </div>
               <div className="col-10_sm-5">
                 <h2 className={`store ${typeTypography}-text`}>Tienda 1</h2>
-                <p className={`address ${typeTypography}-text`}>
+                <span className={`address ${typeTypography}-text`}>
                   Dirección tienda
-                </p>
+                </span>
               </div>
             </div>
           </div>

@@ -52,7 +52,7 @@ const Login: React.FC<LoginProps> = () => {
             </motion.div>
             <div className="text">
               <h2 className="h2">Iniciar sesión en KDS</h2>
-              <p className="p">Digita tu correo electrónico y contraseña</p>
+              <p className="parrafo-subtitulo">Digita tu correo electrónico y contraseña</p>
             </div>
             <LoginForm />
           </div>

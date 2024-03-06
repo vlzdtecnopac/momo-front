@@ -69,14 +69,16 @@
                 }
             }
 
-            .p {
+            .parrafo-subtitulo {
                 color: $cream;
                 display: flex;
                 justify-content: center;
                 text-align: center;
                 margin: 10px auto;
                 display: block;
-                font-family: "Stacion" serif;
+                font-family: 'Stacion';
+                font-weight: normal;
+                font-style: normal;
 
                 &.small-text {
                     font-size: 22px;

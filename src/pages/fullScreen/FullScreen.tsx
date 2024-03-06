@@ -26,6 +26,7 @@ export default function FullScreen() {
 
   return (
     <div className="full_screen_page">
+      <div className="content_full_page">
  {(() => {
         if(typeColumns == 1) {
           return(<div className="columns-stacked">
@@ -78,6 +79,7 @@ export default function FullScreen() {
         }
       })()}
       <Link to="../dashboard"><i className="icon_close_full_screen"></i></Link>
+    </div>
     </div>
   );
 }

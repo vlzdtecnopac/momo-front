@@ -176,8 +176,8 @@ $grey: #F4F4F4;
         }
 
         .success {
-            background: $green;
-            mask-image: url(/src/assets/icons/alert.svg);
+            background: url(/src/assets/icons/alerts/icon_success.svg);
+            background-size: cover;
         }
 
         .text-warning {
@@ -186,8 +186,8 @@ $grey: #F4F4F4;
         }
 
         .warning {
-            mask-image: url(/src/assets/icons/alert.svg);
-            background: $yellow;
+            background: url(/src/assets/icons/alerts/icon_warning.svg);
+            background-size: cover;
         }
 
         .text-danger {
@@ -196,9 +196,8 @@ $grey: #F4F4F4;
         }
 
         .danger {
-            mask-image: url(/src/assets/icons/alert.svg);
-            background: $red;
-
+            background: url(/src/assets/icons/alerts/icon_danger.svg);
+            background-size: cover;
         }
     }
 

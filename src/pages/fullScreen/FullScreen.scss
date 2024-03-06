@@ -1,15 +1,16 @@
 
-  
-  
-
 .full_screen_page{
     height: 100vh;
-    margin: 10px;
     overflow: auto;
+    background-color: white;
 
     .grid-basic-flex{
         flex-wrap: nowrap;
         display: flex;
+    }
+
+    .content_full_page{
+        margin: 10px;
     }
 }
 

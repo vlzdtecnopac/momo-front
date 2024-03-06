@@ -5,7 +5,8 @@
 
     .content-table {
         width: 100% !important;
-        max-width: 98% !important;
+        max-width: 1200px !important;
+        max-height: 800px;
         margin: auto;
         display: block;
         position: relative;
@@ -13,7 +14,7 @@
 
         .scroll_alerts {
             overflow: auto;
-            height: 88vh !important;
+            height: 540px !important;
         }
 
         .table_header {

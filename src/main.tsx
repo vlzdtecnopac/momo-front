@@ -9,8 +9,8 @@ import { LoaderPage } from "./includes/loader/Loader.tsx";
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <SocketProvider>
-    <React.Suspense fallback={<LoaderPage/>}>
-      <RouterProvider router={router} />
+      <React.Suspense fallback={<LoaderPage />}>
+        <RouterProvider router={router} />
       </React.Suspense>
     </SocketProvider>
   </React.StrictMode>

@@ -32,8 +32,12 @@
             padding: 22px 0px;
             width: auto;
 
+            &.active {
+                background-color: $dark-blue;
+            }
+
             &:hover {
-                background-color: #2E418E;
+                background-color: $dark-blue;
             }
 
             .icon {
@@ -50,10 +54,16 @@
                 mask-image: url(/src/assets/icons/inventory.svg);
                 mask-size: 100%;
 
+                &.active {
+                    background-color: $white;
+                }
+
                 &:hover {
-                    background-color: #fff;
+                    background-color: $white;
                     cursor: pointer;
                 }
+
+
             }
 
             .orders-icon {
@@ -62,6 +72,10 @@
                 -webkit-mask-image: url(/src/assets/icons/orders.svg);
                 mask-image: url(/src/assets/icons/orders.svg);
                 mask-size: 100%;
+
+                &.active {
+                    background-color: $white;
+                }
 
                 &:hover {
                     background-color: #fff;
@@ -76,6 +90,10 @@
                 mask-image: url(/src/assets/icons/alert.svg);
                 mask-size: 100%;
 
+                &.active {
+                    background-color: $white;
+                }
+
                 &:hover {
                     background-color: #fff;
                     cursor: pointer;
@@ -84,10 +102,13 @@
 
             .config-icon {
                 background-color: $dark-blue;
-
                 -webkit-mask-image: url(/src/assets/icons/alert.svg);
                 mask-image: url(/src/assets/icons/config.svg);
                 mask-size: 100%;
+
+                &.active {
+                    background-color: $white;
+                }
 
                 &:hover {
                     background-color: #fff;
@@ -154,6 +175,7 @@
             background-color: #2E418E;
         }
 
+
         .logout-icon {
             width: 30px;
             height: 30px;
@@ -164,6 +186,10 @@
             mask-size: 100%;
             text-align: center;
             margin: auto;
+
+            &.active {
+                background-color: $white;
+            }
 
             &:hover {
                 background-color: #fff;

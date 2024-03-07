@@ -75,7 +75,8 @@
         text-align: left;
 
         .item-weight {
-            font-weight: 500;
+            font-weight: 700;
+            color: $gray-text
         }
 
         .td {
@@ -136,7 +137,6 @@
         td:nth-child(5) {
             width: 100px;
             text-align-last: center;
-            font-weight: 500;
             font-family: "Red Hat Display", sans-serif;
         }
 

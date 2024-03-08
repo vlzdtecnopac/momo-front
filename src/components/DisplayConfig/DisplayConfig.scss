@@ -1,239 +1,239 @@
-@import "../../index.scss";
+    @import "../../index.scss";
 
-.config-display-section {
-    padding: 10px;
-    margin: 0px;
-
-    .title {
-        font-size: 18px;
-        font-weight: 500;
+    .config-display-section {
+        padding: 10px;
         margin: 0px;
 
-        color: $orange;
-
-        &.small-text {
-            font-size: 16px;
-        }
-
-        &.medium-text {
-            font-size: 20px;
-        }
-
-        &.large-text {
-            font-size: 24px
-        }
-    }
-
-    .sub-title {
-        color: #000;
-        font-weight: 500;
-        font-family: "Red Hat Display", "serif";
-        margin: 1px 0px;
-
-        &.small-text {
-            font-size: 16px;
-        }
-
-        &.medium-text {
+        .title {
             font-size: 18px;
+            font-weight: 500;
+            margin: 0px;
+
+            color: $orange;
+
+            &.small-text {
+                font-size: 16px;
+            }
+
+            &.medium-text {
+                font-size: 20px;
+            }
+
+            &.large-text {
+                font-size: 24px
+            }
         }
 
-        &.large-text {
-            font-size: 20px
-        }
-    }
-
-    .display-config {
-        display: flex;
-        margin-top: -10px;
-    }
-
-    .btns {
-        display: flex;
-        gap: 16px;
-
-
-        .btn {
-            width: 120px;
-            height: 33.6px;
-            border: none;
-            border-radius: 6px;
+        .sub-title {
+            color: #000;
+            font-weight: 500;
             font-family: "Red Hat Display", "serif";
-            font-weight: 700;
-            font-size: 14px;
-            cursor: pointer;
+            margin: 1px 0px;
 
-
-            &.save {
-                background: $orange;
-                color: $white;
-                width: 155px !important;
-
-                &.small-text {
-                    font-size: 14px;
-                }
-
-                &.medium-text {
-                    font-size: 16px;
-                }
-
-                &.large-text {
-                    font-size: 17px
-                }
-
-                &:hover {
-                    background: #ea5a12;
-                }
+            &.small-text {
+                font-size: 16px;
             }
 
-            &.back {
-                background: #EDEDED;
-                color: #777672;
-
-                &.small-text {
-                    font-size: 14px;
-                }
-
-                &.medium-text {
-                    font-size: 16px;
-                }
-
-                &.large-text {
-                    font-size: 18px
-                }
-
-                &:hover {
-                    background: rgb(211, 211, 211);
-                }
-            }
-
-        }
-
-    }
-
-
-    .column-option-text {
-        display: flex;
-        justify-content: space-around;
-        margin-top: -20px;
-        max-width: 790px;
-
-        .radio-group {
-            position: relative;
-
-            &::before {
-                content: '';
-                position: absolute;
-                top: 18%;
-                left: 0;
-                width: 280px;
-                height: 4px;
-                /* Set the height of your line */
-                background-color: $dark-blue;
-            }
-        }
-
-        .text-title {
-            height: 36px;
-            color: $dark-blue;
-
-            &.small {
+            &.medium-text {
                 font-size: 18px;
-                margin: 0px 5px;
             }
 
-            &.medium {
-                font-size: 26px;
-                margin-left: 6px;
-            }
-
-            &.large {
-                font-size: 32px;
-                margin-left: 4px;
+            &.large-text {
+                font-size: 20px
             }
         }
 
-        .text-small {
-            width: 80px;
-            text-align: center;
-            color: $dark-blue;
-            margin-left: -30px;
-            margin-top: 10px;
+        .display-config {
+            display: flex;
+            margin-top: -10px;
         }
 
-        .text-medium {
-            width: 80px;
-            text-align: center;
-            color: $dark-blue;
-            margin-left: -30px;
-            margin-top: 10px;
-        }
+        .btns {
+            display: flex;
+            gap: 16px;
 
-        .text-large {
-            width: 80px;
-            text-align: center;
-            color: $dark-blue;
-            margin-left: -30px;
-            margin-top: 10px;
-        }
 
-        .opcion-radio-text {
-            display: inline-block;
-            margin-right: 2px;
+            .btn {
+                width: 120px;
+                height: 33.6px;
+                border: none;
+                border-radius: 6px;
+                font-family: "Red Hat Display", "serif";
+                font-weight: 700;
+                font-size: 14px;
+                cursor: pointer;
 
-        }
 
-        .opcion-radio-text input {
-            margin-right: 5px;
-        }
+                &.save {
+                    background: $orange;
+                    color: $white;
+                    width: 155px !important;
 
-        .opcion-radio-text input[type=radio] {
-            position: absolute;
-            opacity: 0;
-        }
+                    &.small-text {
+                        font-size: 14px;
+                    }
 
-        .opcion-radio-text input[type=radio]+label:before {
-            content: '';
-            background: #F4F5F8;
-            border-radius: 100%;
-            border: 1px solid #a6aec6;
-            display: inline-block;
-            width: 1.4em;
-            height: 1.4em;
-            position: relative;
-            top: -.2em;
-            margin-right: .5em;
-            vertical-align: top;
-            cursor: pointer;
-            text-align: center;
-            -webkit-transition: all 250ms ease;
-            transition: all 250ms ease;
-            display: inline-block;
-            vertical-align: middle;
-        }
+                    &.medium-text {
+                        font-size: 16px;
+                    }
 
-        .opcion-radio-text label {
-            display: inline-block;
-            vertical-align: middle;
-            line-height: 32px;
-        }
+                    &.large-text {
+                        font-size: 17px
+                    }
 
-        .opcion-radio-text input[type=radio]:checked+label:before {
-            width: 30px;
-            height: 30px;
-            background-color: $orange;
-            box-shadow: inset 0 0 0 4px #F4F5F8;
+                    &:hover {
+                        background: #ea5a12;
+                    }
+                }
+
+                &.back {
+                    background: #EDEDED;
+                    color: #777672;
+
+                    &.small-text {
+                        font-size: 14px;
+                    }
+
+                    &.medium-text {
+                        font-size: 16px;
+                    }
+
+                    &.large-text {
+                        font-size: 18px
+                    }
+
+                    &:hover {
+                        background: rgb(211, 211, 211);
+                    }
+                }
+
+            }
 
         }
+
+
+        .column-option-text {
+            display: flex;
+            justify-content: space-around;
+            margin-top: -20px;
+            max-width: 790px;
+
+            .radio-group {
+                position: relative;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 18%;
+                    left: 0;
+                    width: 280px;
+                    height: 4px;
+                    /* Set the height of your line */
+                    background-color: $dark-blue;
+                }
+            }
+
+            .text-title {
+                height: 36px;
+                color: $dark-blue;
+
+                &.small {
+                    font-size: 18px;
+                    margin: 0px 5px;
+                }
+
+                &.medium {
+                    font-size: 26px;
+                    margin-left: 6px;
+                }
+
+                &.large {
+                    font-size: 32px;
+                    margin-left: 4px;
+                }
+            }
+
+            .text-small {
+                width: 80px;
+                text-align: center;
+                color: $dark-blue;
+                margin-left: -30px;
+                margin-top: 10px;
+            }
+
+            .text-medium {
+                width: 80px;
+                text-align: center;
+                color: $dark-blue;
+                margin-left: -30px;
+                margin-top: 10px;
+            }
+
+            .text-large {
+                width: 80px;
+                text-align: center;
+                color: $dark-blue;
+                margin-left: -30px;
+                margin-top: 10px;
+            }
+
+            .opcion-radio-text {
+                display: inline-block;
+                margin-right: 2px;
+
+            }
+
+            .opcion-radio-text input {
+                margin-right: 5px;
+            }
+
+            .opcion-radio-text input[type=radio] {
+                position: absolute;
+                opacity: 0;
+            }
+
+            .opcion-radio-text input[type=radio]+label:before {
+                content: '';
+                background: #F4F5F8;
+                border-radius: 100%;
+                border: 1px solid #a6aec6;
+                display: inline-block;
+                width: 1.4em;
+                height: 1.4em;
+                position: relative;
+                top: -.2em;
+                margin-right: .5em;
+                vertical-align: top;
+                cursor: pointer;
+                text-align: center;
+                -webkit-transition: all 250ms ease;
+                transition: all 250ms ease;
+                display: inline-block;
+                vertical-align: middle;
+            }
+
+            .opcion-radio-text label {
+                display: inline-block;
+                vertical-align: middle;
+                line-height: 32px;
+            }
+
+            .opcion-radio-text input[type=radio]:checked+label:before {
+                width: 30px;
+                height: 30px;
+                background-color: $orange;
+                box-shadow: inset 0 0 0 4px #F4F5F8;
+
+            }
+        }
+
+
+        .column-save-options {
+            display: flex;
+            justify-content: flex-end;
+            align-items: end;
+            height: 85px;
+            margin-right: 10px;
+        }
+
     }
-
-
-    .column-save-options {
-        display: flex;
-        justify-content: flex-end;
-        align-items: end;
-        height: 85px;
-        margin-right: 10px;
-    }
-
-}

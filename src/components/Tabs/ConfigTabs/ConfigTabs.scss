@@ -109,7 +109,8 @@ $content-selector: "~ .content > section";
                 .config-tab {
                     margin-left: 5px;
                     color: $grey;
-                    font-weight: 300;
+                    font-weight: 500;
+                    font-family: "Red Hat Display", "serif";
 
                     &.active {
                         color: $orange;

@@ -1,7 +1,6 @@
 import "./DisplayConfig.scss";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
 import DisplayOption from "./DisplayOption/DisplayOption";
 import splitIcon from "../../assets/icons/split.svg";
 import stackedIcon from "../../assets/icons/stacked.svg";

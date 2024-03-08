@@ -1,11 +1,28 @@
+import { useNavigate } from "react-router-dom";
 import { useDesignStore } from "../../store/design.store";
 import "./GeneralInfoForm.scss";
+import { useState } from "react";
+import CongratsModal from "../Congrats/CongratsModal";
 
 function GeneralInfoForm() {
+  const navigate = useNavigate();
+  const [success, setSucess] = useState(false);
+
   const { typeTypography } = useDesignStore();
 
+  const saveChangeHandler = () => {
+    setTimeout(() => {
+      setSucess(false);
+    }, 3000);
+    setSucess(true);
+  };
+
+  const handleBackNavegation = () => navigate("/dashboard");
   return (
     <>
+      <div style={{ display: success ? "block" : "none" }}>
+        <CongratsModal actionKey={Number(success)} />
+      </div>
       <h2 className={`info-general-title ${typeTypography}-text`}>
         Información General
       </h2>
@@ -57,7 +74,24 @@ function GeneralInfoForm() {
               />
             </div>
           </div>
-          <div className="col-2"></div>
+        </div>
+        <div className="col-2">
+          <div className="column-save-options">
+            <div className="btns">
+              <button
+                onClick={() => handleBackNavegation()}
+                className={`btn back ${typeTypography}-text`}
+              >
+                Regresar
+              </button>
+              <button
+                onClick={() => saveChangeHandler()}
+                className={`btn save ${typeTypography}-text`}
+              >
+                Guardar cambios
+              </button>
+            </div>
+          </div>
         </div>
       </form>
     </>

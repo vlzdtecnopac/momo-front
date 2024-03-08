@@ -74,6 +74,72 @@
         color: #000;
     }
 
+    .btns {
+        display: flex;
+        gap: 16px;
+        justify-content: flex-end;
+        position: relative;
+        bottom: 14px;
+
+
+        .btn {
+            width: 120px;
+            height: 33.6px;
+            border: none;
+            border-radius: 6px;
+            font-family: "Red Hat Display", "serif";
+            font-weight: 700;
+            font-size: 14px;
+            cursor: pointer;
+
+
+            &.save {
+                background: $orange;
+                color: $white;
+                width: 155px !important;
+
+                &.small-text {
+                    font-size: 14px;
+                }
+
+                &.medium-text {
+                    font-size: 16px;
+                }
+
+                &.large-text {
+                    font-size: 17px
+                }
+
+                &:hover {
+                    background: #ea5a12;
+                }
+            }
+
+            &.back {
+                background: #EDEDED;
+                color: #777672;
+
+                &.small-text {
+                    font-size: 14px;
+                }
+
+                &.medium-text {
+                    font-size: 16px;
+                }
+
+                &.large-text {
+                    font-size: 18px
+                }
+
+                &:hover {
+                    background: rgb(211, 211, 211);
+                }
+            }
+
+        }
+
+    }
+
     /* BOTTOM BARS */
     .bar {
         position: relative;

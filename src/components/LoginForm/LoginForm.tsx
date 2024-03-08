@@ -30,18 +30,20 @@ function LoginForm() {
             type="password"
             id="password"
             name="password"
-            className="input  "
+            className="input"
             required
           />
           <i className="icon icon-password"></i>
         </div>
         <div className="button-container">
-          <button
-            className="login-buttom"
-            type="button"
-          >
-            <Link to="/welcome"> Ingresar </Link>
-          </button>
+          <Link to="/welcome">
+            <button
+              className="login-buttom"
+              type="button"
+            >
+              Ingresar
+            </button>
+          </Link>
         </div>
       </form>
     </div>

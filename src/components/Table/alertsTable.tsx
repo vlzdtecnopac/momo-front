@@ -72,7 +72,9 @@ function AlertsTable() {
                 </td>
                 <td className={`td ${typeTypography}-text`}>{item.alert}</td>
                 <td className={`td ${typeTypography}-text`}>{item.hour}</td>
-                <td className={`text-${item.status} ${typeTypography}-text`}>
+                <td
+                  className={`item-weight text-${item.status} ${typeTypography}-text`}
+                >
                   {item.alertLevel}
                 </td>
                 <td>

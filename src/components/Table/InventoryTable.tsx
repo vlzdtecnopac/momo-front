@@ -76,10 +76,12 @@ function Table() {
                   </td>
                   <td className={`td ${typeTypography}-text`}>{item.name}</td>
                   <td className={`td ${typeTypography}-text`}>
-                    <p className={`text-${item.status}`}>{item.actualAmount}</p>
+                    <span className={`text-${item.status}`}>
+                      {item.actualAmount}
+                    </span>
                   </td>
-                  <td>{item.alertLevel}</td>
-                  <td>{item.minimumAmount}</td>
+                  <td className="item-weight">{item.alertLevel}</td>
+                  <td className="item-weight">{item.minimumAmount}</td>
                 </tr>
               ))}
             </tbody>

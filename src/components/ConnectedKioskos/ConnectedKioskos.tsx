@@ -23,12 +23,21 @@ function ConnectedKioskos() {
         </h2>
         <div className="connected">
           <ul className="connected-group">
+          <li className="content-center">
+                  <KioskoCard
+                    design="style2"
+                    text="Agregar"
+                    subText="Nuevo Kiosko"
+                    state="Desconectado"
+                    backgroundColor="#D5EAFB"
+                  />
+                </li>
             {kioskos?.map((_, index: number) => {
               index = kioskos.length - 1 - index;
               return (
                 <li className="content-center">
                   <KioskoCard
-                    connect={kioskos[index].state}
+                    design="style1"
                     text={kioskos[index].nombre}
                     subText="Tienda 1"
                     state={kioskos[index].state ?  "Conectado" :  "Desconectado"}

@@ -16,9 +16,11 @@ const Login: React.FC<LoginProps> = () => {
   const { socket } = useContext(SocketContext);
 
   useEffect(() => {
-    socket?.on("mensaje-welcome", (data: string) => {
+    socket.emit("mensaje-welcome", "Desde front");
+    socket.on("mensaje-welcome", (data: string) => {
       console.log(data);
     });
+   
   }, [socket]);
   const { typeTypography } = useDesignStore();
 

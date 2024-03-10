@@ -11,7 +11,7 @@ export const useSocket = (serverPath: string) => {
     const socketTemp = io(serverPath, {
       transports: ["websocket"],
       autoConnect: true,
-      forceNew: true
+      forceNew: true,
     });
 
     // Handle connection errors

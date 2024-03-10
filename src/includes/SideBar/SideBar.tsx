@@ -6,7 +6,6 @@ function SideBar() {
   const [selectedOption, setSelectedOption] = useState("");
   const location = useLocation();
 
-  console.log(location);
   const handleOptionClick = (option: string) => {
     setSelectedOption(option);
   };

@@ -13,13 +13,7 @@ interface LoginProps {
 }
 
 const Login: React.FC<LoginProps> = () => {
-  const { socket } = useContext(SocketContext);
 
-  useEffect(() => {
-    socket?.on("mensaje-welcome", (data: string) => {
-      console.log(data);
-    });
-  }, [socket]);
   const { typeTypography } = useDesignStore();
 
   return (

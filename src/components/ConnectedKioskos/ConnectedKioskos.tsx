@@ -28,7 +28,7 @@ function ConnectedKioskos() {
                     design="style2"
                     text="Agregar"
                     subText="Nuevo Kiosko"
-                    state="Desconectado"
+                    state={false}
                     backgroundColor="#D5EAFB"
                   />
                 </li>
@@ -40,7 +40,7 @@ function ConnectedKioskos() {
                     design="style1"
                     text={kioskos[index].nombre}
                     subText="Tienda 1"
-                    state={kioskos[index].state ?  "Conectado" :  "Desconectado"}
+                    state={kioskos[index].state}
                     backgroundColor="#D5EAFB"
                   />
                 </li>

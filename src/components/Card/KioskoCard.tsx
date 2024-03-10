@@ -47,7 +47,7 @@ const KioskoCard: React.FC<KioskoCardProps> = ({
             </div>
           </div>
           <button className={`btn button-card ${typeTypography}-text`}>
-            {state ? "Desaconectar" :  "Conectar"}
+            {state  ? "Desconectar" :  "Conectar"}
           </button>
         </>
       ) : (

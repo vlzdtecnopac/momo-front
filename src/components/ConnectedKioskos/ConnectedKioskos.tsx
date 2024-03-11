@@ -39,7 +39,7 @@ function ConnectedKioskos() {
                   <KioskoCard
                     design="style1"
                     text={kioskos[index].nombre}
-                    subText="Tienda 1"
+                    subText={kioskos[index].name_shopping}
                     state={kioskos[index].state}
                     backgroundColor="#D5EAFB"
                   />

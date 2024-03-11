@@ -4,12 +4,20 @@ import tabletIcon from "../../assets/icons/tablet.svg";
 import kioskIcon from "../../assets/icons/kiosko.svg";
 import Card from "../../components/Card/Card";
 import "./WelcomePage.scss";
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useDesignStore } from "../../store/design.store";
+import { SocketContext } from "../../context/SocketContext";
+import { KioskoInterface } from "../../interfaces/kiosko.interface";
 
 function WelcomePage() {
-  
+  const { socket } = useContext(SocketContext);
+  const [kioskos, setKioskos] = useState<KioskoInterface[]>();  
   const { typeTypography } = useDesignStore();
+
+  useEffect(() => {
+    socket.on("kiosko-socket", (data: KioskoInterface[]) => setKioskos(data));
+  }, [socket]);
+  
 
   return (
     <div className="component-welcome">
@@ -38,7 +46,7 @@ function WelcomePage() {
       <div className="text-container">
         <div className="text">
           <h2 className={`big-text ${typeTypography}-text`}>¡Bienvenid@!</h2>
-          <p className={`sub-text ${typeTypography}-text`}>
+          <p className={`sub-text ${typeTypography}-text`} style={{marginTop: '15px'}}>
             Antes de comenzar, <br />
             Espera que se emparejen <br />
             tus dispositivos.
@@ -52,47 +60,22 @@ function WelcomePage() {
               icon={tabletIcon}
               text="KDS"
               subText="Tienda 1"
-              state="Conectado"
+              state={true}
             />
           </div>
           <div className="loader"></div>
           <div className="card-group">
-            <Card
-              icon={kioskIcon}
-              text="KIOSKO"
-              subText="Tienda 1"
-              state="Conectado"
-            />
-            <Card
-              icon={kioskIcon}
-              text="KIOSKO"
-              subText="Tienda 1"
-              state="Conectado"
-            />
-            <Card
-              icon={kioskIcon}
-              text="KIOSKO"
-              subText="Tienda 1"
-              state="Conectado"
-            />
-            <Card
-              icon={kioskIcon}
-              text="KIOSKO"
-              subText="Tienda 1"
-              state="Conectado"
-            />
-            <Card
-              icon={kioskIcon}
-              text="KIOSKO"
-              subText="Tienda 1"
-              state="Conectado"
-            />
-            <Card
-              icon={kioskIcon}
-              text="KIOSKO"
-              subText="Tienda 1"
-              state="Conectado"
-            />
+          {kioskos?.map((_, index: number) => {
+              index = kioskos.length - 1 - index;
+              return (
+                <Card
+                icon={kioskIcon}
+                text={kioskos[index].nombre}
+                subText={kioskos[index].name_shopping}
+                state={kioskos[index].state}
+              />
+              );
+            })}
           </div>
         </div>
       </div>

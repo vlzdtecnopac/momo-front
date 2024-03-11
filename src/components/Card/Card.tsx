@@ -7,7 +7,7 @@ interface CardProps {
   icon: string;
   text?: string;
   subText?: string;
-  state?: string;
+  state?: boolean;
   backgroundColor?: string;
 }
 
@@ -36,7 +36,7 @@ const Card: React.FC<CardProps> = ({
           <div className="text_active">
             <p className={`text ${typeTypography}-text`}>{text}</p>
             <p className={`subtext ${typeTypography}-text`}>{subText}</p>
-            <p className={`state ${typeTypography}-text`}>{state}</p>
+            <p className={`state ${typeTypography}-text`}>{state? "Conectado" : "Desconectado"}</p>
           </div>
         </div>
       </div>

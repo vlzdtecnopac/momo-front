@@ -13,7 +13,6 @@ function ConnectedKioskos() {
   useEffect(() => {
     socket.on("kiosko-socket", (data: KioskoInterface[]) => setKioskos(data));
   }, [socket]);
-  console.log(kioskos);
 
   return (
     <>

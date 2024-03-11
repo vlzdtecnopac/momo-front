@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./ConfigTabs.scss";
 import { useDesignStore } from "../../../store/design.store";
+import { SocketContext } from "../../../context/SocketContext";
 
 type ActionFunction = (valor: number) => void;
 
@@ -9,6 +10,7 @@ interface ChildProps {
 }
 
 const ConfigTabs: React.FC<ChildProps> = ({ onClick }) => {
+  const { socket } = useContext(SocketContext);
   const [options, setOptions] = useState([
     {
       text: "General",
@@ -25,6 +27,9 @@ const ConfigTabs: React.FC<ChildProps> = ({ onClick }) => {
   ]);
 
   const changeActivate = (index: number) => {
+    if(index == 2){
+      socket.emit("kiosko-socket");
+    }
     const updatedOptions = options.map((option, i) => ({
       ...option,
       active: i == index ? true : false,

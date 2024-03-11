@@ -5,16 +5,18 @@ import addKioskoIcon from "../../assets/icons/green-kiosko.svg";
 import "./Card.scss";
 import { useDesignStore } from "../../store/design.store";
 
+type Designstyle = "style1" | "style2"
+
 interface KioskoCardProps {
-  connect: boolean;
+  design: Designstyle;
   text?: string;
   backgroundColor?: string;
   subText?: string;
-  state?: string;
+  state?: boolean;
 }
 
 const KioskoCard: React.FC<KioskoCardProps> = ({
-  connect,
+  design,
   text,
   backgroundColor,
   subText,
@@ -25,7 +27,7 @@ const KioskoCard: React.FC<KioskoCardProps> = ({
 
   return (
     <>
-      {connect ? (
+      {design == "style1"? (
         <>
           <div
             className="card"
@@ -45,7 +47,7 @@ const KioskoCard: React.FC<KioskoCardProps> = ({
             </div>
           </div>
           <button className={`btn button-card ${typeTypography}-text`}>
-            Desconectar
+            {state ? "Desaconectar" :  "Conectar"}
           </button>
         </>
       ) : (

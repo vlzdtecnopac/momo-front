@@ -21,21 +21,23 @@ function SideBar() {
     <>
       <ul className="options__menu">
         {sidebarListNav.map((item, index) => (
-          <li
-            className={`option ${
-              location.pathname == item.router ? "active" : ""
-            }`}
-            onClick={() => handleOptionClick(item.name)}
+          <Link
+            to={item.router}
             key={index}
           >
-            <Link to={item.router}>
+            <li
+              className={`option ${
+                location.pathname == item.router ? "active" : ""
+              }`}
+              onClick={() => handleOptionClick(item.name)}
+            >
               <i
                 className={`icon ${
                   location.pathname === item.router ? "active" : ""
                 } ${item.icon}`}
               ></i>
-            </Link>
-          </li>
+            </li>
+          </Link>
         ))}
       </ul>
       <Link

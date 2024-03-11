@@ -1,8 +1,8 @@
 import React from "react";
 
-import "./Table.scss";
-import InventoryTabs from "../Tabs/InventoryTabs/InventoryTabs";
-import { useDesignStore } from "../../store/design.store";
+import "./InventoryTable.scss";
+import InventoryTabs from "../../Tabs/InventoryTabs/InventoryTabs";
+import { useDesignStore } from "../../../store/design.store";
 
 type Inventory = {
   [key: string]: string;

@@ -1,7 +1,7 @@
 import React from "react";
 
-import "./Table.scss";
-import { useDesignStore } from "../../store/design.store";
+import "./AlertsTable.scss";
+import { useDesignStore } from "../../../store/design.store";
 
 const column_headers = ["", "Alertas", "Hora", "Nivel de alerta", "Acción"];
 

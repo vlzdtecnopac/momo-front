@@ -1,11 +1,13 @@
 import React from "react";
 import { Formik } from "formik";
 import * as Yup from "yup";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { useDesignStore } from "../../store/design.store";
 import "./LoginForm.scss";
+import axios from "axios";
 
 function LoginForm() {
+  const navigate = useNavigate();
   const { typeTypography } = useDesignStore();
 
   const SignupSchema = Yup.object().shape({
@@ -21,8 +23,17 @@ function LoginForm() {
       <Formik
         initialValues={{ email: "", password: "" }}
         validationSchema={SignupSchema}
-        onSubmit={(values, { setSubmitting }) => {
-          alert(JSON.stringify(values, null, 2));
+        onSubmit={async (values, { setSubmitting }) => {
+          try{
+            let resp = await axios.post("http://localhost:3000/users/employee/login", values);
+            if(resp.data){
+              localStorage.setItem("token-momo", resp.data.token);
+              navigate("/welcome");
+            }
+          }catch(e){
+            console.log(e);
+          }
+  
         }}
       >
         {({

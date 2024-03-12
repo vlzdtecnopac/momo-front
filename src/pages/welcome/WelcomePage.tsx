@@ -18,21 +18,22 @@ function WelcomePage() {
 
   const { socket } = useContext(SocketContext);
   const [kioskos, setKioskos] = useState<KioskoInterface[]>();  
- 
-  useEffect(() => {
-    socket.emit("kiosko-socket", {shopping_id: localStorage.getItem("store-momo")!});
-    socket.on("kiosko-socket", (data: KioskoInterface[]) => setKioskos(data));
-  }, [socket]);
-
 
   useEffect(()=>{
     return () => {
       fetchData(localStorage.getItem("store-momo")!)
     };
   },[])
+ 
+  useEffect(() => {
+    setTimeout(()=>{
+      socket.emit("kiosko-socket", {shopping_id: localStorage.getItem("store-momo")!});
+    }, 1000)
+    socket.on("kiosko-socket", (data: KioskoInterface[]) => setKioskos(data));
+  }, [socket]);
 
 
-
+ 
   return (
     <div className="component-welcome">
       

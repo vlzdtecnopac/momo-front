@@ -28,7 +28,7 @@ function Header() {
       <div className="column_end">
         <div className="welcome-text">
           <p className={`welcome ${typeTypography}-text`}>Bienvenida</p>
-          <p className={`store ${typeTypography}-text`}>{data&& data[0].name_shopping}</p>
+          <p className={`store ${typeTypography}-text`}>{data? data[0].name_shopping : ""}</p>
         </div>
         <img
           className="profile-pic"

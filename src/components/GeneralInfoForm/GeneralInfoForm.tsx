@@ -3,6 +3,7 @@ import { useDesignStore } from "../../store/design.store";
 import "./GeneralInfoForm.scss";
 import { useState } from "react";
 import CongratsModal from "../Congrats/CongratsModal";
+import { Formik } from "formik";
 
 function GeneralInfoForm() {
   const navigate = useNavigate();
@@ -26,7 +27,17 @@ function GeneralInfoForm() {
       <h2 className={`info-general-title ${typeTypography}-text`}>
         Información General
       </h2>
-      <form
+      <Formik
+       initialValues={{ store: '', close: '', email: '' , open:''}}
+       onSubmit={(values) => {
+        saveChangeHandler()
+       }}
+     >
+     {({
+          values,
+          handleChange,
+          handleBlur,
+       }) => ( <form
         className="info-form"
         action=""
         method="POST"
@@ -38,9 +49,12 @@ function GeneralInfoForm() {
               <input
                 className={`${typeTypography}-text`}
                 id="store"
+                name="store"
                 placeholder="Tienda 1"
                 type="text"
-                required
+                onChange={handleChange}
+                onBlur={handleBlur}
+                value={values.store}
               />
             </div>
             <div className="group">
@@ -49,7 +63,9 @@ function GeneralInfoForm() {
                 className={`${typeTypography}-text`}
                 id="close"
                 type="datetime-local"
-                required
+                onChange={handleChange}
+                onBlur={handleBlur}
+                value={values.close}
               />
             </div>
           </div>
@@ -59,9 +75,12 @@ function GeneralInfoForm() {
               <input
                 className={`${typeTypography}-text`}
                 id="email"
+                name="email"
                 placeholder="mitienda@gmail.com"
                 type="text"
-                required
+                onChange={handleChange}
+                onBlur={handleBlur}
+                value={values.email}
               />
             </div>
             <div className="group">
@@ -69,8 +88,11 @@ function GeneralInfoForm() {
               <input
                 className={`${typeTypography}-text`}
                 id="open"
+                name="open"
                 type="datetime-local"
-                required
+                onChange={handleChange}
+                onBlur={handleBlur}
+                value={values.open}
               />
             </div>
           </div>
@@ -85,7 +107,7 @@ function GeneralInfoForm() {
                 Regresar
               </button>
               <button
-                onClick={() => saveChangeHandler()}
+                type="submit" 
                 className={`btn save ${typeTypography}-text`}
               >
                 Guardar cambios
@@ -93,7 +115,8 @@ function GeneralInfoForm() {
             </div>
           </div>
         </div>
-      </form>
+      </form>)}
+      </Formik>
     </>
   );
 }

@@ -28,7 +28,7 @@ const ConfigTabs: React.FC<ChildProps> = ({ onClick }) => {
 
   const changeActivate = (index: number) => {
     if(index == 2){
-      socket.emit("kiosko-socket", {shopping_id: localStorage.getItem("mome-store")});
+      socket.emit("kiosko-socket", {shopping_id: localStorage.getItem("store-momo")});
     }
     const updatedOptions = options.map((option, i) => ({
       ...option,

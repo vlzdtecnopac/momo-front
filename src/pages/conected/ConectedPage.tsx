@@ -28,8 +28,7 @@ function ConectedPage() {
     setCount(response.data.length);
     if(response.data.length > 0){
      setTimeout(()=>  navigate("/dashboard"), 6000);
-    }
-    
+    } 
   }
 
   return (

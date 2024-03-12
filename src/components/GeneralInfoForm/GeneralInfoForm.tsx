@@ -21,7 +21,7 @@ function GeneralInfoForm() {
   };
 
   useEffect(()=>{
-    console.log(data);
+    console.log(data[0].name_shopping);
     return () => {
       fetchData(localStorage.getItem("store-momo")!)
     };
@@ -37,7 +37,7 @@ function GeneralInfoForm() {
         Información General
       </h2>
       <Formik
-       initialValues={{ store: '', close: '', email: '' , open:''}}
+       initialValues={{ store: data ? data[0].name_shopping : '', close: data ?  data[0].close : '', email: data ? data[0].email : '' , open:  data ?  data[0].open : ''}}
        onSubmit={(values) => {
         saveChangeHandler()
        }}

@@ -13,11 +13,12 @@ import kioskIcon from "../../assets/icons/kiosko.svg";
 
 
 function WelcomePage() {
-  const { socket } = useContext(SocketContext);
-  const [kioskos, setKioskos] = useState<KioskoInterface[]>();  
   const { typeTypography } = useDesignStore();
   const { data, fetchData } = useShoppingStore();
-  
+
+  const { socket } = useContext(SocketContext);
+  const [kioskos, setKioskos] = useState<KioskoInterface[]>();  
+ 
   useEffect(() => {
     socket.emit("kiosko-socket", {shopping_id: localStorage.getItem("store-momo")!});
     socket.on("kiosko-socket", (data: KioskoInterface[]) => setKioskos(data));

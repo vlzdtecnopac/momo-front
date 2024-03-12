@@ -1,12 +1,12 @@
 import React, { useContext } from "react";
 import { Formik } from "formik";
 import * as Yup from "yup";
+import axios from "axios";
 import { Link, Navigate, useNavigate } from "react-router-dom";
+
+import { SocketContext } from "../../context/SocketContext";
 import { useDesignStore } from "../../store/design.store";
 import "./LoginForm.scss";
-import axios from "axios";
-import { useShoppingStore } from "../../store/shopping.store";
-import { SocketContext } from "../../context/SocketContext";
 
 function LoginForm() {
   const navigate = useNavigate();

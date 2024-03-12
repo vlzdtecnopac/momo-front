@@ -1,14 +1,15 @@
 import React, { useState } from "react";
-import "./SideBar.scss";
 import { Link, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import "./SideBar.scss";
 
 function SideBar() {
-  const [selectedOption, setSelectedOption] = useState("");
+  const navigate = useNavigate();
+ 
   const location = useLocation();
 
-  const handleOptionClick = (option: string) => {
-    setSelectedOption(option);
-  };
+
+  const handleNavegation = (nav: string) => navigate(nav);
 
   const sidebarListNav = [
     { icon: "orders-icon", name: "orders", router: "/dashboard" },
@@ -25,23 +26,20 @@ function SideBar() {
             className={`option ${
               location.pathname == item.router ? "active" : ""
             }`}
-            onClick={() => handleOptionClick(item.name)}
             key={index}
+            onClick={() => handleNavegation(item.router)}
           >
-            <Link to={item.router}>
               <i
                 className={`icon ${
                   location.pathname === item.router ? "active" : ""
                 } ${item.icon}`}
               ></i>
-            </Link>
           </li>
         ))}
       </ul>
       <Link
         to="#"
         className="logout"
-        onClick={() => handleOptionClick("logout")}
       >
         <Link to="../login">
           <i className="logout-icon"></i>

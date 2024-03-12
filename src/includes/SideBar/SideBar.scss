@@ -38,6 +38,20 @@
 
             &:hover {
                 background-color: $dark-blue;
+                cursor: pointer;
+                .inventory-icon {
+                    background-color: $white;
+                }
+                .config-icon {
+                    background-color: $white;
+                }
+                .orders-icon{
+                    background-color: $white;
+                }
+                .alert-icon {
+                    background-color: $white;
+                }
+        
             }
 
             .icon {
@@ -65,7 +79,6 @@
 
 
             }
-
             .orders-icon {
                 background-color: $dark-blue;
 
@@ -98,6 +111,7 @@
                     background-color: #fff;
                     cursor: pointer;
                 }
+
             }
 
             .config-icon {
@@ -156,8 +170,6 @@
                 -o-border-radius: 30px;
             }
 
-
-
             .down {
                 margin-top: 200px;
             }
@@ -173,6 +185,9 @@
 
         &:hover {
             background-color: #2E418E;
+            .logout-icon {
+                background-color: #fff;
+            }
         }
 
 

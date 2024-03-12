@@ -1,22 +1,31 @@
 import { useNavigate } from "react-router-dom";
 import { useDesignStore } from "../../store/design.store";
 import "./GeneralInfoForm.scss";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CongratsModal from "../Congrats/CongratsModal";
 import { Formik } from "formik";
+import { useShoppingStore } from "../../store/shopping.store";
 
 function GeneralInfoForm() {
+  const { data, fetchData } = useShoppingStore();
   const navigate = useNavigate();
-  const [success, setSucess] = useState(false);
+  const [success, setSuccess] = useState(false);
 
   const { typeTypography } = useDesignStore();
 
   const saveChangeHandler = () => {
     setTimeout(() => {
-      setSucess(false);
+      setSuccess(false);
     }, 3000);
-    setSucess(true);
+    setSuccess(true);
   };
+
+  useEffect(()=>{
+    console.log(data);
+    return () => {
+      fetchData(localStorage.getItem("store-momo")!)
+    };
+  },[])
 
   const handleBackNavegation = () => navigate("/dashboard");
   return (

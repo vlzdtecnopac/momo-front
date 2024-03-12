@@ -1,15 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import { useDesignStore } from "../../store/design.store";
 import "./LoginForm.scss";
 import axios from "axios";
+import { useShoppingStore } from "../../store/shopping.store";
+import { SocketContext } from "../../context/SocketContext";
 
 function LoginForm() {
   const navigate = useNavigate();
-  const { typeTypography } = useDesignStore();
-
+  const { socket } = useContext(SocketContext);
   const SignupSchema = Yup.object().shape({
     email: Yup.string().email("El correo no es valido.").required("El correo es requerido."),
     password: Yup.string()
@@ -23,17 +24,22 @@ function LoginForm() {
       <Formik
         initialValues={{ email: "", password: "" }}
         validationSchema={SignupSchema}
-        onSubmit={async (values, { setSubmitting }) => {
+        onSubmit={async (values) => {
           try{
             let resp = await axios.post("http://localhost:3000/users/employee/login", values);
             if(resp.data){
+              if(!resp.data.state){
+                  alert("Usuario Inactivo");
+                  return;
+              }
               localStorage.setItem("token-momo", resp.data.token);
+              localStorage.setItem("store-momo", resp.data.shopping_id);
+              socket.emit("kiosko-socket", {shopping_id: resp.data.shopping_id});
               navigate("/welcome");
             }
           }catch(e){
             console.log(e);
           }
-  
         }}
       >
         {({

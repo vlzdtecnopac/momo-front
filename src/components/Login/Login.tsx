@@ -5,7 +5,6 @@ import "./Login.scss";
 import LoginForm from "../LoginForm/LoginForm";
 import imgLogin from "../../assets/login-img.jpg";
 import logoMomo from "../../assets/logo.svg";
-import { SocketContext } from "../../context/SocketContext";
 import { useDesignStore } from "../../store/design.store";
 
 interface LoginProps {

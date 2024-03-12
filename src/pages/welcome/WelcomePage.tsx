@@ -1,26 +1,40 @@
 import { motion } from "framer-motion";
-import logo from "../../assets/logo.svg";
-import tabletIcon from "../../assets/icons/tablet.svg";
-import kioskIcon from "../../assets/icons/kiosko.svg";
-import Card from "../../components/Card/Card";
-import "./WelcomePage.scss";
 import React, { useContext, useEffect, useState } from "react";
+import {useShoppingStore} from "../../store/shopping.store";
 import { useDesignStore } from "../../store/design.store";
 import { SocketContext } from "../../context/SocketContext";
 import { KioskoInterface } from "../../interfaces/kiosko.interface";
+import Card from "../../components/Card/Card";
+import "./WelcomePage.scss";
+
+import logo from "../../assets/logo.svg";
+import tabletIcon from "../../assets/icons/tablet.svg";
+import kioskIcon from "../../assets/icons/kiosko.svg";
+
 
 function WelcomePage() {
   const { socket } = useContext(SocketContext);
   const [kioskos, setKioskos] = useState<KioskoInterface[]>();  
   const { typeTypography } = useDesignStore();
-
+  const { data, fetchData } = useShoppingStore();
+  
   useEffect(() => {
+    socket.emit("kiosko-socket", {shopping_id: localStorage.getItem("store-momo")!});
     socket.on("kiosko-socket", (data: KioskoInterface[]) => setKioskos(data));
   }, [socket]);
-  
+
+
+  useEffect(()=>{
+    return () => {
+      fetchData(localStorage.getItem("store-momo")!)
+    };
+  },[])
+
+
 
   return (
     <div className="component-welcome">
+      
       <div className="logo-container">
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
@@ -56,12 +70,17 @@ function WelcomePage() {
       <div className="kds-loader-container">
         <div className="kds-loader">
           <div className="store-card">
-            <Card
-              icon={tabletIcon}
-              text="KDS"
-              subText="Tienda 1"
-              state={true}
-            />
+          {data?.map((item: any, i: number) => (
+     
+        <Card
+        key={i}
+        icon={tabletIcon}
+        text={item.name_shopping}
+        subText={`No. ${item.no_shooping}`}
+        state={true}
+      />
+      ))}
+           
           </div>
           <div className="loader"></div>
           <div className="card-group">
@@ -69,6 +88,7 @@ function WelcomePage() {
               index = kioskos.length - 1 - index;
               return (
                 <Card
+                key={kioskos[index].id}
                 icon={kioskIcon}
                 text={kioskos[index].nombre}
                 subText={kioskos[index].name_shopping}

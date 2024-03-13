@@ -106,7 +106,7 @@ function WelcomePage() {
                 />
               ))}
             </div>
-            {!loader && data? <div className="loader"></div> : "" }
+            <div className="loader"></div>
             <div className="card-group">
               {kioskos?.map((_, index: number) => {
                 index = kioskos.length - 1 - index;

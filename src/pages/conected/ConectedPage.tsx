@@ -1,5 +1,5 @@
 import "./ConectedPage.scss";
-import { useContext, useEffect, useState } from "react";
+import {  useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 import logo from "../../assets/logo.svg";
@@ -27,7 +27,7 @@ function ConectedPage() {
     const response = await axios.get(`http://localhost:3000/kioskos/?shopping_id=${localStorage.getItem("store-momo")}&state=true`, {headers});
     setCount(response.data.length);
     if(response.data.length > 0){
-     setTimeout(()=>  navigate("/dashboard"), 6000);
+     setTimeout(()=>  navigate("/dashboard"), 4000);
     } 
   }
 

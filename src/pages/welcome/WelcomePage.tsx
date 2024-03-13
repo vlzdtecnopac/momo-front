@@ -11,6 +11,7 @@ import logo from "../../assets/logo.svg";
 import tabletIcon from "../../assets/icons/tablet.svg";
 import kioskIcon from "../../assets/icons/kiosko.svg";
 import { LoaderPage } from "../../includes/loader/Loader";
+import { Link } from "react-router-dom";
 
 function WelcomePage() {
   const { typeTypography } = useDesignStore();
@@ -89,13 +90,15 @@ function WelcomePage() {
               {kioskos?.map((_, index: number) => {
                 index = kioskos.length - 1 - index;
                 return (
-                  <Card
-                    key={kioskos[index].id}
-                    icon={kioskIcon}
-                    text={kioskos[index].nombre}
-                    subText={kioskos[index].name_shopping}
-                    state={kioskos[index].state}
-                  />
+                  <Link to="/success">
+                    <Card
+                      key={kioskos[index].id}
+                      icon={kioskIcon}
+                      text={kioskos[index].nombre}
+                      subText={kioskos[index].name_shopping}
+                      state={kioskos[index].state}
+                    />
+                  </Link>
                 );
               })}
             </div>

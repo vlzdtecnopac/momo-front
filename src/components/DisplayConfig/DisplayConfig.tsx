@@ -1,5 +1,5 @@
-import "./DisplayConfig.scss";
-import { useState } from "react";
+import axios from "axios";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import DisplayOption from "./DisplayOption/DisplayOption";
 import splitIcon from "../../assets/icons/split.svg";
@@ -7,6 +7,14 @@ import stackedIcon from "../../assets/icons/stacked.svg";
 import clasicIcon from "../../assets/icons/clasic.svg";
 import CongratsModal from "../../components/Congrats/CongratsModal";
 import { TypographyEnum, useDesignStore } from "./../../store/design.store";
+
+
+import "./DisplayConfig.scss";
+
+const headers = {
+  'x-token': `${localStorage.getItem('token-momo')}`,
+  'Content-Type': 'application/json', // Adjust content type as needed
+};
 
 const options = [
   { icon: splitIcon, text: "Split" },
@@ -21,12 +29,30 @@ function DisplayConfig() {
     useDesignStore();
   const [success, setSucess] = useState(false);
 
-  const saveChangeHandler = () => {
-    setTimeout(() => {
-      setSucess(false);
-    }, 3000);
+  const saveChangeHandler = async () => {
     setSucess(true);
+    try{
+      const data = {
+        "type_text": typeTypography,
+        "type_column": typeColumns
+    }
+     await axios.put(`http://localhost:3000/config/${localStorage.getItem('store-momo')}`, data, {headers});
+     setTimeout(()=>setSucess(false), 2000);
+    }catch(e){
+      setSucess(false);
+    }
   };
+
+  useEffect(()=>{
+    consultConfig();
+  }, [])
+
+  const consultConfig = async () => {
+   const response =  await axios.get(`http://localhost:3000/config/?shopping_id=${localStorage.getItem('store-momo')}`, {headers});
+   console.log(response.data[0].type_text);
+   selectTypeColumn(response.data[0].type_column); 
+   selectTypography(response.data[0].type_text);
+  }
 
   const handleBackNavegation = () => navigate("/dashboard");
 

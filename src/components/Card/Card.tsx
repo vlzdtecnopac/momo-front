@@ -22,7 +22,6 @@ const Card: React.FC<CardProps> = ({
   const { typeTypography } = useDesignStore();
 
   return (
-    <Link to="/success">
       <div
         className="card"
         style={{ backgroundColor: cardBackgroundColor }}
@@ -40,7 +39,6 @@ const Card: React.FC<CardProps> = ({
           </div>
         </div>
       </div>
-    </Link>
   );
 };
 

@@ -46,6 +46,7 @@ function LoginForm() {
                 }
                 localStorage.setItem("token-momo", resp.data.token);
                 localStorage.setItem("store-momo", resp.data.shopping_id);
+                localStorage.setItem("employee-id", resp.data.employee_id)
                 socket.emit("kiosko-socket", {
                   shopping_id: resp.data.shopping_id,
                 });

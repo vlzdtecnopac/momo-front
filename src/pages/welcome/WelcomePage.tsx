@@ -13,10 +13,12 @@ import kioskIcon from "../../assets/icons/kiosko.svg";
 import { LoaderPage } from "../../includes/loader/Loader";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { useEmployeeStore } from "../../store/employee.store";
 
 function WelcomePage() {
   const { typeTypography } = useDesignStore();
   const { data, fetchData } = useShoppingStore();
+  const { dataEmployee, fetchEmployeeData } = useEmployeeStore();
   const [error, setError] = useState<Boolean>(false);
   const [kioskos, setKioskos] = useState<KioskoInterface[]>();
   const [loader, setLoader] = useState<Boolean>();
@@ -27,14 +29,18 @@ function WelcomePage() {
 
   useEffect(() => {
     setLoader(true);
-    fetchData(localStorage.getItem("store-momo")!).then((resp) => {
-      if (resp) {
-        socket.emit("kiosko-socket", {
-          shopping_id: localStorage.getItem("store-momo")!,
+    fetchEmployeeData(localStorage.getItem("employee-id")!).then((result)=>{
+      if(result){
+        fetchData(dataEmployee[0].shopping_id).then((resp) => {
+          if (resp) {
+            socket.emit("kiosko-socket", {
+              shopping_id: localStorage.getItem("store-momo")!,
+            });
+            setLoader(false);
+          }
         });
-        setLoader(false);
       }
-    });
+    })
   }, []);
 
   useEffect(() => {
@@ -51,12 +57,14 @@ function WelcomePage() {
       const data = {
         state: true,
         shopping_id: localStorage.getItem("store-momo"),
+        kiosko_id: kiosko_id
       };
 
       try {
         await axios.put(`http://localhost:3000/kioskos/${kiosko_id}`, data, {
           headers,
         });
+        //await axios.put(`http://localhost:3000/users/employee/kiosko/${id_user}`, data, {headers} );
        
         navigate("/success");
       } catch (e) {

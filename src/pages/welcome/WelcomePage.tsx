@@ -20,9 +20,7 @@ function WelcomePage() {
   const [kioskos, setKioskos] = useState<KioskoInterface[]>();  
 
   useEffect(()=>{
-    return () => {
-      fetchData(localStorage.getItem("store-momo")!)
-    };
+    fetchData(localStorage.getItem("store-momo")!)
   },[])
  
   useEffect(() => {

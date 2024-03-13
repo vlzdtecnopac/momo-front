@@ -18,6 +18,12 @@ function SideBar() {
     { icon: "config-icon", name: "config", router: "/config-page" },
   ];
 
+  const handleLogout = () => {
+      localStorage.removeItem('token-momo');
+      localStorage.removeItem('store-momo');
+      navigate('/');
+  }
+
   return (
     <>
       <ul className="options__menu">
@@ -37,14 +43,12 @@ function SideBar() {
           </li>
         ))}
       </ul>
-      <Link
-        to="#"
+      <button
+        onClick={()=>handleLogout()}
         className="logout"
       >
-        <Link to="../login">
           <i className="logout-icon"></i>
-        </Link>
-      </Link>
+      </button>
     </>
   );
 }

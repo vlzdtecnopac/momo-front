@@ -56,7 +56,7 @@ function WelcomePage() {
 
       const data = {
         state: true,
-        shopping_id: localStorage.getItem("store-momo"),
+        shopping_id: dataEmployee[0].shopping_id,
         kiosko_id: kiosko_id
       };
 
@@ -64,8 +64,7 @@ function WelcomePage() {
         await axios.put(`http://localhost:3000/kioskos/${kiosko_id}`, data, {
           headers,
         });
-        //await axios.put(`http://localhost:3000/users/employee/kiosko/${id_user}`, data, {headers} );
-       
+        await axios.put(`http://localhost:3000/users/employee/kiosko/${dataEmployee[0].employee_id}`, data, {headers} );
         navigate("/success");
       } catch (e) {
         setError(true);

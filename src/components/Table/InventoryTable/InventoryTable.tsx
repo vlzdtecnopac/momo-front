@@ -46,7 +46,7 @@ function Table() {
 
   return (
     <>
-      <div className="content-table">
+      <div className="content-table-inventary">
         <InventoryTabs />
         <table className="table_header">
           <thead>

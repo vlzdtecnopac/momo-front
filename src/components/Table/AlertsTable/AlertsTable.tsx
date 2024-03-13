@@ -43,7 +43,7 @@ function AlertsTable() {
   const { typeTypography } = useDesignStore();
 
   return (
-    <div className="content-table">
+    <div className="content-table-alert">
       <table className="table_header">
         <thead>
           <tr className={`${typeTypography}-text`}>

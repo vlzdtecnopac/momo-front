@@ -1,11 +1,11 @@
 import { useNavigate } from "react-router-dom";
 import { useDesignStore } from "../../store/design.store";
-import "./GeneralInfoForm.scss";
 import { useEffect, useState } from "react";
 import CongratsModal from "../Congrats/CongratsModal";
 import { Formik } from "formik";
 import { useShoppingStore } from "../../store/shopping.store";
 import { useEmployeeStore } from "../../store/employee.store";
+import "./GeneralInfoForm.scss";
 
 function GeneralInfoForm() {
   const navigate = useNavigate();
@@ -113,24 +113,6 @@ function GeneralInfoForm() {
                 onBlur={handleBlur}
                 value={values.open}
               />
-            </div>
-          </div>
-        </div>
-        <div className="col-2">
-          <div className="column-save-options">
-            <div className="btns">
-              <button
-                onClick={() => handleBackNavegation()}
-                className={`btn back ${typeTypography}-text`}
-              >
-                Regresar
-              </button>
-              <button
-                type="submit" 
-                className={`btn save ${typeTypography}-text`}
-              >
-                Guardar cambios
-              </button>
             </div>
           </div>
         </div>

@@ -91,7 +91,7 @@ function WelcomePage() {
         
         <div className="kds-loader-container">
           <div className="kds-loader">
-          {error? <div className="alert-kiosko">Ya se encuentra conectado, encuentra otro kiosko...</div> : ""}
+          {error? <div className="alert-kiosko">No se encuentra disponible, encuentra otro kiosko...</div> : ""}
             <div className="store-card">
               {data?.map((item: any, i: number) => (
                 <Card

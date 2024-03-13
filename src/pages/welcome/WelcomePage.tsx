@@ -50,7 +50,7 @@ function WelcomePage() {
 
       const data = {
         state: true,
-        shopping_id: localStorage.get("store-momo"),
+        shopping_id: localStorage.getItem("store-momo"),
       };
 
       try {

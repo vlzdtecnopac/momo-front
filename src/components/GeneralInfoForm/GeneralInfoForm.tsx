@@ -21,7 +21,6 @@ function GeneralInfoForm() {
   };
 
   useEffect(()=>{
-    console.log(data[0].name_shopping);
     return () => {
       fetchData(localStorage.getItem("store-momo")!)
     };

@@ -10,10 +10,12 @@
     justify-content: center;
     align-items: center;
 
-
     .container {
         display: block;
         text-align: center;
+        &:hover{
+            cursor: pointer;
+        }
     }
 
     .text-add {

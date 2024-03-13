@@ -11,7 +11,7 @@ import logo from "../../assets/logo.svg";
 import tabletIcon from "../../assets/icons/tablet.svg";
 import kioskIcon from "../../assets/icons/kiosko.svg";
 import { LoaderPage } from "../../includes/loader/Loader";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function WelcomePage() {
   const { typeTypography } = useDesignStore();
@@ -20,6 +20,8 @@ function WelcomePage() {
   const [loader, setLoader] = useState<Boolean>();
 
   const { socket } = useContext(SocketContext);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     setLoader(true);
@@ -36,6 +38,10 @@ function WelcomePage() {
   useEffect(() => {
     socket.on("kiosko-socket", (data: KioskoInterface[]) => setKioskos(data));
   }, [socket]);
+
+  const handleVerifyKiosko = () => {
+    navigate("/success")
+  }
 
   return (
     <>
@@ -90,7 +96,7 @@ function WelcomePage() {
               {kioskos?.map((_, index: number) => {
                 index = kioskos.length - 1 - index;
                 return (
-                  <Link to="/success">
+                  <div key={kioskos[index].id} onClick={()=>handleVerifyKiosko()}>
                     <Card
                       key={kioskos[index].id}
                       icon={kioskIcon}
@@ -98,7 +104,7 @@ function WelcomePage() {
                       subText={kioskos[index].name_shopping}
                       state={kioskos[index].state}
                     />
-                  </Link>
+                  </div>
                 );
               })}
             </div>

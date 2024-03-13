@@ -50,12 +50,12 @@ function WelcomePage() {
 
       const data = {
         state: true,
-        shopping_id: "d852d8f4-8498-42fc-bebd-3ae8a10630f4",
+        shopping_id: localStorage.get("store-momo"),
       };
 
       try {
-        await axios.post(`http://localhost:3000/kioskos/${kiosko}`, data, {
-          headers
+        await axios.put(`http://localhost:3000/kioskos/${kiosko}`, data, {
+          headers,
         });
         navigate("/success");
       } catch (e) {
@@ -131,7 +131,12 @@ function WelcomePage() {
                 return (
                   <div
                     key={kioskos[index].id}
-                    onClick={() => handleVerifyKiosko(kioskos[index].id, kioskos[index].state)}
+                    onClick={() =>
+                      handleVerifyKiosko(
+                        kioskos[index].id,
+                        kioskos[index].state
+                      )
+                    }
                   >
                     <Card
                       key={kioskos[index].id}

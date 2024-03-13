@@ -12,11 +12,12 @@ import tabletIcon from "../../assets/icons/tablet.svg";
 import kioskIcon from "../../assets/icons/kiosko.svg";
 import { LoaderPage } from "../../includes/loader/Loader";
 import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 function WelcomePage() {
   const { typeTypography } = useDesignStore();
   const { data, fetchData } = useShoppingStore();
-  const [ error, setError ] = useState<Boolean>(false);
+  const [error, setError] = useState<Boolean>(false);
   const [kioskos, setKioskos] = useState<KioskoInterface[]>();
   const [loader, setLoader] = useState<Boolean>();
 
@@ -40,23 +41,38 @@ function WelcomePage() {
     socket.on("kiosko-socket", (data: KioskoInterface[]) => setKioskos(data));
   }, [socket]);
 
-  const handleVerifyKiosko = (state: boolean) => {
-    if(!state){
-      navigate("/success");
-    }else{
-     setError(true);
-     setTimeout(()=>setError(false), 2000);
+  const handleVerifyKiosko = async (kiosko: number, state: boolean) => {
+    if (!state) {
+      const headers = {
+        "x-token": `${localStorage.getItem("token-momo")}`,
+        "Content-Type": "application/json", // Adjust content type as needed
+      };
+
+      const data = {
+        state: true,
+        shopping_id: "d852d8f4-8498-42fc-bebd-3ae8a10630f4",
+      };
+
+      try {
+        await axios.post(`http://localhost:3000/kioskos/${kiosko}`, data, {
+          headers
+        });
+        navigate("/success");
+      } catch (e) {
+        setError(true);
+      }
+    } else {
+      setError(true);
+      setTimeout(() => setError(false), 2000);
     }
-  
-  }
+  };
 
   return (
     <>
       {loader ? <LoaderPage /> : ""}
-   
+
       <div className="component-welcome">
         <div className="logo-container">
-       
           <motion.div
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -75,7 +91,6 @@ function WelcomePage() {
           </motion.div>
         </div>
         <div className="text-container">
-          
           <div className="text">
             <h2 className={`big-text ${typeTypography}-text`}>¡Bienvenid@!</h2>
             <p
@@ -88,10 +103,16 @@ function WelcomePage() {
             </p>
           </div>
         </div>
-        
+
         <div className="kds-loader-container">
           <div className="kds-loader">
-          {error? <div className="alert-kiosko">No se encuentra disponible, encuentra otro kiosko...</div> : ""}
+            {error ? (
+              <div className="alert-kiosko">
+                No se encuentra disponible, encuentra otro kiosko...
+              </div>
+            ) : (
+              ""
+            )}
             <div className="store-card">
               {data?.map((item: any, i: number) => (
                 <Card
@@ -108,7 +129,10 @@ function WelcomePage() {
               {kioskos?.map((_, index: number) => {
                 index = kioskos.length - 1 - index;
                 return (
-                  <div key={kioskos[index].id} onClick={()=>handleVerifyKiosko(kioskos[index].state)}>
+                  <div
+                    key={kioskos[index].id}
+                    onClick={() => handleVerifyKiosko(kioskos[index].id, kioskos[index].state)}
+                  >
                     <Card
                       key={kioskos[index].id}
                       icon={kioskIcon}

@@ -1,4 +1,4 @@
-import InventoryTable from "../../components/Table/InventoryTable";
+import InventoryTable from "../../components/Table/InventoryTable/InventoryTable";
 import Layout from "../../includes/layout/Layout";
 import "./../dashboard/DashboardPage.scss";
 

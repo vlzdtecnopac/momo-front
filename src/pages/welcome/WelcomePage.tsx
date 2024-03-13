@@ -33,15 +33,14 @@ function WelcomePage() {
       const employeeId = localStorage.getItem("employee-id");
       if (employeeId) {
         await fetchEmployeeData(employeeId);
-        socket.emit("kiosko-socket", { shopping_id: dataEmployee[0]?.shopping_id });
         await fetchData(dataEmployee[0]?.shopping_id);
+        socket.emit("kiosko-socket", { shopping_id: dataEmployee[0]?.shopping_id });
       }
       setIsLoading(false);
-      setTimeout(()=> navigate("/success"), 2000)
+      setTimeout(()=> navigate("/success"), 4000)
     };
     fetchDataOnMount();
   }, [loader]);
-
 
   useEffect(() => {
     setIsLoading(true);
@@ -116,7 +115,7 @@ function WelcomePage() {
                       key={kioskos[index].id}
                       icon={kioskIcon}
                       text={kioskos[index].nombre}
-                      subText={kioskos[index].name_shopping}
+                      subText={kioskos[index]?.name_shopping}
                       state={kioskos[index].state}
                     />
                 );

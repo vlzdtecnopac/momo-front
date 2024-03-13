@@ -7,6 +7,8 @@ import checkIcon from "../../assets/icons/check.svg";
 import { useDesignStore } from "../../store/design.store";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { useShoppingStore } from "../../store/shopping.store";
+import { useEmployeeStore } from "../../store/employee.store";
 
 const headers = {
   'x-token': `${localStorage.getItem('token-momo')}`,
@@ -15,16 +17,29 @@ const headers = {
 
 function ConectedPage() {
   const navigate = useNavigate();
+  const { data, fetchData } = useShoppingStore();
+  const { fetchEmployeeData } = useEmployeeStore();
   const [count, setCount] = useState<number>(0);
   const { typeTypography } = useDesignStore();
+  const [loader, setIsLoading] = useState<Boolean>(false);  
 
   useEffect(() => {
+    if(!loader){
+    setIsLoading(true);
+    const fetchDataOnMount = async () => {
+      const employeeId = localStorage.getItem("employee-id");
+      if (employeeId) {
+        fetchEmployeeData(employeeId).then(async(resp: any) => await fetchData(resp[0].shopping_id));
+      }
+    };
+    fetchDataOnMount();
     consultNumberKiosko();
-  }, []);
+    }
+  }, [loader]);
 
 
   const consultNumberKiosko = async ()=>{
-    const response = await axios.get(`http://localhost:3000/kioskos/?shopping_id=${localStorage.getItem("store-momo")}&state=true`, {headers});
+    const response = await axios.get(`http://localhost:3000/kioskos/?shopping_id=${data[0].shopping_id}&state=true`, {headers});
     setCount(response.data.length);
     if(response.data.length > 0){
      setTimeout(()=>  navigate("/dashboard"), 4000);

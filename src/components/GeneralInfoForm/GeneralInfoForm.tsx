@@ -5,11 +5,15 @@ import { useEffect, useState } from "react";
 import CongratsModal from "../Congrats/CongratsModal";
 import { Formik } from "formik";
 import { useShoppingStore } from "../../store/shopping.store";
+import { useEmployeeStore } from "../../store/employee.store";
 
 function GeneralInfoForm() {
-  const { data, fetchData } = useShoppingStore();
   const navigate = useNavigate();
+  const { data, fetchData } = useShoppingStore();
+  const { fetchEmployeeData } = useEmployeeStore();
   const [success, setSuccess] = useState(false);
+  const [loader, setIsLoading] = useState<Boolean>(false);  
+
 
   const { typeTypography } = useDesignStore();
 
@@ -20,11 +24,18 @@ function GeneralInfoForm() {
     setSuccess(true);
   };
 
-  useEffect(()=>{
-    return () => {
-      fetchData(localStorage.getItem("store-momo")!)
+  useEffect(() => {
+    if(!loader){
+    setIsLoading(true);
+    const fetchDataOnMount = async () => {
+      const employeeId = localStorage.getItem("employee-id");
+      if (employeeId) {
+        fetchEmployeeData(employeeId).then(async(resp: any) => await fetchData(resp[0].shopping_id));
+      }
     };
-  },[])
+    fetchDataOnMount();
+    }
+  }, [loader]);
 
   const handleBackNavegation = () => navigate("/dashboard");
   return (
@@ -36,7 +47,7 @@ function GeneralInfoForm() {
         Información General
       </h2>
       <Formik
-       initialValues={{ store: data ? data[0].name_shopping : '', close: data ?  data[0].close : '', email: data ? data[0].email : '' , open:  data ?  data[0].open : ''}}
+       initialValues={{ store: data ? data[0].name_shopping : '', close: '', email: data ? data[0].email : '' , open: ''}}
        onSubmit={() => {
         saveChangeHandler()
        }}

@@ -1,19 +1,30 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import logoMomo from "../../assets/logo.svg";
 import profilePic from "../../assets/profile-pic.jpg";
 import { useDesignStore } from "../../store/design.store";
 import { useShoppingStore } from "../../store/shopping.store";
 import "./Header.scss";
+import { useEmployeeStore } from "../../store/employee.store";
+
 
 function Header() {
   const { data, fetchData } = useShoppingStore();
+  const { fetchEmployeeData } = useEmployeeStore();
   const { typeTypography } = useDesignStore();
+  const [loader, setIsLoading] = useState<Boolean>(false);  
 
-  useEffect(()=>{
-    return () => {
-      fetchData(localStorage.getItem("store-momo")!)
+  useEffect(() => {
+    if(!loader){
+    setIsLoading(true);
+    const fetchDataOnMount = async () => {
+      const employeeId = localStorage.getItem("employee-id");
+      if (employeeId) {
+        fetchEmployeeData(employeeId).then(async(resp: any) => await fetchData(resp[0].shopping_id));
+      }
     };
-  },[])
+    fetchDataOnMount();
+    }
+  }, [loader]);
 
   return (
     <header className="head">
@@ -28,7 +39,7 @@ function Header() {
       <div className="column_end">
         <div className="welcome-text">
           <p className={`welcome ${typeTypography}-text`}>Bienvenida</p>
-          <p className={`store ${typeTypography}-text`}>{data? data[0].name_shopping : ""}</p>
+          <p className={`store ${typeTypography}-text`}>{data[0]?.name_shopping}</p>
         </div>
         <img
           className="profile-pic"

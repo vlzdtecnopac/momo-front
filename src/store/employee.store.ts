@@ -31,7 +31,7 @@ export const useEmployeeStore = create<EmployeeStoreInterface>((set) => ({
       axios.get(`http://localhost:3000/users/employee/?employee_id=${employee_id}`, { headers })
         .then((response) => {
           set({ dataEmployee: response.data });
-          resolve(true); 
+          resolve(response.data); 
         })
         .catch((error) => {
           console.error(`Error fetching data: ${error}`);

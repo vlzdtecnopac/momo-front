@@ -25,6 +25,7 @@
         overflow-y: auto;
         height: 212px;
         text-align: center;
+        
 
         .connected-group {
             display: flex;
@@ -32,10 +33,15 @@
             margin: 0px;
             padding: 0px;
             list-style: none;
+            margin: auto 10px;
 
             .content-center {
                 display: block;
                 text-align: center;
+            }
+
+            .card{
+                margin: 5px!important;
             }
         }
 

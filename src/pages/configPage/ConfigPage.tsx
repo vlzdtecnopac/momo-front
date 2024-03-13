@@ -24,9 +24,7 @@ function ConfigPage() {
   };
 
   useEffect(()=>{
-    return () => {
       fetchData(localStorage.getItem("store-momo")!)
-    };
   },[])
 
 
@@ -50,7 +48,7 @@ function ConfigPage() {
                     />
                   </div>
                   <div className="col-10_sm-5">
-                    <h2 className={`store ${typeTypography}-text`}> {data[0].name_shopping}</h2>
+                    <h2 className={`store ${typeTypography}-text`}> {data? data[0].name_shopping : ""}</h2>
                     <span className={`address ${typeTypography}-text`}>
                       {data[0].address}
                     </span>

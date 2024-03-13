@@ -25,17 +25,18 @@ interface DesignStoreInterface{
     fetchData: (shopping_id: string) => Promise<Boolean>
 }
 
+
 export const useShoppingStore = create<DesignStoreInterface>((set) => ({
   data: [],
   fetchData: async (shopping_id) =>  new Promise((resolve, reject) => {
       axios.get(`http://localhost:3000/shopping/?shopping_id=${shopping_id}`, { headers })
         .then((response) => {
-          set({ data: response.data });
-          resolve(true); // Resolvemos la promesa si la petición es exitosa
+          set((state) => ({ ...state, data: response.data }));
+          resolve(response.data);
         })
         .catch((error) => {
           console.error(`Error fetching data: ${error}`);
-          reject(false); // Rechazamos la promesa si hay un error
+          reject(false); 
         });
     })
 }));

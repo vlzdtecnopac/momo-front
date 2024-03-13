@@ -24,18 +24,8 @@ function SideBar() {
   ];
 
   const handleLogout = async () => {
-    try {
-      const data = {
-        state: true,
-        shopping_id: localStorage.getItem("store-momo"),
-      };
-      //await axios.put(`http://localhost:3000/kioskos/${kiosko_id}`, data, { headers });
       localStorage.removeItem("token-momo");
-      localStorage.removeItem("store-momo");
       navigate("/");
-    } catch (e) {
-      console.log(e);
-    }
   };
 
   return (

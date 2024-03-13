@@ -28,8 +28,8 @@ function WelcomePage() {
   const navigate = useNavigate();
 
   useEffect(() => {
+
     const fetchDataOnMount = async () => {
-      setIsLoading(true);
       const employeeId = localStorage.getItem("employee-id");
       if (employeeId) {
         await fetchEmployeeData(employeeId);
@@ -37,43 +37,18 @@ function WelcomePage() {
         await fetchData(dataEmployee[0]?.shopping_id);
       }
       setIsLoading(false);
+      setTimeout(()=> navigate("/success"), 2000)
     };
-  
     fetchDataOnMount();
-   
-  }, []);
+  }, [loader]);
+
 
   useEffect(() => {
+    setIsLoading(true);
     socket.on("kiosko-socket", (data: KioskoInterface[]) => setKioskos(data));
   }, [socket]);
 
-  const handleVerifyKiosko = async (kiosko_id: string, state: boolean) => {
-    if (!state) {
-      const headers = {
-        "x-token": `${localStorage.getItem("token-momo")}`,
-        "Content-Type": "application/json",
-      };
-
-      const data = {
-        state: true,
-        shopping_id: dataEmployee[0].shopping_id,
-        kiosko_id: kiosko_id
-      };
-
-      try {
-        await axios.put(`http://localhost:3000/kioskos/${kiosko_id}`, data, {
-          headers,
-        });
-        await axios.put(`http://localhost:3000/users/employee/kiosko/${dataEmployee[0]?.employee_id}`, data, {headers} );
-        navigate("/success");
-      } catch (e) {
-        setError(true);
-      }
-    } else {
-      setError(true);
-      setTimeout(() => setError(false), 2000);
-    }
-  };
+  
 
   return (
     <>
@@ -132,20 +107,11 @@ function WelcomePage() {
                 />
               ))}
             </div>
-            <div className="loader"></div>
+            {!loader && data? <div className="loader"></div> : "" }
             <div className="card-group">
               {kioskos?.map((_, index: number) => {
                 index = kioskos.length - 1 - index;
                 return (
-                  <div
-                    key={kioskos[index].id}
-                    onClick={() =>
-                      handleVerifyKiosko(
-                        kioskos[index].kiosko_id,
-                        kioskos[index].state
-                      )
-                    }
-                  >
                     <Card
                       key={kioskos[index].id}
                       icon={kioskIcon}
@@ -153,7 +119,6 @@ function WelcomePage() {
                       subText={kioskos[index].name_shopping}
                       state={kioskos[index].state}
                     />
-                  </div>
                 );
               })}
             </div>

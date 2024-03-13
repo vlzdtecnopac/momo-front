@@ -97,13 +97,10 @@
         .card-group {
             overflow-x: auto;
             overflow-y: hidden;
-            width: 680px;
-            max-height: 400px;
+            max-height: 600px;
             display: grid;
-            grid-template-columns: repeat(20, minmax(200px, 1fr));
-            gap: 10px;
-
-
+            grid-template-columns: repeat(3, minmax(200px, 1fr));
+     
             @media screen and (max-width: 768px) {
                 /* Ajustes para dispositivos más pequeños */
                 grid-template-columns: repeat(2, minmax(150px, 1fr));

@@ -41,7 +41,7 @@ function WelcomePage() {
     socket.on("kiosko-socket", (data: KioskoInterface[]) => setKioskos(data));
   }, [socket]);
 
-  const handleVerifyKiosko = async (kiosko: number, state: boolean) => {
+  const handleVerifyKiosko = async (kiosko_id: string, state: boolean) => {
     if (!state) {
       const headers = {
         "x-token": `${localStorage.getItem("token-momo")}`,
@@ -54,9 +54,10 @@ function WelcomePage() {
       };
 
       try {
-        await axios.put(`http://localhost:3000/kioskos/${kiosko}`, data, {
+        await axios.put(`http://localhost:3000/kioskos/${kiosko_id}`, data, {
           headers,
         });
+       
         navigate("/success");
       } catch (e) {
         setError(true);
@@ -133,7 +134,7 @@ function WelcomePage() {
                     key={kioskos[index].id}
                     onClick={() =>
                       handleVerifyKiosko(
-                        kioskos[index].id,
+                        kioskos[index].kiosko_id,
                         kioskos[index].state
                       )
                     }

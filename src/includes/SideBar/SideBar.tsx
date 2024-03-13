@@ -2,14 +2,19 @@ import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import "./SideBar.scss";
+import axios from "axios";
 
 function SideBar() {
   const navigate = useNavigate();
- 
+
   const location = useLocation();
 
-
   const handleNavegation = (nav: string) => navigate(nav);
+
+  const headers = {
+    "x-token": `${localStorage.getItem("token-momo")}`,
+    "Content-Type": "application/json", // Adjust content type as needed
+  };
 
   const sidebarListNav = [
     { icon: "orders-icon", name: "orders", router: "/dashboard" },
@@ -18,11 +23,20 @@ function SideBar() {
     { icon: "config-icon", name: "config", router: "/config-page" },
   ];
 
-  const handleLogout = () => {
-      localStorage.removeItem('token-momo');
-      localStorage.removeItem('store-momo');
-      navigate('/');
-  }
+  const handleLogout = async () => {
+    try {
+      const data = {
+        state: true,
+        shopping_id: localStorage.getItem("store-momo"),
+      };
+      //await axios.put(`http://localhost:3000/kioskos/${kiosko_id}`, data, { headers });
+      localStorage.removeItem("token-momo");
+      localStorage.removeItem("store-momo");
+      navigate("/");
+    } catch (e) {
+      console.log(e);
+    }
+  };
 
   return (
     <>
@@ -35,19 +49,16 @@ function SideBar() {
             key={index}
             onClick={() => handleNavegation(item.router)}
           >
-              <i
-                className={`icon ${
-                  location.pathname === item.router ? "active" : ""
-                } ${item.icon}`}
-              ></i>
+            <i
+              className={`icon ${
+                location.pathname === item.router ? "active" : ""
+              } ${item.icon}`}
+            ></i>
           </li>
         ))}
       </ul>
-      <button
-        onClick={()=>handleLogout()}
-        className="logout"
-      >
-          <i className="logout-icon"></i>
+      <button onClick={() => handleLogout()} className="logout">
+        <i className="logout-icon"></i>
       </button>
     </>
   );

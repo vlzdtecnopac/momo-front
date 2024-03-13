@@ -20,6 +20,14 @@
         }
     }
 
+    .alert-kiosko{
+        position: fixed;
+        background: $orange;
+        padding: 10px;
+        color: #fff;
+        font-family: "Red Hat Display", "serif";
+    }
+
     .text-container {
         display: block;
         width: 544px;

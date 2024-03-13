@@ -19,6 +19,7 @@ function SideBar() {
   ];
 
   const handleLogout = async () => {
+      localStorage.removeItem("employee-id");
       localStorage.removeItem("token-momo");
       navigate("/");
   };

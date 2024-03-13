@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import AlertsTable from "../../components/Table/alertsTable";
+import AlertsTable from "../../components/Table/AlertsTable/AlertsTable";
 import "./FullScreenAlerts.scss";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
@@ -22,10 +22,14 @@ function FullScreenAlerts() {
 
   return (
     <>
-     <div className="alert_table_full_screen">
-      <AlertsTable />
-      <Link to="../full-screen"><i className="icon_dashboard_full_alerts"></i></Link>
-      <Link to="../dashboard"><i className="icon_close_full_screen"></i></Link>
+      <div className="alert_table_full_screen">
+        <AlertsTable />
+        <Link to="../full-screen">
+          <i className="icon_dashboard_full_alerts"></i>
+        </Link>
+        <Link to="../dashboard">
+          <i className="icon_close_full_screen"></i>
+        </Link>
       </div>
     </>
   );

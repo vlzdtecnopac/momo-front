@@ -31,6 +31,18 @@
         .option {
             padding: 22px 0px;
             width: auto;
+            cursor: pointer;
+
+            &:hover {
+                /* Move hover to the top level */
+                background-color: $dark-blue;
+
+                .icon {
+                    /* Target icon directly */
+                    background-color: $white;
+                    /* Change icon background on hover */
+                }
+            }
 
             &.active {
                 background-color: $dark-blue;

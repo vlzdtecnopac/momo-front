@@ -21,26 +21,26 @@ function WelcomePage() {
   const { dataEmployee, fetchEmployeeData } = useEmployeeStore();
   const [error, setError] = useState<Boolean>(false);
   const [kioskos, setKioskos] = useState<KioskoInterface[]>();
-  const [loader, setLoader] = useState<Boolean>();
+  const [loader, setIsLoading] = useState<Boolean>();
 
   const { socket } = useContext(SocketContext);
 
   const navigate = useNavigate();
 
   useEffect(() => {
-    setLoader(true);
-    fetchEmployeeData(localStorage.getItem("employee-id")!).then((result)=>{
-      if(result){
-        fetchData(dataEmployee[0].shopping_id).then((resp) => {
-          if (resp) {
-            socket.emit("kiosko-socket", {
-              shopping_id: localStorage.getItem("store-momo")!,
-            });
-            setLoader(false);
-          }
-        });
+    const fetchDataOnMount = async () => {
+      setIsLoading(true);
+      const employeeId = localStorage.getItem("employee-id");
+      if (employeeId) {
+        await fetchEmployeeData(employeeId);
+        socket.emit("kiosko-socket", { shopping_id: dataEmployee[0]?.shopping_id });
+        await fetchData(dataEmployee[0]?.shopping_id);
       }
-    })
+      setIsLoading(false);
+    };
+  
+    fetchDataOnMount();
+   
   }, []);
 
   useEffect(() => {
@@ -64,7 +64,7 @@ function WelcomePage() {
         await axios.put(`http://localhost:3000/kioskos/${kiosko_id}`, data, {
           headers,
         });
-        await axios.put(`http://localhost:3000/users/employee/kiosko/${dataEmployee[0].employee_id}`, data, {headers} );
+        await axios.put(`http://localhost:3000/users/employee/kiosko/${dataEmployee[0]?.employee_id}`, data, {headers} );
         navigate("/success");
       } catch (e) {
         setError(true);
@@ -122,7 +122,7 @@ function WelcomePage() {
               ""
             )}
             <div className="store-card">
-              {data?.map((item: any, i: number) => (
+              {data.map((item: any, i: number) => (
                 <Card
                   key={i}
                   icon={tabletIcon}

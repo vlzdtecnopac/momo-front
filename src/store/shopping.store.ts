@@ -21,12 +21,12 @@ interface ShoppingInterface{
 }
 
 interface DesignStoreInterface{
-    data: ShoppingInterface | null,
+    data: ShoppingInterface[],
     fetchData: (shopping_id: string) => Promise<Boolean>
 }
 
 export const useShoppingStore = create<DesignStoreInterface>((set) => ({
-  data: null,
+  data: [],
   fetchData: async (shopping_id) =>  new Promise((resolve, reject) => {
       axios.get(`http://localhost:3000/shopping/?shopping_id=${shopping_id}`, { headers })
         .then((response) => {

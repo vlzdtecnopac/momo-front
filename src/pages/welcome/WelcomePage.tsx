@@ -10,30 +10,36 @@ import "./WelcomePage.scss";
 import logo from "../../assets/logo.svg";
 import tabletIcon from "../../assets/icons/tablet.svg";
 import kioskIcon from "../../assets/icons/kiosko.svg";
+import { LoaderPage } from "../../includes/loader/Loader";
 
 function WelcomePage() {
   const { typeTypography } = useDesignStore();
   const { data, fetchData } = useShoppingStore();
+  const [kioskos, setKioskos] = useState<KioskoInterface[]>();
+  const [loader, setLoader] = useState<Boolean>();
 
   const { socket } = useContext(SocketContext);
-  const [kioskos, setKioskos] = useState<KioskoInterface[]>();
-
+ 
   useEffect(() => {
+    setLoader(true);
     return () => {
-      fetchData(localStorage.getItem("store-momo")!);
+      fetchData(localStorage.getItem("store-momo")!).then((resp)=>{
+        if(resp){
+          socket.emit("kiosko-socket", {
+            shopping_id: localStorage.getItem("store-momo")!,
+          });
+          setLoader(false);
+        }
+      });
     };
   }, []);
 
   useEffect(() => {
-    setTimeout(() => {
-      socket.emit("kiosko-socket", {
-        shopping_id: localStorage.getItem("store-momo")!,
-      });
-    }, 1000);
     socket.on("kiosko-socket", (data: KioskoInterface[]) => setKioskos(data));
   }, [socket]);
 
-  return (
+  return (<>
+    {loader ? <LoaderPage/> : ""}
     <div className="component-welcome">
       <div className="logo-container">
         <motion.div
@@ -97,6 +103,7 @@ function WelcomePage() {
         </div>
       </div>
     </div>
+    </>
   );
 }
 

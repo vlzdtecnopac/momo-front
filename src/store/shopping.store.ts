@@ -16,6 +16,7 @@ export const useShoppingStore = create<DesignStoreInterface>((set) => ({
   fetchData: async (shopping_id) => {
     try {
       const response = await axios.get(`http://localhost:3000/shopping/?shopping_id=${shopping_id}`, {headers});
+      console.log({ data: response.data });
       set({ data: response.data });
       return;
     } catch (error) {

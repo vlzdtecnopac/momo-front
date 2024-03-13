@@ -13,8 +13,6 @@ interface LoginProps {
 
 const Login: React.FC<LoginProps> = () => {
 
-  const { typeTypography } = useDesignStore();
-
   return (
     <div className="component-login">
       <div className="sidebar-left">

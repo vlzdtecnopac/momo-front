@@ -1,6 +1,18 @@
 @import "../../index.scss";
+.alert-error{
+    font-family: 'Stacion';
+    font-weight: normal;
+    background: $orange;
+    color: #fff;
+    border-radius: 4px;
+    padding: 10px 10px;
+    position: relative;
+    text-align: center;
+}
+
 
 .component-login-form {
+
     .form-group {
         position: relative;
         margin: 25px 0px;

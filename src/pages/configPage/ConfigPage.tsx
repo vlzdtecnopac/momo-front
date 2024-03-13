@@ -10,11 +10,13 @@ import "./../dashboard/DashboardPage.scss";
 import "./ConfigPage.scss";
 import { useDesignStore } from "../../store/design.store";
 import { useShoppingStore } from "../../store/shopping.store";
+import { useEmployeeStore } from "../../store/employee.store";
 
 function ConfigPage() {
   const { typeTypography } = useDesignStore();
+  const { fetchEmployeeData } = useEmployeeStore();
   const { data, fetchData } = useShoppingStore();
-
+  const [loader, setIsLoading] = useState<Boolean>(false); 
   const [postionTab, setPositionTab] = useState<number>(0);
   const handleClickTab = (resp: number) => setPositionTab(resp);
 
@@ -23,15 +25,22 @@ function ConfigPage() {
     visible: { opacity: 1 },
   };
 
-  useEffect(()=>{
-      fetchData(localStorage.getItem("store-momo")!)
-  },[])
+  useEffect(() => {
+    if(!loader){
+    setIsLoading(true);
+    const fetchDataOnMount = async () => {
+      const employeeId = localStorage.getItem("employee-id");
+      if (employeeId) {
+        fetchEmployeeData(employeeId).then(async(resp: any) => await fetchData(resp[0].shopping_id));
+      }
+    };
+    fetchDataOnMount();
+    }
+  }, [loader]);
 
 
-  return (<>
-    {(() => {
-      if(data){
-        return( <Layout>
+
+  return (<Layout>
           <div className="config_page">
             <div className="bg-blue">
               <div className="header_blue"></div>
@@ -48,9 +57,9 @@ function ConfigPage() {
                     />
                   </div>
                   <div className="col-10_sm-5">
-                    <h2 className={`store ${typeTypography}-text`}> {data? data[0].name_shopping : ""}</h2>
+                    <h2 className={`store ${typeTypography}-text`}> {data[0]?.name_shopping}</h2>
                     <span className={`address ${typeTypography}-text`}>
-                      {data[0].address}
+                      {data[0]?.address}
                     </span>
                   </div>
                 </div>
@@ -79,10 +88,7 @@ function ConfigPage() {
               </div>
             </div>
           </div>
-        </Layout>)
-      }
-    })()}
-   </>
+        </Layout>
   );
 }
 export default ConfigPage;

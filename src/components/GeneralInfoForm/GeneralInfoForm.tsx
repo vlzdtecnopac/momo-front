@@ -47,7 +47,7 @@ function GeneralInfoForm() {
         Información General
       </h2>
       <Formik
-       initialValues={{ store: data ? data[0].name_shopping : '', close: '', email: data ? data[0].email : '' , open: ''}}
+       initialValues={{ store: data[0]?.name_shopping, close: '', email: data[0]?.email , open: ''}}
        onSubmit={() => {
         saveChangeHandler()
        }}

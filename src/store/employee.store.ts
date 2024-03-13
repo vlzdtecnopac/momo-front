@@ -1,10 +1,6 @@
 import { create } from 'zustand'
 import axios from 'axios';
-
-const headers = {
-    'x-token': `${localStorage.getItem('token-momo')}`,
-    'Content-Type': 'application/json', // Adjust content type as needed
-  };
+import { tokenHeader } from '../helpers/token-header.helper';
 
 interface EmployeeInterface{
   id: number,
@@ -28,7 +24,7 @@ interface EmployeeStoreInterface{
 export const useEmployeeStore = create<EmployeeStoreInterface>((set) => ({
   dataEmployee: [],
   fetchEmployeeData: async (employee_id) =>  new Promise((resolve, reject) => {
-      axios.get(`http://localhost:3000/users/employee/?employee_id=${employee_id}`, { headers })
+      axios.get(`http://localhost:3000/users/employee/?employee_id=${employee_id}`, {headers: tokenHeader})
         .then((response) => {
           set({ dataEmployee: response.data });
           resolve(response.data); 

@@ -31,6 +31,7 @@ function WelcomePage() {
 
     const fetchDataOnMount = async () => {
       const employeeId = localStorage.getItem("employee-id");
+      console.log(employeeId);
       if (employeeId) {
         await fetchEmployeeData(employeeId);
         await fetchData(dataEmployee[0]?.shopping_id);

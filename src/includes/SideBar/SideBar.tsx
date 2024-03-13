@@ -11,11 +11,6 @@ function SideBar() {
 
   const handleNavegation = (nav: string) => navigate(nav);
 
-  const headers = {
-    "x-token": `${localStorage.getItem("token-momo")}`,
-    "Content-Type": "application/json", // Adjust content type as needed
-  };
-
   const sidebarListNav = [
     { icon: "orders-icon", name: "orders", router: "/dashboard" },
     { icon: "inventory-icon", name: "inventory", router: "/inventory-page" },

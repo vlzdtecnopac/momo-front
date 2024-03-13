@@ -52,7 +52,7 @@ const ConfigTabs: React.FC<ChildProps> = ({ onClick }) => {
 
   const changeActivate = (index: number) => {
     if(index == 2){
-      socket.emit("kiosko-socket", {shopping_id: data[0].shopping_id});
+      socket.emit("kiosko-socket", {shopping_id: });
     }
     const updatedOptions = options.map((option, i) => ({
       ...option,

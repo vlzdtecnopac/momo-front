@@ -10,11 +10,9 @@ import { TypographyEnum, useDesignStore } from "./../../store/design.store";
 
 
 import "./DisplayConfig.scss";
+import { tokenHeader } from "../../helpers/token-header.helper";
 
-const headers = {
-  'x-token': `${localStorage.getItem('token-momo')}`,
-  'Content-Type': 'application/json', // Adjust content type as needed
-};
+
 
 const options = [
   { icon: splitIcon, text: "Split" },
@@ -36,7 +34,7 @@ function DisplayConfig() {
         "type_text": typeTypography,
         "type_column": typeColumns
     }
-     await axios.put(`http://localhost:3000/config/${localStorage.getItem('store-momo')}`, data, {headers});
+     await axios.put(`http://localhost:3000/config/${localStorage.getItem('store-momo')}`, data, {headers: tokenHeader});
      setTimeout(()=>setSucess(false), 2000);
     }catch(e){
       setSucess(false);
@@ -48,7 +46,7 @@ function DisplayConfig() {
   }, [])
 
   const consultConfig = async () => {
-   const response =  await axios.get(`http://localhost:3000/config/?shopping_id=${localStorage.getItem('store-momo')}`, {headers});
+   const response =  await axios.get(`http://localhost:3000/config/?shopping_id=${localStorage.getItem('store-momo')}`, {headers: tokenHeader});
    console.log(response.data[0].type_text);
    selectTypeColumn(response.data[0].type_column); 
    selectTypography(response.data[0].type_text);

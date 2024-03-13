@@ -3,9 +3,8 @@ import logoMomo from "../../assets/logo.svg";
 import profilePic from "../../assets/profile-pic.jpg";
 import { useDesignStore } from "../../store/design.store";
 import { useShoppingStore } from "../../store/shopping.store";
-import "./Header.scss";
 import { useEmployeeStore } from "../../store/employee.store";
-
+import "./Header.scss";
 
 function Header() {
   const { data, fetchData } = useShoppingStore();

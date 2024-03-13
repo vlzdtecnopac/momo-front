@@ -9,11 +9,9 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useShoppingStore } from "../../store/shopping.store";
 import { useEmployeeStore } from "../../store/employee.store";
+import { tokenHeader } from "../../helpers/token-header.helper";
 
-const headers = {
-  'x-token': `${localStorage.getItem('token-momo')}`,
-  'Content-Type': 'application/json', // Adjust content type as needed
-};
+
 
 function ConectedPage() {
   const navigate = useNavigate();
@@ -37,13 +35,10 @@ function ConectedPage() {
     }
   }, [loader]);
 
-
   const consultNumberKiosko = async ()=>{
-    const response = await axios.get(`http://localhost:3000/kioskos/?shopping_id=${data[0].shopping_id}&state=true`, {headers});
+    const response = await axios.get(`http://localhost:3000/kioskos/?shopping_id=${data[0]?.shopping_id}&state=true`, {headers: tokenHeader});
     setCount(response.data.length);
-    if(response.data.length > 0){
-     setTimeout(()=>  navigate("/dashboard"), 4000);
-    } 
+    setTimeout(()=>  navigate("/dashboard"), 4000);
   }
 
   return (

@@ -1,10 +1,6 @@
 import { create } from 'zustand'
 import axios from 'axios';
-
-const headers = {
-    'x-token': `${localStorage.getItem('token-momo')}`,
-    'Content-Type': 'application/json', // Adjust content type as needed
-  };
+import { tokenHeader } from '../helpers/token-header.helper';
 
 interface ShoppingInterface{
   id: number,
@@ -29,7 +25,7 @@ interface DesignStoreInterface{
 export const useShoppingStore = create<DesignStoreInterface>((set) => ({
   data: [],
   fetchData: async (shopping_id) =>  new Promise((resolve, reject) => {
-      axios.get(`http://localhost:3000/shopping/?shopping_id=${shopping_id}`, { headers })
+      axios.get(`http://localhost:3000/shopping/?shopping_id=${shopping_id}`, {headers: tokenHeader})
         .then((response) => {
           set((state) => ({ ...state, data: response.data }));
           resolve(response.data);

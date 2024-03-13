@@ -45,7 +45,7 @@ function WelcomePage() {
     if (!state) {
       const headers = {
         "x-token": `${localStorage.getItem("token-momo")}`,
-        "Content-Type": "application/json", // Adjust content type as needed
+        "Content-Type": "application/json",
       };
 
       const data = {

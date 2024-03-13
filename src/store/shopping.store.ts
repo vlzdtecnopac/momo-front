@@ -6,8 +6,22 @@ const headers = {
     'Content-Type': 'application/json', // Adjust content type as needed
   };
 
+interface ShoppingInterface{
+  id: number,
+  shopping_id: string,
+  name_shopping: string,
+  no_shooping: string,
+  address: string,
+  email: string,
+  idenfication: string,
+  phone: string,
+  closing: any,
+  open: any,
+  create_at: string,
+}
+
 interface DesignStoreInterface{
-    data: any,
+    data: ShoppingInterface | null,
     fetchData: (shopping_id: string) => Promise<Boolean>
 }
 

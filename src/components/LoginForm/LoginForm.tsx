@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import { SocketContext } from "../../context/SocketContext";
 import "./LoginForm.scss";
@@ -39,9 +39,9 @@ function LoginForm() {
                 "http://localhost:3000/users/employee/login",
                 values
               );
-              if (resp.data) {
+              if (resp) {
                 if (!resp.data.state) {
-                  alert("Usuario Inactivo");
+                  setError("Usuario Inactivo");
                   return;
                 }
                 localStorage.setItem("token-momo", resp.data.token);

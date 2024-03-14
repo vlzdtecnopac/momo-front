@@ -41,6 +41,10 @@ export default function FullScreen() {
     }
   };
 
+  const closeSubSlider = () => {
+    setPostionSelect("initial");
+  };
+
   useEffect(() => {
     window.addEventListener("keydown", handleEscapeKey);
 
@@ -53,12 +57,18 @@ export default function FullScreen() {
     <>
       {postionSelect == "right" ? (
         <motion.div
-          initial={{ x: -1000 }} // Initial position, starting from the left
+          initial={{ x: -100 }} // Initial position, starting from the left
           animate={{ x: 0 }} // Animate to the center
-          exit={{ x: 0 }} // Animate to the right when exiting
+          exit={{ x: 50 }} // Animate to the right when exiting
           transition={{ duration: 0.5 }} // Transition duration
         >
-          <div   style={{ width: "100vw", height: "100vh", background: "#fff" }}>Working Rigth</div>
+          <div className="content-slider">
+            Working Rigth
+            <i
+              onClick={() => closeSubSlider()}
+              className="icon_close_full_screen"
+            ></i>
+          </div>
         </motion.div>
       ) : (
         ""
@@ -66,21 +76,23 @@ export default function FullScreen() {
 
       {postionSelect == "left" ? (
         <motion.div
-          initial={{ x: 2000 }} // Initial position, starting from the left
+          initial={{ x: 10 }} // Initial position, starting from the left
           animate={{ x: 0 }} // Animate to the center
-          exit={{ x: 0 }} // Animate to the right when exiting
+          exit={{ x: -100 }} // Animate to the right when exiting
           transition={{ duration: 0.5 }} // Transition duration
         >
-          <div   style={{ width: "100vw", height: "100vh", background: "#fff" }}>Working Left</div>
+          <div className="content-slider">
+            Working Left
+            <i
+              onClick={() => closeSubSlider()}
+              className="icon_close_full_screen"
+            ></i>
+          </div>
         </motion.div>
       ) : (
         ""
       )}
-      <div
-        onTouchStart={handleTouchStart}
-        onTouchMove={handleTouchMove}
-        style={{ width: "100vw", height: "100vh", background: "lightgray" }}
-      >
+      <div onTouchStart={handleTouchStart} onTouchMove={handleTouchMove}>
         <div className="full_screen_page">
           <div className="content_full_page">
             {(() => {

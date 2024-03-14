@@ -6,6 +6,7 @@ import { Formik } from "formik";
 import { useShoppingStore } from "../../store/shopping.store";
 import { useEmployeeStore } from "../../store/employee.store";
 import "./GeneralInfoForm.scss";
+import moment from "moment";
 
 function GeneralInfoForm() {
   const { data, fetchData } = useShoppingStore();
@@ -49,9 +50,9 @@ function GeneralInfoForm() {
       <Formik
         initialValues={{
           store: data[0]?.name_shopping,
-          close: data[0]?.closing,
+          close: moment(new Date(data[0]?.closing)).format("YYYY-MM-DD h:mm:ss a"),
           email: data[0]?.email,
-          open: data[0]?.open,
+          open: moment(new Date(data[0]?.open)).format("YYYY-MM-DD h:mm:ss a"),
         }}
         onSubmit={() => {
           saveChangeHandler();

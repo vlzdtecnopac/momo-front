@@ -95,9 +95,10 @@
 
 
         .card-group {
-            overflow-x: auto;
-            overflow-y: hidden;
+            overflow-x: hidden;
+            overflow-y: auto;
             max-height: 600px;
+            height: 340px;
             display: grid;
             grid-template-columns: repeat(3, minmax(200px, 1fr));
      

@@ -36,6 +36,7 @@ function ConnectedKioskos() {
               return (
                 <li className="content-center">
                   <KioskoCard
+                    kiosko_id={kioskos[index].kiosko_id}
                     design="style1"
                     text={kioskos[index].nombre}
                     subText={kioskos[index]?.name_shopping}

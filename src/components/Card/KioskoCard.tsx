@@ -12,6 +12,7 @@ import { LoaderPage } from "../../includes/loader/Loader";
 type Designstyle = "style1" | "style2";
 
 interface KioskoCardProps {
+  kiosko_id?: string | undefined
   design: Designstyle;
   text?: string;
   backgroundColor?: string;
@@ -20,6 +21,7 @@ interface KioskoCardProps {
 }
 
 const KioskoCard: React.FC<KioskoCardProps> = ({
+  kiosko_id,
   design,
   text,
   backgroundColor,
@@ -30,6 +32,21 @@ const KioskoCard: React.FC<KioskoCardProps> = ({
   const { data } = useShoppingStore();
   const { typeTypography } = useDesignStore();
   const [loader, setIsLoading] = useState<Boolean>(false);
+
+  const handlerConnectKiosko = async(kiosko_id: string | undefined) => {
+    if(kiosko_id != undefined){ 
+    setIsLoading(true);
+     await axios.put(
+      `http://localhost:3000/kioskos/${kiosko_id}`,
+      {
+        "state": true,
+        "shopping_id": data[0]?.shopping_id
+      },
+      { headers: tokenHeader }
+    );
+    setIsLoading(false);
+    }
+  } 
 
   const handlerAddKiosko = async () => {
     setIsLoading(true);
@@ -67,7 +84,7 @@ const KioskoCard: React.FC<KioskoCardProps> = ({
               </div>
             </div>
           </div>
-          <button className={`btn button-card ${typeTypography}-text`}>
+          <button onClick={()=>handlerConnectKiosko(kiosko_id)} className={`btn button-card ${typeTypography}-text`}>
             {state ? "Desconectar" : "Conectar"}
           </button>
         </>

@@ -11,6 +11,8 @@ import { TypographyEnum, useDesignStore } from "./../../store/design.store";
 
 import "./DisplayConfig.scss";
 import { tokenHeader } from "../../helpers/token-header.helper";
+import { useShoppingStore } from "../../store/shopping.store";
+import { useEmployeeStore } from "../../store/employee.store";
 
 
 
@@ -22,31 +24,35 @@ const options = [
 
 function DisplayConfig() {
   const navigate = useNavigate();
-
+  const [success, setSucess] = useState<Boolean>(false);
+  const [loader, setIsLoading] = useState<Boolean>(false);  
+  const { data } = useShoppingStore();
+  
   const { typeTypography, selectTypography, typeColumns, selectTypeColumn } =
     useDesignStore();
-  const [success, setSucess] = useState(false);
+
 
   const saveChangeHandler = async () => {
     setSucess(true);
     try{
-      const data = {
+      const dataJson = {
         "type_text": typeTypography,
         "type_column": typeColumns
     }
-     await axios.put(`http://localhost:3000/config/${localStorage.getItem('store-momo')}`, data, {headers: tokenHeader});
+     await axios.put(`http://localhost:3000/config/${data[0].shopping_id}`, dataJson, {headers: tokenHeader});
      setTimeout(()=>setSucess(false), 2000);
     }catch(e){
       setSucess(false);
     }
   };
 
-  useEffect(()=>{
+  useEffect(() => {
     consultConfig();
-  }, [])
+  }, []);
+
 
   const consultConfig = async () => {
-   const response =  await axios.get(`http://localhost:3000/config/?shopping_id=${localStorage.getItem('store-momo')}`, {headers: tokenHeader});
+   const response =  await axios.get(`http://localhost:3000/config/?shopping_id=${data[0].shopping_id}`, {headers: tokenHeader});
    selectTypeColumn(response.data[0]?.type_column); 
    selectTypography(response.data[0]?.type_text);
   }

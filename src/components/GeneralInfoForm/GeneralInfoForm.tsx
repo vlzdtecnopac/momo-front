@@ -10,9 +10,7 @@ import moment from "moment";
 
 function GeneralInfoForm() {
   const { data, fetchData } = useShoppingStore();
-  const { fetchEmployeeData } = useEmployeeStore();
   const [success, setSuccess] = useState(false);
-  const [loader, setIsLoading] = useState<Boolean>(false);
 
   const { typeTypography } = useDesignStore();
 
@@ -23,21 +21,8 @@ function GeneralInfoForm() {
     setSuccess(true);
   };
 
-  useEffect(() => {
-    if (!loader) {
-      setIsLoading(true);
-      const fetchDataOnMount = async () => {
-        const employeeId = localStorage.getItem("employee-id");
-        if (employeeId) {
-          fetchEmployeeData(employeeId).then(
-            async (resp: any) => await fetchData(resp[0].shopping_id)
-          );
-        }
-      };
-      fetchDataOnMount();
-    }
-  }, [loader]);
 
+  console.log(data);
 
   return (
     <>
@@ -50,9 +35,9 @@ function GeneralInfoForm() {
       <Formik
         initialValues={{
           store: data[0]?.name_shopping,
-          close: moment(new Date(data[0]?.closing)).format("YYYY-MM-DD h:mm:ss a"),
+          close: data.length > 0 ? moment(new Date(data[0]?.closing)).format("YYYY-MM-DD h:mm:ss a") : "",
           email: data[0]?.email,
-          open: moment(new Date(data[0]?.open)).format("YYYY-MM-DD h:mm:ss a"),
+          open: data.length > 0 ? moment(new Date(data[0]?.open)).format("YYYY-MM-DD h:mm:ss a") : "",
         }}
         onSubmit={() => {
           saveChangeHandler();

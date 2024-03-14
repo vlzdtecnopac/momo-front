@@ -13,8 +13,7 @@ import { tokenHeader } from "../../helpers/token-header.helper";
 
 function ConectedPage() {
   const navigate = useNavigate();
-  const { data, fetchData } = useShoppingStore();
-  const { fetchEmployeeData } = useEmployeeStore();
+  const { data } = useShoppingStore();
   const [count, setCount] = useState<number>(0);
   const { typeTypography } = useDesignStore();
   const [loader, setIsLoading] = useState<Boolean>(false);
@@ -22,15 +21,6 @@ function ConectedPage() {
   useEffect(() => {
     if (!loader) {
       setIsLoading(true);
-      const fetchDataOnMount = async () => {
-        const employeeId = localStorage.getItem("employee-id");
-        if (employeeId) {
-          fetchEmployeeData(employeeId).then(
-            async (resp: any) => await fetchData(resp[0].shopping_id)
-          );
-        }
-      };
-      fetchDataOnMount();
       consultNumberKiosko();
     }
   }, [loader]);

@@ -8,7 +8,6 @@ import { useEmployeeStore } from "../../store/employee.store";
 import "./GeneralInfoForm.scss";
 
 function GeneralInfoForm() {
-  const navigate = useNavigate();
   const { data, fetchData } = useShoppingStore();
   const { fetchEmployeeData } = useEmployeeStore();
   const [success, setSuccess] = useState(false);
@@ -38,7 +37,7 @@ function GeneralInfoForm() {
     }
   }, [loader]);
 
-  const handleBackNavegation = () => navigate("/dashboard");
+
   return (
     <>
       <div style={{ display: success ? "block" : "none" }}>
@@ -50,9 +49,9 @@ function GeneralInfoForm() {
       <Formik
         initialValues={{
           store: data[0]?.name_shopping,
-          close: "",
+          close: data[0]?.closing,
           email: data[0]?.email,
-          open: "",
+          open: data[0]?.open,
         }}
         onSubmit={() => {
           saveChangeHandler();
@@ -73,6 +72,7 @@ function GeneralInfoForm() {
                     onChange={handleChange}
                     onBlur={handleBlur}
                     value={values.store}
+                    disabled
                   />
                 </div>
                 <div className="group">
@@ -80,10 +80,12 @@ function GeneralInfoForm() {
                   <input
                     className={`${typeTypography}-text`}
                     id="close"
-                    type="datetime-local"
+                    name="close"
+                    type="text"
                     onChange={handleChange}
                     onBlur={handleBlur}
                     value={values.close}
+                    disabled
                   />
                 </div>
               </div>
@@ -99,6 +101,7 @@ function GeneralInfoForm() {
                     onChange={handleChange}
                     onBlur={handleBlur}
                     value={values.email}
+                    disabled
                   />
                 </div>
                 <div className="group">
@@ -107,10 +110,11 @@ function GeneralInfoForm() {
                     className={`${typeTypography}-text`}
                     id="open"
                     name="open"
-                    type="datetime-local"
+                    type="text"
                     onChange={handleChange}
                     onBlur={handleBlur}
                     value={values.open}
+                    disabled
                   />
                 </div>
               </div>

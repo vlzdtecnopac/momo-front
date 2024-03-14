@@ -94,11 +94,11 @@ const OrderCardTwo: React.FC<Props> = (props) => {
                     <span className="opcion-radio">
                       <input
                         type="radio"
-                        id={id_input}
+                        id={`id_input_${1}`}
                         onChange={() => startOrder()}
                         name="check_process"
                       />
-                      <label htmlFor={id_input}></label>
+                      <label htmlFor={`id_input_${1}`}></label>
                     </span>
                   </form>
                 </div>
@@ -124,11 +124,11 @@ const OrderCardTwo: React.FC<Props> = (props) => {
                     <span className="opcion-radio">
                       <input
                         type="radio"
-                        id={id_input}
+                        id={`id_input_${2}`}
                         onChange={() => startOrder()}
                         name="check_process"
                       />
-                      <label htmlFor={id_input}></label>
+                      <label htmlFor={`id_input_${2}`}></label>
                     </span>
                   </form>
                 </div>

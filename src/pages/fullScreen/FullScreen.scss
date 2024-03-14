@@ -1,9 +1,11 @@
 
 .full_screen_page{
+    position: relative;
     height: 100vh;
     overflow: auto;
     background-color: white;
-
+    bottom: 0px;
+   
     .grid-basic-flex{
         flex-wrap: nowrap;
         display: flex;

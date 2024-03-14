@@ -39,7 +39,7 @@ function WelcomePage() {
         });
       }
       setIsLoading(false);
-      await axios.put(`http://localhost:3000/shopping/open/${dataEmployee[0]?.shopping_id}`, {header: tokenHeader})
+      await axios.put(`http://localhost:3000/shopping/open/${dataEmployee[0]?.shopping_id}`, {}, {headers: tokenHeader})
       setTimeout(() => navigate("/success"), 4000);
     };
     fetchDataOnMount();

@@ -1,11 +1,15 @@
-import React from "react";
-
+import React, { useState } from "react";
+import axios from "axios";
 import kioskoIcon from "../../assets/icons/kiosko.svg";
 import addKioskoIcon from "../../assets/icons/green-kiosko.svg";
-import "./Card.scss";
 import { useDesignStore } from "../../store/design.store";
+import { tokenHeader } from "../../helpers/token-header.helper";
+import { useShoppingStore } from "../../store/shopping.store";
 
-type Designstyle = "style1" | "style2"
+import "./Card.scss";
+import { LoaderPage } from "../../includes/loader/Loader";
+
+type Designstyle = "style1" | "style2";
 
 interface KioskoCardProps {
   design: Designstyle;
@@ -23,22 +27,39 @@ const KioskoCard: React.FC<KioskoCardProps> = ({
   state,
 }) => {
   const cardBackgroundColor = backgroundColor || "#F2F2F2 !mportant";
+  const { data } = useShoppingStore();
   const { typeTypography } = useDesignStore();
+  const [loader, setIsLoading] = useState<Boolean>(false);
+
+  const handlerAddKiosko = async () => {
+    setIsLoading(true);
+    const response = await axios.get(
+      `http://localhost:3000/kioskos/?shopping_id=${data[0]?.shopping_id}`,
+      { headers: tokenHeader }
+    );
+
+    let dataJson = {
+      shopping_id: data[0].shopping_id,
+      nombre: `Kiosko ${response.data.length + 1}`,
+      state: false,
+    };
+    await axios.post(`http://localhost:3000/kioskos/`, dataJson, {
+      headers: tokenHeader,
+    });
+    setIsLoading(false);
+  };
 
   return (
     <>
-      {design == "style1"? (
+      {loader ? <LoaderPage /> : ""}
+      {design == "style1" ? (
         <>
           <div
             className="card"
             style={{ backgroundColor: cardBackgroundColor }}
           >
             <div className="container">
-              <img
-                className="icon"
-                src={kioskoIcon}
-                alt="icon"
-              />
+              <img className="icon" src={kioskoIcon} alt="icon" />
               <div className="text_active">
                 <p className={`text ${typeTypography}-text`}>{text}</p>
                 <p className={`text ${typeTypography}-text`}>{subText}</p>
@@ -47,7 +68,7 @@ const KioskoCard: React.FC<KioskoCardProps> = ({
             </div>
           </div>
           <button className={`btn button-card ${typeTypography}-text`}>
-            {state  ? "Desconectar" :  "Conectar"}
+            {state ? "Desconectar" : "Conectar"}
           </button>
         </>
       ) : (
@@ -57,17 +78,18 @@ const KioskoCard: React.FC<KioskoCardProps> = ({
             style={{ backgroundColor: cardBackgroundColor }}
           >
             <div className="container">
-              <img
-                className="icon"
-                src={addKioskoIcon}
-                alt="icon"
-              />
+              <img className="icon" src={addKioskoIcon} alt="icon" />
               <div className="text-add">
                 <p>{text}</p>
               </div>
             </div>
           </div>
-          <button className=" btn button-card">Adjuntar</button>
+          <button
+            onClick={() => handlerAddKiosko()}
+            className=" btn button-card"
+          >
+            Adjuntar
+          </button>
         </>
       )}
     </>

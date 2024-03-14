@@ -14,6 +14,7 @@ import { LoaderPage } from "../../includes/loader/Loader";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useEmployeeStore } from "../../store/employee.store";
+import { tokenHeader } from "../../helpers/token-header.helper";
 
 function WelcomePage() {
   const { typeTypography } = useDesignStore();
@@ -38,6 +39,7 @@ function WelcomePage() {
         });
       }
       setIsLoading(false);
+      await axios.put(`http://localhost:3000/shopping/open/${dataEmployee[0]?.shopping_id}`, {header: tokenHeader})
       setTimeout(() => navigate("/success"), 4000);
     };
     fetchDataOnMount();

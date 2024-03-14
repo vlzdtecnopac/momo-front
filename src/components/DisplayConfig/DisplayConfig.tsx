@@ -47,9 +47,8 @@ function DisplayConfig() {
 
   const consultConfig = async () => {
    const response =  await axios.get(`http://localhost:3000/config/?shopping_id=${localStorage.getItem('store-momo')}`, {headers: tokenHeader});
-   console.log(response.data[0].type_text);
-   selectTypeColumn(response.data[0].type_column); 
-   selectTypography(response.data[0].type_text);
+   selectTypeColumn(response.data[0]?.type_column); 
+   selectTypography(response.data[0]?.type_text);
   }
 
   const handleBackNavegation = () => navigate("/dashboard");

@@ -33,13 +33,13 @@ const KioskoCard: React.FC<KioskoCardProps> = ({
   const { typeTypography } = useDesignStore();
   const [loader, setIsLoading] = useState<Boolean>(false);
 
-  const handlerConnectKiosko = async(kiosko_id: string | undefined) => {
+  const handlerConnectKiosko = async(kiosko_id: string | undefined, state: boolean | undefined) => {
     if(kiosko_id != undefined){ 
     setIsLoading(true);
      await axios.put(
       `http://localhost:3000/kioskos/${kiosko_id}`,
       {
-        "state": true,
+        "state": state ? false : true,
         "shopping_id": data[0]?.shopping_id
       },
       { headers: tokenHeader }
@@ -57,7 +57,7 @@ const KioskoCard: React.FC<KioskoCardProps> = ({
 
     let dataJson = {
       shopping_id: data[0].shopping_id,
-      nombre: `Kiosko ${response.data.length + 1}`,
+      nombre: `Kiosko ${  + 1}`,
       state: false,
     };
     await axios.post(`http://localhost:3000/kioskos/`, dataJson, {
@@ -84,7 +84,7 @@ const KioskoCard: React.FC<KioskoCardProps> = ({
               </div>
             </div>
           </div>
-          <button onClick={()=>handlerConnectKiosko(kiosko_id)} className={`btn button-card ${typeTypography}-text`}>
+          <button onClick={()=>handlerConnectKiosko(kiosko_id, state)} className={`btn button-card ${typeTypography}-text`}>
             {state ? "Desconectar" : "Conectar"}
           </button>
         </>

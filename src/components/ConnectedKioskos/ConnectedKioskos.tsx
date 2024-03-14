@@ -34,7 +34,7 @@ function ConnectedKioskos() {
             {kioskos?.map((_, index: number) => {
               index = kioskos.length - 1 - index;
               return (
-                <li className="content-center">
+                <li key={kioskos[index].kiosko_id} className="content-center">
                   <KioskoCard
                     kiosko_id={kioskos[index].kiosko_id}
                     design="style1"

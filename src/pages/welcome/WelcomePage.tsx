@@ -21,32 +21,34 @@ function WelcomePage() {
   const { data, fetchData } = useShoppingStore();
   const { dataEmployee, fetchEmployeeData } = useEmployeeStore();
   const [kioskos, setKioskos] = useState<KioskoInterface[]>();
-  const [loader, setIsLoading] = useState<Boolean>(false);
+  const [loader, setIsLoading] = useState<Boolean>(true);
 
   const { socket } = useContext(SocketContext);
 
   const navigate = useNavigate();
 
   useEffect(() => {
-    if(!loader){
-      setIsLoading(true)
-    const fetchDataOnMount = async () => {
-      const employeeId = localStorage.getItem("employee-id");
-      if (employeeId) {
-        await fetchEmployeeData(employeeId);
-        await fetchData(dataEmployee[0]?.shopping_id);
-        socket.emit("kiosko-socket", {
-          shopping_id: dataEmployee[0]?.shopping_id,
-        });
-      }
-      await axios.put(`http://localhost:3000/shopping/open/${dataEmployee[0]?.shopping_id}`, {}, {headers: tokenHeader})
-      setTimeout(() => navigate("/success"), 4000);
-    };
-    fetchDataOnMount();
-    setIsLoading(false);
-    console.log("hola");
+    if (loader) {
+      const fetchDataOnMount = async () => {
+        const employeeId = localStorage.getItem("employee-id");
+        if (employeeId) {
+          await fetchEmployeeData(employeeId);
+          await fetchData(dataEmployee[0]?.shopping_id);
+          socket.emit("kiosko-socket", {
+            shopping_id: dataEmployee[0]?.shopping_id,
+          });
+        }
+        await axios.put(
+          `http://localhost:3000/shopping/open/${dataEmployee[0]?.shopping_id}`,
+          {},
+          { headers: tokenHeader }
+        );
+        setTimeout(() => navigate("/success"), 4000);
+        setIsLoading(false);
+      };
+      fetchDataOnMount();
     }
-  }, [loader]);
+  }, [loader, data]);
 
   useEffect(() => {
     socket.on("kiosko-socket", (data: KioskoInterface[]) => setKioskos(data));
@@ -106,7 +108,7 @@ function WelcomePage() {
                       />
                     ))}
                   </div>
-                  {data ? <div className="loader"></div> : "" }
+                  {data ? <div className="loader"></div> : ""}
                   <div className="card-group">
                     {kioskos?.map((_, index: number) => {
                       index = kioskos.length - 1 - index;

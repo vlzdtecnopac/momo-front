@@ -54,10 +54,10 @@ const KioskoCard: React.FC<KioskoCardProps> = ({
       `http://localhost:3000/kioskos/?shopping_id=${data[0]?.shopping_id}`,
       { headers: tokenHeader }
     );
-
+   
     let dataJson = {
       shopping_id: data[0].shopping_id,
-      nombre: `Kiosko ${  + 1}`,
+      nombre: `Kiosko ${ response.data.length + 1}`,
       state: false,
     };
     await axios.post(`http://localhost:3000/kioskos/`, dataJson, {

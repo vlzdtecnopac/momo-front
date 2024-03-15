@@ -1,4 +1,4 @@
-import logo from "../../assets/logo.svg";
+import logo from "../../assets/loading_logo.svg";
 import coffee from "../../assets/coffee-momo.png";
 import "./404.scss";
 function NotFound() {

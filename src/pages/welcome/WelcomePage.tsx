@@ -20,15 +20,16 @@ function WelcomePage() {
   const { typeTypography } = useDesignStore();
   const { data, fetchData } = useShoppingStore();
   const { dataEmployee, fetchEmployeeData } = useEmployeeStore();
-  const [error, setError] = useState<Boolean>(false);
   const [kioskos, setKioskos] = useState<KioskoInterface[]>();
-  const [loader, setIsLoading] = useState<Boolean>();
+  const [loader, setIsLoading] = useState<Boolean>(false);
 
   const { socket } = useContext(SocketContext);
 
   const navigate = useNavigate();
 
   useEffect(() => {
+    if(!loader){
+      setIsLoading(true)
     const fetchDataOnMount = async () => {
       const employeeId = localStorage.getItem("employee-id");
       if (employeeId) {
@@ -38,15 +39,16 @@ function WelcomePage() {
           shopping_id: dataEmployee[0]?.shopping_id,
         });
       }
-      setIsLoading(false);
       await axios.put(`http://localhost:3000/shopping/open/${dataEmployee[0]?.shopping_id}`, {}, {headers: tokenHeader})
       setTimeout(() => navigate("/success"), 4000);
     };
     fetchDataOnMount();
+    setIsLoading(false);
+    console.log("hola");
+    }
   }, [loader]);
 
   useEffect(() => {
-    setIsLoading(true);
     socket.on("kiosko-socket", (data: KioskoInterface[]) => setKioskos(data));
   }, [socket]);
 
@@ -93,13 +95,6 @@ function WelcomePage() {
 
               <div className="kds-loader-container">
                 <div className="kds-loader">
-                  {error ? (
-                    <div className="alert-kiosko">
-                      No se encuentra disponible, encuentra otro kiosko...
-                    </div>
-                  ) : (
-                    ""
-                  )}
                   <div className="store-card">
                     {data.map((item: any, i: number) => (
                       <Card

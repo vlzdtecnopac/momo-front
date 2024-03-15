@@ -5,8 +5,8 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 import { SocketContext } from "../../context/SocketContext";
-import "./LoginForm.scss";
 import { LoaderPage } from "../../includes/loader/Loader";
+import "./LoginForm.scss";
 
 function LoginForm() {
   const navigate = useNavigate();
@@ -35,8 +35,7 @@ function LoginForm() {
           onSubmit={async (values) => {
             setLoader(true);
             try {
-              let resp = await axios.post(
-                "http://localhost:3000/users/employee/login",
+              let resp = await axios.post(`${import.meta.env.VITE_API_URL}/users/employee/login`,
                 values
               );
               if (resp) {

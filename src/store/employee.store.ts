@@ -24,7 +24,7 @@ interface EmployeeStoreInterface{
 export const useEmployeeStore = create<EmployeeStoreInterface>((set) => ({
   dataEmployee: [],
   fetchEmployeeData: async (employee_id) =>  new Promise((resolve, reject) => {
-      axios.get(`http://localhost:3000/users/employee/?employee_id=${employee_id}`, {headers: tokenHeader})
+      axios.get(`${import.meta.env.VITE_API_URL}/users/employee/?employee_id=${employee_id}`, {headers: tokenHeader})
         .then((response) => {
           set({ dataEmployee: response.data });
           resolve(response.data); 

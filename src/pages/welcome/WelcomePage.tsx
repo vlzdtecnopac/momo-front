@@ -1,20 +1,25 @@
 import { motion } from "framer-motion";
+import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+
 import { useShoppingStore } from "../../store/shopping.store";
 import { useDesignStore } from "../../store/design.store";
 import { SocketContext } from "../../context/SocketContext";
 import { KioskoInterface } from "../../interfaces/kiosko.interface";
 import Card from "../../components/Card/Card";
+import { LoaderPage } from "../../includes/loader/Loader";
+import { useEmployeeStore } from "../../store/employee.store";
+import { tokenHeader } from "../../helpers/token-header.helper";
+
 import "./WelcomePage.scss";
 
 import logo from "../../assets/logo.svg";
 import tabletIcon from "../../assets/icons/tablet.svg";
 import kioskIcon from "../../assets/icons/kiosko.svg";
-import { LoaderPage } from "../../includes/loader/Loader";
-import { Link, useNavigate } from "react-router-dom";
-import axios from "axios";
-import { useEmployeeStore } from "../../store/employee.store";
-import { tokenHeader } from "../../helpers/token-header.helper";
+
+
+
 
 function WelcomePage() {
   const { typeTypography } = useDesignStore();

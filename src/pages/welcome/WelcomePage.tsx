@@ -43,8 +43,8 @@ function WelcomePage() {
           {},
           { headers: tokenHeader }
         );
-        setTimeout(() => navigate("/success"), 4000);
         setIsLoading(false);
+        setTimeout(() => navigate("/success"), 4000);
       };
       fetchDataOnMount();
     }

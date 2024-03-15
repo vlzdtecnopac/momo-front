@@ -2,20 +2,15 @@
 
 .content-table-alert {
     border-radius: 16px;
-    -webkit-border-radius: 16px;
-    -moz-border-radius: 16px;
-    -ms-border-radius: 16px;
-    -o-border-radius: 16px;
-    max-width: 1950px;
-    margin-top: 20px;
     background: #fff;
-    padding: 0px 10px 10px 10px;
+    width: 1150px;
+    display: block;
 
     .table_header {
         font-family: "Red Hat Display", sans-serif;
         border-collapse: collapse;
-        width: 100%;
         text-align: left;
+        width: 100%;
 
         thead {
             text-align: center;
@@ -65,15 +60,16 @@
 
     .scroll_alerts {
         overflow: auto;
-        height: 480px
+        padding: 10px; 
+        height: 450px;
+
     }
 
     .table {
         font-family: "Red Hat Display", "serif";
         border-collapse: collapse;
-        width: 100%;
         text-align: left;
-
+        width: 100%;
         .item-weight {
             font-weight: 700;
             color: $gray-text
@@ -103,10 +99,10 @@
         }
 
         td:nth-child(2) {
-            width: 50%;
             text-align-last: left;
             font-weight: 500;
             font-family: "Red Hat Display" sans-serif;
+            width: 350px;
         }
 
         td:nth-child(3) {

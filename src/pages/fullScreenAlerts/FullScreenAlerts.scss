@@ -1,6 +1,10 @@
 .alert_table_full_screen {
+    display: flex;
     margin-top: 10px;
     max-width: 1550px;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
     margin: auto;
 
     .content-table {

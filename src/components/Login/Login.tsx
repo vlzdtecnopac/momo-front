@@ -15,10 +15,17 @@ const Login: React.FC<LoginProps> = () => {
   return (
     <div className="component-login">
       <div className="sidebar-left">
-        <img
+      <motion.img
           className="image"
           src={imgLogin}
           alt="img"
+          initial={{ opacity: 0, x: -100 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{
+            duration: 0.8,
+            delay: 0.5,
+            ease: [0, 0.71, 0.2, 1.01],
+          }}
         />
       </div>
       <div className="column-right">

@@ -18,9 +18,6 @@ import logo from "../../assets/logo.svg";
 import tabletIcon from "../../assets/icons/tablet.svg";
 import kioskIcon from "../../assets/icons/kiosko.svg";
 
-
-
-
 function WelcomePage() {
   const { typeTypography } = useDesignStore();
   const { data, fetchData } = useShoppingStore();
@@ -104,13 +101,24 @@ function WelcomePage() {
                 <div className="kds-loader">
                   <div className="store-card">
                     {data.map((item: any, i: number) => (
-                      <Card
-                        key={i}
-                        icon={tabletIcon}
-                        text={item.name_shopping}
-                        subText={`No. ${item.no_shooping}`}
-                        state={true}
-                      />
+                      <motion.div
+                        className="box"
+                        initial={{ opacity: 0, scale: 0.5 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{
+                          duration: 0.8,
+                          delay: 0.5,
+                          ease: [0, 0.71, 0.2, 1.01],
+                        }}
+                      >
+                        <Card
+                          key={i}
+                          icon={tabletIcon}
+                          text={item.name_shopping}
+                          subText={`No. ${item.no_shooping}`}
+                          state={true}
+                        />
+                      </motion.div>
                     ))}
                   </div>
                   {data ? <div className="loader"></div> : ""}
@@ -118,6 +126,16 @@ function WelcomePage() {
                     {kioskos?.map((_, index: number) => {
                       index = kioskos.length - 1 - index;
                       return (
+                        <motion.div
+                        className="box"
+                        initial={{ opacity: 0, scale: 0.5 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{
+                          duration: 0.8,
+                          delay: 0.5,
+                          ease: [0, 0.71, 0.2, 1.01]
+                        }}
+                      >
                         <Card
                           key={kioskos[index].id}
                           icon={kioskIcon}
@@ -125,6 +143,7 @@ function WelcomePage() {
                           subText={kioskos[index]?.name_shopping}
                           state={kioskos[index].state}
                         />
+                        </motion.div>
                       );
                     })}
                   </div>

@@ -12,7 +12,7 @@ import { LoaderPage } from "../../includes/loader/Loader";
 type Designstyle = "style1" | "style2";
 
 interface KioskoCardProps {
-  kiosko_id?: string | undefined
+  kiosko_id?: string | undefined;
   design: Designstyle;
   text?: string;
   backgroundColor?: string;
@@ -33,20 +33,30 @@ const KioskoCard: React.FC<KioskoCardProps> = ({
   const { typeTypography } = useDesignStore();
   const [loader, setIsLoading] = useState<Boolean>(false);
 
-  const handlerConnectKiosko = async(kiosko_id: string | undefined, state: boolean | undefined) => {
-    if(kiosko_id != undefined){ 
-    setIsLoading(true);
-     await axios.put(
-      `http://localhost:3000/kioskos/${kiosko_id}`,
-      {
-        "state": state ? false : true,
-        "shopping_id": data[0]?.shopping_id
-      },
-      { headers: tokenHeader }
-    );
-    setIsLoading(false);
+  const handlerConnectKiosko = async (
+    kiosko_id: string | undefined,
+    state: boolean | undefined
+  ) => {
+    if (state) {
+      if (kiosko_id != undefined) {
+        setIsLoading(true);
+        await axios.put(
+          `${import.meta.env.VITE_API_URL}/kioskos/${kiosko_id}`,
+          {
+            state: false,
+            shopping_id: data[0]?.shopping_id,
+          },
+          { headers: tokenHeader }
+        );
+      }
+    } else {
+      await axios.delete(
+        `${import.meta.env.VITE_API_URL}/kioskos/${kiosko_id}`,
+        { headers: tokenHeader }
+      );
     }
-  } 
+    setIsLoading(false);
+  };
 
   const handlerAddKiosko = async () => {
     setIsLoading(true);
@@ -54,10 +64,10 @@ const KioskoCard: React.FC<KioskoCardProps> = ({
       `http://localhost:3000/kioskos/?shopping_id=${data[0]?.shopping_id}`,
       { headers: tokenHeader }
     );
-   
+
     let dataJson = {
       shopping_id: data[0].shopping_id,
-      nombre: `Kiosko ${ response.data.length + 1}`,
+      nombre: `Kiosko ${response.data.length + 1}`,
       state: false,
     };
     await axios.post(`http://localhost:3000/kioskos/`, dataJson, {
@@ -84,8 +94,11 @@ const KioskoCard: React.FC<KioskoCardProps> = ({
               </div>
             </div>
           </div>
-          <button onClick={()=>handlerConnectKiosko(kiosko_id, state)} className={`btn button-card ${typeTypography}-text`}>
-            {state ? "Desconectar" : "Conectar"}
+          <button
+            onClick={() => handlerConnectKiosko(kiosko_id, state)}
+            className={`btn button-card ${typeTypography}-text`}
+          >
+            {state ? "Desconectar" : "Eliminar"}
           </button>
         </>
       ) : (

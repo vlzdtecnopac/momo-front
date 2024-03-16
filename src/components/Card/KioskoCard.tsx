@@ -51,7 +51,7 @@ const KioskoCard: React.FC<KioskoCardProps> = ({
       }
     } else {
       await axios.delete(
-        `${import.meta.env.VITE_API_URL}/kioskos/${kiosko_id}`,
+        `${import.meta.env.VITE_API_URL}/kioskos/${kiosko_id}?shopping_id=${data[0]?.shopping_id}`,
         { headers: tokenHeader }
       );
     }

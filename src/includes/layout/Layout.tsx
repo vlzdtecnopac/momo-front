@@ -20,6 +20,7 @@ const Layout: React.FC<DynamicLayoutProps> = (props) => {
     }
   },[])
 
+
   const closeSession = ( ) => {
     localStorage.removeItem("employee-id");
     localStorage.removeItem("token-momo");

@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { create } from 'zustand'
 import axios from 'axios';
 import { tokenHeader } from '../helpers/token-header.helper';
@@ -21,6 +22,8 @@ interface DesignStoreInterface{
     fetchData: (shopping_id: string) => Promise<Boolean>
 }
 
+const navigate = useNavigate();
+
 
 export const useShoppingStore = create<DesignStoreInterface>((set) => ({
   data: [],
@@ -31,6 +34,10 @@ export const useShoppingStore = create<DesignStoreInterface>((set) => ({
           resolve(response.data);
         })
         .catch((error) => {
+          if(error.response.data.message == 'jwt expired'){
+            localStorage.removeItem("token-momo")
+            navigate("/");
+          }
           console.error(`Error fetching data: ${error}`);
           reject(false); 
         });

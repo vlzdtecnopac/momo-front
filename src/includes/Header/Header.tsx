@@ -18,7 +18,8 @@ function Header() {
     const fetchDataOnMount = async () => {
       const employeeId = localStorage.getItem("employee-id");
       if (employeeId) {
-        fetchEmployeeData(employeeId).then(async(resp: any) => await fetchData(resp[0].shopping_id));
+        fetchEmployeeData(employeeId)
+          .then(async(resp: any) => await fetchData(resp[0].shopping_id))
       }
     };
     fetchDataOnMount();

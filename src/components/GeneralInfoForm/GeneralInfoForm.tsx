@@ -1,10 +1,8 @@
-import { useNavigate } from "react-router-dom";
 import { useDesignStore } from "../../store/design.store";
 import { useEffect, useState } from "react";
 import CongratsModal from "../Congrats/CongratsModal";
 import { Formik } from "formik";
 import { useShoppingStore } from "../../store/shopping.store";
-import { useEmployeeStore } from "../../store/employee.store";
 import "./GeneralInfoForm.scss";
 import moment from "moment";
 
@@ -20,9 +18,6 @@ function GeneralInfoForm() {
     }, 3000);
     setSuccess(true);
   };
-
-
-  console.log(data);
 
   return (
     <>

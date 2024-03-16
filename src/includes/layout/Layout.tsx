@@ -1,15 +1,30 @@
-import React, { ReactNode } from "react";
+import React, { ReactNode, useEffect } from "react";
 import Header from "../Header/Header";
 import SideBar from "../SideBar/SideBar";
 import InfoSidebar from "../../components/InfoSidebar/InfoSidebar";
 import "./Layout.scss";
 import { useNavigate } from "react-router-dom";
+
 interface DynamicLayoutProps {
   children: ReactNode;
 }
 
+
 const Layout: React.FC<DynamicLayoutProps> = (props) => {
   const navigate = useNavigate();
+
+  useEffect(()=>{
+    if(!localStorage.getItem('token-momo')){
+      closeSession();
+      navigate('/');
+    }
+  },[])
+
+  const closeSession = ( ) => {
+    localStorage.removeItem("employee-id");
+    localStorage.removeItem("token-momo");
+  }
+
   return (
     <>
       {(() => {

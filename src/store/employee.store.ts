@@ -1,4 +1,3 @@
-import { useNavigate } from "react-router-dom";
 import { create } from 'zustand'
 import axios from 'axios';
 import { tokenHeader } from '../helpers/token-header.helper';
@@ -23,8 +22,6 @@ interface EmployeeStoreInterface{
 }
 
 
-const navigate = useNavigate();
-
 export const useEmployeeStore = create<EmployeeStoreInterface>((set) => ({
   dataEmployee: [],
   fetchEmployeeData: async (employee_id) =>  new Promise((resolve, reject) => {
@@ -36,7 +33,6 @@ export const useEmployeeStore = create<EmployeeStoreInterface>((set) => ({
         .catch((error) => {
           if(error.response.data.message == 'jwt expired'){
             localStorage.removeItem("token-momo")
-            navigate("/");
           }
           console.error(`Error fetching data: ${error.message}`);
           reject(false);

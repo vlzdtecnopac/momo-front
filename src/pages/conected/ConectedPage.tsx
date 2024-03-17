@@ -27,7 +27,9 @@ function ConectedPage() {
 
   const consultNumberKiosko = async () => {
     const response = await axios.get(
-      `http://localhost:3000/kioskos/?shopping_id=${data[0]?.shopping_id}&state=true`,
+      `${
+        import.meta.env.VITE_API_URL
+      }/kioskos/?shopping_id=${data[0]?.shopping_id}&state=true`,
       { headers: tokenHeader }
     );
     setCount(response.data.length);

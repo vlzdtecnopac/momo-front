@@ -41,7 +41,9 @@ function WelcomePage() {
           });
         }
         await axios.put(
-          `http://localhost:3000/shopping/open/${dataEmployee[0]?.shopping_id}`,
+          `${
+            import.meta.env.VITE_API_URL
+          }/shopping/open/${dataEmployee[0]?.shopping_id}`,
           {},
           { headers: tokenHeader }
         );

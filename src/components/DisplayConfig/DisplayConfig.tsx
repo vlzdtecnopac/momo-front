@@ -39,7 +39,9 @@ function DisplayConfig() {
         "type_text": typeTypography,
         "type_column": typeColumns
     }
-     await axios.put(`http://localhost:3000/config/${data[0].shopping_id}`, dataJson, {headers: tokenHeader});
+     await axios.put(`${
+      import.meta.env.VITE_API_URL
+    }/config/${data[0].shopping_id}`, dataJson, {headers: tokenHeader});
      setTimeout(()=>setSucess(false), 2000);
     }catch(e){
       setSucess(false);
@@ -52,7 +54,9 @@ function DisplayConfig() {
 
 
   const consultConfig = async () => {
-   const response =  await axios.get(`http://localhost:3000/config/?shopping_id=${data[0].shopping_id}`, {headers: tokenHeader});
+   const response =  await axios.get(`${
+    import.meta.env.VITE_API_URL
+  }/config/?shopping_id=${data[0].shopping_id}`, {headers: tokenHeader});
    selectTypeColumn(response.data[0]?.type_column); 
    selectTypography(response.data[0]?.type_text);
   }

@@ -6,7 +6,9 @@ import { useNavigate } from "react-router-dom";
 const LoginPage = () => {
   const navigate = useNavigate();
   useEffect(()=> {
-    navigate("/dashboard");
+    if(localStorage.getItem("token-momo")){
+      navigate("/dashboard");
+    }
   }, [])
   return (
     <div>

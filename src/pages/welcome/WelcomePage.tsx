@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import { useShoppingStore } from "../../store/shopping.store";
 import { useDesignStore } from "../../store/design.store";
@@ -121,7 +121,7 @@ function WelcomePage() {
                       </motion.div>
                     ))}
                   </div>
-                  {data ? <div className="loader"></div> : ""}
+                  {data && !loader ? <div className="loader"></div> : ""}
                   <div className="card-group">
                     {kioskos?.map((_, index: number) => {
                       index = kioskos.length - 1 - index;

@@ -31,8 +31,9 @@ export const useEmployeeStore = create<EmployeeStoreInterface>((set) => ({
           resolve(response.data); 
         })
         .catch((error) => {
-          if(error.response.data.message == 'jwt expired'){
+          if(error.response.data.message == 'jwt expired' || error.response.data.message ==  'jwt malformed'){
             localStorage.removeItem("token-momo")
+            localStorage.removeItem("employee-id")
           }
           console.error(`Error fetching data: ${error.message}`);
           reject(false);

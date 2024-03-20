@@ -39,20 +39,20 @@ function WelcomePage() {
           socket.emit("kiosko-socket", {
             shopping_id: dataEmployee[0]?.shopping_id,
           });
+          await axios.put(
+            `${
+              import.meta.env.VITE_API_URL
+            }/shopping/open/${dataEmployee[0]?.shopping_id}`,
+            {},
+            { headers: tokenHeader }
+          );
+          setIsLoading(false);
+          setTimeout(() => navigate("/success"), 4000);
         }
-        await axios.put(
-          `${
-            import.meta.env.VITE_API_URL
-          }/shopping/open/${dataEmployee[0]?.shopping_id}`,
-          {},
-          { headers: tokenHeader }
-        );
-        setIsLoading(false);
-        setTimeout(() => navigate("/success"), 4000);
       };
       fetchDataOnMount();
     }
-  }, [loader, data]);
+  }, [loader, data, dataEmployee]);
 
   useEffect(() => {
     socket.on("kiosko-socket", (data: KioskoInterface[]) => setKioskos(data));

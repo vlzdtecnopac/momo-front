@@ -5,11 +5,8 @@ import moment from "moment";
 import Header from "../Header/Header";
 import SideBar from "../SideBar/SideBar";
 import InfoSidebar from "../../components/InfoSidebar/InfoSidebar";
-
-import { useShoppingStore } from "../../store/shopping.store";
-import "./Layout.scss";
 import { useEmployeeStore } from "../../store/employee.store";
-
+import "./Layout.scss";
 
 interface DynamicLayoutProps {
   children: ReactNode;
@@ -17,12 +14,12 @@ interface DynamicLayoutProps {
 
 
 const Layout: React.FC<DynamicLayoutProps> = (props) => {
-  const { dataEmployee } = useEmployeeStore();
+
   const navigate = useNavigate();
   
   useEffect(()=>{
     let start_session = localStorage.getItem("start_session");
-    if(start_session != undefined){
+    if(start_session){
       let currentTime =  moment();
       if (currentTime.diff(start_session, 'hours') >= 1) {
         renewToken(currentTime);
@@ -37,7 +34,7 @@ const Layout: React.FC<DynamicLayoutProps> = (props) => {
 
   const renewToken = async (currentTime: any) => {
     const response = await axios.post(`${import.meta.env.VITE_API_URL}/users/update_token`,{
-      "id": dataEmployee[0]?.employee_id
+      "id": localStorage.getItem("employee-id")
   });
    localStorage.setItem("start_session", currentTime.format('YYYY/MM/DD, h:mm:ss a'));
    localStorage.setItem('token-momo', response.data.token);

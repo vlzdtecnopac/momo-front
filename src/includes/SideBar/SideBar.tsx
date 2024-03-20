@@ -22,12 +22,16 @@ function SideBar() {
   ];
 
   const handleLogout = async () => {
+    try{
       await axios.put(`${
         import.meta.env.VITE_API_URL
       }/shopping/close/${data[0]?.shopping_id}`, {},{headers: tokenHeader});
       localStorage.removeItem("employee-id");
       localStorage.removeItem("token-momo");
       navigate("/");
+    }catch(e){
+      console.log(e);
+    }
   };
 
   return (

@@ -29,7 +29,7 @@ axiosInstance.interceptors.response.use(
         const originalRequest: any = error.config;
         console.warn(error);
 
-        if (error.response?.status === 401 || !originalRequest._retry) {
+        if (error.response?.status === 401 && error.name == "TokenExpiredError" || !originalRequest._retry) {
           
             originalRequest._retry = true;
 

@@ -1,10 +1,30 @@
 @import "../../index.scss";
 
 .kiosko-component {
+    .column-center{
+        align-items: center;
+    }
+    .column-right{
+        display: flex;
+        justify-content: end;
+    }
+    .btn-desconnect-all{
+        background-color: $orange;
+        color: $white;
+        padding: 10px 10px;
+        border-radius: 10px;
+        border: 1px solid $orange;
+        margin: 0px 10px;
+        &:hover{
+            background: #e35108;
+            cursor: pointer;
+        }
+    }
     .connected-title {
         color: $orange;
         padding: 10px;
         margin: 0px;
+       
 
         &.small-text {
             font-size: 20px;

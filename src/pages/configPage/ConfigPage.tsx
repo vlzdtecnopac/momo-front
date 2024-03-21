@@ -6,11 +6,12 @@ import Layout from "../../includes/layout/Layout";
 import GeneralInfoForm from "../../components/GeneralInfoForm/GeneralInfoForm";
 import ConnectedKioskos from "../../components/ConnectedKioskos/ConnectedKioskos";
 import DisplayConfig from "../../components/DisplayConfig/DisplayConfig";
-import "./../dashboard/DashboardPage.scss";
-import "./ConfigPage.scss";
 import { useDesignStore } from "../../store/design.store";
 import { useShoppingStore } from "../../store/shopping.store";
 import { useEmployeeStore } from "../../store/employee.store";
+
+import "./../dashboard/DashboardPage.scss";
+import "./ConfigPage.scss";
 
 function ConfigPage() {
   const { typeTypography } = useDesignStore();

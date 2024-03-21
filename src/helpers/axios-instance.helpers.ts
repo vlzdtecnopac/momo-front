@@ -27,8 +27,10 @@ axiosInstance.interceptors.response.use(
     async (error: AxiosError) => {
         // Si la respuesta es un error, puedes manejarlo aquí, por ejemplo, renovar el token si es necesario y reintentar la solicitud
         const originalRequest: any = error.config;
+        console.warn(error);
 
-        if (error.response?.status === 401 && !originalRequest._retry) {
+        if (error.response?.status === 401 || !originalRequest._retry) {
+          
             originalRequest._retry = true;
 
             try {

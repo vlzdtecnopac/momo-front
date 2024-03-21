@@ -5,7 +5,6 @@ import moment from "moment";
 import Header from "../Header/Header";
 import SideBar from "../SideBar/SideBar";
 import InfoSidebar from "../../components/InfoSidebar/InfoSidebar";
-import { useEmployeeStore } from "../../store/employee.store";
 import "./Layout.scss";
 
 interface DynamicLayoutProps {

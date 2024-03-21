@@ -1,4 +1,3 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import DisplayOption from "./DisplayOption/DisplayOption";
@@ -8,13 +7,10 @@ import clasicIcon from "../../assets/icons/clasic.svg";
 import CongratsModal from "../../components/Congrats/CongratsModal";
 import { TypographyEnum, useDesignStore } from "./../../store/design.store";
 
+import { useShoppingStore } from "../../store/shopping.store";
+import axiosInstance from "../../helpers/axios-instance.helpers";
 
 import "./DisplayConfig.scss";
-import { tokenHeader } from "../../helpers/token-header.helper";
-import { useShoppingStore } from "../../store/shopping.store";
-import { useEmployeeStore } from "../../store/employee.store";
-
-
 
 const options = [
   { icon: splitIcon, text: "Split" },
@@ -24,8 +20,7 @@ const options = [
 
 function DisplayConfig() {
   const navigate = useNavigate();
-  const [success, setSucess] = useState<Boolean>(false);
-  const [loader, setIsLoading] = useState<Boolean>(false);  
+  const [success, setSucess] = useState<Boolean>(false); 
   const { data } = useShoppingStore();
   
   const { typeTypography, selectTypography, typeColumns, selectTypeColumn } =
@@ -39,9 +34,7 @@ function DisplayConfig() {
         "type_text": typeTypography,
         "type_column": typeColumns
     }
-     await axios.put(`${
-      import.meta.env.VITE_API_URL
-    }/config/${data[0].shopping_id}`, dataJson, {headers: tokenHeader});
+     await axiosInstance.put(`/config/${data[0].shopping_id}`, dataJson);
      setTimeout(()=>setSucess(false), 2000);
     }catch(e){
       setSucess(false);
@@ -54,9 +47,7 @@ function DisplayConfig() {
 
 
   const consultConfig = async () => {
-   const response =  await axios.get(`${
-    import.meta.env.VITE_API_URL
-  }/config/?shopping_id=${data[0].shopping_id}`, {headers: tokenHeader});
+   const response =  await axiosInstance.get(`/config/?shopping_id=${data[0].shopping_id}`);
    selectTypeColumn(response.data[0]?.type_column); 
    selectTypography(response.data[0]?.type_text);
   }

@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import "./SideBar.scss";
-import axios from "axios";
-import { tokenHeader } from "../../helpers/token-header.helper";
 import { useShoppingStore } from "../../store/shopping.store";
+import axiosInstance from "../../helpers/axios-instance.helpers";
+import "./SideBar.scss";
 
 function SideBar() {
   const { data, fetchData } = useShoppingStore();
@@ -23,9 +22,7 @@ function SideBar() {
 
   const handleLogout = async () => {
     try{
-      await axios.put(`${
-        import.meta.env.VITE_API_URL
-      }/shopping/close/${data[0]?.shopping_id}`, {},{headers: tokenHeader});
+      await axiosInstance.put(`/shopping/close/${data[0]?.shopping_id}`);
       localStorage.removeItem("employee-id");
       localStorage.removeItem("token-momo");
       navigate("/");

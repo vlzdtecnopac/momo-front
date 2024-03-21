@@ -1,13 +1,12 @@
 import React, { useState } from "react";
-import axios from "axios";
 import kioskoIcon from "../../assets/icons/kiosko.svg";
 import addKioskoIcon from "../../assets/icons/green-kiosko.svg";
 import { useDesignStore } from "../../store/design.store";
-import { tokenHeader } from "../../helpers/token-header.helper";
 import { useShoppingStore } from "../../store/shopping.store";
+import { LoaderPage } from "../../includes/loader/Loader";
+import axiosInstance from "../../helpers/axios-instance.helpers";
 
 import "./Card.scss";
-import { LoaderPage } from "../../includes/loader/Loader";
 
 type Designstyle = "style1" | "style2";
 
@@ -40,43 +39,28 @@ const KioskoCard: React.FC<KioskoCardProps> = ({
     if (state) {
       if (kiosko_id != undefined) {
         setIsLoading(true);
-        await axios.put(
-          `${import.meta.env.VITE_API_URL}/kioskos/${kiosko_id}`,
+        await axiosInstance.put(`/kioskos/${kiosko_id}`,
           {
             state: false,
             shopping_id: data[0]?.shopping_id,
-          },
-          { headers: tokenHeader }
+          }
         );
       }
     } else {
-      await axios.delete(
-        `${import.meta.env.VITE_API_URL}/kioskos/${kiosko_id}?shopping_id=${data[0]?.shopping_id}`,
-        { headers: tokenHeader }
-      );
+      await axiosInstance.delete(`/kioskos/${kiosko_id}?shopping_id=${data[0]?.shopping_id}`);
     }
     setIsLoading(false);
   };
 
   const handlerAddKiosko = async () => {
     setIsLoading(true);
-    const response = await axios.get(
-      `${
-        import.meta.env.VITE_API_URL
-      }/kioskos/?shopping_id=${data[0]?.shopping_id}`,
-      { headers: tokenHeader }
-    );
-
+    const response = await axiosInstance.get(`/kioskos/?shopping_id=${data[0]?.shopping_id}`);
     let dataJson = {
       shopping_id: data[0].shopping_id,
       nombre: `Kiosko ${response.data.length + 1}`,
       state: false,
     };
-    await axios.post(`${
-      import.meta.env.VITE_API_URL
-    }/kioskos/`, dataJson, {
-      headers: tokenHeader,
-    });
+    await axiosInstance.post(`/kioskos/`, dataJson);
     setIsLoading(false);
   };
 

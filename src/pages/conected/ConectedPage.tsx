@@ -5,11 +5,9 @@ import { motion } from "framer-motion";
 import logo from "../../assets/logo.svg";
 import checkIcon from "../../assets/icons/check.svg";
 import { useDesignStore } from "../../store/design.store";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useShoppingStore } from "../../store/shopping.store";
-import { useEmployeeStore } from "../../store/employee.store";
-import { tokenHeader } from "../../helpers/token-header.helper";
+import axiosInstance from "../../helpers/axios-instance.helpers";
 
 function ConectedPage() {
   const navigate = useNavigate();
@@ -26,11 +24,8 @@ function ConectedPage() {
   }, [loader]);
 
   const consultNumberKiosko = async () => {
-    const response = await axios.get(
-      `${
-        import.meta.env.VITE_API_URL
-      }/kioskos/?shopping_id=${data[0]?.shopping_id}&state=true`,
-      { headers: tokenHeader }
+    const response = await axiosInstance.get(
+      `/kioskos/?shopping_id=${data[0]?.shopping_id}&state=true`
     );
     setCount(response.data.length);
     setTimeout(() => navigate("/dashboard"), 4000);

@@ -1,6 +1,5 @@
 import { create } from 'zustand'
-import axios from 'axios';
-import { tokenHeader } from '../helpers/token-header.helper';
+import axiosInstance from '../helpers/axios-instance.helpers';
 
 interface ShoppingInterface{
   id: number,
@@ -25,7 +24,7 @@ interface DesignStoreInterface{
 export const useShoppingStore = create<DesignStoreInterface>((set) => ({
   data: [],
   fetchData: async (shopping_id) =>  new Promise((resolve, reject) => {
-      axios.get(`${import.meta.env.VITE_API_URL}/shopping/?shopping_id=${shopping_id}`, {headers: tokenHeader})
+      axiosInstance.get(`/shopping/?shopping_id=${shopping_id}`)
         .then((response) => {
           set((state) => ({ ...state, data: response.data }));
           resolve(response.data);

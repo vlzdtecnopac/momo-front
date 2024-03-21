@@ -1,6 +1,5 @@
-import { motion } from "framer-motion";
-import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
 import { useShoppingStore } from "../../store/shopping.store";
@@ -10,13 +9,14 @@ import { KioskoInterface } from "../../interfaces/kiosko.interface";
 import Card from "../../components/Card/Card";
 import { LoaderPage } from "../../includes/loader/Loader";
 import { useEmployeeStore } from "../../store/employee.store";
-import { tokenHeader } from "../../helpers/token-header.helper";
-
-import "./WelcomePage.scss";
 
 import logo from "../../assets/logo.svg";
 import tabletIcon from "../../assets/icons/tablet.svg";
 import kioskIcon from "../../assets/icons/kiosko.svg";
+import axiosInstance from "../../helpers/axios-instance.helpers";
+
+import "./WelcomePage.scss";
+
 
 function WelcomePage() {
   const { typeTypography } = useDesignStore();
@@ -39,13 +39,7 @@ function WelcomePage() {
           socket.emit("kiosko-socket", {
             shopping_id: dataEmployee[0]?.shopping_id,
           });
-          await axios.put(
-            `${
-              import.meta.env.VITE_API_URL
-            }/shopping/open/${dataEmployee[0]?.shopping_id}`,
-            {},
-            { headers: tokenHeader }
-          );
+          await axiosInstance.put(`/shopping/open/${dataEmployee[0]?.shopping_id}`);
           setIsLoading(false);
           setTimeout(() => navigate("/success"), 4000);
         }

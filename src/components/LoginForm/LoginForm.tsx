@@ -2,11 +2,11 @@ import React, { useContext, useState } from "react";
 import { Formik } from "formik";
 import moment from "moment";
 import * as Yup from "yup";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 import { SocketContext } from "../../context/SocketContext";
 import { LoaderPage } from "../../includes/loader/Loader";
+import axiosInstance from "../../helpers/axios-instance.helpers";
 import "./LoginForm.scss";
 
 
@@ -37,7 +37,7 @@ function LoginForm() {
           onSubmit={async (values) => {
             setLoader(true);
             try {
-              let resp = await axios.post(`${import.meta.env.VITE_API_URL}/users/employee/login`,
+              let resp = await axiosInstance.post(`${import.meta.env.VITE_API_URL}/users/employee/login`,
                 values
               );
               if (resp) {

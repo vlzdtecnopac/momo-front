@@ -1,21 +1,47 @@
 import { useContext, useEffect, useState } from "react";
+import axiosInstance from "../../helpers/axios-instance.helpers";
+
 import { useDesignStore } from "../../store/design.store";
 import { SocketContext } from "../../context/SocketContext";
 import KioskoCard from "../Card/KioskoCard";
-import "./ConnectedKioskos.scss";
+
 import { KioskoInterface } from "../../interfaces/kiosko.interface";
+
+import "./ConnectedKioskos.scss";
+import { useShoppingStore } from "../../store/shopping.store";
+import { LoaderPage } from "../../includes/loader/Loader";
 
 function ConnectedKioskos() {
   const { socket } = useContext(SocketContext);
   const [kioskos, setKioskos] = useState<KioskoInterface[]>();
+  const [loader, isLoader] = useState<boolean>(false);
   const { typeTypography } = useDesignStore();
+  const { data } = useShoppingStore();
 
   useEffect(() => {
+    updateKioskoSocket();
+  }, []);
+
+  const kioskoDesactivateAll = async (shopping_id: string) => {
+    try {
+      isLoader(true);
+      await axiosInstance.post("/kioskos/desactive_all_kioskos", {
+        shopping_id: shopping_id,
+      });
+      updateKioskoSocket();
+      isLoader(false);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+  function updateKioskoSocket(){
     socket.on("kiosko-socket", (data: KioskoInterface[]) => setKioskos(data));
-  }, [socket]);
+  }
 
   return (
     <>
+     {loader? <LoaderPage/> : ""}
       <div className="kiosko-component">
         <div className="grid-2_xs-1 column-center">
           <div className="col">
@@ -24,7 +50,12 @@ function ConnectedKioskos() {
             </h2>
           </div>
           <div className="col column-right">
-            <button className="btn-desconnect-all">Desconectar Todos</button>
+            <button
+              onClick={() => kioskoDesactivateAll(data[0]?.shopping_id)}
+              className="btn-desconnect-all"
+            >
+              Desconectar Todos
+            </button>
           </div>
         </div>
 
@@ -49,7 +80,9 @@ function ConnectedKioskos() {
                     text={kioskos[index].nombre}
                     subText={kioskos[index]?.name_shopping}
                     state={kioskos[index].state}
-                    backgroundColor= {kioskos[index].state ? "#D5EAFB" : "#e8e8e8"} 
+                    backgroundColor={
+                      kioskos[index].state ? "#D5EAFB" : "#e8e8e8"
+                    }
                   />
                 </li>
               );

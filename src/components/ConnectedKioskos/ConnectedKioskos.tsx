@@ -12,15 +12,29 @@ import { useShoppingStore } from "../../store/shopping.store";
 import { LoaderPage } from "../../includes/loader/Loader";
 
 function ConnectedKioskos() {
+
   const { socket } = useContext(SocketContext);
   const [kioskos, setKioskos] = useState<KioskoInterface[]>();
   const [loader, isLoader] = useState<boolean>(false);
   const { typeTypography } = useDesignStore();
+  const [count, setCount] = useState(0);
+
   const { data } = useShoppingStore();
 
   useEffect(() => {
     updateKioskoSocket();
-  }, []);
+  }, [socket]);
+
+
+  useEffect(() => {
+    let totalCount = 0;
+    kioskos?.forEach(kiosko => {
+      if (kiosko.state) {
+        totalCount += 1;
+      }
+    });
+    setCount(totalCount);
+  }, [kioskos]);
 
   const kioskoDesactivateAll = async (shopping_id: string) => {
     try {
@@ -46,7 +60,7 @@ function ConnectedKioskos() {
         <div className="grid-2_xs-1 column-center">
           <div className="col">
             <h2 className={`connected-title  ${typeTypography}-text`}>
-              Kioskos conectados (0)
+              Kioskos conectados ({count})
             </h2>
           </div>
           <div className="col column-right">
@@ -72,6 +86,7 @@ function ConnectedKioskos() {
             </li>
             {kioskos?.map((_, index: number) => {
               //index = kioskos.length - 1 - index;
+           
               return (
                 <li key={kioskos[index].kiosko_id} className="content-center">
                   <KioskoCard

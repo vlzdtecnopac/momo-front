@@ -16,12 +16,12 @@ function OrderTabs() {
     {
       text: "Pedidos en proceso",
       icon: "bell",
-      active: false,
+      active: true,
     },
     {
       text: "Pedidos entrantes",
       icon: "clock",
-      active: true,
+      active: false,
     },
   ]);
 

@@ -15,15 +15,17 @@ function ConnectedKioskos() {
 
   const { socket } = useContext(SocketContext);
   const [kioskos, setKioskos] = useState<KioskoInterface[]>();
-  const [loader, isLoader] = useState<boolean>(false);
+  const [loader, isLoader] = useState<boolean>(true);
   const { typeTypography } = useDesignStore();
   const [count, setCount] = useState(0);
 
   const { data } = useShoppingStore();
 
   useEffect(() => {
+    if(loader){
     updateKioskoSocket();
-  }, [socket]);
+    }
+  }, [loader]);
 
 
   useEffect(() => {
@@ -42,15 +44,20 @@ function ConnectedKioskos() {
       await axiosInstance.post("/kioskos/desactive_all_kioskos", {
         shopping_id: shopping_id,
       });
-      updateKioskoSocket();
       isLoader(false);
+      updateKioskoSocket();
     } catch (e) {
       console.log(e);
     }
   };
 
   function updateKioskoSocket(){
-    socket.on("kiosko-socket", (data: KioskoInterface[]) => setKioskos(data));
+    isLoader(true);
+    socket.on("kiosko-socket", (data: KioskoInterface[]) => {
+      setKioskos(data)
+      isLoader(false);
+    });
+  
   }
 
   return (

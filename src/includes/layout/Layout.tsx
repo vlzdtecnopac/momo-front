@@ -7,6 +7,7 @@ import "./Layout.scss";
 import axiosInstance from "../../helpers/axios-instance.helpers";
 import { useShoppingStore } from "../../store/shopping.store";
 import { useDesignStore } from "../../store/design.store";
+import { useEmployeeStore } from "../../store/employee.store";
 
 interface DynamicLayoutProps {
   children: ReactNode;
@@ -14,22 +15,36 @@ interface DynamicLayoutProps {
 
 
 const Layout: React.FC<DynamicLayoutProps> = (props) => {
-
+  const { data, fetchData } = useShoppingStore();
   const navigate = useNavigate();
-  const { data } = useShoppingStore();
+  const { fetchEmployeeData } = useEmployeeStore();
   const { typeTypography, selectTypography, typeColumns, selectTypeColumn } =
   useDesignStore();
+
+  
+  useEffect(() => {
+    const fetchDataOnMount = async () => {
+      const employeeId = localStorage.getItem("employee-id");
+      if (employeeId) {
+        fetchEmployeeData(employeeId).then(async(resp: any) => {
+          let respEmp:any = await fetchData(resp[0].shopping_id)
+          localStorage.setItem('shopping_id', respEmp[0].shopping_id)
+          consultConfig(respEmp[0].shopping_id);
+        });
+      }
+    };
+    fetchDataOnMount();
+  }, []);
   
   useEffect(()=>{
     if(!localStorage.getItem('token-momo')){
       closeSession();
       navigate('/');
     }
-    consultConfig();
   },[]);
 
-  const consultConfig = async () => {
-    const response =  await axiosInstance.get(`/config/?shopping_id=${data[0].shopping_id}`);
+  const consultConfig = async (shopping_id: string) => {
+    const response =  await axiosInstance.get(`/config/?shopping_id=${shopping_id}`);
     selectTypeColumn(response.data[0]?.type_column); 
     selectTypography(response.data[0]?.type_text);
    }

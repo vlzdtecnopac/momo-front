@@ -21,11 +21,12 @@ function ConnectedKioskos() {
 
   const { data } = useShoppingStore();
 
+
   useEffect(() => {
     if(loader){
     updateKioskoSocket();
     }
-  }, [loader]);
+  }, []);
 
 
   useEffect(() => {
@@ -44,8 +45,8 @@ function ConnectedKioskos() {
       await axiosInstance.post("/kioskos/desactive_all_kioskos", {
         shopping_id: shopping_id,
       });
-      isLoader(false);
       updateKioskoSocket();
+      isLoader(false);
     } catch (e) {
       console.log(e);
     }

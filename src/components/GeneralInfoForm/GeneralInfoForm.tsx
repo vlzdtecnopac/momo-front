@@ -7,7 +7,7 @@ import "./GeneralInfoForm.scss";
 import moment from "moment";
 
 function GeneralInfoForm() {
-  const { data, fetchData } = useShoppingStore();
+  const { data } = useShoppingStore();
   const [success, setSuccess] = useState(false);
 
   const { typeTypography } = useDesignStore();
